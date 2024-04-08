@@ -4,5 +4,6 @@ This repository will be the home of Impactworkers Complaint Manager 2.0. Further
 
 ## Contributors
 
-Shakeel Bhamani
-Justin Anthony
+- Shakeel Bhamani
+
+- Justin Anthony
