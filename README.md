@@ -9,3 +9,4 @@ This repository will be the home of Impactworkers Complaint Manager 2.0. Further
 - Mariah Sager
 - Victoria Wong
 - Fara Hughes 
+- Paul Thompson
