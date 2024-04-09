@@ -19,9 +19,9 @@ permalink: wiki-info/wiki-migration
 - [ ] Onboarding Outline
 - [ ] Contributor Guidelines
 - [ ] Team Blogs
-  - [ ] Maria's Blog
-    - [ ] errrr
-  - [ ] Syamala's Coding Conundrums
+  - [x] Maria's Blog - deleted
+    - [x] errrr - deleted
+  - [x] Syamala's Coding Conundrums - deleted
   - [ ] Slack Integration with Google Sheet
 - [ ] Analysis Resources
   - [ ] Design and UX
@@ -48,40 +48,40 @@ permalink: wiki-info/wiki-migration
     - [ ] How to Debug Database Problems
     - [ ] How to Switch Between Instances
     - [ ] How to Setup a New Okta Instance for CM
-    - [ ] Prod Checklist
+    - [x] Prod Checklist - deleted
     - [ ] How to Update the PDF Snapshot
   - [ ] New Relic
   - [ ] Docker Commands
   - [ ] Create New City Instance
   - [ ] Commit Format
 - [ ] Pieces of the App
-  - [ ] Client
-    - [ ] Component/Container
+  - [x] Client - deleted
+    - [x] Component/Container - deleted
     - [ ] Action Creator/Thunk
     - [ ] Reducer
     - [ ] Selector
-  - [ ] Server
-    - [ ] Handler
-    - [ ] Model
+  - [x] Server - deleted
+    - [x] Handler - deleted
+    - [x] Model - deleted
     - [ ] Migration/Seeder
     - [ ] Payload Objects
-  - [ ] Worker
-  - [ ] Instance Files
+  - [x] Worker - deleted
+  - [x] Instance Files - deleted
   - [ ] Tests
     - [ ] Pact Tests
   - [ ] Environment Variables
   - [ ] Flakey Test Record
   - [ ] Naming Convention
   - [ ] Content Security Policy
-  - [ ] Prod Pushes
+  - [x] Prod Pushes - deleted
   - [ ] Story Flow
-- [ ] API Documentation
+- [x] API Documentation - deleted
 - [ ] Data Resources
   - [ ] NOLA Data Portal (Misconduct Complaints)
   - [ ] IA Pro Officer & Allegation Data
   - [ ] Auditing
   - [ ] Officer Seed Data
-  - [ ] VPN access to NOIPM office database server
+  - [x] VPN access to NOIPM office database server - deleted
 - [ ] Pivotal Tracker Guidelines
   - [ ] Anatomy of a Card
   - [ ] Lifecycle of a Card
