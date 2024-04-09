@@ -1,16 +1,16 @@
 ---
 layout: default
 title: Wiki Migration Checklist
-parent: Wiki Migration
-has_children: false
+parent: Wiki Information
+permalink: wiki-info/wiki-migration
 ---
 
-### Pages to Review from Wiki
+# Pages to Review from Wiki
 
 - [ ] Project Overview
   - [ ] Project Infrastructure
   - [ ] Team Practices
-- [x] ADRs
+- [x] ADRs - [migrated](../adrs)
 - [ ] Scaling Plans
   - [ ] Customize Workflow
     - [ ] NOIPM Functionality that Makes Generalization Harder
@@ -87,6 +87,13 @@ has_children: false
   - [ ] Lifecycle of a Card
   - [ ] Epics
 - [ ] Concerns and Considerations
+- [ ] Complaint Manager v2
+  - [ ] Overview
+  - [ ] Architecture Proposals
+    - [ ] Proposal #1
+  - [ ] Research
+  - [ ] Content Management Systems
+    - [ ] Drupal
 - [ ] Glossary
 - [ ] FAQ
 - [ ] Updating Tags
