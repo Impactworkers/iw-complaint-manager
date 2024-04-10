@@ -13,8 +13,8 @@ permalink: /adrs/adr-001
 
 ### Status
 
-Proposed
-{: .label .label-yellow }
+Superseded
+{: .label .label-red }
 
 ### Context
 
@@ -42,4 +42,9 @@ Proposed
 - Parts of the system in NOIPM that use the API endpoint /officers/search will be affected by this change.
 - The Hawaii pipeline is not affected by this decision.
 
+
+ ### Note: 
+ 
+ - This feature no longer needed. Revert all the changes added to a codebase. 
+ 
 ---
