@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ADR 005 - Remove function for removing dublicated officers in UI NOIPM
+title: ADR 005 - Remove function for removing duplicated officers in UI NOIPM
 parent: Architecture Decision Records
 permalink: /adrs/adr-005
 ---
