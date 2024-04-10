@@ -16,6 +16,8 @@ permalink: /adrs/adr-001
 Superseded
 {: .label .label-red }
 
+Superseded by [ADR 005](./005-remove-function-for-duplicated-officers.md)
+
 ### Context
 
 [Issue #328](https://github.com/PublicDataWorks/complaint-manager/issues/328) – Do not display duplicated officers in the UI
