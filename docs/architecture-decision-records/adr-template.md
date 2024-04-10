@@ -32,12 +32,16 @@ Choose one of the following status labels:
 
 Proposed
 {: .label .label-yellow }
+
 Accepted
 {: .label .label-green }
+
 Rejected
 {: .label .label-red }
+
 Deprecated
 {: .label .label-red }
+
 Superseded
 {: .label .label-red }
 
