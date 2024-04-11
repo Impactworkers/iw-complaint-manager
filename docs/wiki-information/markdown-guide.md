@@ -9,7 +9,7 @@ permalink: wiki-info/markdown-guide
 
 ## Background Information
 
-This wiki is published on [GitHub Pages](https://pages.github.com/) using the [Just the Docs](https://just-the-docs.com/) theme for [Jekyll](https://jekyllrb.com/).
+This wiki is published on [GitHub Pages](https://pages.github.com/) using the [Just the Docs](https://just-the-docs.com/) theme for [Jekyll](https://jekyllrb.com/). [This page](https://just-the-docs.github.io/just-the-docs-tests/docs/markdown/) provides more examples of the theme.
 
 ## Guide
 
