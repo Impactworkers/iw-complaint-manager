@@ -32,7 +32,7 @@ Decide which tool is better suited for documenting the API endpoints.
 
 Tool we are going to use to document the API endpoints:
 
-- [ ] Swagger
+- [x] Swagger
 - [ ] Github
 
 #### Swagger
