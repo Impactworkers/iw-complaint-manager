@@ -9,10 +9,10 @@ permalink: wiki-info/wiki-migration
 
 - [ ] Project Overview
   - [ ] Project Infrastructure
-  - [ ] Team Practices
+  - [x] ~~Team Practices~~ - no migration action needed
 - [x] ~~ADRs~~ - [migrated](../adrs)
-- [ ] Scaling Plans
-  - [ ] Customize Workflow
+- [x] ~~Scaling Plans~~ - no migration action needed
+  - [x] ~~Customize Workflow~~ - no migration action needed
     - [x] ~~NOIPM Functionality that Makes Generalization Harder~~ - archived
   - [x] ~~Org Configuration~~ - archived
   - [ ] New Client Deploy
@@ -31,7 +31,7 @@ permalink: wiki-info/wiki-migration
     - [ ] Provisioning Higher Enviroments
     - [ ] Provisioning a Playground Env
     - [x] ~~Feature Toggles~~ - archived
-    - [ ] Auth0 Configuration
+    - [x] ~~Auth0 Configuration~~ - no migration action needed
     - [ ] Auth0 Add User Roles and Permissions
     - [x] ~~Recreating Sortable Cases~~ - archived
     - [ ] Monitoring of Worker Jobs
@@ -50,11 +50,11 @@ permalink: wiki-info/wiki-migration
     - [x] ~~How to Setup a New Okta Instance for CM~~ - archived
     - [x] ~~Prod Checklist~~ - deleted
     - [ ] How to Update the PDF Snapshot
-  - [ ] New Relic
+  - [x] ~~New Relic~~ - no migration action needed
   - [ ] Docker Commands
   - [x] ~~Create New City Instance~~ - archived
   - [ ] Commit Format
-- [ ] Pieces of the App
+- [x] ~~Pieces of the App~~ - no migration action needed
   - [x] ~~Client~~ - deleted
     - [x] ~~Component/Container~~ - deleted
     - [x] ~~Action Creator/Thunk~~ - archived
@@ -63,37 +63,37 @@ permalink: wiki-info/wiki-migration
   - [x] ~~Server~~ - deleted
     - [x] ~~Handler~~ - deleted
     - [x] ~~Model~~ - deleted
-    - [ ] Migration/Seeder
+    - [x] ~~Migration/Seeder~~ - no migration action needed
     - [ ] Payload Objects
   - [x] ~~Worker~~ - deleted
   - [x] ~~Instance Files~~ - deleted
   - [ ] Tests
     - [ ] Pact Tests
-  - [ ] Environment Variables
+  - [x] ~~Environment Variables~~ - no migration action needed
   - [ ] Flakey Test Record
   - [ ] Naming Convention
-  - [ ] Content Security Policy
+  - [x] ~~Content Security Policy~~ - no migration action needed
   - [x] ~~Prod Pushes~~ - deleted
   - [ ] Story Flow
 - [x] ~~API Documentation~~ - deleted
-- [ ] Data Resources
-  - [ ] NOLA Data Portal (Misconduct Complaints)
+- [x] ~~Data Resources~~ - no migration action needed
+  - [x] ~~NOLA Data Portal (Misconduct Complaints)~~ - no migration action needed
   - [x] ~~IA Pro Officer & Allegation Data~~ - archived
   - [ ] Auditing
   - [x] ~~Officer Seed Data~~ - archived
   - [x] ~~VPN access to NOIPM office database server~~ - deleted
-- [ ] Pivotal Tracker Guidelines
-  - [ ] Anatomy of a Card
-  - [ ] Lifecycle of a Card
-  - [ ] Epics
+- [x] ~~Pivotal Tracker Guidelines~~ - no migration action needed
+  - [x] ~~Anatomy of a Card~~ - no migration action needed
+  - [x] ~~Lifecycle of a Card~~ - no migration action needed
+  - [x] ~~Epics~~ - no migration action needed
 - [ ] Concerns and Considerations
 - [ ] Complaint Manager v2
   - [ ] Overview
-  - [ ] Architecture Proposals
-    - [ ] Proposal #1
+  - [x] ~~Architecture Proposals~~ - no migration action needed
+    - [x] ~~Proposal #1~~ - no migration action needed
   - [ ] Research
   - [ ] Content Management Systems
     - [ ] Drupal
 - [ ] Glossary
-- [ ] FAQ
+- [x] ~~FAQ~~ - no migration action needed
 - [x] ~~Updating Tags~~ - archived
