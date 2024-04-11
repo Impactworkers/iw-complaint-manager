@@ -12,19 +12,3 @@ permalink: wiki-info/markdown-guide
 This wiki is published on [GitHub Pages](https://pages.github.com/) using the [Just the Docs](https://just-the-docs.com/) theme for [Jekyll](https://jekyllrb.com/).
 
 ## Guide
-
-{: .important }
-> Testing callouts
-
-{: .note-title }
-> Test
->
-> Testing callouts
-
-{: .highlight }
-> Testing callouts
-
-{: .highlight-title }
-> Test
->
-> Testing callouts
