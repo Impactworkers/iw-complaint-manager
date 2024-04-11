@@ -13,15 +13,15 @@ permalink: wiki-info/wiki-migration
 - [x] ADRs - [migrated](../adrs)
 - [ ] Scaling Plans
   - [ ] Customize Workflow
-    - [x] NOIPM Functionality that Makes Generalization Harder - archived
-  - [x] Org Configuration - archived
+    - [x] ~~NOIPM Functionality that Makes Generalization Harder~~ - archived
+  - [x] ~~Org Configuration~~ - archived
   - [ ] New Client Deploy
 - [ ] Onboarding Outline
-- [x] Contributor Guidelines - archived
+- [x] ~~Contributor Guidelines~~ - archived
 - [ ] Team Blogs
-  - [x] Maria's Blog - deleted
-    - [x] errrr - deleted
-  - [x] Syamala's Coding Conundrums - deleted
+  - [x] ~~Maria's Blog~~ - deleted
+    - [x] ~~errrr~~ - deleted
+  - [x] ~~Syamala's Coding Conundrums~~ - deleted
   - [ ] Slack Integration with Google Sheet
 - [ ] Analysis Resources
   - [ ] Design and UX
@@ -30,58 +30,58 @@ permalink: wiki-info/wiki-migration
     - [ ] Creating a New Environment
     - [ ] Provisioning Higher Enviroments
     - [ ] Provisioning a Playground Env
-    - [x] Feature Toggles - archived
+    - [x] ~~Feature Toggles~~ - archived
     - [ ] Auth0 Configuration
     - [ ] Auth0 Add User Roles and Permissions
-    - [x] Recreating Sortable Cases - archived
+    - [x] ~~Recreating Sortable Cases~~ - archived
     - [ ] Monitoring of Worker Jobs
     - [ ] Updating Docker Images
-    - [x] Updating Letter Templates - archived
-    - [x] Setup a Custom Domain - archived
+    - [x] ~~Updating Letter Templates~~ - archived
+    - [x] ~~Setup a Custom Domain~~ - archived
     - [ ] How to Set Up a Stress Test
     - [ ] How to Setup Your Local Database
     - [ ] Creating a Release
     - [ ] Debugging a Particular Release
-    - [x] How to Deal with Security Checks Failing - archived
-    - [x] Possible TDD Process for Using Pact - archived
+    - [x] ~~How to Deal with Security Checks Failing~~ - archived
+    - [x] ~~Possible TDD Process for Using Pact~~ - archived
     - [ ] How to Create a Public Service Handler
     - [ ] How to Debug Database Problems
     - [ ] How to Switch Between Instances
-    - [x] How to Setup a New Okta Instance for CM - archived
-    - [x] Prod Checklist - deleted
+    - [x] ~~How to Setup a New Okta Instance for CM~~ - archived
+    - [x] ~~Prod Checklist~~ - deleted
     - [ ] How to Update the PDF Snapshot
   - [ ] New Relic
   - [ ] Docker Commands
-  - [x] Create New City Instance - archived
+  - [x] ~~Create New City Instance~~ - archived
   - [ ] Commit Format
 - [ ] Pieces of the App
-  - [x] Client - deleted
-    - [x] Component/Container - deleted
-    - [x] Action Creator/Thunk - archived
+  - [x] ~~Client~~ - deleted
+    - [x] ~~Component/Container~~ - deleted
+    - [x] ~~Action Creator/Thunk~~ - archived
     - [ ] Reducer
     - [ ] Selector
-  - [x] Server - deleted
-    - [x] Handler - deleted
-    - [x] Model - deleted
+  - [x] ~~Server~~ - deleted
+    - [x] ~~Handler~~ - deleted
+    - [x] ~~Model~~ - deleted
     - [ ] Migration/Seeder
     - [ ] Payload Objects
-  - [x] Worker - deleted
-  - [x] Instance Files - deleted
+  - [x] ~~Worker~~ - deleted
+  - [x] ~~Instance Files~~ - deleted
   - [ ] Tests
     - [ ] Pact Tests
   - [ ] Environment Variables
   - [ ] Flakey Test Record
   - [ ] Naming Convention
   - [ ] Content Security Policy
-  - [x] Prod Pushes - deleted
+  - [x] ~~Prod Pushes~~ - deleted
   - [ ] Story Flow
-- [x] API Documentation - deleted
+- [x] ~~API Documentation~~ - deleted
 - [ ] Data Resources
   - [ ] NOLA Data Portal (Misconduct Complaints)
-  - [x] IA Pro Officer & Allegation Data - archived
+  - [x] ~~IA Pro Officer & Allegation Data~~ - archived
   - [ ] Auditing
-  - [x] Officer Seed Data - archived
-  - [x] VPN access to NOIPM office database server - deleted
+  - [x] ~~Officer Seed Data~~ - archived
+  - [x] ~~VPN access to NOIPM office database server~~ - deleted
 - [ ] Pivotal Tracker Guidelines
   - [ ] Anatomy of a Card
   - [ ] Lifecycle of a Card
@@ -96,4 +96,4 @@ permalink: wiki-info/wiki-migration
     - [ ] Drupal
 - [ ] Glossary
 - [ ] FAQ
-- [x] Updating Tags - archived
+- [x] ~~Updating Tags~~ - archived
