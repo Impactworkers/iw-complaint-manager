@@ -2,3 +2,15 @@ title: "Complaint Manager 2.0"
 remote_theme: pmarsceill/just-the-docs
 search_enabled: true
 enable_copy_code_button: true
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
