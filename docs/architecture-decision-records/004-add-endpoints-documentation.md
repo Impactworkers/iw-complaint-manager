@@ -13,8 +13,8 @@ permalink: adrs/adr-004
 
 ### Status
 
-Proposed
-{: .label .label-yellow }
+ACCEPTED
+{: .label .label-green }
 
 ### Context
 
