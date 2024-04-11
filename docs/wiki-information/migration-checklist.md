@@ -10,7 +10,7 @@ permalink: wiki-info/wiki-migration
 - [ ] Project Overview
   - [ ] Project Infrastructure
   - [ ] Team Practices
-- [x] ADRs - [migrated](../adrs)
+- [x] ~~ADRs~~ - [migrated](../adrs)
 - [ ] Scaling Plans
   - [ ] Customize Workflow
     - [x] ~~NOIPM Functionality that Makes Generalization Harder~~ - archived
