@@ -6,9 +6,12 @@ permalink: wiki-info/wiki-migration
 ---
 
 # Pages to Review from Wiki
+label test
+{: .label }
 
-- [ ] Project Overview
-  label test {: .label }
+- [ ] Project Overview 
+  label test
+  {: .label }
   - [ ] Project Infrastructure
   - [x] ~~Team Practices~~ - no migration action needed
 - [x] ~~ADRs~~ - [migrated](../adrs)
