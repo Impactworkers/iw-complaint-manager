@@ -13,11 +13,11 @@ permalink: wiki-info/wiki-migration
 - [x] ADRs - [migrated](../adrs)
 - [ ] Scaling Plans
   - [ ] Customize Workflow
-    - [ ] NOIPM Functionality that Makes Generalization Harder
-  - [ ] Org Configuration
+    - [x] NOIPM Functionality that Makes Generalization Harder - archived
+  - [x] Org Configuration - archived
   - [ ] New Client Deploy
 - [ ] Onboarding Outline
-- [ ] Contributor Guidelines
+- [x] Contributor Guidelines - archived
 - [ ] Team Blogs
   - [x] Maria's Blog - deleted
     - [x] errrr - deleted
@@ -30,34 +30,34 @@ permalink: wiki-info/wiki-migration
     - [ ] Creating a New Environment
     - [ ] Provisioning Higher Enviroments
     - [ ] Provisioning a Playground Env
-    - [ ] Feature Toggles
+    - [x] Feature Toggles - archived
     - [ ] Auth0 Configuration
     - [ ] Auth0 Add User Roles and Permissions
-    - [ ] Recreating Sortable Cases
+    - [x] Recreating Sortable Cases - archived
     - [ ] Monitoring of Worker Jobs
     - [ ] Updating Docker Images
-    - [ ] Updating Letter Templates
-    - [ ] Setup a Custom Domain
+    - [x] Updating Letter Templates - archived
+    - [x] Setup a Custom Domain - archived
     - [ ] How to Set Up a Stress Test
     - [ ] How to Setup Your Local Database
     - [ ] Creating a Release
     - [ ] Debugging a Particular Release
-    - [ ] How to Deal with Security Checks Failing
-    - [ ] Possible TDD Process for Using Pact
+    - [x] How to Deal with Security Checks Failing - archived
+    - [x] Possible TDD Process for Using Pact - archived
     - [ ] How to Create a Public Service Handler
     - [ ] How to Debug Database Problems
     - [ ] How to Switch Between Instances
-    - [ ] How to Setup a New Okta Instance for CM
+    - [x] How to Setup a New Okta Instance for CM - archived
     - [x] Prod Checklist - deleted
     - [ ] How to Update the PDF Snapshot
   - [ ] New Relic
   - [ ] Docker Commands
-  - [ ] Create New City Instance
+  - [x] Create New City Instance - archived
   - [ ] Commit Format
 - [ ] Pieces of the App
   - [x] Client - deleted
     - [x] Component/Container - deleted
-    - [ ] Action Creator/Thunk
+    - [x] Action Creator/Thunk - archived
     - [ ] Reducer
     - [ ] Selector
   - [x] Server - deleted
@@ -78,9 +78,9 @@ permalink: wiki-info/wiki-migration
 - [x] API Documentation - deleted
 - [ ] Data Resources
   - [ ] NOLA Data Portal (Misconduct Complaints)
-  - [ ] IA Pro Officer & Allegation Data
+  - [x] IA Pro Officer & Allegation Data - archived
   - [ ] Auditing
-  - [ ] Officer Seed Data
+  - [x] Officer Seed Data - archived
   - [x] VPN access to NOIPM office database server - deleted
 - [ ] Pivotal Tracker Guidelines
   - [ ] Anatomy of a Card
@@ -96,4 +96,4 @@ permalink: wiki-info/wiki-migration
     - [ ] Drupal
 - [ ] Glossary
 - [ ] FAQ
-- [ ] Updating Tags
+- [x] Updating Tags - archived
