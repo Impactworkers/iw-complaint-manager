@@ -14,3 +14,5 @@ callouts:
   warning:
     title: Warning
     color: red
+
+# NB: If you update this config file, please also update docs/wiki-information/wiki-configuration.md.
