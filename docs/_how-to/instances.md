@@ -1,3 +1,7 @@
+---
+layout: default
+title: How to Switch Between Instances
+---
 
 # How to Switch Between Instances
 

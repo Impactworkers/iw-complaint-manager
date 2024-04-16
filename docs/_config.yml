@@ -16,7 +16,7 @@ callouts:
     color: red
 collections:
   how-to:
-    permalink: "/:collection/:path"
+    permalink: "/:collection/:name"
     output: true
 just-the-docs:
   collections:
