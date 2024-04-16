@@ -14,5 +14,15 @@ callouts:
   warning:
     title: Warning
     color: red
+collections:
+  how-to:
+    permalink: "/:collection/:path"
+    output: true
+just-the-docs:
+  collections:
+    how-to:
+      name: How To Guides
+
+# TODO: add info about collections to ./wiki-configuration.md
 
 # NB: If you update this config file, please also update docs/wiki-information/wiki-configuration.md.
