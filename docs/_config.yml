@@ -16,7 +16,7 @@ callouts:
     color: red
 collections:
   how-to:
-    permalink: "/:collection/:name"
+    # permalink: "/:collection/:name"
     output: true
 # defaults:
 #   -
@@ -26,6 +26,7 @@ just-the-docs:
   collections:
     how-to:
       name: How To Guides
+      nav_fold: true
 
 # TODO: add info about collections to ./wiki-configuration.md
 
