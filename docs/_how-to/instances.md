@@ -1,6 +1,8 @@
 ---
 layout: default
 title: How to Switch Between Instances
+parent: How To Guides
+permalink: how-to/instances
 ---
 
 # How to Switch Between Instances
