@@ -7,8 +7,7 @@ permalink: wiki-info/wiki-migration
 
 # Pages to Review from Wiki
 
-Label test
-
+## Label test
 {: .d-inline-block}
 
 Label {: .label .label-green }
