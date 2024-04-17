@@ -7,6 +7,12 @@ permalink: wiki-info/wiki-migration
 
 # Pages to Review from Wiki
 
+Label test
+
+{: .d-inline-block}
+
+Label {: .label .label-green }
+
 - [ ] Project Overview
   - [ ] Project Infrastructure
   - [x] ~~Team Practices~~ - no migration action needed
