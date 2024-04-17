@@ -1,4 +1,11 @@
-Concerns and Considerations
+---
+layout: default
+title: Concerns and Considerations
+parent: Unfiled Pages
+permalink: /unfiled/concerns-and-considerations
+---
+
+# Concerns and Considerations
 
 ***(**last** **modified** **on** 07/19/19)***
 

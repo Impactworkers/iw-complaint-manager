@@ -1,4 +1,11 @@
-Pact Tests
+---
+layout: default
+title: Pact Tests
+parent: Unfiled Pages
+permalink: /unfiled/pact-tests
+---
+
+# Pact Tests
 
 **Pact tests essentially draw a line down the middle of a client/server
 application (like ours) and has separate tests from end to middle for

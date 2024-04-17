@@ -1,3 +1,12 @@
+---
+layout: default
+title: Commit Format
+parent: Unfiled Pages
+permalink: /unfiled/commit-format
+---
+
+# Commit Format
+
 **<type>(<scope (optional)>){! if breaking}: <names of
 contributors> [#<issue number (optional)>] <brief description of
 the commit>**

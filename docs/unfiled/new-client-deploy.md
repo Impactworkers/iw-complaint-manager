@@ -1,4 +1,11 @@
-New Client Deploy
+---
+layout: default
+title: New Client Deploy
+parent: Unfiled Pages
+permalink: /unfiled/new-client-deploy
+---
+
+# New Client Deploy
 
 We will never be free of weighty burden of supporting this tool if
 oversight organizations cannot deploy an instance without our

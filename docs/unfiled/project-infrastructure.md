@@ -1,4 +1,11 @@
-Project Infrastructure
+---
+layout: default
+title: Project Infrastructure
+parent: Unfiled Pages
+permalink: /unfiled/project-infrastructure
+---
+
+# Project Infrastructure
 
 *(last modified on 07/19/19)*
 

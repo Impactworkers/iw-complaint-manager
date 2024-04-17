@@ -1,4 +1,11 @@
-Flakey Test Record
+---
+layout: default
+title: Flakey Test Record
+parent: Unfiled Pages
+permalink: /unfiled/flakey-test-record
+---
+
+# Flakey Test Record
 
 Welcome
 

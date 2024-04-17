@@ -1,4 +1,11 @@
-Docker Commands
+---
+layout: default
+title: Docker Commands
+parent: Unfiled Pages
+permalink: /unfiled/docker-commands
+---
+
+# Docker Commands
 
 **Docker run [image name]**
 

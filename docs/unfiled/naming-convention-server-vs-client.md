@@ -1,4 +1,11 @@
-Naming Conventions for Server vs Client
+---
+layout: default
+title: Naming Conventions for Server vs. Client
+parent: Unfiled Pages
+permalink: /unfiled/naming-conventions-server-vs-client
+---
+
+# Naming Conventions for Server vs. Client
 
 **AGER > Add, Get, Edit, Remove **
 

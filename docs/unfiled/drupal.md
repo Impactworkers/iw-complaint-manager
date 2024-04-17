@@ -1,3 +1,9 @@
+---
+layout: default
+title: Drupal
+parent: Unfiled Pages
+permalink: /unfiled/drupal
+---
 
 # Drupal
 

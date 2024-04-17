@@ -1,3 +1,9 @@
+---
+layout: default
+title: Content Management Systems
+parent: Unfiled Pages
+permalink: /unfiled/content-management-systems
+---
 
 # Content Management Systems
 
