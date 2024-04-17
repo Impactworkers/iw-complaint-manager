@@ -1,4 +1,21 @@
-How to Set Up a Stress Test
+---
+layout: default
+title: How to Set Up a Stress Test
+parent: How To Guides
+permalink: /how-to/set-up-stress-test
+---
+
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
+{: .warning-title }
+> To be Updated
+>
+> This page's content needs to be updated.
+
+# How to Set Up a Stress Test
 
 Considerations
 

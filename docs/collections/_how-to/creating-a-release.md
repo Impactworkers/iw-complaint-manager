@@ -1,4 +1,21 @@
-Creating a Release
+---
+layout: default
+title: Creating a Release
+parent: How To Guides
+permalink: /how-to/create-a-release
+---
+
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
+{: .warning-title }
+> To be Updated
+>
+> This page's content needs to be updated.
+
+# Creating a Release
 
 Pick a Pipeline
 

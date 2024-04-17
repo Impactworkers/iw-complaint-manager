@@ -5,6 +5,11 @@ parent: Unfiled Pages
 permalink: /unfiled/selector
 ---
 
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
 # Selector
 
 A **selector** is a tool that is used occasionally when doing a complicated mapping from the redux store to props of a component. The selector determines what pieces of the redux store are necessary for the mapping and then if subsequent calls have the same value for all of those pieces of state, it returns the previous result instead of re-running the mapping, which can save a lot of processing power since the mapStateToProps function runs every time the component re-renders.

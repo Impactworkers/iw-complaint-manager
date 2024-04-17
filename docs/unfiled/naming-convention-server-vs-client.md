@@ -5,6 +5,16 @@ parent: Unfiled Pages
 permalink: /unfiled/naming-conventions-server-vs-client
 ---
 
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
+{: .warning-title }
+> To be Updated
+>
+> This page's content needs to be updated.
+
 # Naming Conventions for Server vs. Client
 
 **AGER > Add, Get, Edit, Remove **

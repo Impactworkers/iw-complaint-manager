@@ -5,6 +5,11 @@ parent: Unfiled Pages
 permalink: /unfiled/content-management-systems
 ---
 
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
 # Content Management Systems
 
 A **Content Management System (CMS)** is a software application or set of related programs that are used to create and manage digital content. CMSes are typically used for **enterprise content management (ECM)** and **web content management (WCM)**. An ECM facilitates collaboration in the workplace by integrating document management, digital asset management, and records retention functionalities, and providing end users with role-based access to the organization's digital assets. A WCM facilitates collaborative authoring for websites.

@@ -5,6 +5,16 @@ parent: Unfiled Pages
 permalink: /unfiled/project-infrastructure
 ---
 
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
+{: .warning-title }
+> To be Updated
+>
+> This page's content needs to be updated.
+
 # Project Infrastructure
 
 *(last modified on 07/19/19)*

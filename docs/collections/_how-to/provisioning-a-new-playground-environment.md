@@ -1,4 +1,21 @@
-Provisioning a New Playground Environment
+---
+layout: default
+title: Provisioning a New Playground Environment
+parent: How To Guides
+permalink: /how-to/provision-playground-environment
+---
+
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
+{: .warning-title }
+> To be Updated
+>
+> This page's content needs to be updated.
+
+# Provisioning a New Playground Environment
 
 Warning [Read this First!]
 

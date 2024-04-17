@@ -5,6 +5,16 @@ parent: Unfiled Pages
 permalink: /unfiled/glossary
 ---
 
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
+{: .warning-title }
+> To be Updated
+>
+> This page's content needs to be updated.
+
 # Glossary
 
 | Term | Definition |

@@ -1,4 +1,21 @@
-Creating a New Environment
+---
+layout: default
+title: Creating a New Environment
+parent: How To Guides
+permalink: /how-to/create-a-new-environment
+---
+
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
+{: .warning-title }
+> To be Updated
+>
+> This page's content needs to be updated.
+
+# Creating a New Environment
 
 Setting Up a New Heroku App
 

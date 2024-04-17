@@ -1,4 +1,16 @@
-How to Create a Public Service Handler
+---
+layout: default
+title: How to Create a Public Service Handler
+parent: How To Guides
+permalink: /how-to/create-a-public-service-handler
+---
+
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
+# How to Create a Public Service Handler
 
 A public service handler is a handler that is meant to be called without
 any authorization. This is required for service handlers that are called

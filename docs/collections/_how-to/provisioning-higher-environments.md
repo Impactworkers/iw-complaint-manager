@@ -1,4 +1,21 @@
-Provisioning Higher Environments
+---
+layout: default
+title: Provisionining Higher Environments
+parent: How To Guides
+permalink: /how-to/provision-higher-environments
+---
+
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
+{: .warning-title }
+> To be Updated
+>
+> This page's content needs to be updated.
+
+# Provisioning Higher Environments
 
 NOIPM Notes
 

@@ -1,4 +1,21 @@
-Auth0 Add User Roles and Permissions
+---
+layout: default
+title: Auth0 Add User Roles and Permissions
+parent: How To Guides
+permalink: /how-to/auth0-add-user-roles-permissions
+---
+
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
+{: .warning-title }
+> To be Updated
+>
+> This page's content needs to be updated.
+
+# Auth0 Add User Roles and Permissions
 
 *(last modified: 6/9/22)*
 

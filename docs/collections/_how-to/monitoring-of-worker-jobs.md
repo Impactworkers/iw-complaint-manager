@@ -1,4 +1,21 @@
-Monitoring of Worker Jobs
+---
+layout: default
+title: Monitoring Worker Jobs
+parent: How To Guides
+permalink: /how-to/monitor-worker-jobs
+---
+
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
+{: .warning-title }
+> To be Updated
+>
+> This page's content needs to be updated.
+
+# Monitoring of Worker Jobs
 
 Connecting to the queue
 

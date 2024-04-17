@@ -1,4 +1,21 @@
-Debugging a Particular Release
+---
+layout: default
+title: Debugging a Particular Release
+parent: How To Guides
+permalink: /how-to/debug-a-release
+---
+
+{: .highlight-title }
+> Under Construction
+>
+> This page is under construction.
+
+{: .warning-title }
+> To be Updated
+>
+> This page's content needs to be updated.
+
+# Debugging a Particular Release
 
 Finding the Right police-data-manager Commit
 
