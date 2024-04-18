@@ -6,13 +6,11 @@ permalink: /unfiled/auditing
 ---
 
 {: .highlight-title }
-
 > Under Construction
 >
 > This page is under construction.
 
 {: .warning-title }
-
 > To be Updated
 >
 > This page's content needs to be updated.
@@ -31,60 +29,47 @@ you understand the underlying structure of auditing.
 ### We audit the following
 
 - Data changes:
-
-  - We track when data in the db is added, edited, or removed.
-
+  - We track when data in the database is added, edited, or removed.
   - Code: Make sure that if you add a new model, you add the
-    auditDataChange method to track its changes.
-
+    `auditDataChange` method to track its changes.
 - Data access:
-
   - We track what data is returned for each user in the case that
     there is a leak of data and we need to know who had access to
     it.
-
   - Code: Make sure that if you add or edit a handler, the
-    auditDataAccess method call is updated to reflect the data
+    `auditDataAccess` method call is updated to reflect the data
     returned by the handler.
-
 - Login/logout:
-
   - We track each time someone logs in or explicitly logs out. We
     don't track the implicit logout of a token timing out 8 hours
     after login.
-
 - Export:
-
   - We track when someone uses export functionality for exporting
     audit history or all case information
 
 ### Relevant Tables
 
 A diagram of the structure of all the tables used can be found on the
-Invisible Institute Team Google Drive under the name . To sum up the
+Invisible Institute Team Google Drive under the name . To sum up the <!-- TODO: What name?? -->
 diagram, every single audit we create is created in the "audits"table.
 Each audit with then further be categorized into one of the sub tables
-pointing to the "audits"table. For example, creating a new complaint
+pointing to the "audits" table. For example, creating a new complaint
 would be audited first into the audit table and then further categorized
 as a data_change_audit because new data was created
 
 ### Auditing Functions
 
-If there is anything you need to know about auditing its that there
+If there is anything you need to know about auditing it's that there
 are really only a few functions actually needed to audit. These
 functions can be found in the following files:
 
-- auditAuthentication.js
+- `auditAuthentication.js`
+- `auditDataAccess.js`
+- `auditFileAction.js`
+- `getQueryAuditAccessDetails.js`
+- `dataChangeAuditHooks.js`
 
-- auditDataAccess.js
-
-- auditFileAction.js
-
-- getQueryAuditAccessDetails.js
-
-- dataChangeAuditHooks.js
-
-All of them are pretty straightforward to use except for the last one, dataChangeAuditHooks.js.
+All of them are pretty straightforward to use except for the last one, `dataChangeAuditHooks.js`.
 
 ### When Should I Consider Adding More Auditing
 
@@ -135,25 +120,20 @@ This is used for anything file related such as uploading attachments,
 generating complainant letters, downloading attachments and so on. To
 use this function simply import it and then call it with:
 
-- user: The currently logged in user
-
-- caseId: The id of the case of which the file is being uploaded,
-  downloaded from, etc
-
-- auditAction: Was this an uploaded or downloaded. You can refer to
+- `user`: The currently logged in user
+- `caseId`: The id of the case of which the file is being uploaded,
+  downloaded from, etc.
+- `auditAction`: Was this an uploaded or downloaded. You can refer to
   the constants.js file for a list of current actions
-
-- fileName: Name of the file
-
-- fileType: Was this an attachment or something generated. Refer to
-  the AUDIT_FILE_TYPE constants in constants.js
-
-- transaction: a sequelize thing that will roll back the audit it
+- `fileName`: Name of the file
+- `fileType`: Was this an attachment or something generated. Refer to
+  the `AUDIT_FILE_TYPE` constants in `constants.js`
+- `transaction`: a sequelize thing that will roll back the audit it
   there is an error while auditing
 
 It's really that easy.
 
-#### auditDataAccess and getQueryAuditAccessDetails
+#### `auditDataAccess` and `getQueryAuditAccessDetails`
 
 This is by far the most common type of auditing that is done within
 our application. Because most of our handlers will send back some sort
@@ -161,36 +141,30 @@ of data received from the database, we want to audit that the user has
 access to this data. Some exceptions are highlighted in the what not to
 audit section.
 
-Using auditDataAccess is a two step process that involves first
-getting the audit access details with the getQueryAuditAccessDetails
-function. To use getQueryAuditAccessDetails, call it with:
+Using `auditDataAccess` is a two step process that involves first
+getting the audit access details with the `getQueryAuditAccessDetails`
+function. To use `getQueryAuditAccessDetails`, call it with:
 
-- queryOptions: The sequelize query used to retrieve data from the
+- `queryOptions`: The sequelize query used to retrieve data from the
   database
-
-- topLevelModelName: The name of the sequelize model used to query
+- `topLevelModelName`: The name of the sequelize model used to query
   the database
 
-This function will return auditDetails which is then used when calling
-auditDataAccess with:
+This function will return `auditDetails` which is then used when calling
+`auditDataAccess` with:
 
-- auditUser: The currently logged in user
-
-- caseId: Which case are we accessing from. Can be null if it is all
+- `auditUser`: The currently logged in user
+- `caseId`: Which case are we accessing from. Can be `null` if it is all
   cases or not case related
-
-- managerType: Are we in policeDataManager?
-
-- auditSubject: See AUDIT_SUBJECT in constants.js
-
-- auditDetails: Details given by getQueryAuditAccessDetails
-
-- transaction: sequelize safety net
+- `managerType`: Are we in `policeDataManager`?
+- `auditSubject`: See `AUDIT_SUBJECT` in `constants.js`
+- `auditDetails`: Details given by `getQueryAuditAccessDetails`
+- `transaction`: sequelize safety net
 
 There are many examples of this audit being used. Just search the
 codebase for examples
 
-#### dataChangeAuditHooks
+#### `dataChangeAuditHooks`
 
 A weird type of audit because it isn't used the same way as the other
 audit functions. Data change audits are created automatically but there
@@ -200,34 +174,29 @@ changes. Some examples include creating and updating civilian info,
 creating and updating case info, creating a brand new tag. If you have
 identified that data change must be added then follow these steps:
 
-1.  Go to the model that corresponds to the table in the database
+1. Go to the model that corresponds to the table in the database
     where data will be created or edited. These models exist under
-    src/server.
-
-2.  Inside the model add <Model>.auditDataChange(), where <Model>
+    `src/server`.
+2. Inside the model add `<Model>.auditDataChange()`, where `<Model>`
     is replaced with the name of the const declared at the top of the
-    model. For the case of models/tag.js this would be
-    Tag.auditDataChange();
-
-3.  Inside the model add <Model>.prototype.getManagerType(), this is
-    a function that should return policeDataManager by returning the
-    corresponding MANAGER_TYPE constant in constants.js. Make sure to
-    replace <Model> with the const declared up above
-
-4.  If the manager type is COMPLAINT then add
-    <Model>.prototype.getCaseId(). This is a function that returns the
+    model. For the case of `models/tag.js` this would be
+    `Tag.auditDataChange();`
+3. Inside the model add `<Model>.prototype.getManagerType()`, this is
+    a function that should return `policeDataManager` by returning the
+    corresponding `MANAGER_TYPE` constant in `constants.js`. Make sure to
+    replace `<Model>` with the const declared up above
+4. If the manager type is `COMPLAINT` then add
+    `<Model>.prototype.getCaseId()`. This is a function that returns the
     id of the case in which this data is created or edited.
-
-5.  Finally add <Model>.prototype.modelDescription(). This is up to
+5. Finally add `<Model>.prototype.modelDescription()`. This is up to
     the devs to decide what returns. See other models for a reference.
-
-6.  auditUser and transaction should be added to handler of the
+6. `auditUser` and `transaction` should be added to handler of the
     relevant model. Here is an example of a notification and its data
-    change audit being created. The transaction and auditUser are needed
+    change audit being created. The `transaction` and `auditUser` are needed
     in order for the function to work.
 
-```
-    await ***models***.notification.create(
+```javascript
+    await models.notification.create(
         {
             caseNoteId: caseNoteId,
             user: user.value
