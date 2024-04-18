@@ -34,8 +34,8 @@ you understand the underlying structure of auditing.
 
   - We track when data in the db is added, edited, or removed.
 
-  - **Code: Make sure that if you add a new model, you add the
-    auditDataChange method to track its changes.**
+  - Code: Make sure that if you add a new model, you add the
+    auditDataChange method to track its changes.
 
 - Data access:
 
@@ -70,9 +70,9 @@ as a data_change_audit because new data was created
 
 ### Auditing Functions
 
-**If there is anything you need to know about auditing its that there
+If there is anything you need to know about auditing its that there
 are really only a few functions actually needed to audit. These
-functions can be found in the following files:**
+functions can be found in the following files:
 
 - auditAuthentication.js
 
@@ -163,7 +163,7 @@ audit section.
 
 Using auditDataAccess is a two step process that involves first
 getting the audit access details with the getQueryAuditAccessDetails
-function. To use getQueryAuditAccessDetails, call it with:\*\*
+function. To use getQueryAuditAccessDetails, call it with:
 
 - queryOptions: The sequelize query used to retrieve data from the
   database
@@ -177,7 +177,7 @@ auditDataAccess with:
 - auditUser: The currently logged in user
 
 - caseId: Which case are we accessing from. Can be null if it is all
-  cases or not case related\*\*
+  cases or not case related
 
 - managerType: Are we in policeDataManager?
 
@@ -226,16 +226,18 @@ identified that data change must be added then follow these steps:
     change audit being created. The transaction and auditUser are needed
     in order for the function to work.
 
-`await *models*.notification.create(
-    {
-        caseNoteId: caseNoteId,
-        user: user.value
-    },
-    {
-        transaction,
-        auditUser: request.nickname**
-    }
-);`
+```
+    await *models*.notification.create(
+        {
+            caseNoteId: caseNoteId,
+            user: user.value
+        },
+        {
+            transaction,
+            auditUser: request.nickname**
+        }
+    );
+```
 
 After doing all of this auditing should be automatically done whenever
 create or update or destroy queries are being called.
