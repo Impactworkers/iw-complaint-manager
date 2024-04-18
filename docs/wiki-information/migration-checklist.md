@@ -8,92 +8,92 @@ permalink: wiki-info/wiki-migration
 # Pages to Review from Wiki
 
 - [ ] Project Overview
-  - [ ] Project Infrastructure
+  - [x] ~~Project Infrastructure~~ - migrated to [unfiled pages](../unfiled)
   - [x] ~~Team Practices~~ - no migration action needed
 - [x] ~~ADRs~~ - [migrated](../adrs)
 - [x] ~~Scaling Plans~~ - no migration action needed
   - [x] ~~Customize Workflow~~ - no migration action needed
     - [x] ~~NOIPM Functionality that Makes Generalization Harder~~ - archived
   - [x] ~~Org Configuration~~ - archived
-  - [ ] New Client Deploy
+  - [x] ~~New Client Deploy~~ - migrated to [unfiled pages](../unfiled)
 - [ ] Onboarding Outline
 - [x] ~~Contributor Guidelines~~ - archived
 - [ ] Team Blogs
   - [x] ~~Maria's Blog~~ - deleted
     - [x] ~~errrr~~ - deleted
   - [x] ~~Syamala's Coding Conundrums~~ - deleted
-  - [ ] Slack Integration with Google Sheet
+  - [x] ~~Slack Integration with Google Sheet~~ - migrated to [unfiled pages](../unfiled)
 - [ ] Analysis Resources
   - [ ] Design and UX
 - [ ] Development Resources
   - [ ] How To Guides
-    - [ ] Creating a New Environment
-    - [ ] Provisioning Higher Enviroments
-    - [ ] Provisioning a Playground Env
+    - [x] ~~Creating a New Environment~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~Provisioning Higher Enviroments~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~Provisioning a Playground Env~~ - migrated to [how-to collection](../how-to)
     - [x] ~~Feature Toggles~~ - archived
     - [x] ~~Auth0 Configuration~~ - no migration action needed
-    - [ ] Auth0 Add User Roles and Permissions
+    - [x] ~~Auth0 Add User Roles and Permissions~~ - migrated to [how-to collection](../how-to)
     - [x] ~~Recreating Sortable Cases~~ - archived
-    - [ ] Monitoring of Worker Jobs
+    - [x] ~~Monitoring of Worker Jobs~~ - migrated to [how-to collection](../how-to)
     - [ ] Updating Docker Images
     - [x] ~~Updating Letter Templates~~ - archived
     - [x] ~~Setup a Custom Domain~~ - archived
-    - [ ] How to Set Up a Stress Test
-    - [ ] How to Setup Your Local Database
-    - [ ] Creating a Release
-    - [ ] Debugging a Particular Release
+    - [x] ~~How to Set Up a Stress Test~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~How to Setup Your Local Database~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~Creating a Release~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~Debugging a Particular Release~~ - migrated to [how-to collection](../how-to)
     - [x] ~~How to Deal with Security Checks Failing~~ - archived
     - [x] ~~Possible TDD Process for Using Pact~~ - archived
-    - [ ] How to Create a Public Service Handler
+    - [x] ~~How to Create a Public Service Handler~~ - migrated to [how-to collection](../how-to)
     - [ ] How to Debug Database Problems
-    - [ ] How to Switch Between Instances
+    - [x] ~~How to Switch Between Instances~~ - migrated to [how-to collection](../how-to)
     - [x] ~~How to Setup a New Okta Instance for CM~~ - archived
     - [x] ~~Prod Checklist~~ - deleted
     - [ ] How to Update the PDF Snapshot
   - [x] ~~New Relic~~ - no migration action needed
-  - [ ] Docker Commands
+  - [x] ~~Docker Commands~~ - migrated to [unfiled pages](../unfiled)
   - [x] ~~Create New City Instance~~ - archived
-  - [ ] Commit Format
+  - [x] ~~Commit Format~~ - migrated to [unfiled pages](../unfiled)
 - [x] ~~Pieces of the App~~ - no migration action needed
   - [x] ~~Client~~ - deleted
     - [x] ~~Component/Container~~ - deleted
     - [x] ~~Action Creator/Thunk~~ - archived
     - [ ] Reducer
-    - [ ] Selector
+    - [x] ~~Selector~~ - migrated to [unfiled pages](../unfiled)
   - [x] ~~Server~~ - deleted
     - [x] ~~Handler~~ - deleted
     - [x] ~~Model~~ - deleted
     - [x] ~~Migration/Seeder~~ - no migration action needed
-    - [ ] Payload Objects
+    - [x] ~~Payload Objects~~ - migrated to [unfiled pages](../unfiled)
   - [x] ~~Worker~~ - deleted
   - [x] ~~Instance Files~~ - deleted
-  - [ ] Tests
-    - [ ] Pact Tests
+  - [x] ~~Tests~~ - migrated to [unfiled pages](../unfiled)
+    - [x] ~~Pact Tests~~ - migrated to [unfiled pages](../unfiled)
   - [x] ~~Environment Variables~~ - no migration action needed
-  - [ ] Flakey Test Record
-  - [ ] Naming Convention
+  - [x] ~~Flakey Test Record~~ - migrated to [unfiled pages](../unfiled)
+  - [x] ~~Naming Convention~~ - migrated to [unfiled pages](../unfiled)
   - [x] ~~Content Security Policy~~ - no migration action needed
   - [x] ~~Prod Pushes~~ - deleted
-  - [ ] Story Flow
+  - [ ] ~~Story Flow~~ - migrated to [unfiled pages](../unfiled)
 - [x] ~~API Documentation~~ - deleted
 - [x] ~~Data Resources~~ - no migration action needed
   - [x] ~~NOLA Data Portal (Misconduct Complaints)~~ - no migration action needed
   - [x] ~~IA Pro Officer & Allegation Data~~ - archived
-  - [ ] Auditing
+  - [x] ~~Auditing~~ - migrated to [unfiled pages](../unfiled)
   - [x] ~~Officer Seed Data~~ - archived
   - [x] ~~VPN access to NOIPM office database server~~ - deleted
 - [x] ~~Pivotal Tracker Guidelines~~ - no migration action needed
   - [x] ~~Anatomy of a Card~~ - no migration action needed
   - [x] ~~Lifecycle of a Card~~ - no migration action needed
   - [x] ~~Epics~~ - no migration action needed
-- [ ] Concerns and Considerations
+- [x] ~~Concerns and Considerations~~ - migrated to [unfiled pages](../unfiled)
 - [ ] Complaint Manager v2
-  - [ ] Overview
+  - [x] ~~Overview~~ - migrated to [unfiled pages](../unfiled)
   - [x] ~~Architecture Proposals~~ - no migration action needed
     - [x] ~~Proposal #1~~ - no migration action needed
   - [ ] Research
-  - [ ] Content Management Systems
-    - [ ] Drupal
-- [ ] Glossary
+  - [x] ~~Content Management Systems~~ - migrated to [unfiled pages](../unfiled)
+    - [x] ~~Drupal~~ - migrated to [unfiled pages](../unfiled)
+- [x] ~~Glossary~~ - migrated to [unfiled pages](../unfiled)
 - [x] ~~FAQ~~ - no migration action needed
 - [x] ~~Updating Tags~~ - archived
