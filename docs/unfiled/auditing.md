@@ -6,11 +6,13 @@ permalink: /unfiled/auditing
 ---
 
 {: .highlight-title }
+
 > Under Construction
 >
 > This page is under construction.
 
 {: .warning-title }
+
 > To be Updated
 >
 > This page's content needs to be updated.
@@ -103,7 +105,7 @@ tables without our team creating a migration to do it.
 
 ### How Do I Use These Fancy Audit Functions
 
-#### auditAuthentication
+`auditAuthentication`
 
 Because all authentication into our application is done through a
 common auth0 page, you will probably never need to add this function to
@@ -114,7 +116,7 @@ look for where audit is being used, you will find a route called
 "audit"calling a handler called audit. That handler is just the
 auditAuthentication we imported as audit from earlier.
 
-#### auditFileAction
+`auditFileAction`
 
 This is used for anything file related such as uploading attachments,
 generating complainant letters, downloading attachments and so on. To
@@ -133,7 +135,7 @@ use this function simply import it and then call it with:
 
 It's really that easy.
 
-#### `auditDataAccess` and `getQueryAuditAccessDetails`
+`auditDataAccess` and `getQueryAuditAccessDetails`
 
 This is by far the most common type of auditing that is done within
 our application. Because most of our handlers will send back some sort
@@ -164,7 +166,7 @@ This function will return `auditDetails` which is then used when calling
 There are many examples of this audit being used. Just search the
 codebase for examples
 
-#### `dataChangeAuditHooks`
+`dataChangeAuditHooks`
 
 A weird type of audit because it isn't used the same way as the other
 audit functions. Data change audits are created automatically but there
@@ -175,37 +177,37 @@ creating and updating case info, creating a brand new tag. If you have
 identified that data change must be added then follow these steps:
 
 1. Go to the model that corresponds to the table in the database
-    where data will be created or edited. These models exist under
-    `src/server`.
+   where data will be created or edited. These models exist under
+   `src/server`.
 2. Inside the model add `<Model>.auditDataChange()`, where `<Model>`
-    is replaced with the name of the const declared at the top of the
-    model. For the case of `models/tag.js` this would be
-    `Tag.auditDataChange();`
+   is replaced with the name of the const declared at the top of the
+   model. For the case of `models/tag.js` this would be
+   `Tag.auditDataChange();`
 3. Inside the model add `<Model>.prototype.getManagerType()`, this is
-    a function that should return `policeDataManager` by returning the
-    corresponding `MANAGER_TYPE` constant in `constants.js`. Make sure to
-    replace `<Model>` with the const declared up above
+   a function that should return `policeDataManager` by returning the
+   corresponding `MANAGER_TYPE` constant in `constants.js`. Make sure to
+   replace `<Model>` with the const declared up above
 4. If the manager type is `COMPLAINT` then add
-    `<Model>.prototype.getCaseId()`. This is a function that returns the
-    id of the case in which this data is created or edited.
+   `<Model>.prototype.getCaseId()`. This is a function that returns the
+   id of the case in which this data is created or edited.
 5. Finally add `<Model>.prototype.modelDescription()`. This is up to
-    the devs to decide what returns. See other models for a reference.
+   the devs to decide what returns. See other models for a reference.
 6. `auditUser` and `transaction` should be added to handler of the
-    relevant model. Here is an example of a notification and its data
-    change audit being created. The `transaction` and `auditUser` are needed
-    in order for the function to work.
+   relevant model. Here is an example of a notification and its data
+   change audit being created. The `transaction` and `auditUser` are needed
+   in order for the function to work.
 
 ```javascript
-    await models.notification.create(
-        {
-            caseNoteId: caseNoteId,
-            user: user.value
-        },
-        {
-            transaction,
-            auditUser: request.nickname
-        }
-    );
+await models.notification.create(
+  {
+    caseNoteId: caseNoteId,
+    user: user.value,
+  },
+  {
+    transaction,
+    auditUser: request.nickname,
+  }
+);
 ```
 
 After doing all of this auditing should be automatically done whenever
