@@ -219,7 +219,7 @@ identified that data change must be added then follow these steps:
     id of the case in which this data is created or edited.
 
 5.  Finally add <Model>.prototype.modelDescription(). This is up to
-    the devs to decide what returns. See other models for a reference.\*\*
+    the devs to decide what returns. See other models for a reference.
 
 6.  auditUser and transaction should be added to handler of the
     relevant model. Here is an example of a notification and its data
@@ -227,14 +227,14 @@ identified that data change must be added then follow these steps:
     in order for the function to work.
 
 ```
-    await *models*.notification.create(
+    await ***models***.notification.create(
         {
             caseNoteId: caseNoteId,
             user: user.value
         },
         {
             transaction,
-            auditUser: request.nickname**
+            auditUser: request.nickname
         }
     );
 ```
