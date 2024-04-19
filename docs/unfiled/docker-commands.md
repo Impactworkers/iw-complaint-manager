@@ -86,7 +86,7 @@ Execute specific command on running container
 
 runs container in background (detached)
 
-**Docker attach [id of container - first few characters], **
+**Docker attach [id of container - first few characters],**
 
 Attaches detached containers
 
