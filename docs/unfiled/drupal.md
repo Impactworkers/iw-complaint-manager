@@ -16,13 +16,11 @@ permalink: /unfiled/drupal
 <summary> Purpose</summary>
 
 ### Web Content Management (WCM) system
-
 <br>
-
 Drupal excels in creating, managing, and publishing web content. It provides a robust platform for websites, blogs, and web applications, offering features like customizable templates, user management, and content publishing workflows. Drupal is particularly known for its flexibility in building complex websites with diverse content types and intricate user interaction.
 
-### Enterprise Content Management (ECM) system**
-
+### Enterprise Content Management (ECM) system
+<br>
 Drupal can manage and store an organization's documents, digital assets, and records. Through its extensible architecture and modules, Drupal can facilitate collaboration, automate workflows, and integrate with other business systems. Its capabilities can be extended to include document management, digital asset management, and records retention, making it suitable for enterprise-level content management requirements.
 </details>
 
