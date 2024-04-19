@@ -26,12 +26,15 @@ Drupal can manage and store an organization's documents, digital assets, and rec
 
 <br>
 
-<details>
+<details markdown="block">
 <summary> Quick Points</summary>
 
 - Free and open-source
+
 - Written in the PHP programming language and requires a database such as MySQL or PostgreSQL to store content and settings.
+
 - Known for its flexibility, modularity, and a wide range of features,
+
 - Multi-Tenancy: can be configured for multi-site setups, allowing you to run multiple websites from a single codebase, each with their own custom configurations.
 - Custom UI: Offers extensive theming options to customize user interfaces.
 - Business Rules: Supports customizable workflows and business logic through its module system.
@@ -41,28 +44,26 @@ Drupal can manage and store an organization's documents, digital assets, and rec
 
 <br>
 
-<details>
+<details markdown="block">
 <summary> Key Features</summary>
 
-**Flexibility and Extensibility**
+### Flexibility and Extensibility
 
 - **Custom Content Types and Fields**: Drupal allows for the creation of custom content types and fields, enabling you to tailor the content structure to match the specific needs of tracking complaints, managing case studies, or publishing informational content.
 
 - **Modular Architecture**: With thousands of modules (plugins) available, Drupal can be extended to include additional functionalities such as forums, user management, and complex search capabilities, without needing to develop these features from scratch.
 
-**User and Role Management**
-
+### User and Role Management
 
 - **Advanced User Management**: Drupal provides robust user management capabilities, including the creation of custom user roles and permissions. This feature is critical for an application that serves different institutions and user groups, allowing you to control access to sensitive information and functionalities based on the user's role.
 
 - **Workflow and Access Control**: It supports complex workflows and content access control mechanisms, essential for managing the review and publication process of complaints and related content.
 
-**Multi-site Support**
+### Multi-site Support
 
 - Multi-site Configuration: Drupal excels at managing multi-site architectures, allowing you to run multiple sites from a single Drupal codebase. This is particularly beneficial if you plan to deploy the application across different institutions, each with its own sub-site but sharing a common functionality set.
 
-**Security**
-
+### Security
 
 - Security Reports and Updates: Drupal has a dedicated security team that regularly publishes security advisories and updates. This proactive approach helps in identifying and fixing vulnerabilities swiftly.
 
@@ -76,22 +77,23 @@ Drupal can manage and store an organization's documents, digital assets, and rec
 
 - Compliance Support: Drupal supports compliance with various security standards and regulations, making it easier for organizations to meet specific security requirements.
 
-**Scalability and Performance**
+### Scalability and Performance
 
 - Scalability: Drupal can scale to support high traffic loads and large amounts of content, which is crucial for applications expected to grow over time.
 
 - Caching and Performance Optimization: It includes built-in caching and a variety of advanced performance optimization options to ensure the application remains fast and responsive as it scales.
 
-**Integration Capabilities**
+### Integration Capabilities
 
 - API-First Approach: With its latest versions, Drupal has adopted an API-first approach, making it easier to integrate with other systems and technologies, including React for the frontend. This means you can use Drupal as a headless CMS to manage content while leveraging React and MUI components for a dynamic and engaging user interface.
 
 </details>
 
 <br>
-<details>
+<details markdown="block">
 
-<summary> Database Support</summary>
+<summary>Database Support
+</summary>
 
 MySQL and PostgreSQL are the most commonly used databases with Drupal, it also supports other database systems, especially with the improvements made in Drupal 7 and later versions which introduced a database abstraction layer. This abstraction layer allows for the integration of Drupal with various database engines. The main databases supported by Drupal include:
 
@@ -111,7 +113,7 @@ MySQL and PostgreSQL are the most commonly used databases with Drupal, it also s
 
 
 <br>
-<details>
+<details markdown="block">
 
 <summary> Gotchas</summary>
 
