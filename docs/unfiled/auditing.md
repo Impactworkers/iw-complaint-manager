@@ -6,13 +6,10 @@ permalink: /unfiled/auditing
 ---
 
 {: .highlight-title }
-
 > Under Construction
->
 > This page is under construction.
 
 {: .warning-title }
-
 > To be Updated
 >
 > This page's content needs to be updated.

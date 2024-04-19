@@ -18,7 +18,7 @@ permalink: /unfiled/commit-format
 # Commit Format
 
 **<type>(<scope (optional)>){! if breaking}: <names of
-contributors> [#<issue number (optional)>] <brief description of
+contributors> [#<issue number (optional)>]<brief description of
 the commit>**
 
 **<commit body (optional)>**
@@ -30,14 +30,14 @@ populates a changelog, we need to be deliberate about our commit
 messages, specifically using the template above (don't worry there will
 be examples).
 
-Type
+## Type
 
 The type prefix is the most important part of the commit because
 standard-version will use it to determine whether the commit should be
 included in the changelog and if the release should be major, minor, or
 patch. Here are the current supported types
 
-Feat
+### Feat
 
 The feat type indicates a feature, i.e. new functionality not previously
 advertised as part of the application
@@ -50,7 +50,7 @@ A feat commit will be reflected in the list of features in the changelog
 for the release and will cause the release to be at least a minor
 release.
 
-Fix
+### Fix
 
 The fix type indicates a bugfix, i.e. a fix to previously committed code
 that does not in itself introduce new functionality
@@ -61,7 +61,7 @@ straight into the port-pin-lock to bypass faulty reg couple**
 A fix commit will be reflected in the list of bug fixes in the changelog
 for the release
 
-Chore
+### Chore
 
 The chore type indicates work that has to be done from time to time but
 doesn't warrant a big deal being made about it.
@@ -71,7 +71,7 @@ Example commit message: **chore: Lex/Karan updates dependencies**
 A chore commit will not appear on the changelog in the current
 configuration
 
-Docs
+### Docs
 
 The docs type indicates a change that only touches documentation like
 the README.
@@ -82,7 +82,7 @@ buried treasure in the README**
 A docs commit will not appear on the changelog in the current
 configuration
 
-Style
+### Style
 
 The style type indicates an insignificant change that purely affects the
 style of the application. Note that if the style change is considered a
@@ -95,7 +95,7 @@ to 10px on the page header**
 A style commit will not appear on the changelog in the current
 configuration
 
-Refactor
+### Refactor
 
 The refactor type indicates a change that improves the code without
 making any difference in functionality. (If you haven't read , I highly
@@ -107,7 +107,7 @@ component for common modals**
 A refactor commit will not appear on the changelog in the current
 configuration
 
-Perf
+### Perf
 
 The perf type indicates a change that improves the performance of the
 application without changing its functionality
@@ -118,7 +118,7 @@ slipspace**
 A perf commit will not appear on the changelog in the current
 configuration
 
-Test
+### Test
 
 The test type indicates a change that only adds or fixes tests
 
@@ -128,7 +128,7 @@ cases relating to tag management**
 A test commit will not appear on the changelog in the current
 configuration
 
-Scope
+## Scope
 
 The scope is optional and can be added in parentheses after the type and
 before the colon. There is no set group of values; whatever you put down
@@ -137,7 +137,7 @@ as the scope will be used as the prefix for the change in the changelog
 Example commit message: **feat(tagmgmt): Lex/Andrew [#04840400] adds
 the ability to delete multiple tags at once**
 
-!
+## !
 
 Add an exclamation point before the colon (but after the type and scope
 if present) if the change is breaking. This will cause the next release
