@@ -30,11 +30,8 @@ Drupal can manage and store an organization's documents, digital assets, and rec
 <summary> Quick Points</summary>
 
 - Free and open-source
-
 - Written in the PHP programming language and requires a database such as MySQL or PostgreSQL to store content and settings.
-
 - Known for its flexibility, modularity, and a wide range of features,
-
 - Multi-Tenancy: can be configured for multi-site setups, allowing you to run multiple websites from a single codebase, each with their own custom configurations.
 - Custom UI: Offers extensive theming options to customize user interfaces.
 - Business Rules: Supports customizable workflows and business logic through its module system.
