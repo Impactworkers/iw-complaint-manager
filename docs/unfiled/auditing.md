@@ -16,7 +16,7 @@ permalink: /unfiled/auditing
 
 # Auditing
 
-_(last modified: 11/02/20)_
+*(last modified: 11/02/20)*
 
 Auditing is a functionality that is provided in the application if the
 OIPM is ever audited. Although this has not ever happened during my time

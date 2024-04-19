@@ -19,13 +19,13 @@ permalink: /unfiled/commit-format
 
 **<type>(<scope (optional)>){! if breaking}: <names of
 contributors> [#<issue number (optional)>]<brief description of
-the commit>**
+the commit>** <!-- TODO: type and brief now showing -->
 
 **<commit body (optional)>**
 
 **<commit footer (optional)>**
 
-Due to our move to that determines the new version for a release and
+Due to our move to <!-- TODO: the standad-version library(link) -->that determines the new version for a release and
 populates a changelog, we need to be deliberate about our commit
 messages, specifically using the template above (don't worry there will
 be examples).
