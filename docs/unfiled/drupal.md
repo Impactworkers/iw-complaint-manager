@@ -15,7 +15,9 @@ permalink: /unfiled/drupal
 <details>
 <summary> Purpose</summary>
 
-**Web Content Management (WCM) system**
+Web Content Management (WCM) system
+
+<br>
 
 Drupal excels in creating, managing, and publishing web content. It provides a robust platform for websites, blogs, and web applications, offering features like customizable templates, user management, and content publishing workflows. Drupal is particularly known for its flexibility in building complex websites with diverse content types and intricate user interaction.
 
