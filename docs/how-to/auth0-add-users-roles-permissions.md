@@ -40,7 +40,7 @@ Repeat this process for each environment.
 - `permissions: state?.users?.current?.userInfo?.permissions`
 - Now you can use permissions to conditionally render.
 
-```javascript
+```html
 {props.isArchived ||
 !props.permissions?.includes(USER_PERMISSIONS.EDIT_CASE) ? null : (
   <div
