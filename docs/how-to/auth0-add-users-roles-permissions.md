@@ -62,7 +62,7 @@ Repeat this process for each environment.
 
 - In `apiRoutes.js` add a `requiredPermissions` property to the endpoint (for most scenarios). Now you have access to that permission in the handler. (see `addToRouter` function)
 
-{ .note }
+{: .note }
 Permissions can also be passed through the `request` param: `request.permissions`
 
 - Any handler will have the permissions array in the `request` param
