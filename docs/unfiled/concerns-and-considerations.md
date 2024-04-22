@@ -20,7 +20,7 @@ permalink: /unfiled/concerns-and-considerations
 *(last modified on 07/19/19)*
 
 ## Pricing of external services being used
-<!-- TODO: link to google spreadsheet -->
+https://docs.google.com/spreadsheets/d/1_kxAjv9vRIImJXxjdSj87_Gm0lBT6eMYf_v60OLA_po/edit#gid=0
 
 - **Failover of App Servers**
   - If we use the Standard or Performance tier, we can run multiple
@@ -28,14 +28,18 @@ permalink: /unfiled/concerns-and-considerations
   - Standard-1x is $25/mo. Hobby is $7/mo.
   - You can specify the region where the dyno is created if we
     wanted to run them in multiple regions.
+  - https://devcenter.heroku.com/articles/dyno-types
+  - https://devcenter.heroku.com/articles/usage-and-billing
+  - https://stackoverflow.com/questions/38959503/what-exactly-is-a-heroku-compute-on-a-dyno
   - Considerations - very low traffic, easy to redeploy a new
     instance. How important is having failover vs cost?
 
 - **Failover of Database Servers**
   
+  - https://devcenter.heroku.com/articles/heroku-postgres-ha#after-failover
   - *All Premium, Private and Shield tierplans come with the High Availability
     (HA) feature, which involves a database cluster and management system designed to increase database availability in the face of hardware or software failure that would otherwise lead to longer downtime. When a primary database with this feature fails, it is automatically replaced with another replica database called a standby.*
-  - Premium starts at $200/month: <!-- TODO: link?? -->
+  - Premium starts at $200/month: https://elements.heroku.com/addons/heroku-postgresql
 
 - **Performance Testing / Throughput**
 
@@ -43,6 +47,7 @@ permalink: /unfiled/concerns-and-considerations
     users.
   - We use a dynos that run on a shared AWS instance. Performance
     could be variable based on that.
+  - https://devcenter.heroku.com/articles/dynos
 
 - **AWS S3**
 
@@ -59,7 +64,7 @@ permalink: /unfiled/concerns-and-considerations
   - Previously the pricing for MFA plan was $600-750/month, which
     is why we didn't do it. They recently changed their pricing to
     adjust by how many users you have.
-  - Current pricing is $14/mo for 100 active users. <!-- TODO: link? -->
+  - Current pricing is $14/mo for 100 active users. https://auth0.com/pricing
   - They offer free service for open source, non-profit projects.
   - How important is MFA?
   - MFA for other services, like AWS?
@@ -87,11 +92,11 @@ permalink: /unfiled/concerns-and-considerations
   - Heroku automatically manages and renews SSL certs for us for
     free. It does not support wildcard domains if we ever needed
     that.
-    <!-- TODO: link?? -->
+    https://devcenter.heroku.com/articles/understanding-tls-on-heroku
 
 - **Maintenance Page**
 
-  - If we want to customize it, we can.<!-- TODO: link?? -->
+  - If we want to customize it, we can. https://devcenter.heroku.com/articles/error-pages
 
 - **Validation of Data Input**
 

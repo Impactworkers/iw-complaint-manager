@@ -25,7 +25,7 @@ the commit>** <!-- TODO: type and brief now showing -->
 
 **<commit footer (optional)>**
 
-Due to our move to <!-- TODO: the standad-version library(link) -->that determines the new version for a release and
+Due to our move to [the standard-version library](https://www.npmjs.com/package/standard-version) that determines the new version for a release and
 populates a changelog, we need to be deliberate about our commit
 messages, specifically using the template above (don't worry there will
 be examples).
