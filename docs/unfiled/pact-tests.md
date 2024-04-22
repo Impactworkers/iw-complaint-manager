@@ -131,7 +131,7 @@ and what their payload are.
     - If you have multiple client interactions (in the same
       client test file or different ones) with the same
       combination of "state" and "uponReceiving" that have
-      different response payloads then you will get an error**
+      different response payloads then you will get an error
 
     - So if you expect a different response payload for the same
             call, either change the "state" (if the payload is
@@ -164,7 +164,7 @@ and what their payload are.
         object or array) will add an assertion that the data
         requested during the client test is exactly what you
         expected, and using or not using like/eachLike won't
-        affect the server tests**
+        affect the server tests
 
       - If you don't include a Content-Type header or you use
         the GET or DELETE method, Pact won't pass the request
@@ -232,7 +232,7 @@ interaction setup for them
 - OR you have an API call happening that shouldn't be happening.
 
 - it's usually the former since there are always more calls
-  happening than you think when you load a whole page.**
+  happening than you think when you load a whole page.
 
 ### Can't Find DOM Element
 
