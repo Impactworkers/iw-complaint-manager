@@ -29,7 +29,7 @@ various pieces of the app and to build an electron desktop app that can
 take a Pulumi script and walk a user through the options before
 deploying it. It is thought that this app could also handle upgrades.
 One problem we've run into is that only Python supports Pulumi
-integration with Heroku, so our was written in Python, which we hope to
+integration with Heroku, so our [first run of the infrastructure](https://github.com/PublicDataWorks/cm-pulumi) was written in Python, which we hope to
 call using JS from the electron app, but it's possible that the app
 could be developed wholly in Python if the skills of the team warrant
 that.
