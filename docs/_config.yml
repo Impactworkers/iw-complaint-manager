@@ -17,21 +17,21 @@ callouts:
     title: Warning
     color: red
   
-collections_dir: collections
+# collections_dir: collections
 
-collections:
-  how-to:
-    # permalink: "/:collection/:name"
-    output: true
-# defaults:
-#   -
-#   scope: {path: "*"}
-#   values: {layout: default}
-just-the-docs:
-  collections:
-    how-to:
-      name: How To Guides
-      nav_fold: true
+# collections:
+#   how-to:
+#     # permalink: "/:collection/:name"
+#     output: true
+# # defaults:
+# #   -
+# #   scope: {path: "*"}
+# #   values: {layout: default}
+# just-the-docs:
+#   collections:
+#     how-to:
+#       name: How To Guides
+#       nav_fold: true
 
 # TODO: add info about collections to ./wiki-configuration.md
 
