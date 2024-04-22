@@ -227,7 +227,7 @@ were made in the process of the test, but they don't have an
 interaction setup for them
 
 - So either you missed adding an interaction for an API call that's
-  supposed to happen**
+  supposed to happen
 
 - OR you have an API call happening that shouldn't be happening.
 

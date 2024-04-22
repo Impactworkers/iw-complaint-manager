@@ -27,13 +27,13 @@ changing the payload we return to the consumer.
 
 Process for Creating a Payload Object
 
--   Create a class that takes the model as an argument to the
+- Create a class that takes the model as an argument to the
     constructor
 
--   Create getter methods for getting properties that will be needed on
+- Create getter methods for getting properties that will be needed on
     the server side when interacting with the payload object
 
--   Create a to JSON function (can be async, but if it is, you have to
+- Create a to JSON function (can be async, but if it is, you have to
     call it explicitly when returning the object from the service) that
     will map the model data into the format you want to transmit to the
     consumer
