@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Project Infrastructure
-parent: Unfiled Pages
-permalink: /unfiled/project-infrastructure
+parent: Project Overview
+permalink: /project-overview/project-infrastructure
 ---
 
 {: .highlight-title }

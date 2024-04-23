@@ -1,8 +1,8 @@
 ---
 layout: default
 title: New Client Deploy
-parent: Unfiled Pages
-permalink: /unfiled/new-client-deploy
+parent: Project Overview
+permalink: /project-overview/new-client-deploy
 ---
 
 {: .highlight-title }

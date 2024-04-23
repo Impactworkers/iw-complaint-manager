@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Overview
-parent: Unfiled Pages
-permalink: /unfiled/overview
+parent: Project Overview
+permalink: /project-overview/overview
 ---
 
 {: .highlight-title }
