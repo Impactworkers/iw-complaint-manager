@@ -342,6 +342,8 @@ but not matter what you put in there, it's not breaking your
 ## Diagram
 [Source](https://dzone.com/articles/improve-microservice-testing-with-contract-testing)
 
+![](../assets/images/consumer-driven-contract-testing-1.png)
+
 # Server Testing
 
 ## How to set them up
@@ -541,3 +543,5 @@ before committing tho.
 
 ## Diagram
 [Source](https://dzone.com/articles/improve-microservice-testing-with-contract-testing)
+
+![](../assets/images/consumer-driven-contract-testing-2.png)
