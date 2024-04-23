@@ -36,7 +36,9 @@ workflows:
       - test:
           filters:
             branches:
-              - main
+              only:
+                - main
+    
       - build:
           requires:
             - test
