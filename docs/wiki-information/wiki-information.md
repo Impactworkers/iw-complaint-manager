@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Wiki Information
+title: Wiki Management
 has_children: true
 permalink: /wiki-info
 ---

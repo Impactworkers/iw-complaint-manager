@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Markdown Guide
-parent: Wiki Information
+parent: Wiki Management
 permalink: wiki-info/markdown-guide
 ---
 

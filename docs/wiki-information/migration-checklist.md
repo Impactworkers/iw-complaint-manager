@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Wiki Migration Checklist
-parent: Wiki Information
+parent: Wiki Management
 permalink: wiki-info/wiki-migration
 ---
 
