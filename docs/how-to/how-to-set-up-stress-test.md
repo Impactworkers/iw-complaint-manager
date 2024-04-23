@@ -40,5 +40,7 @@ permalink: /how-to/set-up-stress-test
 
     3. Then push these changes to staging on the desired branch.
 
+    <!-- TODO: Fix nested lists (3. shows a.) -->
+
 2. Then, [create your stress test](https://support.loader.io/article/15-creating-a-test) with the test type that best fits your needs.
 3. Run test. Watch results.
