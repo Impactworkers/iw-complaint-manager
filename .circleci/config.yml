@@ -33,7 +33,7 @@ jobs:
 workflows:
   build_deploy_main:
     jobs:
-      - test
+      - test:
           filters:
             branches:
               - main
