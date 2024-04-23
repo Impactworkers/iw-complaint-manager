@@ -27,18 +27,18 @@ permalink: /how-to/set-up-stress-test
 
 1. Create a new target host with the name https://noipm-staging.herokuapp.com and then [follow steps to verify by http](https://support.loader.io/article/20-verifying-an-app#http).
 
-  1. With the verification, you should receive a `.txt` file with your loader.io token. Put this file within the server directory of our codebase.
-  2. Now, in `server.js`, add the following:
+  a. With the verification, you should receive a `.txt` file with your loader.io token. Put this file within the server directory of our codebase.
+  b. Now, in `server.js`, add the following:
 
-```javascript
-app.get("/loaderio-{**token_name**}", function (req, res) {
-  return res.sendFile(
-    path.join(__dirname, "./loaderio-{**token_name**}.txt")
-  );
-});
-```
+  ```javascript
+  app.get("/loaderio-{**token_name**}", function (req, res) {
+    return res.sendFile(
+      path.join(__dirname, "./loaderio-{**token_name**}.txt")
+    );
+  });
+  ```
 
-  3. Then push these changes to staging on the desired branch.
+  c. Then push these changes to staging on the desired branch.
 
 2. Then, [create your stress test](https://support.loader.io/article/15-creating-a-test) with the test type that best fits your needs.
 3. Run test. Watch results.
