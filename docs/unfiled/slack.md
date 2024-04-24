@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Slack Integration with Google Sheet
-parent: Project Overview
-permalink: /project-overview/slack-integration-google-sheet
+parent: Unfiled Pages
+permalink: /unfiled/slack-integration-google-sheet
 ---
 
 {: .highlight-title }
