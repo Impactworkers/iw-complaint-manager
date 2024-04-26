@@ -2,7 +2,7 @@
 layout: default
 title: Auth0 Add User Roles and Permissions
 parent: How To Guides
-permalink: /how-to/auth0-add-user-roles-permissions
+permalink: /dev-resources/how-to/auth0-add-user-roles-permissions
 ---
 
 {: .highlight-title }
