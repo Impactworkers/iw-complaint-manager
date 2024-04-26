@@ -2,7 +2,8 @@
 layout: default
 title: Monitoring Worker Jobs
 parent: How To Guides
-permalink: /how-to/monitor-worker-jobs
+grand_parent: Development Resources
+permalink: /dev-resources/how-to/monitor-worker-jobs
 ---
 
 {: .highlight-title }

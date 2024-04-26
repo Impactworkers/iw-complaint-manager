@@ -2,7 +2,8 @@
 layout: default
 title: How to Set Up Your Local Database
 parent: How To Guides
-permalink: /how-to/set-up-local-database
+grand_parent: Development Resources
+permalink: /dev-resources/how-to/set-up-local-database
 ---
 
 {: .highlight-title }

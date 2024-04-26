@@ -2,7 +2,8 @@
 layout: default
 title: Debugging a Particular Release
 parent: How To Guides
-permalink: /how-to/debug-a-release
+grand_parent: Development Resources
+permalink: /dev-resources/how-to/debug-a-release
 ---
 
 {: .highlight-title }

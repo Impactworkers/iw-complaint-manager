@@ -2,7 +2,8 @@
 layout: default
 title: Provisioning Higher Environments
 parent: How To Guides
-permalink: /how-to/provision-higher-environments
+grand_parent: Development Resources
+permalink: /dev-resources/how-to/provision-higher-environments
 ---
 
 {: .highlight-title }

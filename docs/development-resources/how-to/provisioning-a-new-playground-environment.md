@@ -2,7 +2,8 @@
 layout: default
 title: Provisioning a New Playground Environment
 parent: How To Guides
-permalink: /how-to/provision-playground-environment
+grand_parent: Development Resources
+permalink: /dev-resources/how-to/provision-playground-environment
 ---
 
 {: .highlight-title }
