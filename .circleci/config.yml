@@ -28,6 +28,7 @@ jobs:
     steps:
       # Replace this with steps to deploy to users
       - run:
+
           name: deploy main to heroku
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
@@ -46,5 +47,3 @@ workflows:
       - deploy:
           requires:
             - test
-
-  

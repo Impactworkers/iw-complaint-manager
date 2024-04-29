@@ -2,7 +2,8 @@
 layout: default
 title: Auth0 Add User Roles and Permissions
 parent: How To Guides
-permalink: /how-to/auth0-add-user-roles-permissions
+grand_parent: Development Resources
+permalink: /dev-resources/how-to/auth0-add-user-roles-permissions
 ---
 
 {: .highlight-title }
@@ -31,7 +32,7 @@ Repeat this process for each environment.
 
 ## To add a new permission in code
 
-- `In constants.js` add value of permission name in the `PERMISSIONS` variable and create a property in `USER_PERMISSIONS` with that value.
+- In `constants.js` add value of permission name in the `PERMISSIONS` variable and create a property in `USER_PERMISSIONS` with that value.
 
 ### Client side implementation
 

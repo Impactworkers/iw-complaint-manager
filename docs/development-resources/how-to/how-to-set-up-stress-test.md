@@ -2,7 +2,8 @@
 layout: default
 title: How to Set Up a Stress Test
 parent: How To Guides
-permalink: /how-to/set-up-stress-test
+grand_parent: Development Resources
+permalink: /dev-resources/how-to/set-up-stress-test
 ---
 
 {: .highlight-title }

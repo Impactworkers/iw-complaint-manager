@@ -2,7 +2,8 @@
 layout: default
 title: How to Create a Public Service Handler
 parent: How To Guides
-permalink: /how-to/create-a-public-service-handler
+grand_parent: Development Resources
+permalink: /dev-resources/how-to/create-a-public-service-handler
 ---
 
 {: .highlight-title }

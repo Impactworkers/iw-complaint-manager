@@ -2,5 +2,6 @@
 layout: default
 title: How To Guides
 has_children: true
-permalink: /how-to
+parent: Development Resources
+permalink: /dev-resources/how-to
 ---
