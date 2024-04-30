@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: dev-resources
 title: Creating a New Environment
-parent: How To Guides
-grand_parent: Development Resources
-permalink: /dev-resources/how-to/create-a-new-environment
+parent: Development Resources
+permalink: /dev-resources/create-a-new-environment
 ---
 
 {: .highlight-title }

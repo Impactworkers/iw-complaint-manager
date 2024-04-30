@@ -32,3 +32,7 @@ This enables a button to allow readers to copy code from code blocks.
 ### `callouts`
 
 This configures [callouts](https://just-the-docs.com/docs/ui-components/callouts/) for Just the Docs.
+
+### `collections`
+
+This enables the use of Jekyll collections.  It is Implemented in the Development resources folder.

@@ -1,5 +1,5 @@
 title: "Complaint Manager 2.0"
-remote_theme: pmarsceill/just-the-docs
+theme: "just-the-docs"
 
 search_enabled: true
 enable_copy_code_button: true
@@ -17,22 +17,16 @@ callouts:
     title: Warning
     color: red
   
-# collections_dir: collections
-
-# collections:
-#   how-to:
-#     # permalink: "/:collection/:name"
-#     output: true
-# # defaults:
-# #   -
-# #   scope: {path: "*"}
-# #   values: {layout: default}
-# just-the-docs:
-#   collections:
-#     how-to:
-#       name: How To Guides
-#       nav_fold: true
-
-# TODO: add info about collections to ./wiki-configuration.md
 
 # NB: If you update this config file, please also update docs/wiki-information/wiki-configuration.md.
+
+# The collections_dir is the directory where the collections are stored.  Only needed if using nested folders
+# collections_dir: development-resources
+
+# To implement collections, make a folder "_example" the name is bananable but the underscore infront of the name is very important.
+# Inside this folder add your markdown files. Then in the _config.yml file add the following code structured like below.
+# The underscore is not necessary in here.  Jekyll will now to look for the folder with the underscore infront of the name. 
+collections:
+  development-resources:
+    output: true
+    

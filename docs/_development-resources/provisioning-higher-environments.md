@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: dev-resources
 title: Provisioning Higher Environments
-parent: How To Guides
-grand_parent: Development Resources
-permalink: /dev-resources/how-to/provision-higher-environments
+parent: Development Resources
+permalink: /dev-resources/provision-higher-environments
 ---
 
 {: .highlight-title }

@@ -5,6 +5,7 @@ parent: Architecture Decision Records
 permalink: /adrs/adr-001
 ---
 
+{:toc}
 # 001 - Prevent duplicate officers from being displayed when searching within a case in NOIPM
 
 ### Date
