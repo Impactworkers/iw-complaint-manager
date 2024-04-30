@@ -1,8 +1,8 @@
 ---
 layout: dev-resources
 title: Debugging a Particular Release
-parent: Development Resources
-permalink: /dev-resources/debug-a-release
+parent: How To Guides
+permalink: /how-to/debug-a-release
 ---
 
 {: .highlight-title }

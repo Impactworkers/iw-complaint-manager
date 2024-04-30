@@ -1,8 +1,8 @@
 ---
 layout: dev-resources
 title: How to Switch Between Instances
-parent: Development Resources
-permalink: /dev-resources/instances
+parent: How To Guides
+permalink: /how-to/instances
 ---
 
 # How to Switch Between Instances

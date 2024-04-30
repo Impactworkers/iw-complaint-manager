@@ -1,8 +1,8 @@
 ---
 layout: dev-resources
 title: How to Create a Public Service Handler
-parent: Development Resources
-permalink: /dev-resources/create-a-public-service-handler
+parent: How To Guides
+permalink: /how-to/create-a-public-service-handler
 ---
 
 {: .highlight-title }

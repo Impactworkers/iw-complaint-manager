@@ -1,8 +1,8 @@
 ---
 layout: dev-resources
 title: How to Set Up Your Local Database
-parent: Development Resources
-permalink: /dev-resources/set-up-local-database
+parent: How To Guides
+permalink: /how-to/set-up-local-database
 ---
 
 {: .highlight-title }

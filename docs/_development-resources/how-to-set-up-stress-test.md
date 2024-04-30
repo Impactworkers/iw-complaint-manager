@@ -1,8 +1,8 @@
 ---
 layout: dev-resources
 title: How to Set Up a Stress Test
-parent: Development Resources
-permalink: /dev-resources/set-up-stress-test
+parent: How To Guides
+permalink: /how-to/set-up-stress-test
 ---
 
 {: .highlight-title }

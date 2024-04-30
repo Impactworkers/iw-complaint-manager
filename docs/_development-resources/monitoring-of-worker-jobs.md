@@ -1,8 +1,8 @@
 ---
 layout: dev-resources
 title: Monitoring Worker Jobs
-parent: Development Resources
-permalink: /dev-resources/monitor-worker-jobs
+parent: How To Guides
+permalink: /how-to/monitor-worker-jobs
 ---
 
 {: .highlight-title }
