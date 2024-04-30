@@ -1,8 +1,8 @@
 ---
 layout: dev-resources
 title: Auth0 Add User Roles and Permissions
-parent: Development Resources
-permalink: /dev-resources/auth0-add-user-roles-permissions
+parent: How To Guides
+permalink: /dev-resources/how-to/auth0-add-user-roles-permissions
 ---
 
 {: .highlight-title }
