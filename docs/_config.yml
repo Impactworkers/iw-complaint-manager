@@ -1,5 +1,5 @@
 title: "Complaint Manager 2.0"
-theme: "just-the-docs"
+remote_theme: pmarsceill/just-the-docs
 
 search_enabled: true
 enable_copy_code_button: true
