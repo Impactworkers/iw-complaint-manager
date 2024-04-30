@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: dev-resources
 title: Creating a Release
 parent: How To Guides
-grand_parent: Development Resources
-permalink: /dev-resources/how-to/create-a-release
+permalink: /how-to/create-a-release
 ---
 
 {: .highlight-title }
