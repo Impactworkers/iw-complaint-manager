@@ -1,49 +1,77 @@
 # Couldn't automatically generate a config from your source code.
 # This is a generic template to serve as a base for your custom config
 # See: https://circleci.com/docs/configuration-reference
+orbs:
+  node: circleci/node@4.1.0
+  heroku: circleci/heroku@1.2.6
+
 version: 2.1
+
+commands:
+  deploy-command:
+    parameters:
+      BRANCH:
+        type: string
+      HEROKU_APP_NAME:
+        type: string
+    steps:
+      - run: heroku config:set YARN_PRODUCTION=false -a <<parameters.HEROKU_APP_NAME>>
+      - heroku/deploy-via-git:
+          app-name: <<parameters.HEROKU_APP_NAME>>
+          branch: <<parameters.BRANCH>>
+
 jobs:
   test:
-    docker:
-      - image: cimg/base:stable
+    executor: node/default
     steps:
       - checkout
-     
-      - run:
-          name: Run tests
-          command: echo 'replace me with real tests!'
-  build:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      - run:
-          name: Build an artifact
-          command: touch example.txt
-      - store_artifacts:
-          path: example.txt
-  deploy:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      # Replace this with steps to deploy to users
-      - run:
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
+      - run: npm test
 
-          name: deploy main to heroku
-          command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
+  deploy:
+    executor: heroku/default
+    steps:
+      - checkout
+      - heroku/install
+
+      - when:
+          condition:
+            equal: [master, << pipeline.git.branch >>]
+          steps:
+            - deploy-command:
+                HEROKU_APP_NAME: production-server
+                BRANCH: master
+
+      - when:
+          condition:
+            equal: [staging, << pipeline.git.branch >>]
+          steps:
+            - deploy-command:
+                HEROKU_APP_NAME: staging-server
+                BRANCH: staging
+
+      - when:
+          condition:
+            equal: [develop, << pipeline.git.branch >>]
+          steps:
+            - deploy-command:
+                HEROKU_APP_NAME: develop-server
+                BRANCH: develop
+
 workflows:
-  build_deploy_main:
+  heroku_deploy:
     jobs:
-      - test:
-          filters:
-            branches:
-              only:
-                - main
-    
-      - build:
-          requires:
-            - test
+      - test
+
       - deploy:
           requires:
             - test
+          filters:
+            branches:
+              only:
+                - master
+                - develop
+                - staging
+  
