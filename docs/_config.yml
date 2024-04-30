@@ -26,7 +26,13 @@ callouts:
 # To implement collections, make a folder "_example" the name is bananable but the underscore infront of the name is very important.
 # Inside this folder add your markdown files. Then in the _config.yml file add the following code structured like below.
 # The underscore is not necessary in here.  Jekyll will now to look for the folder with the underscore infront of the name. 
+
 collections:
   development-resources:
     output: true
-    
+
+just_the_docs:
+  collections:
+    development-resources:
+      name: Development Resources
+      
