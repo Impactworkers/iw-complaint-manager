@@ -1,10 +1,7 @@
 # Couldn't automatically generate a config from your source code.
 # This is a generic template to serve as a base for your custom config
 # See: https://circleci.com/docs/configuration-reference
-orbs:
-  node: circleci/node@4.1.0
-  heroku: circleci/heroku@1.2.6
-
+#This step is on hold 
 version: 2.1
 
 commands:
