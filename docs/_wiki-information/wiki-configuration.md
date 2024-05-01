@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Wiki Configuration
-parent: Wiki Information
 permalink: wiki-info/wiki-configuration
 ---
 
