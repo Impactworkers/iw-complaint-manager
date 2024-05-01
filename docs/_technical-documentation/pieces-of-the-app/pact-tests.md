@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Pact Tests
-parent: Unfiled Pages
-permalink: /unfiled/pact-tests
+parent: Tests
+grandparent: Pieces of the App
+permalink: /pieces-of-the-app/tests/pact-tests
 ---
 
 {: .highlight-title }
