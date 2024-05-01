@@ -5,6 +5,9 @@ parent: Wiki Information
 permalink: wiki-info/wiki-migration
 ---
 
+{: .label }
+Updated 05/01/2024
+
 # Pages to Review from Wiki
 
 - [ ] Project Overview
@@ -59,18 +62,18 @@ permalink: wiki-info/wiki-migration
     - [x] ~~Component/Container~~ - deleted
     - [x] ~~Action Creator/Thunk~~ - archived
     - [ ] Reducer
-    - [x] ~~Selector~~ - migrated to [unfiled pages](../unfiled)
+    - [x] ~~Selector~~ - migrated to [pieces of the app (client)](../pieces-of-the-app/client)
   - [x] ~~Server~~ - deleted
     - [x] ~~Handler~~ - deleted
     - [x] ~~Model~~ - deleted
     - [x] ~~Migration/Seeder~~ - no migration action needed
-    - [x] ~~Payload Objects~~ - migrated to [unfiled pages](../unfiled)
+    - [x] ~~Payload Objects~~ - migrated to [pieces of the app (server)](../pieces-of-the-app/server)
   - [x] ~~Worker~~ - deleted
   - [x] ~~Instance Files~~ - deleted
-  - [x] ~~Tests~~ - migrated to [unfiled pages](../unfiled)
-    - [x] ~~Pact Tests~~ - migrated to [unfiled pages](../unfiled)
+  - [x] ~~Tests~~ - migrated to [pieces of the app (tests)](../pieces-of-the-app/tests)
+    - [x] ~~Pact Tests~~ - migrated to [pieces of the app (tests)](../pieces-of-the-app/tests)
   - [x] ~~Environment Variables~~ - no migration action needed
-  - [x] ~~Flakey Test Record~~ - migrated to [unfiled pages](../unfiled)
+  - [x] ~~Flakey Test Record~~ - migrated to [pieces of the app (tests)](../pieces-of-the-app/tests)
   - [x] ~~Naming Convention~~ - migrated to [unfiled pages](../unfiled)
   - [x] ~~Content Security Policy~~ - no migration action needed
   - [x] ~~Prod Pushes~~ - deleted
@@ -92,8 +95,8 @@ permalink: wiki-info/wiki-migration
   - [x] ~~Architecture Proposals~~ - no migration action needed
     - [x] ~~Proposal #1~~ - no migration action needed
   - [ ] Research
-  - [x] ~~Content Management Systems~~ - migrated to [unfiled pages](../unfiled)
-    - [x] ~~Drupal~~ - migrated to [unfiled pages](../unfiled)
+  - [x] ~~Content Management Systems~~ - migrated to [research](../research/content-management-systems)
+    - [x] ~~Drupal~~ - migrated to [research](../research/content-management-systems)
 - [x] ~~Glossary~~ - migrated to [unfiled pages](../unfiled)
 - [x] ~~FAQ~~ - no migration action needed
 - [x] ~~Updating Tags~~ - archived
