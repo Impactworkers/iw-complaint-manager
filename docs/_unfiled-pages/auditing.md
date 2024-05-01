@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Auditing
-parent: Unfiled Pages
 permalink: /unfiled/auditing
 ---
 

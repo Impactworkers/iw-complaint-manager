@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Naming Conventions for Server vs. Client
-parent: Unfiled Pages
 permalink: /unfiled/naming-conventions-server-vs-client
 ---
 

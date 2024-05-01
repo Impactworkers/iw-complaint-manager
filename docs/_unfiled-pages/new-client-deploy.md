@@ -1,7 +1,6 @@
 ---
 layout: default
 title: New Client Deploy
-parent: Unfiled Pages
 permalink: /unfiled/new-client-deploy
 ---
 

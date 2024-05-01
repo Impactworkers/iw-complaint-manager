@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Docker Commands
-parent: Unfiled Pages
 permalink: /unfiled/docker-commands
 ---
 

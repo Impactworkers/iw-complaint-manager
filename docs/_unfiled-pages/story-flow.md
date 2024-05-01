@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Story Flow
-parent: Unfiled Pages
 permalink: /unfiled/story-flow
 ---
 

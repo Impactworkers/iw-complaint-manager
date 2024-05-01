@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Slack Integration with Google Sheet
-parent: Unfiled Pages
 permalink: /unfiled/slack-integration-google-sheet
 ---
 

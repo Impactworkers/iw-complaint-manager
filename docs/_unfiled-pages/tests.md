@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Tests
-parent: Unfiled Pages
 permalink: /unfiled/tests
 ---
 

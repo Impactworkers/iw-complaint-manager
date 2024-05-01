@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Project Infrastructure
-parent: Unfiled Pages
 permalink: /unfiled/project-infrastructure
 ---
 

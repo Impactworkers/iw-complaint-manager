@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Concerns and Considerations
-parent: Unfiled Pages
 permalink: /unfiled/concerns-and-considerations
 ---
 

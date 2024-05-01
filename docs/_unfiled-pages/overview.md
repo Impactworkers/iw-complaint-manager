@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Overview
-parent: Unfiled Pages
 permalink: /unfiled/overview
 ---
 

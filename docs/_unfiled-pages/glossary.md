@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Glossary
-parent: Unfiled Pages
 permalink: /unfiled/glossary
 ---
 

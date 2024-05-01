@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Commit Format
-parent: Unfiled Pages
 permalink: /unfiled/commit-format
 ---
 
