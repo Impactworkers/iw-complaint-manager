@@ -5,7 +5,7 @@ parent: How To Guides
 permalink: /how-to/auth0-add-user-roles-permissions
 ---
 
-<!-- {: .highlight-title }
+{: .highlight-title }
 > Under Construction
 >
 > This page is under construction.
@@ -13,13 +13,7 @@ permalink: /how-to/auth0-add-user-roles-permissions
 {: .warning-title }
 > To be Updated
 >
-> This page's content needs to be updated. -->
-
-{: .label .label-yellow }
-Under Construction
-
-{: .label .label-red }
-To be Updated
+> This page's content needs to be updated.
 
 # Auth0 Add User Roles and Permissions
 
