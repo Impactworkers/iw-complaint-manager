@@ -15,15 +15,16 @@ permalink: /how-to/auth0-add-user-roles-permissions
 >
 > This page's content needs to be updated. -->
 
-{: .label label-yellow }
+{: .label .label-yellow }
 Under Construction
 
-{: .label label-red }
+{: .label .label-red }
 To be Updated
 
 # Auth0 Add User Roles and Permissions
 
-*(last modified: 6/9/22)*
+{: .label }
+Modified 06/09/22
 
 ## To add new role/permission
 
