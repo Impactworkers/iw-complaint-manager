@@ -43,6 +43,7 @@ just_the_docs:
       name: Technical Documentation
     wiki-information:
       name: Wiki Information
+      nav_fold: true
 
 defaults:
   -
