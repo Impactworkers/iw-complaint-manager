@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Rsearch
+title: Research
 has_children: true
 permalink: /research
 ---
