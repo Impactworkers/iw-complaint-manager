@@ -2,7 +2,7 @@
 layout: default
 title: Pact Tests
 parent: Tests
-grandparent: Pieces of the App
+grand_parent: Pieces of the App
 permalink: /pieces-of-the-app/tests/pact-tests
 ---
 
