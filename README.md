@@ -8,7 +8,7 @@ This repository will be the home of Impactworkers Complaint Manager 2.0. The wik
 - Justin Anthony
 - Mariah Sager
 - Victoria Wong
-- Fara Hughes 
+- Fara Hughes
 - Paul Thompson
 - Charles Woods
 - Yooboo Park

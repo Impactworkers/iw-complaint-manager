@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Docker Commands
-permalink: /unfiled-pages/docker-commands
+permalink: unfiled-pages/docker-commands
 ---
 
 {: .highlight-title }

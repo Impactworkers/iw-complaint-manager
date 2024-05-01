@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Naming Conventions for Server vs. Client
-permalink: /unfiled-pages/naming-conventions-server-vs-client
+permalink: unfiled-pages/naming-conventions-server-vs-client
 ---
 
 {: .highlight-title }

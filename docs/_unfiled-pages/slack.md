@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Slack Integration with Google Sheet
-permalink: /unfiled-pages/slack-integration-google-sheet
+permalink: unfiled-pages/slack-integration-google-sheet
 ---
 
 {: .highlight-title }

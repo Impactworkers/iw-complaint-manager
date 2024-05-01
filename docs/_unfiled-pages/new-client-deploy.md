@@ -1,7 +1,7 @@
 ---
 layout: default
 title: New Client Deploy
-permalink: /unfiled-pages/new-client-deploy
+permalink: unfiled-pages/new-client-deploy
 ---
 
 {: .highlight-title }

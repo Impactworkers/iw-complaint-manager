@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Story Flow
-permalink: /unfiled-pages/story-flow
+permalink: unfiled-pages/story-flow
 ---
 
 {: .highlight-title }

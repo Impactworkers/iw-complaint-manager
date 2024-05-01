@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Concerns and Considerations
-permalink: /unfiled-pages/concerns-and-considerations
+permalink: unfiled-pages/concerns-and-considerations
 ---
 
 {: .highlight-title }

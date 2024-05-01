@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Glossary
-permalink: /unfiled-pages/glossary
+permalink: unfiled-pages/glossary
 ---
 
 {: .highlight-title }

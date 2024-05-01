@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Commit Format
-permalink: /unfiled-pages/commit-format
+permalink: unfiled-pages/commit-format
 ---
 
 {: .highlight-title }
