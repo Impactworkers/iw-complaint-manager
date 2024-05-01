@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Overview
-permalink: /unfiled/overview
+permalink: /unfiled-pages/overview
 ---
 
 {: .highlight-title }

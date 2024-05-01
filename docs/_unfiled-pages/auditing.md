@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Auditing
-permalink: /unfiled/auditing
+permalink: /unfiled-pages/auditing
 ---
 
 {: .highlight-title }
