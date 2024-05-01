@@ -2,7 +2,7 @@
 layout: default
 title: ADR 007 - Upgrade to React 17
 parent: Architecture Decision Records
-permalink: adrs/adr-008=7
+permalink: adrs/adr-007
 ---
 
 # 007 - Upgrade to React 17

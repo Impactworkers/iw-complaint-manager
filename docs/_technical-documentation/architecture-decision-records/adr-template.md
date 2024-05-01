@@ -5,8 +5,6 @@ parent: Architecture Decision Records
 permalink: adrs/adr-template
 ---
 
-<!-- TODO: Update for technical documentation collection and update all ADR permalinks. -->
-
 When creating a new ADR:
 
 - Copy-paste this template, which can be found in this markdown file, `docs/_technical-documentation/architecture-decision-records/adr-template.md`.
