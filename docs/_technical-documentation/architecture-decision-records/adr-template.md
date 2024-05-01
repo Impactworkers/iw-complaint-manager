@@ -16,7 +16,7 @@ When creating a new ADR:
   - Change the permalink to the format `adrs/adr-{000}`.
 - Be sure to remove this middle section before publishing the ADR.
 
-{ :important }
+{: .important }
 The front matter must be included in the ADR.
 
 [ADR resource](https://github.com/joelparkerhenderson/architecture-decision-record?tab=readme-ov-file)
