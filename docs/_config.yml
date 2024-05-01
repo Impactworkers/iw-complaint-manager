@@ -36,5 +36,10 @@ just_the_docs:
     development-resources:
       name: Development Resources
 
+defaults:
+  -
+    scope: {path: "collections/*"}
+    values: {layout: default}
+
 # TODO: Add collectons info to wiki-configuration.md
       
