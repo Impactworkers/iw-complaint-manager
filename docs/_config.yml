@@ -30,15 +30,22 @@ callouts:
 collections:
   development-resources:
     output: true
+  technical-documentation:
+    output: true
 
 just_the_docs:
   collections:
     development-resources:
       name: Development Resources
+    technical-documentation:
+      name: Technical Documentation
 
 defaults:
   -
     scope: {path: "_development-resources/*"}
+    values: {layout: default}
+  -
+    scope: {path: "_technical-documentation/*"}
     values: {layout: default}
 
 # TODO: Add collectons info to wiki-configuration.md
