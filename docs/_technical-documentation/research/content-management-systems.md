@@ -23,10 +23,9 @@ A Content Management System (CMS) is a software application or set of related pr
 - **Search and Retrieval**: Enables users to search for and retrieve content.
 - **User and Group Management**: Manages user access to the CMS, allowing for role-based permissions that control what users can and cannot do.
 
-### Drupal
+## Drupal
 
-<details>
-<summary> Purpose</summary>
+### Purpose
 
 #### Web Content Management (WCM) system
 
@@ -36,10 +35,7 @@ Drupal excels in creating, managing, and publishing web content. It provides a r
 
 Drupal can manage and store an organization's documents, digital assets, and records. Through its extensible architecture and modules, Drupal can facilitate collaboration, automate workflows, and integrate with other business systems. Its capabilities can be extended to include document management, digital asset management, and records retention, making it suitable for enterprise-level content management requirements.
 
-</details>
-
-<details>
-<summary> Quick Points</summary>
+### Quick Points
 
 - Free and open-source
 - Written in the PHP programming language and requires a database such as MySQL or PostgreSQL to store content and settings.
@@ -50,10 +46,7 @@ Drupal can manage and store an organization's documents, digital assets, and rec
 - Infrastructure as Code: Can be deployed and managed through tools like Ansible, Chef, or Puppet, and supports containerization with Docker.
 - Widely used for websites that require high levels of security, such as government websites, large organizations, and universities.
 
-</details>
-
-<details>
-<summary> Key Features</summary>
+### Key Features
 
 #### Flexibility and Extensibility
 
@@ -68,6 +61,7 @@ With thousands of modules (plugins) available, Drupal can be extended to include
 #### User and Role Management
 
 ##### Advanced User Management
+
 Drupal provides robust user management capabilities, including the creation of custom user roles and permissions. This feature is critical for an application that serves different institutions and user groups, allowing you to control access to sensitive information and functionalities based on the user's role.
 
 ##### Workflow and Access Control
@@ -120,10 +114,7 @@ It includes built-in caching and a variety of advanced performance optimization 
 
 With its latest versions, Drupal has adopted an API-first approach, making it easier to integrate with other systems and technologies, including React for the frontend. This means you can use Drupal as a headless CMS to manage content while leveraging React and MUI components for a dynamic and engaging user interface.
 
-</details>
-
-<details>
-<summary>Database Support</summary>
+### Database Support
 
 MySQL and PostgreSQL are the most commonly used databases with Drupal, it also supports other database systems, especially with the improvements made in Drupal 7 and later versions which introduced a database abstraction layer. This abstraction layer allows for the integration of Drupal with various database engines. The main databases supported by Drupal include:
 
@@ -150,17 +141,11 @@ While not supported out of the box, there are contributed modules and solutions 
 {: .note }
 It's important to note that while Drupal can work with these database systems, the level of support, performance, and features available may vary depending on the database used. MySQL and MariaDB tend to have the most comprehensive support due to their widespread use and the active development of Drupal modules for these platforms. For other databases like SQL Server and Oracle, additional modules or configurations may be required to achieve full functionality. Always check the specific requirements and support status for the Drupal version you are using when considering a database system.  
 
-</details>
+### Gotchas
 
-<details>
-<summary>Gotchas</summary>
+- Learning curve for site builders and developers new to Drupal that can more complex than simpler platforms like wordpress
+- Need for careful selection of modules and configurations to ensure performance and maintainability
 
-- learning curve for site builders and developers new to Drupal that can more complex than simpler platforms like wordpress
-
-- need for careful selection of modules and configurations to ensure performance and maintainability
-
-</details>
-
-#### Links
+### Links
 
 - [Drupal - Open Source CMS](https://www.google.com/url?q=https%3A%2F%2Fwww.drupal.org%2F&sa=D&sntz=1&usg=AOvVaw0zljFIK0RQXTCgS3xZ_VDU)
