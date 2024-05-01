@@ -1,5 +1,5 @@
 ---
-layout: dev-resources
+layout: default
 title: Provisioning Higher Environments
 parent: How To Guides
 permalink: /how-to/provision-higher-environments

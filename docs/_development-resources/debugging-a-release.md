@@ -1,5 +1,5 @@
 ---
-layout: dev-resources
+layout: default
 title: Debugging a Particular Release
 parent: How To Guides
 permalink: /how-to/debug-a-release

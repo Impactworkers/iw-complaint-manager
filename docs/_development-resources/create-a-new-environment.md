@@ -1,5 +1,5 @@
 ---
-layout: dev-resources
+layout: default
 title: Creating a New Environment
 parent: How To Guides
 permalink: /how-to/create-a-new-environment

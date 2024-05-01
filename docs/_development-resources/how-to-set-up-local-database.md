@@ -1,5 +1,5 @@
 ---
-layout: dev-resources
+layout: default
 title: How to Set Up Your Local Database
 parent: How To Guides
 permalink: /how-to/set-up-local-database

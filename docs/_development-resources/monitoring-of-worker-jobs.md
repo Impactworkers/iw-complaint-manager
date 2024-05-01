@@ -1,5 +1,5 @@
 ---
-layout: dev-resources
+layout: default
 title: Monitoring Worker Jobs
 parent: How To Guides
 permalink: /how-to/monitor-worker-jobs

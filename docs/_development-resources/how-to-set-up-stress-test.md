@@ -1,5 +1,5 @@
 ---
-layout: dev-resources
+layout: default
 title: How to Set Up a Stress Test
 parent: How To Guides
 permalink: /how-to/set-up-stress-test

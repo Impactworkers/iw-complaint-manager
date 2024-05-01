@@ -1,5 +1,5 @@
 ---
-layout: dev-resources
+layout: default
 title: How to Create a Public Service Handler
 parent: How To Guides
 permalink: /how-to/create-a-public-service-handler

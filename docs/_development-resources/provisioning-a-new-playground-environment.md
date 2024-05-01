@@ -1,5 +1,5 @@
 ---
-layout: dev-resources
+layout: default
 title: Provisioning a New Playground Environment
 parent: How To Guides
 permalink: /how-to/provision-playground-environment
