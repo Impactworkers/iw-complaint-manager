@@ -32,6 +32,8 @@ collections:
     output: true
   technical-documentation:
     output: true
+  wiki-information:
+    output: true
 
 just_the_docs:
   collections:
@@ -39,6 +41,8 @@ just_the_docs:
       name: Development Resources
     technical-documentation:
       name: Technical Documentation
+    wiki-information:
+      name: Wiki Information
 
 defaults:
   -
@@ -46,6 +50,9 @@ defaults:
     values: {layout: default}
   -
     scope: {path: "_technical-documentation/*"}
+    values: {layout: default}
+  -
+    scope: {path: "_wiki-information/*"}
     values: {layout: default}
 
 # TODO: Add collectons info to wiki-configuration.md
