@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Slack Integration with Google Sheet
-permalink: unfiled-pages/slack-integration-google-sheet
+parent: How To Guides
+permalink: how-to/slack-integration-google-sheet
 ---
 
 {: .label .label-yellow }

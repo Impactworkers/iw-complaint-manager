@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Naming Conventions for Server vs. Client
-permalink: unfiled-pages/naming-conventions-server-vs-client
+parent: Development Guides
+permalink: dev-guides/naming-conventions-server-vs-client
 ---
 
 {: .label .label-yellow }

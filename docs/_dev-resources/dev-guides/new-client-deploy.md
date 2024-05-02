@@ -1,7 +1,8 @@
 ---
 layout: default
 title: New Client Deploy
-permalink: unfiled-pages/new-client-deploy
+parent: Development Guides
+permalink: dev-guides/new-client-deploy
 ---
 
 {: .warning-title }

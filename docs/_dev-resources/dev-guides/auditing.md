@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Auditing
-permalink: unfiled-pages/auditing
+parent: Development Guides
+permalink: dev-guides/auditing
 ---
 
 {: .warning-title }

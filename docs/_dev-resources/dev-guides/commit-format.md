@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Commit Format
-permalink: unfiled-pages/commit-format
+parent: Development Guides
+permalink: dev-guides/commit-format
 ---
 
 {: .label .label-yellow }

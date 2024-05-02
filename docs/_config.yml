@@ -28,7 +28,7 @@ callouts:
 # The underscore is not necessary in here.  Jekyll will now to look for the folder with the underscore infront of the name. 
 
 collections:
-  development-resources:
+  dev-resources:
     output: true
   technical-documentation:
     output: true
@@ -39,8 +39,8 @@ collections:
 
 just_the_docs:
   collections:
-    development-resources:
-      name: Development Resources
+    dev-resources:
+      name: Developer Resources
     technical-documentation:
       name: Technical Documentation
     unfiled-pages:
@@ -52,7 +52,7 @@ just_the_docs:
 
 defaults:
   -
-    scope: {path: "_development-resources/*"}
+    scope: {path: "_dev-resources/*"}
     values: {layout: default}
   -
     scope: {path: "_technical-documentation/*"}

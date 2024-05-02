@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Docker Commands
-permalink: unfiled-pages/docker-commands
+parent: Development Guides
+permalink: dev-guides/docker-commands
 ---
 
 {: .warning-title }
