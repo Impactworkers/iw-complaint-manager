@@ -4,6 +4,9 @@ title: Wiki Configuration
 permalink: wiki-info/wiki-configuration
 ---
 
+{: .label .label-red }
+To be Updated
+
 # Wiki Configuration
 
 The config file for this wiki can be found in `docs/_config.yml`.
