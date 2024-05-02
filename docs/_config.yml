@@ -48,7 +48,6 @@ just_the_docs:
       nav_fold: true
     wiki-information:
       name: Wiki Information
-      nav_fold: true
 
 defaults:
   -
