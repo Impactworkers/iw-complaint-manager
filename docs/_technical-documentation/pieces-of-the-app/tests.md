@@ -16,7 +16,6 @@ Under Construction
 
 {: .label .label-red }
 To be Updated
-> This page's content needs to be updated.
 
 # Tests
 
