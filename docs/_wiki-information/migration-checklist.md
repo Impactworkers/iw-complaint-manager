@@ -5,7 +5,7 @@ permalink: wiki-info/wiki-migration
 ---
 
 {: .label }
-Updated 05/01/2024
+Updated 05/02/2024
 
 # Pages to Review from Wiki
 
@@ -76,7 +76,7 @@ Updated 05/01/2024
   - [x] ~~Naming Convention~~ - migrated to [dev guides](../dev-guides)
   - [x] ~~Content Security Policy~~ - no migration action needed
   - [x] ~~Prod Pushes~~ - deleted
-  - [ ] ~~Story Flow~~ - migrated to [developer resources](../story-flow)
+  - [x] ~~Story Flow~~ - migrated to [developer resources](../story-flow)
 - [x] ~~API Documentation~~ - deleted
 - [x] ~~Data Resources~~ - no migration action needed
   - [x] ~~NOLA Data Portal (Misconduct Complaints)~~ - no migration action needed
