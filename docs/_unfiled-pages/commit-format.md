@@ -4,15 +4,11 @@ title: Commit Format
 permalink: unfiled-pages/commit-format
 ---
 
-{: .highlight-title }
-> Under Construction
->
-> This page is under construction.
+{: .label .label-yellow }
+Under Construction
 
-{: .warning-title }
-> To be Updated
->
-> This page's content needs to be updated.
+{: .label .label-red }
+To be Updated
 
 # Commit Format
 

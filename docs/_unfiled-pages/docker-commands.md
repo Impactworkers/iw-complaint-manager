@@ -9,15 +9,11 @@ permalink: unfiled-pages/docker-commands
 >
 > This page may be about Complaint Manager 1.0. Should it be removed from this wiki?
 
-{: .highlight-title }
-> Under Construction
->
-> This page is under construction.
+{: .label .label-yellow }
+Under Construction
 
-{: .warning-title }
-> To be Updated
->
-> This page's content needs to be updated.
+{: .label .label-red }
+To be Updated
 
 # Docker Commands
 

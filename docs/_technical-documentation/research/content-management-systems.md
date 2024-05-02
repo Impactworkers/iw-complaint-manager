@@ -5,10 +5,8 @@ parent: Research
 permalink: /research/content-management-systems
 ---
 
-{: .highlight-title }
-> Under Construction
->
-> This page is under construction.
+{: .label .label-yellow }
+Under Construction
 
 # Content Management Systems
 

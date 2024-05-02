@@ -4,10 +4,8 @@ title: Overview
 permalink: unfiled-pages/overview
 ---
 
-{: .highlight-title }
-> Under Construction
->
-> This page is under construction.
+{: .label .label-yellow }
+Under Construction
 
 # Overview
 

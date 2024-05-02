@@ -10,10 +10,8 @@ permalink: /pieces-of-the-app/client
 >
 > This page may be about Complaint Manager 1.0. Should it be removed from this wiki?
 
-{: .highlight-title }
-> Under Construction
->
-> This page is under construction.
+{: .label .label-yellow }
+Under Construction
 
 # Client
 

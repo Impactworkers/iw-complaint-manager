@@ -4,10 +4,8 @@ title: Slack Integration with Google Sheet
 permalink: unfiled-pages/slack-integration-google-sheet
 ---
 
-{: .highlight-title }
-> Under Construction
->
-> This page is under construction.
+{: .label .label-yellow }
+Under Construction
 
 # Slack Integration with Google Sheet
 

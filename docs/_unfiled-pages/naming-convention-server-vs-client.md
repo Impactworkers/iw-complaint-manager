@@ -4,15 +4,11 @@ title: Naming Conventions for Server vs. Client
 permalink: unfiled-pages/naming-conventions-server-vs-client
 ---
 
-{: .highlight-title }
-> Under Construction
->
-> This page is under construction.
+{: .label .label-yellow }
+Under Construction
 
-{: .warning-title }
-> To be Updated
->
-> This page's content needs to be updated.
+{: .label .label-red }
+To be Updated
 
 # Naming Conventions for Server vs. Client
 

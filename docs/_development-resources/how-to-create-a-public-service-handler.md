@@ -10,10 +10,8 @@ permalink: /how-to/create-a-public-service-handler
 >
 > This page may be about Complaint Manager 1.0. Should it be removed from this wiki?
 
-{: .highlight-title }
-> Under Construction
->
-> This page is under construction.
+{: .label .label-yellow }
+Under Construction
 
 # How to Create a Public Service Handler
 
