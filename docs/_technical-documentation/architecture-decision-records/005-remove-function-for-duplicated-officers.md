@@ -5,6 +5,11 @@ parent: Architecture Decision Records
 permalink: /adrs/adr-005
 ---
 
+{: .warning-title }
+> Check for Relevance
+>
+> This page may be about Complaint Manager 1.0. Should it be removed from this wiki?
+
 # 005 - Remove function for removing duplicated officers in UI NOIPM
 
 ### Date

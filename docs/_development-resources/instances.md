@@ -5,6 +5,11 @@ parent: How To Guides
 permalink: /how-to/instances
 ---
 
+{: .warning-title }
+> Check for Relevance
+>
+> This page may be about Complaint Manager 1.0. Should it be removed from this wiki?
+
 # How to Switch Between Instances
 
 Now that we're actively developing for multiple instances (NOIPM and HAWAII) we need to be able to flip our environments between them, so here's how.

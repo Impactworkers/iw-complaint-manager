@@ -5,6 +5,11 @@ parent: Architecture Decision Records
 permalink: adrs/adr-007
 ---
 
+{: .warning-title }
+> Check for Relevance
+>
+> This page may be about Complaint Manager 1.0. Should it be removed from this wiki?
+
 # 007 - Upgrade to React 17
 
 ### Date
@@ -29,5 +34,5 @@ We're upgrading to React 17 so we can quickly implement the MUI X Data Grid Comp
 ### Consequences
 
 There will be a handful of failing tests that result from breaking changes/incompatibilities, and we'll have to fix those.
-We still aren't be completely up-to-date with the latest React version, but have a plan to get there eventually. 
+We still aren't be completely up-to-date with the latest React version, but have a plan to get there eventually.
 This upgrade will also allow us to upgrade MUI and use MUI X Data Grid.

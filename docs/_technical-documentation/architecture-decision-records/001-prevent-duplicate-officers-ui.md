@@ -5,7 +5,11 @@ parent: Architecture Decision Records
 permalink: /adrs/adr-001
 ---
 
-{:toc}
+{: .warning-title }
+> Check for Relevance
+>
+> This page may be about Complaint Manager 1.0. Should it be removed from this wiki?
+
 # 001 - Prevent duplicate officers from being displayed when searching within a case in NOIPM
 
 ### Date

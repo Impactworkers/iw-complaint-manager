@@ -4,6 +4,11 @@ title: Concerns and Considerations
 permalink: unfiled-pages/concerns-and-considerations
 ---
 
+{: .warning-title }
+> Check for Relevance
+>
+> This page may be about Complaint Manager 1.0. Should it be removed from this wiki?
+
 {: .highlight-title }
 > Under Construction
 >

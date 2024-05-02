@@ -19,54 +19,34 @@ permalink: /how-to/create-a-release
 
 ## Pick a Pipeline
 
-Any master pipeline can now be promoted to a release (with a few
-exceptions noted below), so the first step to creating a release is to
-choose a master pipeline in [CircleCI](https://app.circleci.com/pipelines/github/PublicDataWorks/police_data_manager?branch=master).
+Any master pipeline can now be promoted to a release (with a few exceptions noted below), so the first step to creating a release is to choose a master pipeline in [CircleCI](https://app.circleci.com/pipelines/github/PublicDataWorks/police_data_manager?branch=master).
 
 ## Manual Jobs
 
-On the master pipeline you choose you might need to deploy it to CI for
-New Orleans if you haven't already. This control is intended to make it
-so that we don't promote a pipeline to release unless it can be
-deployed to and passes end-to-end tests for both orgs.
+On the master pipeline you choose you might need to deploy it to CI for New Orleans if you haven't already. This control is intended to make it so that we don't promote a pipeline to release unless it can be deployed to and passes end-to-end tests for both orgs.
 
-Once you've deployed NO to CI, you'll need to then approve the
-`create-release` manual job, which will trigger a process that creates
-a new release tag based on the [commit messages](https://sites.google.com/thoughtworks.com/tw-invisible-institute-wiki/development-resources/commit-format).
+Once you've deployed NO to CI, you'll need to then approve the `create-release` manual job, which will trigger a process that creates a new release tag based on the [commit messages](https://sites.google.com/thoughtworks.com/tw-invisible-institute-wiki/development-resources/commit-format).
 
 For more information on semantic versioning, see [semver.org](http://semver.org/).
 
 ## Build and Release
 
-Picking the version will trigger jobs to update the version and build.
-After the build is finished, another pipeline will kick off that deploys
-the code to the staging environment, runs end-to-end tests on the staging
-environment, then awaits approval for release. This will allow for
-regression testing and demos to stakeholders before triggering the
-manual approval step to release to production.
+Picking the version will trigger jobs to update the version and build. After the build is finished, another pipeline will kick off that deploys the code to the staging environment, runs end-to-end tests on the staging environment, then awaits approval for release. This will allow for regression testing and demos to stakeholders before triggering the manual approval step to release to production.
 
 ## Re-Releasing a Previously Built Version
 
-To re-release a version that was previously built, you simply need to
-restart the release pipeline (not the master pipeline, but the one that
-is triggered after it), which will take the images that were already
-built and deploy to stage, then await approval to deploy to production.
+To re-release a version that was previously built, you simply need to restart the release pipeline (not the master pipeline, but the one that is triggered after it), which will take the images that were already built and deploy to stage, then await approval to deploy to production.
 
-This will not roll back any migrations/seeders, so you may need to
-manually roll some back if there are significant migrations/seeders that
-will break the previous release.
+This will not roll back any migrations/seeders, so you may need to manually roll some back if there are significant migrations/seeders that will break the previous release.
 
 ## Pipelines That Can't be Released
 
-This setup is designed to allow any master pipeline to be promoted to a
-release, but there are a couple of exceptions to that rule/
+This setup is designed to allow any master pipeline to be promoted to a release, but there are a couple of exceptions to that rule/
 
 - Pipelines that are more than 14 days old will fail to release because the pipeline's workspace will have expired
 - When releasing, we create a commit that we push to a release branch and then merge into master, triggering another pipeline. Any pipelines that ran between the released pipeline and the new pipeline triggered by that merge cannot be released because the version history would be off
 
-If we need to release on commits that don't have a pipeline or only
-have pipelines that can't be released, we can manually build the images
-and push to a release branch.
+If we need to release on commits that don't have a pipeline or only have pipelines that can't be released, we can manually build the images and push to a release branch.
 
 ## Manually Releasing
 
