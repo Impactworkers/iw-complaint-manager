@@ -17,14 +17,14 @@ Updated 05/01/2024
   - [x] ~~Customize Workflow~~ - no migration action needed
     - [x] ~~NOIPM Functionality that Makes Generalization Harder~~ - archived
   - [x] ~~Org Configuration~~ - archived
-  - [x] ~~New Client Deploy~~ - migrated to [unfiled pages](../unfiled)
+  - [x] ~~New Client Deploy~~ - migrated to [dev guides](../dev-guides)
 - [ ] Onboarding Outline
 - [x] ~~Contributor Guidelines~~ - archived
 - [ ] Team Blogs
   - [x] ~~Maria's Blog~~ - deleted
     - [x] ~~errrr~~ - deleted
   - [x] ~~Syamala's Coding Conundrums~~ - deleted
-  - [x] ~~Slack Integration with Google Sheet~~ - migrated to [unfiled pages](../unfiled)
+  - [x] ~~Slack Integration with Google Sheet~~ - migrated to [how-to collection](../how-to)
 - [ ] Analysis Resources
   - [ ] Design and UX
 - [ ] Development Resources
@@ -53,9 +53,9 @@ Updated 05/01/2024
     - [x] ~~Prod Checklist~~ - deleted
     - [ ] How to Update the PDF Snapshot
   - [x] ~~New Relic~~ - no migration action needed
-  - [x] ~~Docker Commands~~ - migrated to [unfiled pages](../unfiled)
+  - [x] ~~Docker Commands~~ - migrated to [dev guides](../dev-guides)
   - [x] ~~Create New City Instance~~ - archived
-  - [x] ~~Commit Format~~ - migrated to [unfiled pages](../unfiled)
+  - [x] ~~Commit Format~~ - migrated to [developer resources](../commit-format)
 - [x] ~~Pieces of the App~~ - no migration action needed
   - [x] ~~Client~~ - deleted
     - [x] ~~Component/Container~~ - deleted
@@ -73,15 +73,15 @@ Updated 05/01/2024
     - [x] ~~Pact Tests~~ - migrated to [pieces of the app (tests)](../pieces-of-the-app/tests)
   - [x] ~~Environment Variables~~ - no migration action needed
   - [x] ~~Flakey Test Record~~ - migrated to [pieces of the app (tests)](../pieces-of-the-app/tests)
-  - [x] ~~Naming Convention~~ - migrated to [unfiled pages](../unfiled)
+  - [x] ~~Naming Convention~~ - migrated to [dev guides](../dev-guides)
   - [x] ~~Content Security Policy~~ - no migration action needed
   - [x] ~~Prod Pushes~~ - deleted
-  - [ ] ~~Story Flow~~ - migrated to [unfiled pages](../unfiled)
+  - [ ] ~~Story Flow~~ - migrated to [developer resources](../story-flow)
 - [x] ~~API Documentation~~ - deleted
 - [x] ~~Data Resources~~ - no migration action needed
   - [x] ~~NOLA Data Portal (Misconduct Complaints)~~ - no migration action needed
   - [x] ~~IA Pro Officer & Allegation Data~~ - archived
-  - [x] ~~Auditing~~ - migrated to [unfiled pages](../unfiled)
+  - [x] ~~Auditing~~ - migrated to [dev guides](../dev-guides)
   - [x] ~~Officer Seed Data~~ - archived
   - [x] ~~VPN access to NOIPM office database server~~ - deleted
 - [x] ~~Pivotal Tracker Guidelines~~ - no migration action needed
@@ -96,6 +96,6 @@ Updated 05/01/2024
   - [ ] Research
   - [x] ~~Content Management Systems~~ - migrated to [research](../research/content-management-systems)
     - [x] ~~Drupal~~ - migrated to [research](../research/content-management-systems)
-- [x] ~~Glossary~~ - migrated to [unfiled pages](../unfiled)
-- [x] ~~FAQ~~ - no migration action needed
+- [x] ~~Glossary~~ - [migrated](../glossary)
+- [x] ~~FAQ~~ - [new page](../faq) created
 - [x] ~~Updating Tags~~ - archived
