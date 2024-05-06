@@ -4,10 +4,12 @@ title: Markdown Guide
 permalink: wiki-info/markdown-guide
 ---
 
-{: .label .label-red }
-To be Updated
+{: .label .label-yellow }
+Under Construction
 
 # Markdown Guide
+
+{:toc}
 
 ## Background Information
 
@@ -17,9 +19,50 @@ This wiki is published on [GitHub Pages](https://pages.github.com/) using the [J
 
 More content coming soon!
 
+### Labels
+
+<div class="code-example" markdown="1">
+Default label
+{: .label }
+
+Blue label
+{: .label .label-blue }
+
+Green label
+{: .label .label-green }
+
+Purple lable
+{: .label .label-purple }
+
+Yellow label
+{: .label .label-yellow }
+
+Red label
+{: .label .label-red }
+</div>
+```markdown
+Default label
+{: .label }
+
+Blue label
+{: .label .label-blue }
+
+Green label
+{: .label .label-green }
+
+Purple lable
+{: .label .label-purple }
+
+Yellow label
+{: .label .label-yellow }
+
+Red label
+{: .label .label-red }
+```
+
 ### Callouts
 
-[Just the Docs guide](https://just-the-docs.com/docs/ui-components/callouts/)
+[Just the Docs documentation](https://just-the-docs.com/docs/ui-components/callouts/)
 
 <div class="code-example" markdown="1">
 {: .highlight }
