@@ -5,16 +5,8 @@ parent: Development Guides
 permalink: dev-guides/docker-commands
 ---
 
-{: .warning-title }
-> Check for Relevance
->
-> This page may be about Complaint Manager 1.0. Should it be removed from this wiki?
-
 {: .label .label-yellow }
 Under Construction
-
-{: .label .label-red }
-To be Updated
 
 # Docker Commands
 

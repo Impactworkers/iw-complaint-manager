@@ -5,26 +5,20 @@ parent: Development Guides
 permalink: dev-guides/commit-format
 ---
 
-{: .label .label-yellow }
-Under Construction
-
-{: .label .label-red }
-To be Updated
+{: .warning-title }
+> Requires Review
+>
+> This page details the commit format we were using for Complaint Manager 1.0. We need to take a look at this as a team and determine whether we should update our practices.
 
 # Commit Format
 
-**<type>(<scope (optional)>){! if breaking}: <names of
-contributors> [#<issue number (optional)>]<brief description of
-the commit>** <!-- TODO: type and brief now showing -->
+**<type>(<scope (optional)>){! if breaking}: <names of contributors> [#<issue number (optional)>]<brief description of the commit>**
 
 **<commit body (optional)>**
 
 **<commit footer (optional)>**
 
-Due to our move to [the standard-version library](https://www.npmjs.com/package/standard-version) that determines the new version for a release and
-populates a changelog, we need to be deliberate about our commit
-messages, specifically using the template above (don't worry there will
-be examples).
+Due to our move to [the standard-version library](https://www.npmjs.com/package/standard-version) that determines the new version for a release and populates a changelog, we need to be deliberate about our commit messages, specifically using the template above (don't worry there will be examples).
 
 ## Type
 

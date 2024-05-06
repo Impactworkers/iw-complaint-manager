@@ -6,24 +6,21 @@ permalink: /how-to/provision-playground-environment
 ---
 
 {: .warning-title }
-> Check for Relevance
+> Complaint Manager 1.0
 >
-> This page may be about Complaint Manager 1.0. Should it be removed from this wiki?
-
-{: .label .label-yellow }
-Under Construction
+> This page references processes used for Complaint Manager 1.0. It should be updated with the processes for Complaint Manager 2.0 as we establish them.
 
 {: .label .label-red }
 To be Updated
 
 # Provisioning a New Playground Environment
 
-{: .warning-title }
-> Warning - Read this first!
->
-> - Provisioning scripts were first used to provision playground environment (for prototyping/testing).
-> - Scripts have also been used to provision parts of other higher environments (CI/Staging/Production). Working with tools like terraform for infra provisioning should always be approached with caution.
-> - The Playground environment should only be provisioned for testing/prototyping and destroyed when done (for cost minimization purposes).
+{: .warning }
+Read this section first!
+
+- Provisioning scripts were first used to provision playground environment (for prototyping/testing).
+- Scripts have also been used to provision parts of other higher environments (CI/Staging/Production). Working with tools like terraform for infra provisioning should always be approached with caution.
+- The Playground environment should only be provisioned for testing/prototyping and destroyed when done (for cost minimization purposes).
 
 ## Setting Up Local Env for Provisioning
 

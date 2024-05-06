@@ -5,8 +5,10 @@ parent: How To Guides
 permalink: /how-to/create-a-release
 ---
 
-{: .label .label-yellow }
-Under Construction
+{: .warning-title }
+> Complaint Manager 1.0
+>
+> This page references processes used for Complaint Manager 1.0. It should be updated with the processes for Complaint Manager 2.0 as we establish them.
 
 {: .label .label-red }
 To be Updated

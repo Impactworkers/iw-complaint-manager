@@ -34,14 +34,14 @@ Updated 05/02/2024
     - [x] ~~Provisioning a Playground Env~~ - migrated to [how-to collection](../how-to)
     - [x] ~~Feature Toggles~~ - archived
     - [x] ~~Auth0 Configuration~~ - no migration action needed
-    - [x] ~~Auth0 Add User Roles and Permissions~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~Auth0 Add User Roles and Permissions~~ - no migration action needed
     - [x] ~~Recreating Sortable Cases~~ - archived
-    - [x] ~~Monitoring of Worker Jobs~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~Monitoring of Worker Jobs~~ - no migration action necessary
     - [ ] Updating Docker Images
     - [x] ~~Updating Letter Templates~~ - archived
     - [x] ~~Setup a Custom Domain~~ - archived
-    - [x] ~~How to Set Up a Stress Test~~ - migrated to [how-to collection](../how-to)
-    - [x] ~~How to Setup Your Local Database~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~How to Set Up a Stress Test~~ - no migration action necessary
+    - [x] ~~How to Setup Your Local Database~~ - placed in [how-to collection](../how-to) and content wiped - needs to be remade for CM 2.0
     - [x] ~~Creating a Release~~ - migrated to [how-to collection](../how-to)
     - [x] ~~Debugging a Particular Release~~ - migrated to [how-to collection](../how-to)
     - [x] ~~How to Deal with Security Checks Failing~~ - archived
@@ -56,21 +56,21 @@ Updated 05/02/2024
   - [x] ~~Docker Commands~~ - migrated to [dev guides](../dev-guides)
   - [x] ~~Create New City Instance~~ - archived
   - [x] ~~Commit Format~~ - migrated to [developer resources](../commit-format)
-- [x] ~~Pieces of the App~~ - no migration action needed
-  - [x] ~~Client~~ - deleted
+- [x] ~~Pieces of the App~~ - migrated to [pieces of the app](../pieces-of-the-app) and most content wiped - needs to be remade for CM 2.0
+  - [x] ~~Client~~ - deleted and migrated to [pieces of the app](../pieces-of-the-app) and content wiped - needs to be remade for CM 2.0
     - [x] ~~Component/Container~~ - deleted
     - [x] ~~Action Creator/Thunk~~ - archived
     - [ ] Reducer
-    - [x] ~~Selector~~ - migrated to [pieces of the app (client)](../pieces-of-the-app/client)
-  - [x] ~~Server~~ - deleted
+    - [x] ~~Selector~~ - migrated to [how-to collection)](../how-to)
+  - [x] ~~Server~~ - migrated to [pieces of the app](../pieces-of-the-app) and content wiped - needs to be remade for CM 2.0
     - [x] ~~Handler~~ - deleted
     - [x] ~~Model~~ - deleted
     - [x] ~~Migration/Seeder~~ - no migration action needed
-    - [x] ~~Payload Objects~~ - migrated to [pieces of the app (server)](../pieces-of-the-app/server)
+    - [x] ~~Payload Objects~~ - no migration action needed
   - [x] ~~Worker~~ - deleted
   - [x] ~~Instance Files~~ - deleted
-  - [x] ~~Tests~~ - migrated to [pieces of the app (tests)](../pieces-of-the-app/tests)
-    - [x] ~~Pact Tests~~ - migrated to [pieces of the app (tests)](../pieces-of-the-app/tests)
+  - [x] ~~Tests~~ - no migration action needed
+    - [x] ~~Pact Tests~~ - no migration action needed
   - [x] ~~Environment Variables~~ - no migration action needed
   - [x] ~~Flakey Test Record~~ - migrated to [pieces of the app (tests)](../pieces-of-the-app/tests)
   - [x] ~~Naming Convention~~ - migrated to [dev guides](../dev-guides)

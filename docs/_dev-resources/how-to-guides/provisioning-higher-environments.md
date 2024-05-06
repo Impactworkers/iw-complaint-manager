@@ -6,12 +6,9 @@ permalink: /how-to/provision-higher-environments
 ---
 
 {: .warning-title }
-> Check for Relevance
+> Complaint Manager 1.0
 >
-> This page may be about Complaint Manager 1.0. Should it be removed from this wiki?
-
-{: .label .label-yellow }
-Under Construction
+> This page references processes used for Complaint Manager 1.0. It should be updated with the processes for Complaint Manager 2.0 as we establish them.
 
 {: .label .label-red }
 To be Updated
