@@ -1,0 +1,25 @@
+{
+  "name": "iw-complaint-manager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Impactworkers/iw-complaint-manager.git",
+  "author": "Aerin Parker <aerin.parker@thoughtworks.com>, Claire Holt <claire.holt@thoughtworks.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@remix-run/node": "^2.9.1",
+    "@remix-run/react": "^2.9.1",
+    "@remix-run/serve": "^2.9.1",
+    "isbot": "4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.9.1",
+    "vite": "^5.2.11"
+  },
+  "packageManager": "yarn@4.2.1",
+  "workspaces": [
+    "packages/*"
+  ]
+}

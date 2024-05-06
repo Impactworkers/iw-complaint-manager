@@ -15,3 +15,4 @@ This repository will be the home of Impactworkers Complaint Manager 2.0. The wik
 - Julio Espinola
 - Raina Huerta
 - Claire Holt
+- Aerin Parker
