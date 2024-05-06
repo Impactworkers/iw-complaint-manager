@@ -21,6 +21,17 @@ More content coming soon!
 
 More detailed guide coming soon. [Just the Docs guide](https://just-the-docs.com/docs/ui-components/callouts/)
 
+<div class="code-example" markdown="1">
+
+{: .highlight }
+This is a `highlight` callout.
+
+</div>
+```markdown
+{: .highlight }
+This is a `highlight` callout.
+```
+
 #### Highlight
 
 {: .highlight }
