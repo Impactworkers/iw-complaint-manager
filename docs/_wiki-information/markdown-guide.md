@@ -8,7 +8,12 @@ permalink: wiki-info/markdown-guide
 Under Construction
 
 # Markdown Guide
+{: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
+- Table of Contents
 {:toc}
 
 ## Background Information
