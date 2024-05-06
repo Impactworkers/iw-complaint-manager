@@ -19,35 +19,68 @@ More content coming soon!
 
 ### Callouts
 
-More detailed guide coming soon. [Just the Docs guide](https://just-the-docs.com/docs/ui-components/callouts/)
+[Just the Docs guide](https://just-the-docs.com/docs/ui-components/callouts/)
 
 <div class="code-example" markdown="1">
-
 {: .highlight }
 This is a `highlight` callout.
-
 </div>
 ```markdown
 {: .highlight }
 This is a `highlight` callout.
 ```
 
-#### Highlight
-
-{: .highlight }
-This is a `highlight` callout.
-
-#### Important
-
+<div class="code-example" markdown="1">
 {: .important }
 This is an `important` callout.
+</div>
+```markdown
+{: .important }
+This is an `important` callout.
+```
 
-#### Note
-
+<div class="code-example" markdown="1">
 {: .note }
 This is a `note` callout.
+</div>
+```markdown
+{: .note }
+This is a `note` callout.
+```
 
-#### Warning
-
+<div class="code-example" markdown="1">
 {: .warning }
 This is a `warning` callout.
+</div>
+```markdown
+{: .warning }
+This is a `warning` callout.
+```
+
+#### Callouts with Custom Titles
+
+<div class="code-example" markdown="1">
+{: .highlight-title }
+> My Cool Title
+>
+> This is a `highlight` callout with a custom title.
+</div>
+```markdown
+{: .highlight-title }
+> My Cool Title
+>
+> This is a `highlight` callout with a custom title.
+```
+
+<div class="code-example" markdown="1">
+{: .important-title }
+> Super Duper Important Callout
+>
+> This is an `important` callout with a custom title.
+</div>
+```markdown
+{: .important-title }
+> Super Duper Important Callout
+>
+> This is an `important` callout with a custom title.
+```
