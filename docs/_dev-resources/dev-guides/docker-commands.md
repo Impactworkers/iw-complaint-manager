@@ -10,6 +10,10 @@ Under Construction
 
 # Docker Commands
 
+| command | option |
+| :------ | :----- |
+| `docker run <image name>` | Runs instance of image if on the host (exists); otherwise, pulls image from hub (only done first time) |
+
 **Docker run [image name]**
 
 Runs instance of image if on the host (exists), if not, pulls image from
