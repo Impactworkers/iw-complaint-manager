@@ -10,7 +10,7 @@ Under Construction
 # Markdown Guide
 {: .no_toc }
 
-## Table of contents
+## Table of Contents
 {: .no_toc .text-delta }
 
 - Table of Contents
@@ -20,11 +20,9 @@ Under Construction
 
 This wiki is published on [GitHub Pages](https://pages.github.com/) using the [Just the Docs](https://just-the-docs.com/) theme for [Jekyll](https://jekyllrb.com/). [This page](https://just-the-docs.github.io/just-the-docs-tests/docs/markdown/) provides more examples of the theme.
 
-## Guide
+## Labels
 
-More content coming soon!
-
-### Labels
+<details markdown="block">
 
 <div class="code-example" markdown="1">
 Default label
@@ -65,7 +63,9 @@ Red label
 {: .label .label-red }
 ```
 
-### Callouts
+</details>
+
+## Callouts
 
 [Just the Docs documentation](https://just-the-docs.com/docs/ui-components/callouts/)
 
@@ -105,7 +105,7 @@ This is a `warning` callout.
 This is a `warning` callout.
 ```
 
-#### Callouts with Custom Titles
+### Callouts with Custom Titles
 
 <div class="code-example" markdown="1">
 {: .highlight-title }
