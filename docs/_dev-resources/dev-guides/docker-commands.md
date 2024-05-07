@@ -13,6 +13,7 @@ Under Construction
 | command | option |
 | :------ | :----- |
 | `docker run <image name>` | Runs instance of image if on the host (exists); otherwise, pulls image from hub (only done first time) |
+| ```docker ps``` | Lists all running containers |
 
 **Docker run [image name]**
 
