@@ -22,50 +22,59 @@ This wiki is published on [GitHub Pages](https://pages.github.com/) using the [J
 
 ## Labels
 
+{: .label }
+This is a label
+
+Expand Details below for further examples and code blocks.
+
 <details markdown="block">
 
 <div class="code-example" markdown="1">
-Default label
 {: .label }
+Default label
 
-Blue label
 {: .label .label-blue }
+Blue label
 
-Green label
 {: .label .label-green }
+Green label
 
-Purple lable
 {: .label .label-purple }
+Purple lable
 
-Yellow label
 {: .label .label-yellow }
+Yellow label
 
-Red label
 {: .label .label-red }
+Red label
 </div>
+
 ```markdown
-Default label
 {: .label }
+Default label
 
-Blue label
 {: .label .label-blue }
+Blue label
 
-Green label
 {: .label .label-green }
+Green label
 
-Purple lable
 {: .label .label-purple }
+Purple lable
 
-Yellow label
 {: .label .label-yellow }
+Yellow label
 
-Red label
 {: .label .label-red }
+Red label
 ```
 
 </details>
 
 ## Callouts
+
+{: .highlight }
+This is an example of a callout. Expand Details below for further examples and code blocks.
 
 <details markdown="block">
 
@@ -73,6 +82,7 @@ Red label
 {: .highlight }
 This is a `highlight` callout.
 </div>
+
 ```markdown
 {: .highlight }
 This is a `highlight` callout.
@@ -82,6 +92,7 @@ This is a `highlight` callout.
 {: .important }
 This is an `important` callout.
 </div>
+
 ```markdown
 {: .important }
 This is an `important` callout.
@@ -91,6 +102,7 @@ This is an `important` callout.
 {: .note }
 This is a `note` callout.
 </div>
+
 ```markdown
 {: .note }
 This is a `note` callout.
@@ -100,6 +112,7 @@ This is a `note` callout.
 {: .warning }
 This is a `warning` callout.
 </div>
+
 ```markdown
 {: .warning }
 This is a `warning` callout.
