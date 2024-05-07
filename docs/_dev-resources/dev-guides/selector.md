@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Selector
-parent: How To Guides
-permalink: /how-to/selector
+parent: Development Guides
+permalink: /dev-guides/selector
 ---
 
 {: .warning-title }
