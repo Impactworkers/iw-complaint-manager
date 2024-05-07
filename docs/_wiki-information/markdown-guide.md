@@ -67,7 +67,7 @@ Red label
 
 ## Callouts
 
-[Just the Docs documentation](https://just-the-docs.com/docs/ui-components/callouts/)
+<details markdown="block">
 
 <div class="code-example" markdown="1">
 {: .highlight }
@@ -104,9 +104,13 @@ This is a `warning` callout.
 {: .warning }
 This is a `warning` callout.
 ```
+
+</details>
 
 ### Callouts with Custom Titles
 
+<details markdown="block">
+
 <div class="code-example" markdown="1">
 {: .highlight-title }
 > My Cool Title
@@ -132,3 +136,5 @@ This is a `warning` callout.
 >
 > This is an `important` callout with a custom title.
 ```
+
+</details>
