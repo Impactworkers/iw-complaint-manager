@@ -1,25 +1,43 @@
 {
   "name": "iw-complaint-manager",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:Impactworkers/iw-complaint-manager.git",
-  "author": "Aerin Parker <aerin.parker@thoughtworks.com>, Claire Holt <claire.holt@thoughtworks.com>",
-  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "sideEffects": false,
   "type": "module",
+  "scripts": {
+    "build": "remix vite:build",
+    "dev": "remix vite:dev",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "start": "remix-serve ./build/server/index.js",
+    "typecheck": "tsc"
+  },
   "dependencies": {
     "@remix-run/node": "^2.9.1",
     "@remix-run/react": "^2.9.1",
     "@remix-run/serve": "^2.9.1",
-    "isbot": "4",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "isbot": "^4.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.9.1",
-    "vite": "^5.2.11"
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "eslint": "^8.38.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "typescript": "^5.1.6",
+    "vite": "^5.1.0",
+    "vite-tsconfig-paths": "^4.2.1"
   },
-  "packageManager": "yarn@4.2.1",
-  "workspaces": [
-    "packages/*"
-  ]
+  "engines": {
+    "node": "=20.13.0"
+  }
 }
