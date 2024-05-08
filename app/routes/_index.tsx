@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { useEffect, useState } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,9 +9,16 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch("/api/data")
+      .then((response) => response.json())
+      .then((data) => setData(data));
+  }, []);
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix</h1>
+      <p>{data ? "hi!!! or some other text" : "Loading..."}</p>
       <ul>
         <li>
           <a

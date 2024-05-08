@@ -13,3 +13,7 @@ app.all("*", createRequestHandler({ build }));
 app.listen(3000, () => {
   console.log("App listening on http://localhost:3000");
 });
+
+app.get("/api/data", (req, res) => {
+  res.json("Hello, this is your data!"); // change this string to make sure backend reload works
+});
