@@ -22,14 +22,41 @@ jobs:
           command: touch example.txt
       - store_artifacts:
           path: example.txt
-  deploy:
+  deploy_qa_iwcm:
     docker:
       - image: cimg/base:stable
     steps:
       # Replace this with steps to deploy to users
+      - checkout
       - run:
-
-          name: deploy main to heroku
+          name: Run tests
+          command: echo 'replace me with real tests!'
+      - run:
+          name: deploy qa to heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
+  deploy_staging_iwcm:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Run tests
+          command: echo 'replace me with real tests!'
+      - run:
+          name: deploy staging to heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
+  deploy_prod_iwcm:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Run tests
+          command: echo 'replace me with real tests!'
+      - run:
+          name: deploy production to heroku
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
 workflows:
@@ -40,10 +67,27 @@ workflows:
             branches:
               only:
                 - main
-    
       - build:
           requires:
             - test
-      - deploy:
+      - deploy_qa_iwcm:
           requires:
-            - test
+            - build
+          filters:
+            branches:
+              only:
+                - main
+      - deploy_staging_iwcm:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
+      - deploy_prod_iwcm:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
