@@ -8,7 +8,7 @@ permalink: /
 
 ## What is Complaint Manager 2.0?
 
-The Complaint Manager is a case management platform that aids oversight agencies in monitoring and managing complaints across public institutions. With this tool, users can record complaint details and subsquently generate personalized letters based on this collected information. It also allows for for organization-wide collabaration through tracking, documentation, user tagging, notifications, audit logging and centralized case notes. Lastly, the tool enables the analysis of complaint data through visualizations. Users have the additional option to enable a public-facing page with the complaint data, to increase the transparency and accountability of their work. The tool is built with scalability and user configurability, allowing users to define their own data fields and workflows to suit their unique needs.
+The Complaint Manager is a case management platform that aids oversight agencies in monitoring and managing complaints across public institutions. With this tool, users can record complaint details and subsquently generate personalized letters based on this collected information. It also allows for for organization-wide collaboration through tracking, documentation, user tagging, notifications, audit logging and centralized case notes. Lastly, the tool enables the analysis of complaint data through visualizations. Users have the additional option to enable a public-facing page with the complaint data, to increase the transparency and accountability of their work. The tool is built with scalability and user configurability, allowing users to define their own data fields and workflows to suit their unique needs.
 
 ## Background and Purpose
 
