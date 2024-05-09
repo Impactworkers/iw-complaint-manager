@@ -22,6 +22,18 @@ jobs:
           command: touch example.txt
       - store_artifacts:
           path: example.txt
+  deploy_dev_iwcm:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Run tests
+          command: echo 'replace me with real tests!'
+      - run:
+          name: deploy dev to heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
   deploy_qa_iwcm:
     docker:
       - image: cimg/base:stable
@@ -34,7 +46,7 @@ jobs:
       - run:
           name: deploy qa to heroku
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_QA.git main
   deploy_staging_iwcm:
     docker:
       - image: cimg/base:stable
@@ -46,7 +58,7 @@ jobs:
       - run:
           name: deploy staging to heroku
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_STAGING.git main
   deploy_prod_iwcm:
     docker:
       - image: cimg/base:stable
@@ -58,7 +70,7 @@ jobs:
       - run:
           name: deploy production to heroku
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_PROD.git main
 workflows:
   build_deploy_main:
     jobs:
@@ -70,23 +82,33 @@ workflows:
       - build:
           requires:
             - test
-      - deploy_qa_iwcm:
+      - deploy_dev_iwcm:
           requires:
             - build
+          filters:
+            branches:
+              only:
+                - main
+      - deploy_qa_iwcm:
+          type: approval
+          requires:
+            - deploy_dev_iwcm
           filters:
             branches:
               only:
                 - main
       - deploy_staging_iwcm:
+          type: approval
           requires:
-            - build
+            - deploy_qa_iwcm
           filters:
             branches:
               only:
                 - main
       - deploy_prod_iwcm:
+          type: approval
           requires:
-            - build
+            - deploy_staging_iwcm
           filters:
             branches:
               only:
