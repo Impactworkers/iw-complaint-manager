@@ -32,8 +32,6 @@ collections:
     output: true
   technical-documentation:
     output: true
-  unfiled-pages:
-    output: true
   wiki-information:
     output: true
 
@@ -43,9 +41,6 @@ just_the_docs:
       name: Developer Resources
     technical-documentation:
       name: Technical Documentation
-    unfiled-pages:
-      name: Unfiled Pages
-      nav_fold: true
     wiki-information:
       name: Wiki Information
 
@@ -55,9 +50,6 @@ defaults:
     values: {layout: default}
   -
     scope: {path: "_technical-documentation/*"}
-    values: {layout: default}
-  -
-    scope: {path: "_unfiled-pages/*"}
     values: {layout: default}
   -
     scope: {path: "_wiki-information/*"}
