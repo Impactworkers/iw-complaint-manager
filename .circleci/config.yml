@@ -19,8 +19,8 @@ jobs:
       - run:
           name: Build an artifact
           command: touch example.txt
-      - store_artifact:
-          path: example.txt
+      # - store_artifact:
+      #     path: example.txt
       - persist_to_workspace:
           root: .
           paths: example.txt
