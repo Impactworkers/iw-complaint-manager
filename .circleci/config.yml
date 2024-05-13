@@ -17,14 +17,14 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build an artifact
-          command: mkdir -p artifacts && touch example.txt
-      # - store_artifact:
-      #     path: example.txt
-      - run: pwd
+          name: Install dependencies
+          command: yarn install
+      - run:
+          name: Build the application
+          command: yarn build
       - persist_to_workspace:
-          root: artifacts
-          paths: example.txt
+          root: .
+          paths: dist
   deploy_dev_iwcm:
     docker:
       - image: cimg/node:20.13.1
