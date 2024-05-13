@@ -22,6 +22,7 @@ jobs:
       - run:
           name: Build the application
           command: yarn build
+      - run: pwd
       - persist_to_workspace:
           root: .
           paths: dist
