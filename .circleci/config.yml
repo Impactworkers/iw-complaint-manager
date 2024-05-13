@@ -32,8 +32,8 @@ jobs:
           at: .
       - checkout
       - run:
-          name: Install dependencies
-          command: yarn install
+          name: Use the artifact
+          command: cat example.txt
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
