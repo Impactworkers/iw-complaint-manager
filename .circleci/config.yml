@@ -18,12 +18,16 @@ jobs:
       - checkout
       - run:
           name: Build an artifact
-          command: touch example.txt
+          command: mkdir -p artifacts && touch example.txt
       # - store_artifact:
       #     path: example.txt
       - persist_to_workspace:
           root: .
+<<<<<<< HEAD
           paths: ./example.txt
+=======
+          paths: artifacts/example.txt
+>>>>>>> 518476b (Yooboo/Elleni[#539]edited the config file)
   deploy_dev_iwcm:
     docker:
       - image: cimg/node:20.13.1
@@ -46,7 +50,7 @@ jobs:
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
       - persist_to_workspace:
           root: .
-          paths: example.txt
+          paths: artifacts/example.txt
   deploy_qa_iwcm:
     docker:
       - image: cimg/node:20.13.1
