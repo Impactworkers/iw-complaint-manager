@@ -48,7 +48,7 @@ jobs:
       - image: cimg/node:20.13.1
     steps:
       # Replace this with steps to deploy to users
-       - attach_workspace:
+      - attach_workspace:
         at: .
       - checkout
       - run:
