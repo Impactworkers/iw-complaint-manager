@@ -33,7 +33,7 @@ jobs:
       - image: cimg/node:20.13.1
     steps:
       - attach_workspace:
-          at: .
+          at: ./build
       - run:
           name: List build directory contents
           command: ls -la build
