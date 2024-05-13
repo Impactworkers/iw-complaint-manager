@@ -35,6 +35,10 @@ jobs:
       - run:
           name: Build the application
           command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths: example.txt
+            - 
       - run:
           name: Deploy Dev to Heroku
           command: |
@@ -44,6 +48,8 @@ jobs:
       - image: cimg/node:20.13.1
     steps:
       # Replace this with steps to deploy to users
+       - attach_workspace:
+        at: .
       - checkout
       - run:
           name: Install dependencies
