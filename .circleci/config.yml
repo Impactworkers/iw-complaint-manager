@@ -23,11 +23,7 @@ jobs:
       #     path: example.txt
       - persist_to_workspace:
           root: .
-<<<<<<< HEAD
-          paths: ./example.txt
-=======
           paths: artifacts/example.txt
->>>>>>> 518476b (Yooboo/Elleni[#539]edited the config file)
   deploy_dev_iwcm:
     docker:
       - image: cimg/node:20.13.1
