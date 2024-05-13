@@ -23,7 +23,8 @@ jobs:
       #     path: example.txt
       - run: pwd
       - persist_to_workspace:
-          paths: /home/circleci/project/artifacts/example.txt
+          root: artifacts
+          paths: example.txt
   deploy_dev_iwcm:
     docker:
       - image: cimg/node:20.13.1
