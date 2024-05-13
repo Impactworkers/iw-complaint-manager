@@ -21,6 +21,7 @@ jobs:
           command: mkdir -p artifacts && touch example.txt
       # - store_artifact:
       #     path: example.txt
+      - run: pwd
       - persist_to_workspace:
           root: .
           paths: artifacts/example.txt
