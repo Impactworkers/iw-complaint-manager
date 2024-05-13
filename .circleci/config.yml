@@ -27,7 +27,7 @@ jobs:
           command: ls -la
       - persist_to_workspace:
           root: .
-          paths: dist
+          paths: /build
   deploy_dev_iwcm:
     docker:
       - image: cimg/node:20.13.1
