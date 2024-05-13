@@ -5,16 +5,15 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:20.13.1
     steps:
       - checkout
-     
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
   build:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:20.13.1
     steps:
       - checkout
       - run:
@@ -27,51 +26,72 @@ jobs:
       - image: cimg/node:20.13.1
     steps:
       - checkout
-      - run:
+       - run:
           name: Install dependencies
           command: yarn install
+      - run:
+          name: Run tests
+          command: echo 'replace me with real tests!'
       - run:
           name: Build the application
           command: yarn build
       - run:
-          name: Deploy to Heroku
+          name: Deploy Dev to Heroku
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
   deploy_qa_iwcm:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:20.13.1
     steps:
       # Replace this with steps to deploy to users
       - checkout
       - run:
+          name: Install dependencies
+          command: yarn install
+      - run:
           name: Run tests
           command: echo 'replace me with real tests!'
       - run:
-          name: deploy qa to heroku
+          name: Build the application
+          command: yarn build
+      - run:
+          name: Deploy QA to Heroku
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_QA.git main
   deploy_staging_iwcm:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:20.13.1
     steps:
       - checkout
+      - run:
+          name: Install dependencies
+          command: yarn install
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
       - run:
-          name: deploy staging to heroku
+          name: Build the application
+          command: yarn build
+      - run:
+          name: Deploy Staging to Heroku
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_STAGING.git main
   deploy_prod_iwcm:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:20.13.1
     steps:
       - checkout
+      - run:
+          name: Install dependencies
+          command: yarn install
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
       - run:
-          name: deploy production to heroku
+          name: Build the application
+          command: yarn build
+      - run:
+          name: Deploy Prod to Heroku
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_PROD.git main
 workflows:
