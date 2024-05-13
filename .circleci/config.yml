@@ -23,7 +23,7 @@ jobs:
       #     path: example.txt
       - persist_to_workspace:
           root: .
-          paths: example.txt
+          paths: ./example.txt
   deploy_dev_iwcm:
     docker:
       - image: cimg/node:20.13.1
