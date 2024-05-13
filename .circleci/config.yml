@@ -23,8 +23,8 @@ jobs:
           name: Build the application
           command: yarn build
       - run:
-        name: List directory contents
-        command: ls -la
+          name: List directory contents
+          command: ls -la
       - persist_to_workspace:
           root: .
           paths: dist
