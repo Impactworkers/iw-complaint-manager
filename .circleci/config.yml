@@ -26,7 +26,7 @@ jobs:
       - image: cimg/node:20.13.1
     steps:
       - checkout
-       - run:
+      - run:
           name: Install dependencies
           command: yarn install
       - run:
