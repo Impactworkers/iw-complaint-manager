@@ -21,10 +21,15 @@ jobs:
           command: touch example.txt
       - store_artifacts:
           path: example.txt
+      - persist_to_workspace:
+          root: .
+          paths: example.txt
   deploy_dev_iwcm:
     docker:
       - image: cimg/node:20.13.1
     steps:
+      - attach_workspace:
+        at: .
       - checkout
       - run:
           name: Install dependencies
@@ -35,10 +40,6 @@ jobs:
       - run:
           name: Build the application
           command: yarn build
-      - persist_to_workspace:
-          root: .
-          paths: example.txt
-            - 
       - run:
           name: Deploy Dev to Heroku
           command: |
