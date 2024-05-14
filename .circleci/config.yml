@@ -32,21 +32,21 @@ jobs:
     docker:
       - image: cimg/node:20.13.1
     steps:
-      - checkout
+      # - checkout
       - attach_workspace:
           at: .
       - run:
           name: List build directory contents
           command: ls -la build
-      - run:
-          name: Use the artifact
-          command: cat ./build
+      # - run:
+      #     name: Use the artifact
+      #     command: cat ./build
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
-      - run:
-          name: Build the application
-          command: yarn build
+      # - run:
+      #     name: Build the application
+      #     command: yarn build
       - run:
           name: Deploy Dev to Heroku
           command: |
