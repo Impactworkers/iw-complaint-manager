@@ -40,7 +40,7 @@ jobs:
           command: ls -la build
       - run:
           name: Use the artifact
-          command: cat example.txt
+          command: cat ./build
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
