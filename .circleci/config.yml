@@ -32,12 +32,12 @@ jobs:
     docker:
       - image: cimg/node:20.13.1
     steps:
+      - checkout
       - attach_workspace:
-          at: ./build
+          at: .
       - run:
           name: List build directory contents
           command: ls -la build
-      - checkout
       - run:
           name: Use the artifact
           command: cat example.txt
