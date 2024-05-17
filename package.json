@@ -45,7 +45,6 @@
   "engines": {
     "node": "20.13.1"
   },
-  "packageManager": "yarn@2.4.3",
   "overrides": {
     "react": "^19.0.0-beta-26f2496093-20240514",
     "react-dom": "^19.0.0-beta-26f2496093-20240514"
