@@ -5,7 +5,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: cimg/node:20.13.1
+      - image: cimg/node:22.2.0
     steps:
       - checkout
       - run:
@@ -13,7 +13,7 @@ jobs:
           command: echo 'replace me with real tests!'
   build:
     docker:
-      - image: cimg/node:20.13.1
+      - image: cimg/node:22.2.0
     steps:
       - checkout
       - run:
@@ -30,7 +30,7 @@ jobs:
           paths: build/
   deploy_dev_iwcm:
     docker:
-      - image: cimg/node:20.13.1
+      - image: cimg/node:22.2.0
     steps:
       - checkout
       - attach_workspace:
@@ -50,7 +50,7 @@ jobs:
           paths: build/
   deploy_qa_iwcm:
     docker:
-      - image: cimg/node:20.13.1
+      - image: cimg/node:22.2.0
     steps:
       # Replace this with steps to deploy to users
       - checkout
@@ -68,7 +68,7 @@ jobs:
           paths: build/
   deploy_staging_iwcm:
     docker:
-      - image: cimg/node:20.13.1
+      - image: cimg/node:22.2.0
     steps:
       - checkout
       - attach_workspace:
@@ -85,7 +85,7 @@ jobs:
           paths: build/
   deploy_prod_iwcm:
     docker:
-      - image: cimg/node:20.13.1
+      - image: cimg/node:22.2.0
     steps:
       - checkout
       - attach_workspace:
