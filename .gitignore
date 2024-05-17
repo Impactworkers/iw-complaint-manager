@@ -20,7 +20,6 @@ package-lock.json
 
 # Yarn 2
 .yarn/
-.yarnrc.yml
 .pnp.*
 
 # Miscellaneous

@@ -8,12 +8,12 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "dev": "remix vite:dev",
+    "dev": "remix vite:dev --host",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "node server.js",
     "typecheck": "tsc",
     "cy:open": "cypress open",
-    "cy:run": "cypress run --browser=chrome" 
+    "cy:run": "cypress run --browser=chrome"
   },
   "dependencies": {
     "@remix-run/express": "^2.9.1",
@@ -22,8 +22,8 @@
     "cross-env": "^7.0.3",
     "express": "^4.19.2",
     "isbot": "^4.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "19.0.0-beta-26f2496093-20240514",
+    "react-dom": "19.0.0-beta-26f2496093-20240514"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.9.1",
@@ -44,5 +44,6 @@
   },
   "engines": {
     "node": ">=20.00.0"
-  }
+  },
+  "packageManager": "yarn@4.2.2"
 }
