@@ -18,11 +18,17 @@ module.exports = {
     browser: true,
     commonjs: true,
     es6: true,
+    es2021: true,
   },
   ignorePatterns: ["!**/.server", "!**/.client"],
 
   // Base config
-  extends: ["eslint:recommended"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+  ],
 
   overrides: [
     // React
