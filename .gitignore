@@ -15,7 +15,6 @@ logs/
 .idea/
 
 # Dependency lock files
-yarn.lock
 package-lock.json
 
 # Yarn 2
