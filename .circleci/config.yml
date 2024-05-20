@@ -49,7 +49,7 @@ jobs:
           name: yarn set version 4.2.2
           command: | 
             sudo corepack enable
-            ls -alh
+            ls -alh ../
             yarn set version 4.2.2
       - run:
           name: List build directory contents
