@@ -44,14 +44,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: .
-      - run:
-          name: yarn set version 4.2.2
-          command: | 
-            sudo corepack enable
-            yarn set version 4.2.2
-            cd ../project/.yarn/releases/
-            ls -alh
+          at: . 
       - run:
           name: List build directory contents
           command: ls -la build
