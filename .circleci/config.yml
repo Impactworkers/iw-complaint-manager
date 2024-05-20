@@ -44,7 +44,12 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: . 
+          at: .
+      - run:
+          name: list current directory
+          command: |
+            ls -alh
+            yarn -v
       - run:
           name: List build directory contents
           command: ls -la build
