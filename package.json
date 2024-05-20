@@ -7,7 +7,6 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "heroku-prebuild": "corepack enable && yarn set version 4.2.2",
     "build": "remix vite:build",
     "dev": "remix vite:dev --host",
     "format": "prettier --write .",
