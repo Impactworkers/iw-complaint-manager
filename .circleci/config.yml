@@ -21,6 +21,7 @@ jobs:
           command: |
             sudo corepack enable
             yarn cache clean --all
+            ls -alh
       - run:
           name: Upgrade yarn
           command: yarn set version 4.2.2
