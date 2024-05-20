@@ -17,17 +17,12 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Yarn 4.2.2
+          name: Enable corepack
           command: |
             sudo corepack enable
-            sudo corepack prepare yarn@4.2.2 --activate
       - run:
           name: Upgrade yarn
-          command: |
-            yarn set version 4.2.2
-            rm -rf node_modules
-            yarn install
-            rm -rf node_modules
+          command: yarn set version 4.2.2
       - run:
           name: Verify Yarn Version
           command: yarn -v
