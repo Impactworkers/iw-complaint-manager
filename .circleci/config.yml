@@ -23,7 +23,12 @@ jobs:
             sudo corepack prepare yarn@4.2.2 --activate
       - run:
           name: Upgrade yarn
-          command: yarn set version 4.2.2
+          command: |
+            yarn set version 4.2.2
+            rm -rf node_modules
+            rm yarn.lock
+            yarn install
+            rm -rf node_modules
       - run:
           name: Verify Yarn Version
           command: yarn -v
