@@ -7,7 +7,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "heroku-prebuild": "yarn set version 4.2.2",
+    "heroku-prebuild": "corepack enable && yarn set version 4.2.2",
     "build": "remix vite:build",
     "dev": "remix vite:dev --host",
     "format": "prettier --write .",
@@ -51,8 +51,7 @@
     "vitest": "^1.6.0"
   },
   "engines": {
-    "node": "20.13.1",
-    "yarn": "4.2.2"
+    "node": "20.13.1"
   },
   "overrides": {
     "react": "^19.0.0-beta-26f2496093-20240514",
