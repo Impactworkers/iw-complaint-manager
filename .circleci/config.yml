@@ -17,6 +17,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Upgrade yarn
+          command: yarn set version 4.2.2
+      - run:
           name: Install dependencies
           command: yarn install --immutable
       - run:
