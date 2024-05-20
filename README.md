@@ -59,12 +59,12 @@ Make sure to deploy the output of `yarn run build`
 
 This project supports `Prettier` and `ESLint` packages. When you run `yarn install` it will automatically install all necesaary dev dependency packages for you. If you have not installed in your Vscode ESLint and Prettier extensions, it will suggest you to install, and please do so.. Without an extension these formatting packages won't work. 
 
-Following Eslint command to lint your code and fix linting issues:
+#### Following Eslint command to lint your code and fix linting issues:
 
 - `yarn lint`
 - `yarn lint:fix`
 
-Following Prettier command to run to format your code : (Currently disabled)
+##### Following Prettier command to run to format your code : (Currently disabled)
 
 - `yarn format`  
 
