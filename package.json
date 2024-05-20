@@ -50,5 +50,8 @@
     "react": "^19.0.0-beta-26f2496093-20240514",
     "react-dom": "^19.0.0-beta-26f2496093-20240514"
   },
+  "installConfig": {
+    "hoistingLimits": "workspaces"
+  },
   "packageManager": "yarn@3.2.0"
 }
