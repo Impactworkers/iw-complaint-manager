@@ -26,7 +26,6 @@ jobs:
           command: |
             yarn set version 4.2.2
             rm -rf node_modules
-            rm yarn.lock
             yarn install
             rm -rf node_modules
       - run:
