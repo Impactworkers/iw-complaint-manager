@@ -48,8 +48,8 @@ jobs:
       - run:
           name: yarn set version 4.2.2
           command: | 
+            corepack enable
             yarn set version 4.2.2
-            echo "yarnPath: .yarn/releases/yarn-4.2.2.cjs" >> .yarnrc.yml
       - run:
           name: List build directory contents
           command: ls -la build
