@@ -49,6 +49,7 @@ jobs:
           name: yarn set version 4.2.2
           command: | 
             sudo corepack enable
+            echo "yarnPath: .yarn/releases/yarn-4.2.2.cjs" >> .yarnrc.yml
             yarn set version 4.2.2
       - run:
           name: List build directory contents
