@@ -6,6 +6,13 @@
   ],
   "sideEffects": false,
   "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "import": "./build/server/index.js", 
+      "require": "./build/server/index.cjs" 
+    }
+  },
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev --host",
