@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Install Yarn 4.2.2
           command: |
-            corepack enable
+            sudo corepack enable
             sudo corepack prepare yarn@4.2.2 --activate
       - run:
           name: Upgrade yarn
