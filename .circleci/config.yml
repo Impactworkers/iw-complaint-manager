@@ -46,7 +46,7 @@ jobs:
           command: |
             rm -rf ~/.yarn
             rm -rf node_modules
-            rm yarn.lock
+            yarn install
             yarn -v
             ls -alh build
       - run:
