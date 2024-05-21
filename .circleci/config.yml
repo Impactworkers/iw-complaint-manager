@@ -45,7 +45,8 @@ jobs:
           name: List build directory contents
           command: |
             rm -rf ~/.yarn
-            yarn set version ^1
+            rm -rf node_modules
+            rm yarn.lock
             yarn -v
             ls -alh build
       - run:
