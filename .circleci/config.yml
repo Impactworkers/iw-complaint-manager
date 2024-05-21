@@ -16,9 +16,7 @@ jobs:
   build:
     docker:
       - image: cimg/node:20.13.1
-      - node/install:
-          install-yarn: true
-          node-version: '20.13.1'
+      - node/install-packages:
           yarn-version: '4.2.2'
     steps:
       - checkout
