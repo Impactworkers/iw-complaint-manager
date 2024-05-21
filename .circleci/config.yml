@@ -53,7 +53,7 @@ jobs:
       - run:
           name: Verify Yarn Version
           command: |
-          ls -alh
+            ls -alh
       - run:
           name: List build directory contents
           command: ls -la build
