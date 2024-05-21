@@ -27,8 +27,8 @@
     "cross-env": "^7.0.3",
     "express": "^4.19.2",
     "isbot": "^4.1.0",
-    "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react": "19.0.0-beta-26f2496093-20240514",
+    "react-dom": "19.0.0-beta-26f2496093-20240514"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.9.1",
