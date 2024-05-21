@@ -16,8 +16,13 @@
     "typecheck": "tsc",
     "cy:open": "cypress open",
     "cy:run": "cypress run --browser=chrome",
+<<<<<<< Updated upstream
     "test": "yarn vitest",
     "test:ui": "yarn vitest --ui"
+=======
+    "test" : "yarn vitest"
+
+>>>>>>> Stashed changes
   },
   "dependencies": {
     "@remix-run/express": "^2.9.1",
