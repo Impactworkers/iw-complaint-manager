@@ -57,7 +57,7 @@ jobs:
             yarn set version 4.2.2
             yarn install
             yarn build
-            echo "yarnPath: ".yarn/releases/yarn-4.2.2.cjs" >> .yarnrc.yml
+            echo 'yarnPath: "~/.yarn/releases/yarn-4.2.2.cjs' >> .yarnrc.yml
       - run:
           name: List build directory contents
           command: ls -la build
