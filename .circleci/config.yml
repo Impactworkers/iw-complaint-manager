@@ -45,6 +45,8 @@ jobs:
           name: List build directory contents
           command: |
             yarn cache clean
+            sudo corepack disable
+            npm i -g yarn
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
