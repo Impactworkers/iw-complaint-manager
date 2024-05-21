@@ -28,7 +28,8 @@ module.exports = {
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "prettier",
-        "plugin:prettier/recommended" // Additional recommended rules for prettier
+        "plugin:prettier/recommended",
+        "plugin:storybook/recommended"
     ],
 
     overrides: [

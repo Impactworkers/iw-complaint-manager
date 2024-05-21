@@ -30,3 +30,5 @@ yarn.lock
 # Miscellaneous
 .DS_Store
 Thumbs.db
+
+*storybook.log
