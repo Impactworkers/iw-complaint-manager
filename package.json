@@ -16,13 +16,9 @@
     "typecheck": "tsc",
     "cy:open": "cypress open",
     "cy:run": "cypress run --browser=chrome",
-<<<<<<< Updated upstream
     "test": "yarn vitest",
     "test:ui": "yarn vitest --ui"
-=======
     "test" : "yarn vitest"
-
->>>>>>> Stashed changes
   },
   "dependencies": {
     "@remix-run/express": "^2.9.1",
@@ -60,13 +56,10 @@
   },
   "engines": {
     "node": "20.13.1",
-    "yarn": ">=1.22.0"
+    "yarn": ">=1.22.0 <1.22.24"
   },
   "overrides": {
     "react": "^19.0.0-beta-26f2496093-20240514",
     "react-dom": "^19.0.0-beta-26f2496093-20240514"
-  },
-  "installConfig": {
-    "hoistingLimits": "workspaces"
   }
 }
