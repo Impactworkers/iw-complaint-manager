@@ -43,7 +43,11 @@ jobs:
           at: .
       - run:
           name: List build directory contents
-          command: ls -la build
+          command: |
+            yarn set version classic
+            rm -rf node_modules
+            yarn install
+            ls -la build
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
