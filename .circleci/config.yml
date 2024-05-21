@@ -53,7 +53,9 @@ jobs:
       - run:
           name: Verify Yarn Version
           command: |
-            ls -alh
+            corepack eanble
+            yarn set version 4.2.2
+            yarn -v
       - run:
           name: List build directory contents
           command: ls -la build
