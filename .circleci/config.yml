@@ -54,9 +54,7 @@ jobs:
           name: Verify Yarn Version
           command: |
             sudo corepack enable
-            yarn set version 4.2.2
-            cd
-            ls -alh ./.cache
+            yarn -v
       - run:
           name: List build directory contents
           command: ls -la build
