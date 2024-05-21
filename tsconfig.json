@@ -8,15 +8,15 @@
     "**/.client/**/*.tsx"
   ],
   "compilerOptions": {
-    "lib":  ["DOM", "DOM.Iterable", "ES2022"],
+    "lib":  ["DOM", "DOM.Iterable", "ES2019"],
     "types": ["cypress", "@remix-run/node", "vite/client"],
     "isolatedModules": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
-    "target": "ES2022",
+    "target": "ES2019",
     "strict": true,
     "allowJs": true,
     "skipLibCheck": true,
