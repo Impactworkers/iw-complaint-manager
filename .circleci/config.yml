@@ -46,10 +46,7 @@ jobs:
       - run:
           name: Verify Yarn Version
           command: |
-            sudo corepack enable
-            yarn set version 4.2.2
-            yarn install --no-immutable
-            yarn build
+            yarn -v
       - run:
           name: List build directory contents
           command: ls -la build
