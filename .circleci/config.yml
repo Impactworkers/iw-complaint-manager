@@ -44,6 +44,8 @@ jobs:
       - run:
           name: List build directory contents
           command: |
+            rm -rf ~/.yarn
+            yarn set version ^1
             yarn -v
             ls -alh build
       - run:
