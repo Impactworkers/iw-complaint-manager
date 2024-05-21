@@ -16,24 +16,17 @@ jobs:
       - image: cimg/node:20.13.1
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - yarn-v4-{{ checksum "yarn.lock" }}
       - run:
           name: Update Yarn Version
           command: |
             sudo corepack enable
             yarn set version 4.2.2
-      - save_cache:
-          paths:
-            - ~/.yarn/cache
-          key: yarn-v4-{{ checksum "yarn.lock" }}
       - run:
           name: Verify Yarn Version
           command: yarn -v
       - run:
           name: Install dependencies
-          command: yarn install
+          command: yarn install --no-immutable
       - run:
           name: Build the application
           command: yarn build
@@ -55,9 +48,8 @@ jobs:
           command: |
             sudo corepack enable
             yarn set version 4.2.2
-            yarn install
+            yarn install --no-immutable
             yarn build
-            echo 'yarnPath: ".yarn/releases/yarn-4.2.2.cjs' >> .yarnrc.yml
       - run:
           name: List build directory contents
           command: ls -la build
