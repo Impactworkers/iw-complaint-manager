@@ -18,7 +18,6 @@
     "cy:run": "cypress run --browser=chrome",
     "test": "yarn vitest",
     "test:ui": "yarn vitest --ui",
-    "test" : "yarn vitest"
   },
   "dependencies": {
     "@remix-run/express": "^2.9.1",
