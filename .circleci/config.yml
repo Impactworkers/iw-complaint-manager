@@ -54,9 +54,8 @@ jobs:
           name: Verify Yarn Version
           command: |
             sudo corepack enable
-            rm -rf node_modules
             yarn set version 4.2.2
-            yarn install
+            yarn build
       - run:
           name: List build directory contents
           command: ls -la build
