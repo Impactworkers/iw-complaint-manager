@@ -46,7 +46,7 @@ jobs:
           command: |
             yarn cache clean
             sudo corepack disable
-            npm i -g yarn
+            yarn set version classic
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
