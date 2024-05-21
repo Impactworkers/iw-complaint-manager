@@ -17,16 +17,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update Yarn Version
-          command: |
-            sudo corepack enable
-            yarn set version stable
-      - run:
           name: Verify Yarn Version
           command: yarn -v
       - run:
           name: Install dependencies
-          command: yarn install --no-immutable
+          command: yarn install
       - run:
           name: Build the application
           command: yarn build
@@ -43,10 +38,6 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run:
-          name: Verify Yarn Version
-          command: |
-            yarn -v
       - run:
           name: List build directory contents
           command: ls -la build
