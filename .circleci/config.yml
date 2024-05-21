@@ -20,7 +20,7 @@ jobs:
           name: Update Yarn Version
           command: |
             sudo corepack enable
-            yarn set version 4.2.2
+            yarn set version stable
       - run:
           name: Verify Yarn Version
           command: yarn -v
