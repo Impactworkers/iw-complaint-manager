@@ -3,17 +3,13 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     },
+    "prettier.configPath": ".prettierrc",
     "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact"
     ],
-    "prettier.requireConfig": true,
-    "prettier.singleQuote": true,
-    "prettier.trailingComma": "es5",
-    "prettier.tabWidth": 2,
-    "prettier.useTabs": false,
     "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
     },

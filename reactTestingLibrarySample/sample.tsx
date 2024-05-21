@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const SampleComponent: React.FC = () => {
-  return <h1>Hello, World!</h1>
-}
+    return <h1>Hello, World!</h1>;
+};
 
-export default SampleComponent
+export default SampleComponent;

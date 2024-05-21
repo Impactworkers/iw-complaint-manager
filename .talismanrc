@@ -1,4 +1,6 @@
 fileignoreconfig:
+- filename: cypress/e2e/spec.cy.ts
+  checksum: b023db5de7d5aaa13d5524de9c36cee9ac89350629ad6e35adc518f4fb0187d7
 - filename: yarn.lock
   checksum: 19fc7bf74d885b211e33147bcd4fa3de417f7c3d1d5768d7ffe409d8d5e4f4db
 version: "1.0"
