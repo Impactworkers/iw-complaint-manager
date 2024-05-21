@@ -40,7 +40,13 @@ jobs:
           at: .
       - run:
           name: List build directory contents
-          command: ls -la build
+          command: |
+            rm -rf node_modules
+            yarn set version 1.22.19
+            rm yarn.lock
+            yarn install
+            yarn -v
+            ls -la build
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
