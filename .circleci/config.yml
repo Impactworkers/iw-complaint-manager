@@ -2,8 +2,6 @@
 # This is a generic template to serve as a base for your custom config
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
-orbs:
-  node: circleci/node@20.13.1
 jobs:
   test:
     docker:
@@ -16,10 +14,13 @@ jobs:
   build:
     docker:
       - image: cimg/node:20.13.1
-      - node/install-packages:
-          yarn-version: '4.2.2'
     steps:
       - checkout
+      - run:
+          name: Update Yarn Version
+          command: |
+            sudo corepack enable
+            yarn set version 4.2.2
       - run:
           name: Verify Yarn Version
           command: yarn -v
