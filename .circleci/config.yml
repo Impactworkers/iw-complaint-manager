@@ -16,11 +16,18 @@ jobs:
       - image: cimg/node:20.13.1
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - yarn-v4-{{ checksum "yarn.lock" }}
       - run:
           name: Update Yarn Version
           command: |
             sudo corepack enable
             yarn set version 4.2.2
+      - save_cache:
+          paths:
+            - ~/.yarn/cache
+          key: yarn-v4-{{ checksum "yarn.lock" }}
       - run:
           name: Verify Yarn Version
           command: yarn -v
