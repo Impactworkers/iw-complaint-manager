@@ -43,12 +43,7 @@ jobs:
           at: .
       - run:
           name: List build directory contents
-          command: |
-            rm -rf ~/.yarn
-            rm -rf node_modules
-            yarn install
-            yarn -v
-            ls -alh build
+          command: ls -alh build
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
