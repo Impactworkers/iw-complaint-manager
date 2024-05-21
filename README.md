@@ -89,3 +89,8 @@ yarn run cy:run
 yarn test
 ```
 
+### To run Vitest in the browser 
+
+```sh
+yarn test:ui
+```
