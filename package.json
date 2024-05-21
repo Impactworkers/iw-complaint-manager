@@ -17,7 +17,7 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run --browser=chrome",
     "test": "yarn vitest",
-    "test:ui": "yarn vitest --ui"
+    "test:ui": "yarn vitest --ui",
     "test" : "yarn vitest"
   },
   "dependencies": {
