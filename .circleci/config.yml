@@ -51,6 +51,10 @@ jobs:
       - attach_workspace:
           at: .
       - run:
+          name: Verify Yarn Version
+          command: |
+          ls -alh
+      - run:
           name: List build directory contents
           command: ls -la build
       - run:
