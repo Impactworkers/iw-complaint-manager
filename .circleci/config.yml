@@ -8,9 +8,6 @@ jobs:
       - image: cimg/node:20.13.1
     steps:
       - checkout
-      - circleci/node@latest:
-        node-version: 20.13.1
-        yarn-version: "stable"
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
@@ -19,6 +16,9 @@ jobs:
       - image: cimg/node:20.13.1
     steps:
       - checkout
+      - circleci/node@latest:
+          node-version: 20.13.1
+          yarn-version: "stable"
       - run:
           name: Verify Yarn Version
           command: yarn -v
