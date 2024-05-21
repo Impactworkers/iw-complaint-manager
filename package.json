@@ -54,7 +54,7 @@
     "vitest": "^1.6.0"
   },
   "engines": {
-    "node": "20.13.1",
-    "yarn": "<=1.22.23"
-  }
+    "node": "20.13.1"
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
