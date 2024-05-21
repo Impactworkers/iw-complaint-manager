@@ -14,7 +14,7 @@
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "target": "ES2021",
     "strict": true,
@@ -22,7 +22,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
-    "allowImportingTsExtensions": true,
     "paths": {
       "~/*": ["./app/*"]
     },
