@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "dev": "remix vite:dev --host",
+    "dev": "HTTPS=true SSL_CRT_FILE=.cert/localhost.pem SSL_KEY_FILE=.cert/localhost-key.pem remix vite:dev --host",
     "format": "prettier --write .",
     "lint": "eslint . --cache --cache-location ./node_modules/.cache/eslint",
     "lint:fix": "eslint . --fix --cache --cache-location ./node_modules/.cache/eslint",

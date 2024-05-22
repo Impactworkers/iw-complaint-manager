@@ -13,6 +13,7 @@ logs/
 # Editor and IDE files
 .vscode/
 .idea/
+.cert/
 
 # Dependency lock files
 package-lock.json
