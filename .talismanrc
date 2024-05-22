@@ -6,7 +6,7 @@ fileignoreconfig:
 - filename: server.js
   checksum: 6fc8fefc13ae27bbcee60f781360497c518f31ecf7be7cba29a61a1ee0ba0399
 - filename: vite.config.ts
-  checksum: 4f48219ccf732a945678c249489046aa6463c3c2fbd12d7f3b2b788bfca4709a
+  checksum: 1d851df9adfbb4000bfc8bdde5b0ab7bf0f118c2c72b517b4dab3413a77bccf9
 - filename: yarn.lock
   checksum: 7f131bce1b1923110568024df8fe556936a6614bab4a35f812e7afd18cd9122f
 version: "1.0"
