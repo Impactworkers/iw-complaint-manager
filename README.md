@@ -55,10 +55,9 @@ Make sure to deploy the output of `yarn run build`
 - `build/server`
 - `build/client`
 
-<<<<<<< Updated upstream
 ### Prettier and Lint 
 
-This project supports `Prettier` and `ESLint` packages. When you run `yarn install` it will automatically install all necesaary dev dependency packages for you. If you have not installed in your Vscode ESLint and Prettier extensions, it will suggest you to install, and please do so.. Without an extension these formatting packages won't work. 
+###### This project supports `Prettier` and `ESLint` packages. When you run `yarn install` it will automatically install all necesaary dev dependency packages for you. If you have not installed in your Vscode ESLint and Prettier extensions, it will suggest you to install, and please do so.. Without an extension these formatting packages won't work. 
 
 #### Following Eslint command to lint your code and fix linting issues:
 
@@ -69,9 +68,6 @@ This project supports `Prettier` and `ESLint` packages. When you run `yarn insta
 
 - `yarn format`  
 
-
-=======
->>>>>>> Stashed changes
 ### To run cypress tests (End to End testing)
 
 ### - Headless
@@ -91,12 +87,33 @@ yarn run cy:run
 ```sh
 yarn test
 ```
-<<<<<<< Updated upstream
-
 ### To run Vitest in the browser 
 
 ```sh
 yarn test:ui
 ```
-=======
->>>>>>> Stashed changes
+### Set mkcert locally
+
+#### Install mkcert. On a Mac, you can use Homebrew:
+
+```sh
+brew install mkcert
+```
+
+##### Set up the local Certificate Authority:
+
+```sh
+mkcert -install
+```
+
+##### Navigate to your project directory and create the local SSL certificate:
+
+```sh
+mkcert localhost
+```
+
+###### This will create two files: `localhost.pem`, which is your local certificate, and `localhost-key.pem`, which is your private key.
+
+###### Create folder `.cert` and move `localhost.pem` and `localhost-key.pem` into the folder.
+
+###### Re-run Server and Client: You should be able to open localhost wihtout incognito mode now. 

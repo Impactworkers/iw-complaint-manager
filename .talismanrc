@@ -1,4 +1,6 @@
 fileignoreconfig:
+- filename: README.md
+  checksum: 451417658dec88b319a39e9945e2ad1df823a0fc88d53a95f46103e25e66e04c
 - filename: cypress/e2e/spec.cy.ts
   checksum: b023db5de7d5aaa13d5524de9c36cee9ac89350629ad6e35adc518f4fb0187d7
 - filename: package.json
