@@ -22,9 +22,21 @@ module.exports = {
     },
     ignorePatterns: ["!**/.server", "!**/.client"],
 
-    // Base config
-    extends: [
-        "eslint:recommended",
+  // Base config
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:storybook/recommended"
+  ],
+
+  overrides: [
+    // React
+    {
+      files: ["**/*.{js,jsx,ts,tsx}"],
+      plugins: ["react", "jsx-a11y"],
+      extends: [
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "prettier",

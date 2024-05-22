@@ -1,48 +1,33 @@
-// import type { StorybookConfig } from "@storybook/react-vite";
-
-// import { join, dirname } from "path";
-
-// /**
-//  * This function is used to resolve the absolute path of a package.
-//  * It is needed in projects that use Yarn PnP or are set up within a monorepo.
-//  */
-// function getAbsolutePath(value: string): any {
-//     return dirname(require.resolve(join(value, "package.json")));
-// }
-// const config: StorybookConfig = {
-//     stories: [
-//         "../stories/**/*.mdx",
-//         "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"
-//     ],
-//     addons: [
-//         getAbsolutePath("@storybook/addon-onboarding"),
-//         getAbsolutePath("@storybook/addon-links"),
-//         getAbsolutePath("@storybook/addon-essentials"),
-//         getAbsolutePath("@chromatic-com/storybook"),
-//         getAbsolutePath("@storybook/addon-interactions")
-//     ],
-//     framework: {
-//         name: getAbsolutePath("@storybook/react-vite"),
-//         options: {}
-//     }
-// };
-// export default config;
-
 export default {
-    stories: [
-        "../src/**/*.mdx",
-        "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"
-    ],
-    addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
-    core: {
-        builder: "@storybook/builder-vite"
+  stories: ['../src/**/*.mdx', '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  core: {
+    builder: '@storybook/builder-vite', // 👈 The builder enabled here.
+  },
+  framework: {
+      name: '@storybook/react-vite',
+      options: {
+        builder: {
+          viteConfigPath: 'sb-vite.config.ts',
+        },
+      },
     },
-    framework: {
-        name: "@storybook/react-vite",
-        options: {
-            builder: {
-                viteConfigPath: "sb-vite.config.ts"
-            }
-        }
-    }
+    typescript: {
+      reactDocgen: 'react-docgen-typescript',
+      reactDocgenTypescriptOptions: {
+        // Speeds up Storybook build time
+        compilerOptions: {
+          allowSyntheticDefaultImports: false,
+          esModuleInterop: false,
+        },
+        // Makes union prop types like variant and size appear as select controls
+        shouldExtractLiteralValuesFromEnum: true,
+        // Makes string and boolean types that can be undefined appear as inputs and switches
+        shouldRemoveUndefinedFromOptional: true,
+        // Filter out third-party props from node_modules except @mui packages
+        propFilter: (prop) =>
+          prop.parent ? !/node_modules\/(?!@mui)/.test(prop.parent.fileName) : true,
+      },
+    },
 };
+
