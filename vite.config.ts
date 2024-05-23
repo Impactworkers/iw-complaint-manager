@@ -22,6 +22,7 @@ const httpsConfig = useHttps
 export default defineConfig({
     plugins: [remix(), tsconfigPaths()],
     server: {
+        proxy: {},
         https: httpsConfig,
         host: true // This allows the server to be accessed externally
     }
