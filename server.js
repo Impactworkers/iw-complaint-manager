@@ -6,6 +6,7 @@ import process from "process";
 
 // notice that the result of `remix vite:build` is "just a module"
 import * as build from "./build/server/index.js";
+import { sequelize } from "./server/sequelize_config.cjs";
 
 const app = express();
 app.use(express.static("build/client"));
@@ -26,3 +27,12 @@ const options = {
 https.createServer(options, app).listen(process.env.PORT || 3000, () => {
     console.log(`App listening on port ${process.env.PORT || 3000}!`);
 });
+
+sequelize
+    .sync({ alter: true })
+    .then(() => {
+        console.log("Database synced");
+    })
+    .catch((err) => {
+        console.log("sequelize error", err);
+    });

@@ -4,19 +4,19 @@ This repository will be the home of Impactworkers Complaint Manager 2.0. The wik
 
 ## Contributors
 
-- Shakeel Bhamani
-- Justin Anthony
-- Mariah Sager
-- Victoria Wong
-- Fara Hughes
-- Paul Thompson
-- Charles Woods
-- Yooboo Park
-- Julio Espinola
-- Raina Huerta
-- Claire Holt
-- Aerin Parker
-- Elleni Tessema
+-   Shakeel Bhamani
+-   Justin Anthony
+-   Mariah Sager
+-   Victoria Wong
+-   Fara Hughes
+-   Paul Thompson
+-   Charles Woods
+-   Yooboo Park
+-   Julio Espinola
+-   Raina Huerta
+-   Claire Holt
+-   Aerin Parker
+-   Elleni Tessema
 
 # Welcome to Remix + Vite!
 
@@ -40,9 +40,16 @@ yarn run build
 
 Then run the app in production mode:
 
+-   This will also create database with Postgres and build your tables
+
 ```sh
 yarn start
 ```
+
+Connect to DBeaver
+
+-   Make sure to change the database name to iw_complaint_manager
+-   Enter password("password")
 
 Now you'll need to pick a host to deploy it to.
 
@@ -52,23 +59,23 @@ If you're familiar with deploying Node applications, the built-in Remix app serv
 
 Make sure to deploy the output of `yarn run build`
 
-- `build/server`
-- `build/client`
+-   `build/server`
+-   `build/client`
 
-### Prettier and Lint 
+### Prettier and Lint
 
-###### This project supports `Prettier` and `ESLint` packages. When you run `yarn install` it will automatically install all necesaary dev dependency packages for you. If you have not installed in your Vscode ESLint and Prettier extensions, it will suggest you to install, and please do so.. Without an extension these formatting packages won't work. 
+###### This project supports `Prettier` and `ESLint` packages. When you run `yarn install` it will automatically install all necesaary dev dependency packages for you. If you have not installed in your Vscode ESLint and Prettier extensions, it will suggest you to install, and please do so.. Without an extension these formatting packages won't work.
 
 #### Following Eslint command to lint your code and fix linting issues:
 
-- `yarn lint`
-- `yarn lint:fix`
+-   `yarn lint`
+-   `yarn lint:fix`
 
 ##### Following Prettier command to run to format your code : (Currently disabled)
 
-- `yarn format`  
+-   `yarn format`
 
-### To run cypress tests (End to End testing)
+## To run cypress tests (End to End testing)
 
 ### - Headless
 
@@ -87,11 +94,13 @@ yarn run cy:run
 ```sh
 yarn test
 ```
-### To run Vitest in the browser 
+
+### To run Vitest in the browser
 
 ```sh
 yarn test:ui
 ```
+
 ### Set mkcert locally
 
 #### Install mkcert. On a Mac, you can use Homebrew:
@@ -116,4 +125,4 @@ mkcert localhost
 
 ###### Create folder `.cert` and move `localhost.pem` and `localhost-key.pem` into the folder.
 
-###### Re-run Server and Client: You should be able to open localhost wihtout incognito mode now. 
+###### Re-run Server and Client: You should be able to open localhost wihtout incognito mode now.
