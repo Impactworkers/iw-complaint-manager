@@ -36,8 +36,11 @@
         "express": "^4.19.2",
         "init": "^0.1.2",
         "isbot": "^4.1.0",
+        "pg": "^8.11.5",
+        "pg-hstore": "^2.3.4",
         "react": "19.0.0-rc-d3ce0d3ea9-20240520",
         "react-dom": "19.0.0-rc-d3ce0d3ea9-20240520",
+        "sequelize": "^6.37.3",
         "storybook": "^8.1.2"
     },
     "devDependencies": {
