@@ -19,7 +19,7 @@
         "cy:run": "cypress run --browser=chrome",
         "test": "yarn vitest",
         "test:ui": "yarn vitest --ui",
-        "storybook": "storybook dev -p 6006",
+        "storybook": "storybook dev -p 6006 --https --ssl-cert .cert/localhost.pem --ssl-key .cert/localhost-key.pem",
         "build-storybook": "storybook build"
     },
     "dependencies": {
