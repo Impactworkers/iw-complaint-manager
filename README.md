@@ -126,3 +126,13 @@ mkcert localhost
 ###### Create folder `.cert` and move `localhost.pem` and `localhost-key.pem` into the folder.
 
 ###### Re-run Server and Client: You should be able to open localhost wihtout incognito mode now.
+
+### Storybook 
+
+ Storybook is a development environment tool that is used as a playground for UI components. It allows us, the developers, to create and test components in isolation.
+
+ To run Storybook CLI locally: 
+
+```sh
+yarn run storybook
+```
