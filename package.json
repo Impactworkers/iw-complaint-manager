@@ -1,5 +1,6 @@
 {
     "name": "iw-complaint-manager",
+    "version": "0.1.0",
     "private": true,
     "workspaces": [
         "packages/*"
