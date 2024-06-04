@@ -1,0 +1,10 @@
+fileignoreconfig:
+- filename: cypress/e2e/spec.cy.ts
+  checksum: 53b53dc96162892552ad7608a90b196247dd65159a0b6a418543bf523ee55223
+- filename: package.json
+  checksum: 88fef28310fe9725e99aeb64836b510b1ed59741f031f5f7ec9b6640de3e8b81
+- filename: remix
+  checksum: 6b5809dab650e75401253815d60ec182f6e05241b1bf63c536ab85007de56f4a
+- filename: yarn.lock
+  checksum: cd99d225cd78c2b4abcf41da095fdcfbd76fa3b6b1cf4b0dcbccae9d4f26f00d
+version: "1.0"
