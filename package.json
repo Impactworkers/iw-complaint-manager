@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --experimental-https",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --check .",
     "format:fix": "prettier --write --list-different .",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --https --ssl-cert certificates/localhost.pem --ssl-key certificates/localhost-key.pem",
     "build-storybook": "storybook build",
     "cypress:open": "cypress open",
     "test": "jest",
@@ -29,8 +29,6 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.6",
-    "@babel/preset-env": "^7.24.6",
     "@babel/preset-typescript": "^7.24.6",
     "@chromatic-com/storybook": "^1.5.0",
     "@storybook/addon-essentials": "^8.1.5",
@@ -46,7 +44,6 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "babel-jest": "^29.7.0",
     "cypress": "^13.10.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
