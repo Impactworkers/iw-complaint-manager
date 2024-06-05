@@ -1,10 +1,76 @@
+/**
+ * This is intended to be a basic starting point for linting in your app.
+ * It relies on recommended configs out of the box for simplicity, but you can
+ * and should modify this configuration to best suit your team's needs.
+ */
+
+/** @type {import('eslint').Linter.Config} */
 {
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:storybook/recommended",
-    "prettier"
-  ],
+    "root": true,
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "es2021": true
+    },
+
+    // Base config
+    "extends": [
+        "plugin:@next/next/recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended", // Enables eslint-plugin-prettier and eslint-config-prettier
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+        "eslint:recommended",
+        "next"
+    ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "formComponents": ["Form"],
+        "linkComponents": [
+            { "name": "Link", "linkAttribute": "to" },
+            { "name": "NavLink", "linkAttribute": "to" }
+        ],
+        "import/resolver": {
+            "typescript": {}
+        }
+    },
     "rules": {
-    "react/no-unescaped-entities": "off"
-  }
+        "prettier/prettier": "error", // Commented out Prettier
+        "quotes": ["error", "double"]
+    },
+    "overrides": [
+        {
+            "files": ["**/*.{ts,tsx}"],
+            "plugins": ["import"],
+            "parser": "@typescript-eslint/parser",
+            "settings": {
+                "import/internal-regex": "^~/",
+                "import/resolver": {
+                    "node": {
+                        "extensions": [".ts", ".tsx"]
+                    },
+                    "typescript": {
+                        "alwaysTryTypes": true
+                    }
+                }
+            }
+        }
+    ]
 }
+
+// Node
+/*{
+          "files": [".eslintrc.cjs"],
+          "env": {
+              "node": true
+          }
+      }*/
