@@ -107,7 +107,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - current_project_version
       - build:
           requires:
             - test
@@ -117,7 +117,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - current_project_version
       - deploy_qa_iwcm:
           type: approval
           requires:
@@ -125,7 +125,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - current_project_version
       - deploy_staging_iwcm:
           type: approval
           requires:
@@ -133,7 +133,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - current_project_version
       - deploy_prod_iwcm:
           type: approval
           requires:
@@ -141,4 +141,4 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - current_project_version
