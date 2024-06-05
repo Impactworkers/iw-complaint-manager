@@ -47,7 +47,7 @@ jobs:
             - run:
                   name: Deploy Dev to Heroku
                   command: |
-                      git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
+                      git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git current_project_version
             - persist_to_workspace:
                   root: .
                   paths: build/
@@ -107,7 +107,7 @@ workflows:
                   filters:
                       branches:
                           only:
-                              - main
+                              - current_project_version
             - build:
                   requires:
                       - test
@@ -117,7 +117,7 @@ workflows:
                   filters:
                       branches:
                           only:
-                              - main
+                              - current_project_version
             - deploy_qa_iwcm:
                   type: approval
                   requires:
@@ -125,7 +125,7 @@ workflows:
                   filters:
                       branches:
                           only:
-                              - main
+                              - current_project_version
             - deploy_staging_iwcm:
                   type: approval
                   requires:
@@ -133,7 +133,7 @@ workflows:
                   filters:
                       branches:
                           only:
-                              - main
+                              - current_project_version
             - deploy_prod_iwcm:
                   type: approval
                   requires:
@@ -141,4 +141,4 @@ workflows:
                   filters:
                       branches:
                           only:
-                              - main
+                              - current_project_version
