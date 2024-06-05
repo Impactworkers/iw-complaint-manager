@@ -25,6 +25,9 @@ jobs:
       - run:
           name: Run unit tests
           command: echo 'replace me with real tests!'
+      - run:
+          name: List directory contents
+          command: ls -la
       - persist_to_workspace:
           root: .
           paths: build/
@@ -35,6 +38,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
+      - run:
+          name: List build directory contents
+          command: ls -alh build
       - run:
           name: Run tests
           command: echo 'replace me with real tests!'
