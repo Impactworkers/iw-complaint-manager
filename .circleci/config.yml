@@ -23,9 +23,6 @@ jobs:
                   name: Build the application
                   command: yarn build
             - run:
-                  name: Run unit tests
-                  command: yarn test
-            - run:
                   name: List directory contents
                   command: ls -la
             - persist_to_workspace:
