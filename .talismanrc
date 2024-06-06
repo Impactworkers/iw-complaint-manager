@@ -1,14 +1,10 @@
 fileignoreconfig:
-- filename: README.md
-  checksum: 451417658dec88b319a39e9945e2ad1df823a0fc88d53a95f46103e25e66e04c
 - filename: cypress/e2e/spec.cy.ts
-  checksum: b023db5de7d5aaa13d5524de9c36cee9ac89350629ad6e35adc518f4fb0187d7
+  checksum: 53b53dc96162892552ad7608a90b196247dd65159a0b6a418543bf523ee55223
 - filename: package.json
-  checksum: b14fe9ac7fc203c68b1ceaba7b7b03e056ba623d9c24c80fccbaac2dc9378ba2
-- filename: server.js
-  checksum: 6fc8fefc13ae27bbcee60f781360497c518f31ecf7be7cba29a61a1ee0ba0399
-- filename: vite.config.ts
-  checksum: 1d851df9adfbb4000bfc8bdde5b0ab7bf0f118c2c72b517b4dab3413a77bccf9
+  checksum: 88fef28310fe9725e99aeb64836b510b1ed59741f031f5f7ec9b6640de3e8b81
+- filename: remix
+  checksum: 6b5809dab650e75401253815d60ec182f6e05241b1bf63c536ab85007de56f4a
 - filename: yarn.lock
-  checksum: 7f131bce1b1923110568024df8fe556936a6614bab4a35f812e7afd18cd9122f
+  checksum: cd99d225cd78c2b4abcf41da095fdcfbd76fa3b6b1cf4b0dcbccae9d4f26f00d
 version: "1.0"
