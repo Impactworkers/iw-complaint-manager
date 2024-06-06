@@ -1,0 +1,101 @@
+---
+layout: default
+title: Wiki Migration Checklist
+permalink: wiki-info/wiki-migration
+---
+
+{: .label }
+Updated 05/06/2024
+
+# Pages to Review from Wiki
+
+- [ ] Project Overview
+  - [x] ~~Project Infrastructure~~ - migrated to [unfiled pages](../unfiled)
+  - [x] ~~Team Practices~~ - no migration action needed
+- [x] ~~ADRs~~ - [migrated](../adrs)
+- [x] ~~Scaling Plans~~ - no migration action needed
+  - [x] ~~Customize Workflow~~ - no migration action needed
+    - [x] ~~NOIPM Functionality that Makes Generalization Harder~~ - archived
+  - [x] ~~Org Configuration~~ - archived
+  - [x] ~~New Client Deploy~~ - migrated to [dev guides](../dev-guides)
+- [ ] Onboarding Outline
+- [x] ~~Contributor Guidelines~~ - archived
+- [ ] Team Blogs
+  - [x] ~~Maria's Blog~~ - deleted
+    - [x] ~~errrr~~ - deleted
+  - [x] ~~Syamala's Coding Conundrums~~ - deleted
+  - [x] ~~Slack Integration with Google Sheet~~ - migrated to [how-to collection](../how-to)
+- [ ] Analysis Resources
+  - [ ] Design and UX
+- [ ] Development Resources
+  - [ ] How To Guides
+    - [x] ~~Creating a New Environment~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~Provisioning Higher Enviroments~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~Provisioning a Playground Env~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~Feature Toggles~~ - archived
+    - [x] ~~Auth0 Configuration~~ - no migration action needed
+    - [x] ~~Auth0 Add User Roles and Permissions~~ - no migration action needed
+    - [x] ~~Recreating Sortable Cases~~ - archived
+    - [x] ~~Monitoring of Worker Jobs~~ - no migration action necessary
+    - [ ] Updating Docker Images
+    - [x] ~~Updating Letter Templates~~ - archived
+    - [x] ~~Setup a Custom Domain~~ - archived
+    - [x] ~~How to Set Up a Stress Test~~ - no migration action necessary
+    - [x] ~~How to Setup Your Local Database~~ - placed in [how-to collection](../how-to) and content wiped - needs to be remade for CM 2.0
+    - [x] ~~Creating a Release~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~Debugging a Particular Release~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~How to Deal with Security Checks Failing~~ - archived
+    - [x] ~~Possible TDD Process for Using Pact~~ - archived
+    - [x] ~~How to Create a Public Service Handler~~ - migrated to [how-to collection](../how-to)
+    - [ ] How to Debug Database Problems
+    - [x] ~~How to Switch Between Instances~~ - migrated to [how-to collection](../how-to)
+    - [x] ~~How to Setup a New Okta Instance for CM~~ - archived
+    - [x] ~~Prod Checklist~~ - deleted
+    - [ ] How to Update the PDF Snapshot
+  - [x] ~~New Relic~~ - no migration action needed
+  - [x] ~~Docker Commands~~ - migrated to [dev guides](../dev-guides)
+  - [x] ~~Create New City Instance~~ - archived
+  - [x] ~~Commit Format~~ - migrated to [developer resources](../commit-format)
+- [x] ~~Pieces of the App~~ - migrated to [pieces of the app](../pieces-of-the-app) and most content wiped - needs to be remade for CM 2.0
+  - [x] ~~Client~~ - deleted and migrated to [pieces of the app](../pieces-of-the-app) and content wiped - needs to be remade for CM 2.0
+    - [x] ~~Component/Container~~ - deleted
+    - [x] ~~Action Creator/Thunk~~ - archived
+    - [ ] Reducer
+    - [x] ~~Selector~~ - migrated to [how-to collection)](../how-to)
+  - [x] ~~Server~~ - migrated to [pieces of the app](../pieces-of-the-app) and content wiped - needs to be remade for CM 2.0
+    - [x] ~~Handler~~ - deleted
+    - [x] ~~Model~~ - deleted
+    - [x] ~~Migration/Seeder~~ - no migration action needed
+    - [x] ~~Payload Objects~~ - no migration action needed
+  - [x] ~~Worker~~ - deleted
+  - [x] ~~Instance Files~~ - deleted
+  - [x] ~~Tests~~ - no migration action needed
+    - [x] ~~Pact Tests~~ - no migration action needed
+  - [x] ~~Environment Variables~~ - no migration action needed
+  - [x] ~~Flakey Test Record~~ - migrated to [pieces of the app (tests)](../pieces-of-the-app/tests)
+  - [x] ~~Naming Convention~~ - migrated to [dev guides](../dev-guides)
+  - [x] ~~Content Security Policy~~ - no migration action needed
+  - [x] ~~Prod Pushes~~ - deleted
+  - [x] ~~Story Flow~~ - migrated to [developer resources](../story-flow)
+- [x] ~~API Documentation~~ - deleted
+- [x] ~~Data Resources~~ - no migration action needed
+  - [x] ~~NOLA Data Portal (Misconduct Complaints)~~ - no migration action needed
+  - [x] ~~IA Pro Officer & Allegation Data~~ - archived
+  - [x] ~~Auditing~~ - migrated to [dev guides](../dev-guides)
+  - [x] ~~Officer Seed Data~~ - archived
+  - [x] ~~VPN access to NOIPM office database server~~ - deleted
+- [x] ~~Pivotal Tracker Guidelines~~ - no migration action needed
+  - [x] ~~Anatomy of a Card~~ - no migration action needed
+  - [x] ~~Lifecycle of a Card~~ - no migration action needed
+  - [x] ~~Epics~~ - no migration action needed
+- [x] ~~Concerns and Considerations~~ - migrated to [unfiled pages](../unfiled)
+- [ ] Complaint Manager v2
+  - [x] ~~Overview~~ - migrated to [unfiled pages](../unfiled)
+  - [x] ~~Architecture Proposals~~ - no migration action needed
+    - [x] ~~Proposal #1~~ - no migration action needed
+  - [ ] Research
+  - [x] ~~Content Management Systems~~ - migrated to [research](../research/content-management-systems)
+    - [x] ~~Drupal~~ - migrated to [research](../research/content-management-systems)
+- [x] ~~Glossary~~ - [migrated](../glossary)
+- [x] ~~FAQ~~ - [new page](../faq) created
+- [x] ~~Updating Tags~~ - archived
