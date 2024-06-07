@@ -50,9 +50,12 @@
     },
     "overrides": [
         {
-            "files": ["**/*.{ts,tsx}"],
+            "files": ["**/*.{ts,tsx}", "tests/**/*"],
             "plugins": ["import"],
             "parser": "@typescript-eslint/parser",
+            "env": {
+                "jest": true
+            },
             "settings": {
                 "import/internal-regex": "^~/",
                 "import/resolver": {
