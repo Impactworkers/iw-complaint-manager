@@ -14,37 +14,37 @@ jobs:
         steps:
             - checkout
             - run:
-                  name: Verify Yarn Version
-                  command: yarn -v
+                name: Verify Yarn Version
+                command: yarn -v
             - run:
-                  name: Install dependencies
-                  command: yarn install
+                name: Install dependencies
+                command: yarn install
             - run:
-                  name: Build the application
-                  command: yarn build
+                name: Build the application
+                command: yarn build
             - run:
-                  name: List directory contents
-                  command: ls -la
+                name: List directory contents
+                command: ls -la
             - persist_to_workspace:
-                  root: .
-                  paths: .next/
+                root: .
+                paths: .next/
     deploy_dev_iwcm:
         docker:
             - image: cimg/node:20.13.1
         steps:
             - checkout
             - attach_workspace:
-                  at: .
+                at: .
             - run:
-                  name: Run tests
-                  command: echo 'replace me with real tests!'
+                name: Run tests
+                command: echo 'replace me with real tests!'
             - run:
-                  name: Deploy Dev to Heroku
-                  command: |
-                      git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
+                name: Deploy Dev to Heroku
+                command: |
+                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
             - persist_to_workspace:
-                  root: .
-                  paths: .next/
+                root: .
+                paths: .next/
     deploy_qa_iwcm:
         docker:
             - image: cimg/node:20.13.1
@@ -52,100 +52,100 @@ jobs:
             # Replace this with steps to deploy to users
             - checkout
             - attach_workspace:
-                  at: .
+                at: .
             - run:
-                  name: Run tests
-                  command: echo 'replace me with real tests!'
+                name: Run tests
+                command: echo 'replace me with real tests!'
             - run:
-                  name: Deploy QA to Heroku
-                  command: |
-                      git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_QA.git main
+                name: Deploy QA to Heroku
+                command: |
+                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_QA.git main
             - persist_to_workspace:
-                  root: .
-                  paths: .next/
+                root: .
+                paths: .next/
     create_release:
         docker:
             - image: cimg/node:20.13.1
         steps:
             - checkout
             - run:
-                    name: Create Release
-                    command: |
-                        npx release-please github-release --token=${{ secrets.RELEASE_PLEASE_TOKEN }} --release-type=node
+                name: Create Release
+                command: |
+                    npx release-please github-release --token=${{ secrets.RELEASE_PLEASE_TOKEN }} --release-type=node
     deploy_staging_iwcm:
         docker:
             - image: cimg/node:20.13.1
         steps:
             - checkout
             - attach_workspace:
-                  at: .
+                at: .
             - run:
-                  name: Run tests
-                  command: echo 'replace me with real tests!'
+                name: Run tests
+                command: echo 'replace me with real tests!'
             - run:
-                  name: Deploy Staging to Heroku
-                  command: |
-                      git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_STAGING.git main
+                name: Deploy Staging to Heroku
+                command: |
+                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_STAGING.git main
             - persist_to_workspace:
-                  root: .
-                  paths: .next/
+                root: .
+                paths: .next/
     deploy_prod_iwcm:
         docker:
             - image: cimg/node:20.13.1
         steps:
             - checkout
             - attach_workspace:
-                  at: .
+                at: .
             - run:
-                  name: Run tests
-                  command: echo 'replace me with real tests!'
+                name: Run tests
+                command: echo 'replace me with real tests!'
             - run:
-                  name: Deploy Prod to Heroku
-                  command: |
-                      git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_PROD.git main
+                name: Deploy Prod to Heroku
+                command: |
+                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_PROD.git main
 workflows:
     build_deploy_main:
         jobs:
             - test:
-                  filters:
-                      branches:
-                          only:
-                              - main
+                filters:
+                    branches:
+                        only:
+                            - main
             - build:
-                  requires:
-                      - test
+                requires:
+                    - test
             - deploy_dev_iwcm:
-                  requires:
-                      - build
-                  filters:
-                      branches:
-                          only:
-                              - main
+                requires:
+                    - build
+                filters:
+                    branches:
+                        only:
+                            - main
             - deploy_qa_iwcm:
-                  type: approval
-                  requires:
-                      - deploy_dev_iwcm
-                  filters:
-                      branches:
-                          only:
-                              - main
+                type: approval
+                requires:
+                    - deploy_dev_iwcm
+                filters:
+                    branches:
+                        only:
+                            - main
             - create_release_pr:
-                    type: approval
-                    requires:
-                        - deploy_qa_iwcm
+                type: approval
+                requires:
+                    - deploy_qa_iwcm
             - deploy_staging_iwcm:
-                  type: approval
-                  requires:
-                      - deploy_qa_iwcm
-                  filters:
-                      branches:
-                          only:
-                              - main
+                type: approval
+                requires:
+                    - deploy_qa_iwcm
+                filters:
+                    branches:
+                        only:
+                            - main
             - deploy_prod_iwcm:
-                  type: approval
-                  requires:
-                      - deploy_staging_iwcm
-                  filters:
-                      branches:
-                          only:
-                              - main
+                type: approval
+                requires:
+                    - deploy_staging_iwcm
+                filters:
+                    branches:
+                        only:
+                            - main
