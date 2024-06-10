@@ -129,7 +129,7 @@ workflows:
                     branches:
                         only:
                             - main
-            - create_release_pr:
+            - create_release:
                 type: approval
                 requires:
                     - deploy_qa_iwcm
