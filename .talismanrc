@@ -1,4 +1,6 @@
 fileignoreconfig:
+- filename: .env
+  checksum: c4cf3494797a1e9f8a598a31ca8e72172f695c124268cdcab92f0d3005fd32ea
 - filename: cypress/e2e/spec.cy.ts
   checksum: 53b53dc96162892552ad7608a90b196247dd65159a0b6a418543bf523ee55223
 - filename: package.json
@@ -6,5 +8,5 @@ fileignoreconfig:
 - filename: remix
   checksum: 6b5809dab650e75401253815d60ec182f6e05241b1bf63c536ab85007de56f4a
 - filename: yarn.lock
-  checksum: cd99d225cd78c2b4abcf41da095fdcfbd76fa3b6b1cf4b0dcbccae9d4f26f00d
+  checksum: afc07936843f8210feaedfd14fd21889def611e059175db6575726a7579b7ec1
 version: "1.0"
