@@ -9,7 +9,7 @@ const restoreOriginalUri = async (_oktaAuth: OktaAuth, originalUri: string) => {
     window.location.replace(originalUri);
 };
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: AppProps) => {
     return (
         <Security
             oktaAuth={oktaAuth}
@@ -21,4 +21,4 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     );
 };
 
-export default MyApp;
+export default App;
