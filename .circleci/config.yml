@@ -63,6 +63,15 @@ jobs:
             - persist_to_workspace:
                   root: .
                   paths: .next/
+    create_release:
+        docker:
+            - image: cimg/node:20.13.1
+        steps:
+            - checkout
+            - run:
+                    name: Create Release
+                    command: |
+                        npx release-please github-release --token=${{ secrets.RELEASE_PLEASE_TOKEN }} --release-type=node
     deploy_staging_iwcm:
         docker:
             - image: cimg/node:20.13.1
@@ -120,6 +129,10 @@ workflows:
                       branches:
                           only:
                               - main
+            - create_release_pr:
+                    type: approval
+                    requires:
+                        - deploy_qa_iwcm
             - deploy_staging_iwcm:
                   type: approval
                   requires:
