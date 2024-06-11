@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2](https://github.com/Impactworkers/iw-complaint-manager/compare/v0.1.1...v0.1.2) (2024-06-11)
+
+
+### Bug Fixes
+
+* another test ([3f81478](https://github.com/Impactworkers/iw-complaint-manager/commit/3f814787bec3b15e3ede76d837638f763fbd2692))
+* Charles\Paul [[#69](https://github.com/Impactworkers/iw-complaint-manager/issues/69)] Resolved prettier errors in sum.test.ts ([77a1e54](https://github.com/Impactworkers/iw-complaint-manager/commit/77a1e547fb0fed5036e7b83f42b2909eeacd7af9))
+
 ## [0.1.1](https://github.com/Impactworkers/iw-complaint-manager/compare/v0.1.0...v0.1.1) (2024-06-07)
 
 
