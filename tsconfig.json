@@ -22,6 +22,6 @@
             "@/*": ["./src/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/RootLayout.js", "src/app/Home.js", "src/components/pages/ProtectedRoute.js", "src/components/pages/Login.js", "src/config/oktaConfig.js", "src/components/pages/login/LoginCallback.js"],
     "exclude": ["node_modules"]
 }
