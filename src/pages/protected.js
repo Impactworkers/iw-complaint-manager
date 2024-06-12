@@ -4,6 +4,10 @@ import { useOktaAuth } from "@okta/okta-react";
 const ProtectedPage = () => {
     const { authState } = useOktaAuth();
 
+    if (authState.isPending) {
+        return <div>Loading authentication...</div>;
+    }
+
     if (!authState.isAuthenticated) {
         return <div>Not authenticated</div>;
     }

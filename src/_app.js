@@ -1,6 +1,11 @@
 import React from "react";
 import { Security } from "@okta/okta-react";
 import { OktaAuth } from "@okta/okta-auth-js";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+// import ProtectedPage from "./protected";
+import Home from "./pages";
+// import LoginCallback from "./pages/login/callback";
+import Login from "./pages/login";
 
 const oktaAuth = new OktaAuth({
     issuer: `${process.env.NEXT_PUBLIC_OKTA_DOMAIN}/oauth2/default`,
@@ -10,11 +15,16 @@ const oktaAuth = new OktaAuth({
     pkce: true
 });
 
-const App = ({ Component, pageProps }) => {
+const App = () => {
     return (
-        <Security oktaAuth={oktaAuth}>
-            <Component {...pageProps} />
-        </Security>
+        <Router>
+            <Security oktaAuth={oktaAuth}>
+                <Route path="/" component={Home} />
+                <Route path="/login" component={Login} />
+                {/* <Route path="/login/callback" component={LoginCallback} /> */}
+                {/* <Route path="/protected" component={ProtectedPage} /> */}
+            </Security>
+        </Router>
     );
 };
 
