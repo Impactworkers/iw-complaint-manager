@@ -1,11 +1,13 @@
 import React from "react";
+import "@okta/okta-signin-widget/dist/css/okta-sign-in.min.css";
+import "../styles/globals.css";
 import { Security } from "@okta/okta-react";
 import { OktaAuth } from "@okta/okta-auth-js";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-// import ProtectedPage from "./protected";
-import Home from "./pages";
-// import LoginCallback from "./pages/login/callback";
+import { useRouter } from "next/router";
+
+import Home from "./pages/index";
 import Login from "./pages/login";
+import LoginCallback from "./pages/login/callback";
 
 const oktaAuth = new OktaAuth({
     issuer: `${process.env.NEXT_PUBLIC_OKTA_DOMAIN}/oauth2/default`,
@@ -15,17 +17,22 @@ const oktaAuth = new OktaAuth({
     pkce: true
 });
 
-const App = () => {
+function App() {
+    const router = useRouter();
+
+    const onAuthRequired = () => {
+        router.push("/login");
+    };
+
     return (
-        <Router>
-            <Security oktaAuth={oktaAuth}>
-                <Route path="/" component={Home} />
-                <Route path="/login" component={Login} />
-                {/* <Route path="/login/callback" component={LoginCallback} /> */}
-                {/* <Route path="/protected" component={ProtectedPage} /> */}
-            </Security>
-        </Router>
+        <Security>
+            oktaAuth={oktaAuth}
+            onAuthRequired={onAuthRequired}
+            <router path="/" exact component={Home} />
+            <router path="/login" component={Login} />
+            <router path="/login/callback" component={LoginCallback} />
+        </Security>
     );
-};
+}
 
 export default App;

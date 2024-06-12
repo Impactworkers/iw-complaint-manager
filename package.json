@@ -26,14 +26,17 @@
         "@mui/material-nextjs": "^5.15.11",
         "@okta/okta-auth-js": "^7.7.0",
         "@okta/okta-react": "^6.9.0",
+        "@okta/okta-signin-widget": "^7.19.3",
         "@storybook/addon-themes": "^8.1.5",
+        "css-loader": "^7.1.2",
         "dotenv": "^16.4.5",
         "install": "^0.13.0",
         "next": "14.2.3",
         "react": "^18",
         "react-dom": "^18",
         "react-router-dom": "^6.23.1",
-        "release-please": "^16.12.0"
+        "release-please": "^16.12.0",
+        "style-loader": "^4.0.0"
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.24.6",

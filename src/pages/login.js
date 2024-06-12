@@ -1,16 +1,14 @@
 import React from "react";
 import { useOktaAuth } from "@okta/okta-react";
+import useOktaWidget from "../hooks/useOktaWidget";
 
 const Login = () => {
-    const oktaAuthContext = useOktaAuth();
-
-    const login = async () => {
-        oktaAuthContext.signInWithRedirect();
-    };
+    const { oktaAuth } = useOktaAuth();
+    const widgetRef = useOktaWidget(oktaAuth);
 
     return (
         <div>
-            <button onClick={login}>Log in</button>
+            <div ref={widgetRef} />
         </div>
     );
 };
