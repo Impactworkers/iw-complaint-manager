@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/Impactworkers/iw-complaint-manager/compare/v0.1.3...v0.1.4) (2024-06-12)
+
+
+### Bug Fixes
+
+* test[#2](https://github.com/Impactworkers/iw-complaint-manager/issues/2) ([0979c6d](https://github.com/Impactworkers/iw-complaint-manager/commit/0979c6d3c8b589c1cea69d70fa0b226bc1db8b64))
+
 ## [0.1.3](https://github.com/Impactworkers/iw-complaint-manager/compare/v0.1.2...v0.1.3) (2024-06-12)
 
 
