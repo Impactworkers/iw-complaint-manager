@@ -14,15 +14,17 @@ Under Construction
 
 Our repo is using the [release-please](https://github.com/googleapis/release-please) library as a utilitity for release versioning. Commit messages must be made using conventional commit messages. The most important prefixes are:
 
--   `fix:`
--   `feat:`
--   `feat!:`
+-   `fix:` which represents bug fixes, and correlates to a SemVer patch.
+-   `feat:` which represents a new feature, and correlates to a SemVer minor.
+-   `feat!:` represents a breaking change (indicated by the !) and will result in a SemVer major.
+
+See the [commit format page](../dev-guides/commit-format.md) for more detailed information. 
 
 Release-please automatically parses the git commit history and adds commits that have this prefix to the pull request.
 
 ## How to Create a Release
 
-Once you have tested your changes in the dev environment, if you'd like to create a release, review the PQ in Github and verify that `CHANGELOG.md` file contains the proper commits/information that you are expecting. If satisfied with the `CHANGELOG.md`, squash and merge the PR request in Github.
+Once you have tested your changes in the dev environment, if you'd like to create a release, review the PR in Github and verify that `CHANGELOG.md` file contains the proper commits/information that you are expecting. If satisfied with the `CHANGELOG.md`, squash and merge the PR request in Github.
 
 Release-please will:
 
