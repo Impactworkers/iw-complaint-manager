@@ -32,7 +32,8 @@
         "next": "14.2.3",
         "react": "^18",
         "react-dom": "^18",
-        "react-router-dom": "^6.23.1"
+        "react-router-dom": "^6.23.1",
+        "release-please": "^16.12.0"
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.24.6",
