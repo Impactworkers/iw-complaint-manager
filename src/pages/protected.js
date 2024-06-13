@@ -1,23 +1,25 @@
+// pages/protected.js
 import React from "react";
 import { useOktaAuth } from "@okta/okta-react";
+import { withAuthRequired } from "@okta/okta-react";
 
-const ProtectedPage = () => {
-    const { authState } = useOktaAuth();
+const Protected = () => {
+    const { authState, oktaAuth } = useOktaAuth();
 
-    if (authState.isPending) {
-        return <div>Loading authentication...</div>;
+    if (!authState || !authState.isAuthenticated) {
+        return <div>Loading...</div>;
     }
 
-    if (!authState.isAuthenticated) {
-        return <div>Not authenticated</div>;
-    }
+    const logout = async () => {
+        await oktaAuth.signOut();
+    };
 
     return (
         <div>
-            <p>You are logged in!</p>
-            {/* Add your protected content here */}
+            <h1>Protected Page</h1>
+            <button onClick={logout}>Logout</button>
         </div>
     );
 };
 
-export default ProtectedPage;
+export default withAuthRequired(Protected);

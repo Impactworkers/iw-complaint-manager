@@ -5,7 +5,6 @@ const OktaSignIn = dynamic(() => import("@okta/okta-signin-widget"), {
     ssr: false
 });
 
-console.log(OktaSignIn);
 const useOktaWidget = (oktaAuth) => {
     const widgetRef = useRef(null);
 

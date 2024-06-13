@@ -1,8 +1,20 @@
-import React from "react";
-import { LoginCallback } from "@okta/okta-react";
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
+import { useOktaAuth } from "@okta/okta-react";
 
-const Callback = () => {
-    return <LoginCallback />;
+const LoginCallback = () => {
+    const router = useRouter();
+    const { oktaAuth } = useOktaAuth();
+
+    useEffect(() => {
+        const handleCallback = async () => {
+            await oktaAuth.handleLoginRedirect();
+            router.push("/");
+        };
+        handleCallback();
+    }, [oktaAuth, router]);
+
+    return <div>Loading...</div>;
 };
 
-export default Callback;
+export default LoginCallback;
