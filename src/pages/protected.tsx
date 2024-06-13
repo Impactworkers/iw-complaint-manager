@@ -1,9 +1,8 @@
 // pages/protected.js
 import React from "react";
 import { useOktaAuth } from "@okta/okta-react";
-import { withAuthRequired } from "@okta/okta-react";
 
-const Protected = () => {
+const Protected: React.FC = () => {
     const { authState, oktaAuth } = useOktaAuth();
 
     if (!authState || !authState.isAuthenticated) {
@@ -22,4 +21,4 @@ const Protected = () => {
     );
 };
 
-export default withAuthRequired(Protected);
+export default Protected;

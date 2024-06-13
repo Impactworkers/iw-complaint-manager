@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useOktaAuth } from "@okta/okta-react";
 
-const LoginCallback = () => {
+const LoginCallback: React.FC = () => {
     const router = useRouter();
     const { oktaAuth } = useOktaAuth();
 

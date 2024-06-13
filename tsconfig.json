@@ -22,6 +22,6 @@
             "@/*": ["./src/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/RootLayout.js", "src/app/Home.js", "src/components/pages/protected.js", "src/components/pages/login.js", "src/config/oktaConfig.js", "src/components/pages/login/callback.js", "okta_config/oktaConfig.js"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/RootLayout.tsx", "src/app/Home.tsx", "src/components/pages/protected.tsx", "src/components/pages/login.tsx", "src/components/pages/login/callback.tsx", "okta_config/oktaConfig.ts"],
     "exclude": ["node_modules"]
 }

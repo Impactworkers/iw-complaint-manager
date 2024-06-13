@@ -1,15 +1,22 @@
+import { AppProps } from "next/app";
+import React from "react";
 import { useRouter } from "next/router";
 import { Security } from "@okta/okta-react";
-import { oktaAuthConfig } from "../../okta_config/oktaConfig";
+import {
+    oktaAuthConfig,
+    useOnAuthRequired
+} from "../../okta_config/oktaConfig";
+import { OktaAuth } from "@okta/okta-auth-js";
 
-function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }: AppProps) => {
     const router = useRouter();
 
-    const onAuthRequired = () => {
-        router.push("/login");
-    };
+    const onAuthRequired = useOnAuthRequired();
 
-    const restoreOriginalUri = async (_oktaAuth, originalUri) => {
+    const restoreOriginalUri = async (
+        oktaAuth: OktaAuth,
+        originalUri: string
+    ): Promise<void> => {
         router.push(originalUri);
     };
 
@@ -22,6 +29,6 @@ function App({ Component, pageProps }) {
             <Component {...pageProps} />
         </Security>
     );
-}
+};
 
 export default App;
