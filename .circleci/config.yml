@@ -41,7 +41,7 @@ jobs:
             - run:
                 name: Deploy Dev to Heroku
                 command: |
-                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
+                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git feature/update-config-QA
             - persist_to_workspace:
                 root: .
                 paths: .next/
@@ -59,7 +59,7 @@ jobs:
             - run:
                 name: Deploy QA to Heroku
                 command: |
-                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_QA.git main
+                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_QA.git feature/update-config-QA
             - persist_to_workspace:
                 root: .
                 paths: .next/
@@ -76,7 +76,7 @@ jobs:
             - run:
                 name: Deploy Staging to Heroku
                 command: |
-                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_STAGING.git main
+                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_STAGING.git feature/update-config-QA
             - persist_to_workspace:
                 root: .
                 paths: .next/
@@ -93,7 +93,7 @@ jobs:
             - run:
                 name: Deploy Prod to Heroku
                 command: |
-                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_PROD.git main
+                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_PROD.git feature/update-config-QA
 workflows:
     build_deploy_main:
         jobs:
@@ -101,7 +101,7 @@ workflows:
                 filters:
                     branches:
                         only:
-                            - main
+                            - feature/update-config-QA
             - build:
                 requires:
                     - test
@@ -111,7 +111,7 @@ workflows:
                 filters:
                     branches:
                         only:
-                            - main
+                            - feature/update-config-QA
             - deploy_qa_iwcm:
                 type: approval
                 requires:
@@ -119,7 +119,7 @@ workflows:
                 filters:
                     branches:
                         only:
-                            - main
+                            - feature/update-config-QA
             - create_release:
                 type: approval
                 requires:
@@ -131,7 +131,7 @@ workflows:
                 filters:
                     branches:
                         only:
-                            - main
+                            - feature/update-config-QA
             - deploy_prod_iwcm:
                 type: approval
                 requires:
@@ -139,4 +139,4 @@ workflows:
                 filters:
                     branches:
                         only:
-                            - main
+                            - feature/update-config-QA
