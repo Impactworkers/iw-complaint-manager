@@ -39,4 +39,5 @@ next-env.d.ts
 certificates
 
 #secrets 
-.env.local
+.env
+
