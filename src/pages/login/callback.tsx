@@ -8,8 +8,12 @@ const LoginCallback: React.FC = () => {
 
     useEffect(() => {
         const handleCallback = async () => {
-            await oktaAuth.handleLoginRedirect();
-            router.push("/");
+            try {
+                await oktaAuth.handleLoginRedirect();
+                router.push("/");
+            } catch (error) {
+                console.error("Error handling login callback: ", error);
+            }
         };
         handleCallback();
     }, [oktaAuth, router]);
@@ -18,3 +22,4 @@ const LoginCallback: React.FC = () => {
 };
 
 export default LoginCallback;
+

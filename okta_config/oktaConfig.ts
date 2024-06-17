@@ -21,3 +21,4 @@ export const oktaAuthConfig = {
     oktaAuth,
     onAuthRequired: useOnAuthRequired
 };
+
