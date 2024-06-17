@@ -1,13 +1,12 @@
-# Couldn't automatically generate a config from your source code.
-# This is a generic template to serve as a base for your custom config
-# See: https://circleci.com/docs/configuration-reference
 version: 2.1
+
 jobs:
     test:
         docker:
             - image: cimg/node:20.13.1
         steps:
             - checkout
+
     build:
         docker:
             - image: cimg/node:20.13.1
@@ -28,6 +27,7 @@ jobs:
             - persist_to_workspace:
                 root: .
                 paths: .next/
+
     deploy_dev_iwcm:
         docker:
             - image: cimg/node:20.13.1
@@ -45,11 +45,11 @@ jobs:
             - persist_to_workspace:
                 root: .
                 paths: .next/
+
     deploy_qa_iwcm:
         docker:
             - image: cimg/node:20.13.1
         steps:
-            # Replace this with steps to deploy to users
             - checkout
             - attach_workspace:
                 at: .
@@ -63,6 +63,7 @@ jobs:
             - persist_to_workspace:
                 root: .
                 paths: .next/
+
     deploy_staging_iwcm:
         docker:
             - image: cimg/node:20.13.1
@@ -80,6 +81,7 @@ jobs:
             - persist_to_workspace:
                 root: .
                 paths: .next/
+
     deploy_prod_iwcm:
         docker:
             - image: cimg/node:20.13.1
@@ -94,6 +96,7 @@ jobs:
                 name: Deploy Prod to Heroku
                 command: |
                     git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_PROD.git feature/update-config-QA
+
 workflows:
     build_deploy_main:
         jobs:
@@ -120,10 +123,6 @@ workflows:
                     branches:
                         only:
                             - feature/update-config-QA
-            - create_release:
-                type: approval
-                requires:
-                    - deploy_qa_iwcm
             - deploy_staging_iwcm:
                 type: approval
                 requires:
