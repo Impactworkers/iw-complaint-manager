@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Working with Figma Plugin for Designers
-permalink: /working-with-figma
+parent: How To Guides
+permalink: how-to/working-with-figma
 ---
 
 # Working with Figma Plugin for Designers
