@@ -86,7 +86,6 @@ jobs:
                   command: |
                       mkdir -p .next
                       cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
-                      cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/
             - run:
                 name: Deploy Dev to Heroku
                 command: |
@@ -117,7 +116,6 @@ jobs:
                   command: |
                       mkdir -p .next
                       cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
-                      cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/
             - run:
                 name: Deploy QA to Heroku
                 command: |
@@ -149,7 +147,6 @@ jobs:
                   command: |
                       mkdir -p .next
                       cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
-                      cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/
             - run:
                 name: Deploy Staging to Heroku
                 command: |
@@ -181,7 +178,6 @@ jobs:
                   command: |
                       mkdir -p .next
                       cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
-                      cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/
             - run:
                 name: Deploy Prod to Heroku
                 command: |
