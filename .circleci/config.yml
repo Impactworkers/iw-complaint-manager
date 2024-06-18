@@ -5,14 +5,33 @@ executors:
         docker:
             - image: cimg/node:20.13.1
 
-jobs:
-    lint:
-        executor: node-executor
+commands:
+    install-dependencies:
         steps:
             - checkout
             - run:
                   name: Install dependencies
                   command: yarn install
+
+    compress-artifacts:
+        steps:
+            - run:
+                  name: Compress build artifacts
+                  command: |
+                      tar -czf build_artifacts.tar.gz .next
+
+    extract-artifacts:
+        steps:
+            - run:
+                  name: Extract build artifacts
+                  command: |
+                      tar -xzf $CIRCLE_ARTIFACTS/build_artifacts.tar.gz -C .
+
+jobs:
+    lint:
+        executor: node-executor
+        steps:
+            - install-dependencies
             - run:
                   name: Run Prettier
                   command: yarn prettier --check .
@@ -23,10 +42,7 @@ jobs:
     test:
         executor: node-executor
         steps:
-            - checkout
-            - run:
-                  name: Install dependencies
-                  command: yarn install
+            - install-dependencies
             - run:
                   name: Run tests
                   command: yarn test
@@ -40,17 +56,10 @@ jobs:
     build:
         executor: node-executor
         steps:
-            - checkout
-            - restore_cache:
-                  keys:
-                      - v3-dependencies-{{ checksum "yarn.lock" }}
-                      - v3-dependencies-
+            - install-dependencies
             - run:
                   name: Verify Yarn Version
                   command: yarn -v
-            - run:
-                  name: Install dependencies
-                  command: yarn install
             - run:
                   name: Build the application
                   command: yarn build
@@ -62,13 +71,10 @@ jobs:
                   key: v3-nextjs-cache-{{ .Branch }}-{{ epoch }}
                   paths:
                       - .next/cache
+            - compress-artifacts
             - store_artifacts:
-                  path: .next
+                  path: build_artifacts.tar.gz
                   destination: build_artifacts
-                  retention: 7
-            - store_artifacts:
-                  path: node_modules
-                  destination: node_modules
                   retention: 7
             - store_test_results:
                   path: test-results
@@ -76,20 +82,12 @@ jobs:
     deploy_dev_iwcm:
         executor: node-executor
         steps:
-            - checkout
-            - restore_cache:
-                  keys:
-                      - v3-dependencies-{{ checksum "yarn.lock" }}
-                      - v3-dependencies-
+            - install-dependencies
             - run:
-                  name: Install dependencies
-                  command: yarn install
-            - run:
-                  name: Download build artifacts
+                  name: Download and extract build artifacts
                   command: |
                       mkdir -p .next
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/ || echo "No build artifacts found"
-                      cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/ || echo "No node_modules found"
+                      tar -xzf $CIRCLE_ARTIFACTS/build_artifacts.tar.gz -C .
             - run:
                   name: Deploy Dev to Heroku
                   command: |
@@ -100,14 +98,7 @@ jobs:
     deploy_qa_iwcm:
         executor: node-executor
         steps:
-            - checkout
-            - restore_cache:
-                  keys:
-                      - v3-dependencies-{{ checksum "yarn.lock" }}
-                      - v3-dependencies-
-            - run:
-                  name: Install dependencies
-                  command: yarn install
+            - install-dependencies
             - run:
                   name: Install Heroku CLI
                   command: curl https://cli-assets.heroku.com/install.sh | sh
@@ -115,11 +106,10 @@ jobs:
                   name: Login to Heroku
                   command: echo "$HEROKU_API_KEY" | heroku auth:token
             - run:
-                  name: Download build artifacts
+                  name: Download and extract build artifacts
                   command: |
                       mkdir -p .next
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/ || echo "No build artifacts found"
-                      cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/ || echo "No node_modules found"
+                      tar -xzf $CIRCLE_ARTIFACTS/build_artifacts.tar.gz -C .
             - run:
                   name: Deploy QA to Heroku
                   command: |
@@ -131,14 +121,7 @@ jobs:
     deploy_staging_iwcm:
         executor: node-executor
         steps:
-            - checkout
-            - restore_cache:
-                  keys:
-                      - v3-dependencies-{{ checksum "yarn.lock" }}
-                      - v3-dependencies-
-            - run:
-                  name: Install dependencies
-                  command: yarn install
+            - install-dependencies
             - run:
                   name: Install Heroku CLI
                   command: curl https://cli-assets.heroku.com/install.sh | sh
@@ -146,11 +129,10 @@ jobs:
                   name: Login to Heroku
                   command: echo "$HEROKU_API_KEY" | heroku auth:token
             - run:
-                  name: Download build artifacts
+                  name: Download and extract build artifacts
                   command: |
                       mkdir -p .next
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/ || echo "No build artifacts found"
-                      cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/ || echo "No node_modules found"
+                      tar -xzf $CIRCLE_ARTIFACTS/build_artifacts.tar.gz -C .
             - run:
                   name: Deploy Staging to Heroku
                   command: |
@@ -162,14 +144,7 @@ jobs:
     deploy_prod_iwcm:
         executor: node-executor
         steps:
-            - checkout
-            - restore_cache:
-                  keys:
-                      - v3-dependencies-{{ checksum "yarn.lock" }}
-                      - v3-dependencies-
-            - run:
-                  name: Install dependencies
-                  command: yarn install
+            - install-dependencies
             - run:
                   name: Install Heroku CLI
                   command: curl https://cli-assets.heroku.com/install.sh | sh
@@ -177,11 +152,10 @@ jobs:
                   name: Login to Heroku
                   command: echo "$HEROKU_API_KEY" | heroku auth:token
             - run:
-                  name: Download build artifacts
+                  name: Download and extract build artifacts
                   command: |
                       mkdir -p .next
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/ || echo "No build artifacts found"
-                      cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/ || echo "No node_modules found"
+                      tar -xzf $CIRCLE_ARTIFACTS/build_artifacts.tar.gz -C .
             - run:
                   name: Deploy Prod to Heroku
                   command: |
