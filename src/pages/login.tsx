@@ -7,6 +7,7 @@ const Login = () => {
     const widgetRef = useOktaWidget(oktaAuth);
 
     useEffect(() => {
+        console.log(process.env.NEXT_PUBLIC_OKTA_CLIENT_ID);
         if (!authState) return;
 
         if (!authState.isAuthenticated) {
@@ -24,4 +25,3 @@ const Login = () => {
 };
 
 export default Login;
-

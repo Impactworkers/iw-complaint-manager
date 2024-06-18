@@ -1,14 +1,11 @@
+// pages/protected.js
 import React from "react";
 import { useOktaAuth } from "@okta/okta-react";
 
 const Protected: React.FC = () => {
     const { authState, oktaAuth } = useOktaAuth();
 
-    if (!authState) {
-        return <div>Loading...</div>;
-    }
-
-    if (!authState.isAuthenticated) {
+    if (!authState || !authState.isAuthenticated) {
         return <div>Loading...</div>;
     }
 
@@ -25,4 +22,3 @@ const Protected: React.FC = () => {
 };
 
 export default Protected;
-

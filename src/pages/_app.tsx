@@ -17,7 +17,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         oktaAuth: OktaAuth,
         originalUri: string
     ): Promise<void> => {
-        router.push(originalUri || '/');
+        router.push(originalUri);
     };
 
     return (

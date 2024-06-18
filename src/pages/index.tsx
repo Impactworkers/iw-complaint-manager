@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 
 const Home = () => {
-    const { authState, oktaAuth } = useOktaAuth();
+    const oktaAuthContext = useOktaAuth();
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
         setIsClient(true);
     }, []);
 
-    if (!isClient) {
+    if (!isClient || !oktaAuthContext) {
         return <div>Loading...</div>;
     }
+
+    const { authState, oktaAuth } = oktaAuthContext;
 
     if (!authState) {
         return <div>Loading...</div>;

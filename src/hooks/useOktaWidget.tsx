@@ -9,8 +9,6 @@ const useOktaWidget = (oktaAuth) => {
     const widgetRef = useRef(null);
 
     useEffect(() => {
-        if (!widgetRef.current) return;
-
         const widget = new OktaSignIn({
             baseUrl: process.env.NEXT_PUBLIC_OKTA_DOMAIN,
             clientId: process.env.NEXT_PUBLIC_OKTA_CLIENT_ID,

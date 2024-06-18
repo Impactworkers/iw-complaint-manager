@@ -23,6 +23,6 @@
             "@stories/*": ["./src/stories/*"],
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/RootLayout.tsx", "src/app/Home.tsx", "src/components/pages/protected.tsx", "src/components/pages/login.tsx", "src/components/pages/login/callback.tsx", "src/okta_config/oktaConfig.ts"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/RootLayout.tsx", "src/app/Home.tsx", "src/components/pages/protected.tsx", "src/components/pages/login.tsx", "src/components/pages/login/callback.tsx", "okta_config/oktaConfig.ts"],
     "exclude": ["node_modules"]
 }
