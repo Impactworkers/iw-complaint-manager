@@ -13,20 +13,6 @@ commands:
                   name: Install dependencies
                   command: yarn install
 
-    compress-artifacts:
-        steps:
-            - run:
-                  name: Compress build artifacts
-                  command: |
-                      tar -czf build_artifacts.tar.gz .next
-
-    extract-artifacts:
-        steps:
-            - run:
-                  name: Extract build artifacts
-                  command: |
-                      tar -xzf build_artifacts.tar.gz -C .
-
 jobs:
     lint:
         executor: node-executor
@@ -71,23 +57,28 @@ jobs:
                   key: v3-nextjs-cache-{{ .Branch }}-{{ epoch }}
                   paths:
                       - .next/cache
-            - compress-artifacts
-            - store_artifacts:
-                  path: build_artifacts.tar.gz
-                  destination: build_artifacts
-                  retention: 7
+            - run:
+                  name: Compress build artifacts
+                  command: |
+                      tar -czf build_artifacts.tar.gz .next
+            - persist_to_workspace:
+                  root: .
+                  paths:
+                      - build_artifacts.tar.gz
             - store_test_results:
                   path: test-results
 
     deploy_dev_iwcm:
         executor: node-executor
         steps:
-            - install-dependencies
+            - checkout
+            - attach_workspace:
+                  at: /workspace
             - run:
-                  name: Download and extract build artifacts
+                  name: Extract build artifacts
                   command: |
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/build_artifacts.tar.gz .
-                      tar -xzf build_artifacts.tar.gz -C .
+                      tar -xzf /workspace/build_artifacts.tar.gz -C .
+            - install-dependencies
             - run:
                   name: Deploy Dev to Heroku
                   command: |
@@ -98,6 +89,13 @@ jobs:
     deploy_qa_iwcm:
         executor: node-executor
         steps:
+            - checkout
+            - attach_workspace:
+                  at: /workspace
+            - run:
+                  name: Extract build artifacts
+                  command: |
+                      tar -xzf /workspace/build_artifacts.tar.gz -C .
             - install-dependencies
             - run:
                   name: Install Heroku CLI
@@ -105,11 +103,6 @@ jobs:
             - run:
                   name: Login to Heroku
                   command: echo "$HEROKU_API_KEY" | heroku auth:token
-            - run:
-                  name: Download and extract build artifacts
-                  command: |
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/build_artifacts.tar.gz .
-                      tar -xzf build_artifacts.tar.gz -C .
             - run:
                   name: Deploy QA to Heroku
                   command: |
@@ -121,6 +114,13 @@ jobs:
     deploy_staging_iwcm:
         executor: node-executor
         steps:
+            - checkout
+            - attach_workspace:
+                  at: /workspace
+            - run:
+                  name: Extract build artifacts
+                  command: |
+                      tar -xzf /workspace/build_artifacts.tar.gz -C .
             - install-dependencies
             - run:
                   name: Install Heroku CLI
@@ -128,11 +128,6 @@ jobs:
             - run:
                   name: Login to Heroku
                   command: echo "$HEROKU_API_KEY" | heroku auth:token
-            - run:
-                  name: Download and extract build artifacts
-                  command: |
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/build_artifacts.tar.gz .
-                      tar -xzf build_artifacts.tar.gz -C .
             - run:
                   name: Deploy Staging to Heroku
                   command: |
@@ -144,6 +139,13 @@ jobs:
     deploy_prod_iwcm:
         executor: node-executor
         steps:
+            - checkout
+            - attach_workspace:
+                  at: /workspace
+            - run:
+                  name: Extract build artifacts
+                  command: |
+                      tar -xzf /workspace/build_artifacts.tar.gz -C .
             - install-dependencies
             - run:
                   name: Install Heroku CLI
@@ -151,11 +153,6 @@ jobs:
             - run:
                   name: Login to Heroku
                   command: echo "$HEROKU_API_KEY" | heroku auth:token
-            - run:
-                  name: Download and extract build artifacts
-                  command: |
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/build_artifacts.tar.gz .
-                      tar -xzf build_artifacts.tar.gz -C .
             - run:
                   name: Deploy Prod to Heroku
                   command: |
