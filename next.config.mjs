@@ -2,13 +2,12 @@
 
 import { config as dotenvConfig } from "dotenv";
 dotenvConfig();
+import path from "path";
 
-const nextConfig = {
-    env: {
-        NEXT_PUBLIC_OKTA_CLIENT_ID: process.env.NEXT_PUBLIC_OKTA_CLIENT_ID,
-        NEXT_PUBLIC_OKTA_DOMAIN: process.env.NEXT_PUBLIC_OKTA_DOMAIN,
-        NEXT_PUBLIC_OKTA_REDIRECT_URI: process.env.NEXT_PUBLIC_OKTA_REDIRECT_URI
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+    webpack: (config) => {
+        config.resolve.alias["pages"] = path.join(process.cwd(), "src/pages");
+        return config;
     }
 };
-
-export default nextConfig;

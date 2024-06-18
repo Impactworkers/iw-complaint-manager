@@ -1,15 +1,21 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
+"use client";
+import React from "react";
 import { useOktaAuth } from "@okta/okta-react";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
-const LoginCallback: React.FC = () => {
-    const router = useRouter();
+const Callback: React.FC = () => {
     const { oktaAuth } = useOktaAuth();
+    const router = useRouter();
 
     useEffect(() => {
         const handleCallback = async () => {
-            await oktaAuth.handleLoginRedirect();
-            router.push("/");
+            try {
+                await oktaAuth.handleLoginRedirect();
+                router.push("/");
+            } catch (error) {
+                console.error("Error handling login callback: ", error);
+            }
         };
         handleCallback();
     }, [oktaAuth, router]);
@@ -17,4 +23,4 @@ const LoginCallback: React.FC = () => {
     return <div>Loading...</div>;
 };
 
-export default LoginCallback;
+export default Callback;
