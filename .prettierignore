@@ -1,3 +1,13 @@
 node_modules
 .next
 certificates
+.github/
+.storybook/
+.vscode/
+docs/
+jest.config.ts
+jest.setup.ts
+README.md
+src/stories/
+tokens.json
+tsconfig.json
