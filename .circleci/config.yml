@@ -25,7 +25,7 @@ commands:
             - run:
                   name: Extract build artifacts
                   command: |
-                      tar -xzf $CIRCLE_ARTIFACTS/build_artifacts.tar.gz -C .
+                      tar -xzf build_artifacts.tar.gz -C .
 
 jobs:
     lint:
@@ -86,8 +86,8 @@ jobs:
             - run:
                   name: Download and extract build artifacts
                   command: |
-                      mkdir -p .next
-                      tar -xzf $CIRCLE_ARTIFACTS/build_artifacts.tar.gz -C .
+                      cp $CIRCLE_ARTIFACTS/build_artifacts/build_artifacts.tar.gz .
+                      tar -xzf build_artifacts.tar.gz -C .
             - run:
                   name: Deploy Dev to Heroku
                   command: |
@@ -108,8 +108,8 @@ jobs:
             - run:
                   name: Download and extract build artifacts
                   command: |
-                      mkdir -p .next
-                      tar -xzf $CIRCLE_ARTIFACTS/build_artifacts.tar.gz -C .
+                      cp $CIRCLE_ARTIFACTS/build_artifacts/build_artifacts.tar.gz .
+                      tar -xzf build_artifacts.tar.gz -C .
             - run:
                   name: Deploy QA to Heroku
                   command: |
@@ -131,8 +131,8 @@ jobs:
             - run:
                   name: Download and extract build artifacts
                   command: |
-                      mkdir -p .next
-                      tar -xzf $CIRCLE_ARTIFACTS/build_artifacts.tar.gz -C .
+                      cp $CIRCLE_ARTIFACTS/build_artifacts/build_artifacts.tar.gz .
+                      tar -xzf build_artifacts.tar.gz -C .
             - run:
                   name: Deploy Staging to Heroku
                   command: |
@@ -154,8 +154,8 @@ jobs:
             - run:
                   name: Download and extract build artifacts
                   command: |
-                      mkdir -p .next
-                      tar -xzf $CIRCLE_ARTIFACTS/build_artifacts.tar.gz -C .
+                      cp $CIRCLE_ARTIFACTS/build_artifacts/build_artifacts.tar.gz .
+                      tar -xzf build_artifacts.tar.gz -C .
             - run:
                   name: Deploy Prod to Heroku
                   command: |
