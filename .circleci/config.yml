@@ -66,6 +66,10 @@ jobs:
                   path: .next
                   destination: build_artifacts
                   retention: 7
+            - store_artifacts:
+                  path: node_modules
+                  destination: node_modules
+                  retention: 7
             - store_test_results:
                   path: test-results
 
@@ -74,7 +78,9 @@ jobs:
         steps:
             - checkout
             - restore_cache:
-                  key: v3-dependencies-{{ checksum "yarn.lock" }}
+                  keys:
+                      - v3-dependencies-{{ checksum "yarn.lock" }}
+                      - v3-dependencies-
             - run:
                   name: Install dependencies
                   command: yarn install
@@ -82,7 +88,8 @@ jobs:
                   name: Download build artifacts
                   command: |
                       mkdir -p .next
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
+                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/ || echo "No build artifacts found"
+                      cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/ || echo "No node_modules found"
             - run:
                   name: Deploy Dev to Heroku
                   command: |
@@ -95,7 +102,9 @@ jobs:
         steps:
             - checkout
             - restore_cache:
-                  key: v3-dependencies-{{ checksum "yarn.lock" }}
+                  keys:
+                      - v3-dependencies-{{ checksum "yarn.lock" }}
+                      - v3-dependencies-
             - run:
                   name: Install dependencies
                   command: yarn install
@@ -109,7 +118,8 @@ jobs:
                   name: Download build artifacts
                   command: |
                       mkdir -p .next
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
+                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/ || echo "No build artifacts found"
+                      cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/ || echo "No node_modules found"
             - run:
                   name: Deploy QA to Heroku
                   command: |
@@ -123,7 +133,9 @@ jobs:
         steps:
             - checkout
             - restore_cache:
-                  key: v3-dependencies-{{ checksum "yarn.lock" }}
+                  keys:
+                      - v3-dependencies-{{ checksum "yarn.lock" }}
+                      - v3-dependencies-
             - run:
                   name: Install dependencies
                   command: yarn install
@@ -137,7 +149,8 @@ jobs:
                   name: Download build artifacts
                   command: |
                       mkdir -p .next
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
+                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/ || echo "No build artifacts found"
+                      cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/ || echo "No node_modules found"
             - run:
                   name: Deploy Staging to Heroku
                   command: |
@@ -151,7 +164,9 @@ jobs:
         steps:
             - checkout
             - restore_cache:
-                  key: v3-dependencies-{{ checksum "yarn.lock" }}
+                  keys:
+                      - v3-dependencies-{{ checksum "yarn.lock" }}
+                      - v3-dependencies-
             - run:
                   name: Install dependencies
                   command: yarn install
@@ -165,7 +180,8 @@ jobs:
                   name: Download build artifacts
                   command: |
                       mkdir -p .next
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
+                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/ || echo "No build artifacts found"
+                      cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/ || echo "No node_modules found"
             - run:
                   name: Deploy Prod to Heroku
                   command: |
