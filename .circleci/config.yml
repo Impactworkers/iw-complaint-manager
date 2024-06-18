@@ -16,6 +16,7 @@ commands:
 jobs:
     lint:
         executor: node-executor
+        working_directory: /workspace
         steps:
             - install-dependencies
             - run:
@@ -27,6 +28,7 @@ jobs:
 
     test:
         executor: node-executor
+        working_directory: /workspace
         steps:
             - install-dependencies
             - run:
@@ -41,6 +43,7 @@ jobs:
 
     build:
         executor: node-executor
+        working_directory: /workspace
         steps:
             - install-dependencies
             - run:
@@ -62,7 +65,7 @@ jobs:
                   command: |
                       tar -czf build_artifacts.tar.gz .next
             - persist_to_workspace:
-                  root: .
+                  root: /workspace
                   paths:
                       - build_artifacts.tar.gz
             - store_test_results:
@@ -70,6 +73,7 @@ jobs:
 
     deploy_dev_iwcm:
         executor: node-executor
+        working_directory: /workspace
         steps:
             - checkout
             - attach_workspace:
@@ -77,7 +81,7 @@ jobs:
             - run:
                   name: Extract build artifacts
                   command: |
-                      tar -xzf /workspace/build_artifacts.tar.gz -C .
+                      tar -xzf build_artifacts.tar.gz -C .
             - install-dependencies
             - run:
                   name: Deploy Dev to Heroku
@@ -88,6 +92,7 @@ jobs:
 
     deploy_qa_iwcm:
         executor: node-executor
+        working_directory: /workspace
         steps:
             - checkout
             - attach_workspace:
@@ -95,7 +100,7 @@ jobs:
             - run:
                   name: Extract build artifacts
                   command: |
-                      tar -xzf /workspace/build_artifacts.tar.gz -C .
+                      tar -xzf build_artifacts.tar.gz -C .
             - install-dependencies
             - run:
                   name: Install Heroku CLI
@@ -113,6 +118,7 @@ jobs:
 
     deploy_staging_iwcm:
         executor: node-executor
+        working_directory: /workspace
         steps:
             - checkout
             - attach_workspace:
@@ -120,7 +126,7 @@ jobs:
             - run:
                   name: Extract build artifacts
                   command: |
-                      tar -xzf /workspace/build_artifacts.tar.gz -C .
+                      tar -xzf build_artifacts.tar.gz -C .
             - install-dependencies
             - run:
                   name: Install Heroku CLI
@@ -138,6 +144,7 @@ jobs:
 
     deploy_prod_iwcm:
         executor: node-executor
+        working_directory: /workspace
         steps:
             - checkout
             - attach_workspace:
@@ -145,7 +152,7 @@ jobs:
             - run:
                   name: Extract build artifacts
                   command: |
-                      tar -xzf /workspace/build_artifacts.tar.gz -C .
+                      tar -xzf build_artifacts.tar.gz -C .
             - install-dependencies
             - run:
                   name: Install Heroku CLI
