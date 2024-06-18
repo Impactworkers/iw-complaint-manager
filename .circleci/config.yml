@@ -42,10 +42,6 @@ jobs:
             - run:
                   name: Run tests
                   command: yarn test
-            - save_cache:
-                  key: v1-dependencies-{{ checksum "yarn.lock" }}
-                  paths:
-                      - node_modules
             - store_test_results:
                   path: test-results
 
@@ -54,6 +50,10 @@ jobs:
         working_directory: ~/project
         steps:
             - install-dependencies
+            - restore_cache:
+                  keys:
+                      - v1-nextjs-cache-{{ checksum "yarn.lock" }}
+                      - v1-nextjs-cache-
             - run:
                   name: Verify Yarn Version
                   command: yarn -v
@@ -65,7 +65,7 @@ jobs:
                   command: |
                       rm -rf some_unnecessary_directory_or_files
             - save_cache:
-                  key: v1-nextjs-cache-{{ .Branch }}-{{ epoch }}
+                  key: v1-nextjs-cache-{{ checksum "yarn.lock" }}
                   paths:
                       - .next/cache
             - run:
@@ -79,7 +79,7 @@ jobs:
             - store_test_results:
                   path: test-results
 
-    deploy_dev_iwcm:
+    deploy_dev:
         executor: node-executor
         working_directory: ~/project
         steps:
@@ -92,8 +92,7 @@ jobs:
                       - v1-dependencies-
             - run:
                   name: Extract build artifacts
-                  command: |
-                      tar -xzf build_artifacts.tar.gz -C .
+                  command: tar -xzf build_artifacts.tar.gz -C .
             - run:
                   name: Log files after extraction
                   command: ls -la
@@ -105,7 +104,7 @@ jobs:
             - store_test_results:
                   path: test-results
 
-    deploy_qa_iwcm:
+    deploy_qa:
         executor: node-executor
         working_directory: ~/project
         steps:
@@ -118,8 +117,7 @@ jobs:
                       - v1-dependencies-
             - run:
                   name: Extract build artifacts
-                  command: |
-                      tar -xzf build_artifacts.tar.gz -C .
+                  command: tar -xzf build_artifacts.tar.gz -C .
             - run:
                   name: Log files after extraction
                   command: ls -la
@@ -142,7 +140,7 @@ jobs:
             - store_test_results:
                   path: test-results
 
-    deploy_staging_iwcm:
+    deploy_staging:
         executor: node-executor
         working_directory: ~/project
         steps:
@@ -155,8 +153,7 @@ jobs:
                       - v1-dependencies-
             - run:
                   name: Extract build artifacts
-                  command: |
-                      tar -xzf build_artifacts.tar.gz -C .
+                  command: tar -xzf build_artifacts.tar.gz -C .
             - run:
                   name: Log files after extraction
                   command: ls -la
@@ -179,7 +176,7 @@ jobs:
             - store_test_results:
                   path: test-results
 
-    deploy_prod_iwcm:
+    deploy_prod:
         executor: node-executor
         working_directory: ~/project
         steps:
@@ -192,8 +189,7 @@ jobs:
                       - v1-dependencies-
             - run:
                   name: Extract build artifacts
-                  command: |
-                      tar -xzf build_artifacts.tar.gz -C .
+                  command: tar -xzf build_artifacts.tar.gz -C .
             - run:
                   name: Log files after extraction
                   command: ls -la
@@ -235,7 +231,7 @@ workflows:
             - build:
                   requires:
                       - test
-            - deploy_dev_iwcm:
+            - deploy_dev:
                   requires:
                       - build
                   filters:
@@ -245,12 +241,18 @@ workflows:
             - deploy_qa_iwcm:
                   type: approval
                   requires:
-                      - deploy_dev_iwcm
-            - create_release:
+                      - deploy_dev
+            - deploy_qa:
                   type: approval
                   requires:
                       - deploy_qa_iwcm
-            - deploy_staging_iwcm:
+                  environment:
+                      HEROKU_APP_NAME: $HEROKU_APP_NAME_QA
+            - create_release:
+                  type: approval
+                  requires:
+                      - deploy_qa
+            - deploy_staging:
                   type: approval
                   requires:
                       - create_release
@@ -258,11 +260,15 @@ workflows:
                       branches:
                           only:
                               - main
-            - deploy_prod_iwcm:
+                  environment:
+                      HEROKU_APP_NAME: $HEROKU_APP_NAME_STAGING
+            - deploy_prod:
                   type: approval
                   requires:
-                      - deploy_staging_iwcm
+                      - deploy_staging
                   filters:
                       branches:
                           only:
                               - main
+                  environment:
+                      HEROKU_APP_NAME: $HEROKU_APP_NAME_PROD
