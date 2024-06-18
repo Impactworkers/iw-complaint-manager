@@ -9,9 +9,17 @@ commands:
     install-dependencies:
         steps:
             - checkout
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "yarn.lock" }}
+                      - v1-dependencies-
             - run:
                   name: Install dependencies
                   command: yarn install
+            - save_cache:
+                  paths:
+                      - node_modules
+                  key: v1-dependencies-{{ checksum "yarn.lock" }}
 
 jobs:
     lint:
@@ -35,7 +43,7 @@ jobs:
                   name: Run tests
                   command: yarn test
             - save_cache:
-                  key: v3-dependencies-{{ checksum "yarn.lock" }}
+                  key: v1-dependencies-{{ checksum "yarn.lock" }}
                   paths:
                       - node_modules
             - store_test_results:
@@ -57,7 +65,7 @@ jobs:
                   command: |
                       rm -rf some_unnecessary_directory_or_files
             - save_cache:
-                  key: v3-nextjs-cache-{{ .Branch }}-{{ epoch }}
+                  key: v1-nextjs-cache-{{ .Branch }}-{{ epoch }}
                   paths:
                       - .next/cache
             - run:
@@ -78,10 +86,17 @@ jobs:
             - checkout
             - attach_workspace:
                   at: .
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "yarn.lock" }}
+                      - v1-dependencies-
             - run:
                   name: Extract build artifacts
                   command: |
                       tar -xzf build_artifacts.tar.gz -C .
+            - run:
+                  name: Log files after extraction
+                  command: ls -la
             - install-dependencies
             - run:
                   name: Deploy Dev to Heroku
@@ -97,10 +112,17 @@ jobs:
             - checkout
             - attach_workspace:
                   at: .
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "yarn.lock" }}
+                      - v1-dependencies-
             - run:
                   name: Extract build artifacts
                   command: |
                       tar -xzf build_artifacts.tar.gz -C .
+            - run:
+                  name: Log files after extraction
+                  command: ls -la
             - install-dependencies
             - run:
                   name: Install Heroku CLI
@@ -109,10 +131,14 @@ jobs:
                   name: Login to Heroku
                   command: echo "$HEROKU_API_KEY" | heroku auth:token
             - run:
-                  name: Deploy QA to Heroku
-                  command: |
-                      heroku git:remote -a $HEROKU_APP_NAME_QA
-                      git push heroku main
+                  name: Set Heroku remote for QA
+                  command: heroku git:remote -a $HEROKU_APP_NAME_QA
+            - run:
+                  name: Push to Heroku QA
+                  command: git push heroku main
+            - run:
+                  name: Log deployment status
+                  command: heroku releases --app $HEROKU_APP_NAME_QA
             - store_test_results:
                   path: test-results
 
@@ -123,10 +149,17 @@ jobs:
             - checkout
             - attach_workspace:
                   at: .
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "yarn.lock" }}
+                      - v1-dependencies-
             - run:
                   name: Extract build artifacts
                   command: |
                       tar -xzf build_artifacts.tar.gz -C .
+            - run:
+                  name: Log files after extraction
+                  command: ls -la
             - install-dependencies
             - run:
                   name: Install Heroku CLI
@@ -135,10 +168,14 @@ jobs:
                   name: Login to Heroku
                   command: echo "$HEROKU_API_KEY" | heroku auth:token
             - run:
-                  name: Deploy Staging to Heroku
-                  command: |
-                      heroku git:remote -a $HEROKU_APP_NAME_STAGING
-                      git push heroku main
+                  name: Set Heroku remote for Staging
+                  command: heroku git:remote -a $HEROKU_APP_NAME_STAGING
+            - run:
+                  name: Push to Heroku Staging
+                  command: git push heroku main
+            - run:
+                  name: Log deployment status
+                  command: heroku releases --app $HEROKU_APP_NAME_STAGING
             - store_test_results:
                   path: test-results
 
@@ -149,10 +186,17 @@ jobs:
             - checkout
             - attach_workspace:
                   at: .
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "yarn.lock" }}
+                      - v1-dependencies-
             - run:
                   name: Extract build artifacts
                   command: |
                       tar -xzf build_artifacts.tar.gz -C .
+            - run:
+                  name: Log files after extraction
+                  command: ls -la
             - install-dependencies
             - run:
                   name: Install Heroku CLI
@@ -161,10 +205,14 @@ jobs:
                   name: Login to Heroku
                   command: echo "$HEROKU_API_KEY" | heroku auth:token
             - run:
-                  name: Deploy Prod to Heroku
-                  command: |
-                      heroku git:remote -a $HEROKU_APP_NAME_PROD
-                      git push heroku main
+                  name: Set Heroku remote for Prod
+                  command: heroku git:remote -a $HEROKU_APP_NAME_PROD
+            - run:
+                  name: Push to Heroku Prod
+                  command: git push heroku main
+            - run:
+                  name: Log deployment status
+                  command: heroku releases --app $HEROKU_APP_NAME_PROD
             - store_test_results:
                   path: test-results
 
