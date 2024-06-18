@@ -11,14 +11,14 @@ jobs:
         steps:
             - checkout
             - run:
-                  name: Install dependencies
-                  command: yarn install
+                name: Install dependencies
+                command: yarn install
             - run:
-                  name: Run Prettier
-                  command: yarn prettier --check .
+                name: Run Prettier
+                command: yarn prettier --check .
             - run:
-                  name: Run ESLint
-                  command: yarn lint
+                name: Run ESLint
+                command: yarn lint
 
     test:
         executor: node-executor
@@ -42,9 +42,9 @@ jobs:
         steps:
             - checkout
             - restore_cache:
-                  keys:
-                      - v3-dependencies-{{ checksum "yarn.lock" }}
-                      - v3-dependencies-
+                keys:
+                    - v3-dependencies-{{ checksum "yarn.lock" }}
+                    - v3-dependencies-
             - run:
                 name: Verify Yarn Version
                 command: yarn -v
@@ -55,13 +55,13 @@ jobs:
                 name: Build the application
                 command: yarn build
             - run:
-                  name: Cleanup Unnecessary Files
-                  command: |
-                      rm -rf some_unnecessary_directory_or_files
+                name: Cleanup Unnecessary Files
+                command: |
+                    rm -rf some_unnecessary_directory_or_files
             - save_cache:
-                  key: v3-nextjs-cache-{{ .Branch }}-{{ epoch }}
-                  paths:
-                      - .next/cache
+                key: v3-nextjs-cache-{{ .Branch }}-{{ epoch }}
+                paths:
+                    - .next/cache
             - store_artifacts:
                 path: .next
                 destination: build_artifacts
@@ -82,10 +82,10 @@ jobs:
                 name: Download build artifacts
                 command: |
                     curl -O $CIRCLE_ARTIFACTS/build_artifacts
-                  name: Download build artifacts
-                  command: |
-                      mkdir -p .next
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
+                name: Download build artifacts
+                command: |
+                    mkdir -p .next
+                    cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
             - run:
                 name: Deploy Dev to Heroku
                 command: |
@@ -112,10 +112,10 @@ jobs:
                 name: Download build artifacts
                 command: |
                     curl -O $CIRCLE_ARTIFACTS/build_artifacts
-                  name: Download build artifacts
-                  command: |
-                      mkdir -p .next
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
+                name: Download build artifacts
+                command: |
+                    mkdir -p .next
+                    cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
             - run:
                 name: Deploy QA to Heroku
                 command: |
@@ -143,10 +143,10 @@ jobs:
                 name: Download build artifacts
                 command: |
                     curl -O $CIRCLE_ARTIFACTS/build_artifacts
-                  name: Download build artifacts
-                  command: |
-                      mkdir -p .next
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
+                name: Download build artifacts
+                command: |
+                    mkdir -p .next
+                    cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
             - run:
                 name: Deploy Staging to Heroku
                 command: |
@@ -174,10 +174,10 @@ jobs:
                 name: Download build artifacts
                 command: |
                     curl -O $CIRCLE_ARTIFACTS/build_artifacts
-                  name: Download build artifacts
-                  command: |
-                      mkdir -p .next
-                      cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
+                name: Download build artifacts
+                command: |
+                    mkdir -p .next
+                    cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
             - run:
                 name: Deploy Prod to Heroku
                 command: |
@@ -191,17 +191,17 @@ workflows:
     build_deploy_main:
         jobs:
             - lint:
-                  filters:
-                      branches:
-                          only:
-                              - main
+                filters:
+                    branches:
+                        only:
+                            - main
             - test:
-                  requires:
-                      - lint
-                  filters:
-                      branches:
-                          only:
-                              - main
+                requires:
+                    - lint
+                filters:
+                    branches:
+                        only:
+                            - main
             - build:
                 requires:
                     - test
