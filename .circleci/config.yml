@@ -25,17 +25,17 @@ jobs:
         steps:
             - checkout
             - run:
-                  name: Install dependencies
-                  command: yarn install
+                name: Install dependencies
+                command: yarn install
             - run:
-                  name: Run tests
-                  command: yarn test
+                name: Run tests
+                command: yarn test
             - save_cache:
-                  key: v3-dependencies-{{ checksum "yarn.lock" }}
-                  paths:
-                      - node_modules
+                key: v3-dependencies-{{ checksum "yarn.lock" }}
+                paths:
+                    - node_modules
             - store_test_results:
-                  path: test-results
+                path: test-results
 
     build:
         executor: node-executor
@@ -46,14 +46,14 @@ jobs:
                       - v3-dependencies-{{ checksum "yarn.lock" }}
                       - v3-dependencies-
             - run:
-                  name: Verify Yarn Version
-                  command: yarn -v
+                name: Verify Yarn Version
+                command: yarn -v
             - run:
-                  name: Install dependencies
-                  command: yarn install
+                name: Install dependencies
+                command: yarn install
             - run:
-                  name: Build the application
-                  command: yarn build
+                name: Build the application
+                command: yarn build
             - run:
                   name: Cleanup Unnecessary Files
                   command: |
@@ -63,124 +63,132 @@ jobs:
                   paths:
                       - .next/cache
             - store_artifacts:
-                  path: .next
-                  destination: build_artifacts
-                  retention: 7
-            - store_artifacts:
-                  path: node_modules
-                  destination: node_modules
-                  retention: 7
+                path: .next
+                destination: build_artifacts
+                retention: 7
             - store_test_results:
-                  path: test-results
+                path: test-results
 
     deploy_dev_iwcm:
         executor: node-executor
         steps:
             - checkout
             - restore_cache:
-                  key: v3-dependencies-{{ checksum "yarn.lock" }}
+                key: v3-dependencies-{{ checksum "yarn.lock" }}
             - run:
-                  name: Install dependencies
-                  command: yarn install
+                name: Install dependencies
+                command: yarn install
             - run:
+                name: Download build artifacts
+                command: |
+                    curl -O $CIRCLE_ARTIFACTS/build_artifacts
                   name: Download build artifacts
                   command: |
                       mkdir -p .next
                       cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
                       cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/
             - run:
-                  name: Deploy Dev to Heroku
-                  command: |
-                      git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
+                name: Deploy Dev to Heroku
+                command: |
+                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
             - store_test_results:
-                  path: test-results
+                path: test-results
 
-    deploy_qa_iwcm:
+    deploy_qa_iwcm
         executor: node-executor
         steps:
             - checkout
             - restore_cache:
-                  key: v3-dependencies-{{ checksum "yarn.lock" }}
+                key: v3-dependencies-{{ checksum "yarn.lock" }}
             - run:
-                  name: Install dependencies
-                  command: yarn install
+                name: Install dependencies
+                command: yarn install
             - run:
-                  name: Install Heroku CLI
-                  command: curl https://cli-assets.heroku.com/install.sh | sh
+                name: Install Heroku CLI
+                command: curl https://cli-assets.heroku.com/install.sh | sh
             - run:
-                  name: Login to Heroku
-                  command: echo "$HEROKU_API_KEY" | heroku auth:token
+                name: Login to Heroku
+                command: echo "$HEROKU_API_KEY" | heroku auth:token
             - run:
+                name: Download build artifacts
+                command: |
+                    curl -O $CIRCLE_ARTIFACTS/build_artifacts
                   name: Download build artifacts
                   command: |
                       mkdir -p .next
                       cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
                       cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/
             - run:
-                  name: Deploy QA to Heroku
-                  command: |
-                      heroku git:remote -a $HEROKU_APP_NAME_QA
-                      git push heroku main
+                name: Deploy QA to Heroku
+                command: |
+                    heroku git:remote -a $HEROKU_APP_NAME_QA
+                    git push heroku main
             - store_test_results:
-                  path: test-results
+                path: test-results
 
     deploy_staging_iwcm:
         executor: node-executor
         steps:
             - checkout
             - restore_cache:
-                  key: v3-dependencies-{{ checksum "yarn.lock" }}
+                key: v3-dependencies-{{ checksum "yarn.lock" }}
             - run:
-                  name: Install dependencies
-                  command: yarn install
+                name: Install dependencies
+                command: yarn install
             - run:
-                  name: Install Heroku CLI
-                  command: curl https://cli-assets.heroku.com/install.sh | sh
+                name: Install Heroku CLI
+                command: curl https://cli-assets.heroku.com/install.sh | sh
             - run:
-                  name: Login to Heroku
-                  command: echo "$HEROKU_API_KEY" | heroku auth:token
+                name: Login to Heroku
+                command: echo "$HEROKU_API_KEY" | heroku auth:token
             - run:
+                name: Download build artifacts
+                command: |
+                    curl -O $CIRCLE_ARTIFACTS/build_artifacts
                   name: Download build artifacts
                   command: |
                       mkdir -p .next
                       cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
                       cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/
             - run:
-                  name: Deploy Staging to Heroku
-                  command: |
-                      heroku git:remote -a $HEROKU_APP_NAME_STAGING
-                      git push heroku main
+                name: Deploy Staging to Heroku
+                command: |
+                    heroku git:remote -a $HEROKU_APP_NAME_STAGING
+                    git push heroku main
             - store_test_results:
-                  path: test-results
+                path: test-results
 
     deploy_prod_iwcm:
         executor: node-executor
         steps:
             - checkout
             - restore_cache:
-                  key: v3-dependencies-{{ checksum "yarn.lock" }}
+                key: v3-dependencies-{{ checksum "yarn.lock" }}
             - run:
-                  name: Install dependencies
-                  command: yarn install
+                name: Install dependencies
+                command: yarn install
             - run:
-                  name: Install Heroku CLI
-                  command: curl https://cli-assets.heroku.com/install.sh | sh
+                name: Install Heroku CLI
+                command: curl https://cli-assets.heroku.com/install.sh | sh
             - run:
-                  name: Login to Heroku
-                  command: echo "$HEROKU_API_KEY" | heroku auth:token
+                name: Login to Heroku
+                command: echo "$HEROKU_API_KEY" | heroku auth:token
             - run:
+                name: Download build artifacts
+                command: |
+                    curl -O $CIRCLE_ARTIFACTS/build_artifacts
                   name: Download build artifacts
                   command: |
                       mkdir -p .next
                       cp $CIRCLE_ARTIFACTS/build_artifacts/* .next/
                       cp $CIRCLE_ARTIFACTS/node_modules/* node_modules/
             - run:
-                  name: Deploy Prod to Heroku
-                  command: |
-                      heroku git:remote -a $HEROKU_APP_NAME_PROD
-                      git push heroku main
+                name: Deploy Prod to Heroku
+                command: |
+                    heroku git:remote -a $HEROKU_APP_NAME_PROD
+                    git push heroku main
             - store_test_results:
-                  path: test-results
+                path: test-results
 
 workflows:
     version: 2.1
@@ -199,36 +207,36 @@ workflows:
                           only:
                               - main
             - build:
-                  requires:
-                      - test
+                requires:
+                    - test
             - deploy_dev_iwcm:
-                  requires:
-                      - build
-                  filters:
-                      branches:
-                          only:
-                              - main
+                requires:
+                    - build
+                filters:
+                    branches:
+                        only:
+                            - main
             - deploy_qa_iwcm:
-                  type: approval
-                  requires:
-                      - deploy_dev_iwcm
+        type: approval
+        requires:
+            - deploy_dev_iwcm
             - create_release:
-                  type: approval
-                  requires:
-                      - deploy_qa_iwcm
+        type: approval
+        requires:
+            - deploy_qa_iwcm
             - deploy_staging_iwcm:
-                  type: approval
-                  requires:
-                      - create_release
-                  filters:
-                      branches:
-                          only:
-                              - main
+        type: approval
+        requires:
+            - create_release
+        filters:
+            branches:
+                only:
+                    - main
             - deploy_prod_iwcm:
-                  type: approval
-                  requires:
-                      - deploy_staging_iwcm
-                  filters:
-                      branches:
-                          only:
-                              - main
+            type: approval
+            requires:
+                - deploy_staging_iwcm
+            filters:
+                branches:
+                    only:
+                        - main
