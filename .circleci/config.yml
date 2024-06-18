@@ -1,142 +1,168 @@
-# Couldn't automatically generate a config from your source code.
-# This is a generic template to serve as a base for your custom config
-# See: https://circleci.com/docs/configuration-reference
 version: 2.1
+
+executors:
+  node-executor:
+    docker:
+      - image: cimg/node:20.13.1
+
 jobs:
-    test:
-        docker:
-            - image: cimg/node:20.13.1
-        steps:
-            - checkout
-    build:
-        docker:
-            - image: cimg/node:20.13.1
-        steps:
-            - checkout
-            - run:
-                name: Verify Yarn Version
-                command: yarn -v
-            - run:
-                name: Install dependencies
-                command: yarn install
-            - run:
-                name: Build the application
-                command: yarn build
-            - run:
-                name: List directory contents
-                command: ls -la
-            - persist_to_workspace:
-                root: .
-                paths: .next/
-    deploy_dev_iwcm:
-        docker:
-            - image: cimg/node:20.13.1
-        steps:
-            - checkout
-            - attach_workspace:
-                at: .
-            - run:
-                name: Run tests
-                command: echo 'replace me with real tests!'
-            - run:
-                name: Deploy Dev to Heroku
-                command: |
-                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
-            - persist_to_workspace:
-                root: .
-                paths: .next/
-    deploy_qa_iwcm:
-        docker:
-            - image: cimg/node:20.13.1
-        steps:
-            # Replace this with steps to deploy to users
-            - checkout
-            - attach_workspace:
-                at: .
-            - run:
-                name: Run tests
-                command: echo 'replace me with real tests!'
-            - run:
-                name: Deploy QA to Heroku
-                command: |
-                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_QA.git main
-            - persist_to_workspace:
-                root: .
-                paths: .next/
-    deploy_staging_iwcm:
-        docker:
-            - image: cimg/node:20.13.1
-        steps:
-            - checkout
-            - attach_workspace:
-                at: .
-            - run:
-                name: Run tests
-                command: echo 'replace me with real tests!'
-            - run:
-                name: Deploy Staging to Heroku
-                command: |
-                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_STAGING.git main
-            - persist_to_workspace:
-                root: .
-                paths: .next/
-    deploy_prod_iwcm:
-        docker:
-            - image: cimg/node:20.13.1
-        steps:
-            - checkout
-            - attach_workspace:
-                at: .
-            - run:
-                name: Run tests
-                command: echo 'replace me with real tests!'
-            - run:
-                name: Deploy Prod to Heroku
-                command: |
-                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_PROD.git main
+  test:
+    executor: node-executor
+    steps:
+      - checkout
+      - run:
+          name: Run tests
+          command: yarn test
+      - save_cache:
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+
+  build:
+    executor: node-executor
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: Verify Yarn Version
+          command: yarn -v
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - run:
+          name: Build the application
+          command: yarn build
+      - run:
+          name: Cleanup Unnecessary Files
+          command: |
+            rm -rf some_unnecessary_directory_or_files
+      - store_artifacts:
+          path: .next
+          destination: build_artifacts
+          retention: 7
+      - store_artifacts:
+          path: node_modules
+          destination: node_modules
+          retention: 7
+
+  deploy_dev_iwcm:
+    executor: node-executor
+    steps:
+      - checkout
+      - run:
+          name: Download build artifacts
+          command: |
+            curl -O $CIRCLE_ARTIFACTS/build_artifacts
+            curl -O $CIRCLE_ARTIFACTS/node_modules
+      - run:
+          name: Deploy Dev to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
+
+  deploy_qa_iwcm:
+    executor: node-executor
+    steps:
+      - checkout
+      - run:
+          name: Install Heroku CLI
+          command: curl https://cli-assets.heroku.com/install.sh | sh
+      - run:
+          name: Login to Heroku
+          command: echo "$HEROKU_API_KEY" | heroku auth:token
+      - run:
+          name: Download build artifacts
+          command: |
+            curl -O $CIRCLE_ARTIFACTS/build_artifacts
+            curl -O $CIRCLE_ARTIFACTS/node_modules
+      - run:
+          name: Deploy QA to Heroku
+          command: |
+            heroku git:remote -a $HEROKU_APP_NAME_QA
+            git push heroku main
+
+  deploy_staging_iwcm:
+    executor: node-executor
+    steps:
+      - checkout
+      - run:
+          name: Install Heroku CLI
+          command: curl https://cli-assets.heroku.com/install.sh | sh
+      - run:
+          name: Login to Heroku
+          command: echo "$HEROKU_API_KEY" | heroku auth:token
+      - run:
+          name: Download build artifacts
+          command: |
+            curl -O $CIRCLE_ARTIFACTS/build_artifacts
+            curl -O $CIRCLE_ARTIFACTS/node_modules
+      - run:
+          name: Deploy Staging to Heroku
+          command: |
+            heroku git:remote -a $HEROKU_APP_NAME_STAGING
+            git push heroku main
+
+  deploy_prod_iwcm:
+    executor: node-executor
+    steps:
+      - checkout
+      - run:
+          name: Install Heroku CLI
+          command: curl https://cli-assets.heroku.com/install.sh | sh
+      - run:
+          name: Login to Heroku
+          command: echo "$HEROKU_API_KEY" | heroku auth:token
+      - run:
+          name: Download build artifacts
+          command: |
+            curl -O $CIRCLE_ARTIFACTS/build_artifacts
+            curl -O $CIRCLE_ARTIFACTS/node_modules
+      - run:
+          name: Deploy Prod to Heroku
+          command: |
+            heroku git:remote -a $HEROKU_APP_NAME_PROD
+            git push heroku main
+
 workflows:
-    build_deploy_main:
-        jobs:
-            - test:
-                filters:
-                    branches:
-                        only:
-                            - main
-            - build:
-                requires:
-                    - test
-            - deploy_dev_iwcm:
-                requires:
-                    - build
-                filters:
-                    branches:
-                        only:
-                            - main
-            - deploy_qa_iwcm:
-                type: approval
-                requires:
-                    - deploy_dev_iwcm
-                filters:
-                    branches:
-                        only:
-                            - main
-            - create_release:
-                type: approval
-                requires:
-                    - deploy_qa_iwcm
-            - deploy_staging_iwcm:
-                type: approval
-                requires:
-                    - deploy_qa_iwcm
-                filters:
-                    branches:
-                        only:
-                            - main
-            - deploy_prod_iwcm:
-                type: approval
-                requires:
-                    - deploy_staging_iwcm
-                filters:
-                    branches:
-                        only:
-                            - main
+  version: 2.1
+  build_deploy_main:
+    jobs:
+      - test:
+          filters:
+            branches:
+              only:
+                - main
+      - build:
+          requires:
+            - test
+      - deploy_dev_iwcm:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
+      - deploy_qa_iwcm:
+          type: approval
+          requires:
+            - deploy_dev_iwcm
+      - create_release:
+          type: approval
+          requires:
+            - deploy_qa_iwcm
+      - deploy_staging_iwcm:
+          type: approval
+          requires:
+            - create_release
+          filters:
+            branches:
+              only:
+                - main
+      - deploy_prod_iwcm:
+          type: approval
+          requires:
+            - deploy_staging_iwcm
+          filters:
+            branches:
+              only:
+                - main
