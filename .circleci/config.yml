@@ -93,7 +93,7 @@ jobs:
             - store_test_results:
                 path: test-results
 
-    deploy_qa_iwcm
+    deploy_qa_iwcm:
         executor: node-executor
         steps:
             - checkout
