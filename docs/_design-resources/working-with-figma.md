@@ -1,11 +1,10 @@
 ---
 layout: default
 title: Working with Figma Plugin for Designers
-has_children: true
 permalink: /working-with-figma
 ---
 
-# How To Get Started Working with Figma Plugin
+# Working with Figma Plugin for Designers
 
 1. Create a Github personal access token(PAT)
 2. Request personal access token approval & configuration from Tech Lead
