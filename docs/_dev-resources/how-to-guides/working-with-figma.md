@@ -16,7 +16,7 @@ Tokens Studio for Figma is a plugin that allows designers to create design token
 
 - Create a Github PAT
   - Navigate to [Github](https://github.com) and make sure you are signed in. In the upper right hand corner, click your profile icon and then click "Settings":
-![account navigation bar](/docs/assets/images/pat-github-2.png)   
+![account navigation bar](/assets/images/pat-github-2.png)   
 - A new window will open. Click "Developer Settings":
 ![Developer Settings](/docs/assets/images/pat-github-3.png)
 - Navigate to Personal access tokens > Fine-grained tokens
@@ -31,6 +31,7 @@ Tokens Studio for Figma is a plugin that allows designers to create design token
    ![generate new token button](/docs/assets/images/pat-github-10.png)
 - Your new personal access token will appear:
    ![generate new token button](/docs/assets/images/pat-github-11.png)
+   
 {: .important }
 Make sure to store your PAT in 1password in your employee vault!
 
