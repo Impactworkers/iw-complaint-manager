@@ -187,52 +187,52 @@ jobs:
                 path: test-results
 
 workflows:
-    version: 2.1
-    build_deploy_main:
-        jobs:
-            - lint:
-                filters:
-                    branches:
-                        only:
-                            - main
-            - test:
-                requires:
-                    - lint
-                filters:
-                    branches:
-                        only:
-                            - main
-            - build:
-                requires:
-                    - test
-            - deploy_dev_iwcm:
-                requires:
-                    - build
-                filters:
-                    branches:
-                        only:
-                            - main
-            - deploy_qa_iwcm:
-        type: approval
-        requires:
-            - deploy_dev_iwcm
-            - create_release:
-        type: approval
-        requires:
-            - deploy_qa_iwcm
-            - deploy_staging_iwcm:
-        type: approval
-        requires:
-            - create_release
-        filters:
+  version: 2.1
+  build_deploy_main:
+    jobs:
+      - lint:
+          filters:
             branches:
-                only:
-                    - main
-            - deploy_prod_iwcm:
-            type: approval
-            requires:
-                - deploy_staging_iwcm
-            filters:
-                branches:
-                    only:
-                        - main
+              only:
+                - main
+      - test:
+          requires:
+            - lint
+          filters:
+            branches:
+              only:
+                - main
+      - build:
+          requires:
+            - test
+      - deploy_dev_iwcm:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
+      - deploy_qa_iwcm:
+          type: approval
+          requires:
+            - deploy_dev_iwcm
+      - create_release:
+          type: approval
+          requires:
+            - deploy_qa_iwcm
+      - deploy_staging_iwcm:
+          type: approval
+          requires:
+            - create_release
+          filters:
+            branches:
+              only:
+                - main
+      - deploy_prod_iwcm:
+          type: approval
+          requires:
+            - deploy_staging_iwcm
+          filters:
+            branches:
+              only:
+                - main
