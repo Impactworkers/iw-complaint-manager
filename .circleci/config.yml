@@ -16,7 +16,7 @@ commands:
 jobs:
     lint:
         executor: node-executor
-        working_directory: /workspace
+        working_directory: ~/project
         steps:
             - install-dependencies
             - run:
@@ -28,7 +28,7 @@ jobs:
 
     test:
         executor: node-executor
-        working_directory: /workspace
+        working_directory: ~/project
         steps:
             - install-dependencies
             - run:
@@ -43,7 +43,7 @@ jobs:
 
     build:
         executor: node-executor
-        working_directory: /workspace
+        working_directory: ~/project
         steps:
             - install-dependencies
             - run:
@@ -65,7 +65,7 @@ jobs:
                   command: |
                       tar -czf build_artifacts.tar.gz .next
             - persist_to_workspace:
-                  root: /workspace
+                  root: .
                   paths:
                       - build_artifacts.tar.gz
             - store_test_results:
@@ -73,11 +73,11 @@ jobs:
 
     deploy_dev_iwcm:
         executor: node-executor
-        working_directory: /workspace
+        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
-                  at: /workspace
+                  at: .
             - run:
                   name: Extract build artifacts
                   command: |
@@ -92,11 +92,11 @@ jobs:
 
     deploy_qa_iwcm:
         executor: node-executor
-        working_directory: /workspace
+        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
-                  at: /workspace
+                  at: .
             - run:
                   name: Extract build artifacts
                   command: |
@@ -118,11 +118,11 @@ jobs:
 
     deploy_staging_iwcm:
         executor: node-executor
-        working_directory: /workspace
+        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
-                  at: /workspace
+                  at: .
             - run:
                   name: Extract build artifacts
                   command: |
@@ -144,11 +144,11 @@ jobs:
 
     deploy_prod_iwcm:
         executor: node-executor
-        working_directory: /workspace
+        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
-                  at: /workspace
+                  at: .
             - run:
                   name: Extract build artifacts
                   command: |
