@@ -15,9 +15,9 @@ Tokens Studio for Figma is a plugin that allows designers to create design token
 ### How to request a Github Personal Access Token(PAT)
 
 - Create a Github PAT
-  - Navigate to [Github](https://github.com) and make sure you are signed in. In the upper right hand corner, click your profile icon and then click "Settings":
+  - Navigate to [Github](https://github.com) and make sure you are signed in. In the upper right hand corner, click your profile icon and then click "Settings":  
 ![account navigation bar]({{site.baseurl}}/assets/images/pat-github-2.png)   
-- A new window will open. Click "Developer Settings":
+- A new window will open. Click "Developer Settings":  
 ![Developer Settings]({{site.baseurl}}/assets/images/pat-github-3.png)
 - Navigate to Personal access tokens > Fine-grained tokens
 - Click "Generate new token" in the upper right hand corner:
@@ -47,9 +47,9 @@ Once you have submitted your request, the tech lead will have to approve it befo
 ![search plugins]({{site.baseurl}}/assets/images/figma-plugin-8.png)
 - In the upper left-hand corner of the screen, click the figma icon and select plugins. Tokens Studio for Figma should appear in the recents section. Click it and a new window will open:
 ![tokens studio pop-up]({{site.baseurl}}/assets/images/figma-plugin-2.png)
-- To add your token, go to settings > add new > Github
+- To add your token, go to settings > add new > Github  
 ![tokens studio settings]({{site.baseurl}}/assets/images/figma-plugin-4.png) 
-- Input your token in the Personal Access Token field:
+- Input your token in the Personal Access Token field:  
 ![add new credentials]({{site.baseurl}}/assets/images/figma-plugin-5.png)
   - for Repository, input: `impactworkers/iw-complaint-manager`
   - for Branch, input: `main`
@@ -60,4 +60,5 @@ Once you have submitted your request, the tech lead will have to approve it befo
 
  {: .note }
 Once you have pushed your changes to github, you can view them in the Github UI. You should see a `tokens.json` file with a recent update. 
+
 ![github repo files]({{site.baseurl}}/assets/images/figma-plugin-7.png)
