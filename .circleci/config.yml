@@ -166,6 +166,7 @@ workflows:
                       branches:
                           only:
                               - main
+                              - okta-authentication
             - build:
                   requires:
                       - test
@@ -176,6 +177,7 @@ workflows:
                       branches:
                           only:
                               - main
+                              - okta-authentication
             - deploy_qa_iwcm:
                   type: approval
                   requires:

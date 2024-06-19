@@ -2,9 +2,9 @@
 import { OktaAuth } from "@okta/okta-auth-js";
 
 const oktaAuth = new OktaAuth({
-    issuer: "fakeissuer",
-    clientId: "fakeid",
-    redirectUri: "https://localhost:3000/login/callback",
+    issuer: process.env.NEXT_PUBLIC_OKTA_ISSUER!,
+    clientId: process.env.NEXT_PUBLIC_OKTA_CLIENT_ID!,
+    redirectUri: process.env.NEXT_PUBLIC_OKTA_REDIRECT_URI!,
     scopes: ["openid", "profile", "email"],
     pkce: true,
     responseType: "code"

@@ -1,25 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
-import { useEffect } from "react";
-// import { useRouter } from "next/router";
 
-const Home: React.FC = () => {
-    const { authState, oktaAuth } = useOktaAuth();
-    // const router = useRouter();
+const HomePage = () => {
+    const isHerokuEnv = process.env.NODE_ENV === "development"; // Check if in Heroku environment
 
+    const { oktaAuth, authState } = useOktaAuth();
     useEffect(() => {
-        if (!authState || !authState.isAuthenticated) {
-            oktaAuth.signInWithRedirect();
+        if (isHerokuEnv) {
+            const handleRedirect = async () => {
+                if (!((await oktaAuth.isAuthenticated()) && authState)) {
+                    await oktaAuth.signInWithRedirect();
+                }
+            };
+
+            handleRedirect();
         }
-    }, [authState, oktaAuth]);
+    }, [isHerokuEnv, oktaAuth, authState]);
 
-    if (!authState || !authState.isAuthenticated) {
-        return <div>Loading...</div>;
-    }
-
-    return <div>Welcome to the app!</div>;
+    return (
+        <div>
+            <h1>Home Page</h1>
+            {isHerokuEnv ? (
+                <p>Welcome to the app!</p>
+            ) : (
+                <p>Local Environment: No SSO</p>
+            )}
+        </div>
+    );
 };
 
-export default Home;
+export default HomePage;
