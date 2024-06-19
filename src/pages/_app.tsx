@@ -2,7 +2,7 @@
 import { OktaAuth } from "@okta/okta-auth-js";
 import { Security } from "@okta/okta-react";
 import { useRouter } from "next/router";
-import oktaAuth from "./auth";
+import oktaAuth from "../auth";
 import type { AppProps } from "next/app";
 
 const App = ({ Component, pageProps }: AppProps) => {
