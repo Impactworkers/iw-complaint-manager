@@ -2,6 +2,9 @@
     "name": "iw-complaint-manager",
     "version": "0.1.4",
     "private": true,
+    "engines": {
+        "node": "20.13.1"
+    },
     "scripts": {
         "dev": "next dev --experimental-https",
         "build": "next build ",
