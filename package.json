@@ -29,6 +29,7 @@
         "@okta/okta-react": "^6.9.0",
         "@okta/okta-signin-widget": "^7.19.3",
         "@storybook/addon-themes": "^8.1.5",
+        "@tokens-studio/sd-transforms": "0.12.2",
         "css-loader": "^7.1.2",
         "dotenv": "^16.4.5",
         "install": "^0.13.0",
@@ -37,6 +38,7 @@
         "react-dom": "^18",
         "react-router-dom": "^6.23.1",
         "release-please": "^16.12.0",
+        "style-dictionary": "^3.9.2",
         "style-loader": "^4.0.0"
     },
     "devDependencies": {
