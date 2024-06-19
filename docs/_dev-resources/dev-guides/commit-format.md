@@ -6,6 +6,7 @@ permalink: dev-guides/commit-format
 ---
 
 {: .warning-title }
+
 > Requires Review
 >
 > This page details the commit format we were using for Complaint Manager 1.0. We need to take a look at this as a team and determine whether we should update our practices.

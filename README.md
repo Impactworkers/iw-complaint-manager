@@ -90,11 +90,11 @@ yarn run dev
 
 ###### This will create two files in a **certificates** directory: `localhost.pem`, which is your local certificate, and `localhost-key.pem`, which is your private key.
 
-### Storybook 
+### Storybook
 
- Storybook is a development environment tool that is used as a playground for UI components. It allows us, the developers, to create and test components in isolation.
+Storybook is a development environment tool that is used as a playground for UI components. It allows us, the developers, to create and test components in isolation.
 
- To run Storybook CLI locally: 
+To run Storybook CLI locally:
 
 ```sh
 yarn run storybook

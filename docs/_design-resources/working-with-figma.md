@@ -15,4 +15,3 @@ permalink: /working-with-figma
    4b. Go to the settings tab and select options
    4c. Input your PAT
    4d. Push your changes to the github main branch
- 

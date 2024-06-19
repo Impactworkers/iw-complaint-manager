@@ -7,14 +7,14 @@ permalink: adrs/adr-template
 
 When creating a new ADR:
 
-- Copy-paste this template, which can be found in this markdown file, `docs/_technical-documentation/architecture-decision-records/adr-template.md`.
-- The document should be placed in `/docs/_technical-documentation/architecture-decision-records`.
-- You will likely have two versions of the ADR title: a longer version, inserted in the template, and a shorter version for the file name.
-- Name the file following the format `{000}-{short-title}.md`.
-- In the front matter (the section above this one in the markdown file):
-  - Change the title to match the longer ADR title in the format "ADR {000} - {ADR long title}".
-  - Change the permalink to the format `adrs/adr-{000}`.
-- Be sure to remove this middle section before publishing the ADR.
+-   Copy-paste this template, which can be found in this markdown file, `docs/_technical-documentation/architecture-decision-records/adr-template.md`.
+-   The document should be placed in `/docs/_technical-documentation/architecture-decision-records`.
+-   You will likely have two versions of the ADR title: a longer version, inserted in the template, and a shorter version for the file name.
+-   Name the file following the format `{000}-{short-title}.md`.
+-   In the front matter (the section above this one in the markdown file):
+    -   Change the title to match the longer ADR title in the format "ADR {000} - {ADR long title}".
+    -   Change the permalink to the format `adrs/adr-{000}`.
+-   Be sure to remove this middle section before publishing the ADR.
 
 {: .important }
 The front matter must be included in the ADR.

@@ -24,10 +24,10 @@ Our current testing framework is Jest. This ADR explores switching to [Vitest](h
 
 We propose adopting Vitest for our testing suite. Vitest offers:
 
-* **Speed:** Faster test execution compared to Jest.
-* **Compatibility:** Built to use with Vite
+-   **Speed:** Faster test execution compared to Jest.
+-   **Compatibility:** Built to use with Vite
 
 **Consequences**
 
-* **Positives:** Faster testing improves development efficiency and addresses pain point from CM v1.0.
-* **Negatives:** Vitest only works with the Vite framework, so if we ever switch to let's say Next.js, we'd have to convert our tests to Jest.
+-   **Positives:** Faster testing improves development efficiency and addresses pain point from CM v1.0.
+-   **Negatives:** Vitest only works with the Vite framework, so if we ever switch to let's say Next.js, we'd have to convert our tests to Jest.

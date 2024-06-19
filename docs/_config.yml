@@ -5,18 +5,17 @@ search_enabled: true
 enable_copy_code_button: true
 
 callouts:
-  highlight:
-    color: yellow
-  important:
-    title: Important
-    color: blue
-  note:
-    title: Note
-    color: purple
-  warning:
-    title: Warning
-    color: red
-  
+    highlight:
+        color: yellow
+    important:
+        title: Important
+        color: blue
+    note:
+        title: Note
+        color: purple
+    warning:
+        title: Warning
+        color: red
 
 # NB: If you update this config file, please also update docs/wiki-information/wiki-configuration.md.
 
@@ -25,35 +24,30 @@ callouts:
 
 # To implement collections, make a folder "_example" the name is bananable but the underscore infront of the name is very important.
 # Inside this folder add your markdown files. Then in the _config.yml file add the following code structured like below.
-# The underscore is not necessary in here.  Jekyll will now to look for the folder with the underscore infront of the name. 
+# The underscore is not necessary in here.  Jekyll will now to look for the folder with the underscore infront of the name.
 
 collections:
-  dev-resources:
-    output: true
-  technical-documentation:
-    output: true
-  wiki-information:
-    output: true
+    dev-resources:
+        output: true
+    technical-documentation:
+        output: true
+    wiki-information:
+        output: true
 
 just_the_docs:
-  collections:
-    dev-resources:
-      name: Developer Resources
-    technical-documentation:
-      name: Technical Documentation
-    wiki-information:
-      name: Wiki Information
+    collections:
+        dev-resources:
+            name: Developer Resources
+        technical-documentation:
+            name: Technical Documentation
+        wiki-information:
+            name: Wiki Information
 
 defaults:
-  -
-    scope: {path: "_dev-resources/*"}
-    values: {layout: default}
-  -
-    scope: {path: "_technical-documentation/*"}
-    values: {layout: default}
-  -
-    scope: {path: "_wiki-information/*"}
-    values: {layout: default}
-
+    - scope: { path: "_dev-resources/*" }
+      values: { layout: default }
+    - scope: { path: "_technical-documentation/*" }
+      values: { layout: default }
+    - scope: { path: "_wiki-information/*" }
+      values: { layout: default }
 # TODO: Add collectons info to wiki-configuration.md
-      
