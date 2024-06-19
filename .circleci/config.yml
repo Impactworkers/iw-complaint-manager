@@ -16,10 +16,6 @@ jobs:
             - run:
                   name: Run tests
                   command: yarn test
-            - save_cache:
-                  key: v1-dependencies-{{ checksum "yarn.lock" }}
-                  paths:
-                      - node_modules
             - store_test_results:
                   path: test-results
 
@@ -27,8 +23,6 @@ jobs:
         executor: node-executor
         steps:
             - checkout
-            - restore_cache:
-                  key: v1-dependencies-{{ checksum "yarn.lock" }}
             - run:
                   name: Verify Yarn Version
                   command: yarn -v
@@ -42,23 +36,11 @@ jobs:
                   name: Cleanup Unnecessary Files
                   command: |
                       rm -rf some_unnecessary_directory_or_files
-            - store_artifacts:
-                  path: .next
-                  destination: build_artifacts
-                  retention: 7
-            - store_artifacts:
-                  path: node_modules
-                  destination: node_modules
-                  retention: 7
-            - store_test_results:
-                  path: test-results
 
     deploy_dev_iwcm:
         executor: node-executor
         steps:
             - checkout
-            - restore_cache:
-                  key: v1-dependencies-{{ checksum "yarn.lock" }}
             - run:
                   name: Install dependencies
                   command: yarn install
@@ -73,8 +55,6 @@ jobs:
         executor: node-executor
         steps:
             - checkout
-            - restore_cache:
-                  key: v1-dependencies-{{ checksum "yarn.lock" }}
             - run:
                   name: Install dependencies
                   command: yarn install
@@ -96,8 +76,6 @@ jobs:
         executor: node-executor
         steps:
             - checkout
-            - restore_cache:
-                  key: v1-dependencies-{{ checksum "yarn.lock" }}
             - run:
                   name: Install dependencies
                   command: yarn install
@@ -119,8 +97,6 @@ jobs:
         executor: node-executor
         steps:
             - checkout
-            - restore_cache:
-                  key: v1-dependencies-{{ checksum "yarn.lock" }}
             - run:
                   name: Install dependencies
                   command: yarn install
