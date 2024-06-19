@@ -63,11 +63,6 @@ jobs:
                   name: Install dependencies
                   command: yarn install
             - run:
-                  name: Download build artifacts
-                  command: |
-                      curl -O $CIRCLE_ARTIFACTS/build_artifacts
-                      curl -O $CIRCLE_ARTIFACTS/node_modules
-            - run:
                   name: Deploy Dev to Heroku
                   command: |
                       git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
@@ -89,11 +84,6 @@ jobs:
             - run:
                   name: Login to Heroku
                   command: echo "$HEROKU_API_KEY" | heroku auth:token
-            - run:
-                  name: Download build artifacts
-                  command: |
-                      curl -O $CIRCLE_ARTIFACTS/build_artifacts
-                      curl -O $CIRCLE_ARTIFACTS/node_modules
             - run:
                   name: Deploy QA to Heroku
                   command: |
@@ -118,11 +108,6 @@ jobs:
                   name: Login to Heroku
                   command: echo "$HEROKU_API_KEY" | heroku auth:token
             - run:
-                  name: Download build artifacts
-                  command: |
-                      curl -O $CIRCLE_ARTIFACTS/build_artifacts
-                      curl -O $CIRCLE_ARTIFACTS/node_modules
-            - run:
                   name: Deploy Staging to Heroku
                   command: |
                       heroku git:remote -a $HEROKU_APP_NAME_STAGING
@@ -145,11 +130,6 @@ jobs:
             - run:
                   name: Login to Heroku
                   command: echo "$HEROKU_API_KEY" | heroku auth:token
-            - run:
-                  name: Download build artifacts
-                  command: |
-                      curl -O $CIRCLE_ARTIFACTS/build_artifacts
-                      curl -O $CIRCLE_ARTIFACTS/node_modules
             - run:
                   name: Deploy Prod to Heroku
                   command: |
