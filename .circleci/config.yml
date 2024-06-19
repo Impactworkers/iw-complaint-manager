@@ -1,291 +1,294 @@
 version: 2.1
 
 executors:
-    node-executor:
-        docker:
-            - image: cimg/node:20.13.1
+  node-executor:
+    docker:
+      - image: cimg/node:20.13.1
 
 commands:
-    install-dependencies:
-        steps:
-            - checkout
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "yarn.lock" }}
-                      - v1-dependencies-
-            - run:
-                  name: Install dependencies
-                  command: yarn install
-            - save_cache:
-                  paths:
-                      - node_modules
-                  key: v1-dependencies-{{ checksum "yarn.lock" }}
+  install-dependencies:
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
 
 jobs:
-    lint:
-        executor: node-executor
-        working_directory: ~/project
-        steps:
-            - install-dependencies
-            - run:
-                  name: Run Prettier
-                  command: yarn prettier --check .
-            - run:
-                  name: Run ESLint
-                  command: yarn lint
+  lint:
+    executor: node-executor
+    working_directory: ~/project
+    steps:
+      - install-dependencies
+      - run:
+          name: Run Prettier
+          command: yarn prettier --check .
+      - run:
+          name: Run ESLint
+          command: yarn lint
 
-    test:
-        executor: node-executor
-        working_directory: ~/project
-        steps:
-            - install-dependencies
-            - run:
-                  name: Run tests
-                  command: yarn test
-            - store_test_results:
-                  path: test-results
+  test:
+    executor: node-executor
+    working_directory: ~/project
+    steps:
+      - install-dependencies
+      - run:
+          name: Run tests
+          command: yarn test
+      - store_test_results:
+          path: test-results
 
-    build:
-        executor: node-executor
-        working_directory: ~/project
-        steps:
-            - install-dependencies
-            - restore_cache:
-                  keys:
-                      - v1-nextjs-cache-{{ checksum "yarn.lock" }}
-                      - v1-nextjs-cache-
-            - run:
-                  name: Verify Yarn Version
-                  command: yarn -v
-            - run:
-                  name: Build the application
-                  command: yarn build
-            - run:
-                  name: Cleanup Unnecessary Files
-                  command: |
-                      rm -rf some_unnecessary_directory_or_files
-            - save_cache:
-                  key: v1-nextjs-cache-{{ checksum "yarn.lock" }}
-                  paths:
-                      - .next/cache
-            - run:
-                  name: Compress build artifacts
-                  command: |
-                      tar -czf build_artifacts.tar.gz .next
-            - persist_to_workspace:
-                  root: .
-                  paths:
-                      - build_artifacts.tar.gz
-            - store_test_results:
-                  path: test-results
+  build:
+    executor: node-executor
+    working_directory: ~/project
+    steps:
+      - install-dependencies
+      - restore_cache:
+          keys:
+            - v1-nextjs-cache-{{ checksum "yarn.lock" }}
+            - v1-nextjs-cache-
+      - run:
+          name: Verify Yarn Version
+          command: yarn -v
+      - run:
+          name: Build the application
+          command: yarn build
+      - run:
+          name: Cleanup Unnecessary Files
+          command: |
+            rm -rf some_unnecessary_directory_or_files
+      - save_cache:
+          key: v1-nextjs-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - .next/cache
+      - run:
+          name: Compress build artifacts
+          command: |
+            tar -czf build_artifacts.tar.gz .next
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build_artifacts.tar.gz
+      - store_test_results:
+          path: test-results
 
-    deploy_dev:
-        executor: node-executor
-        working_directory: ~/project
-        steps:
-            - checkout
-            - attach_workspace:
-                  at: ~/project
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "yarn.lock" }}
-                      - v1-dependencies-
-            - run:
-                  name: Extract build artifacts
-                  command: tar -xzf build_artifacts.tar.gz -C .
-            - run:
-                  name: Log files after extraction
-                  command: ls -la
-            - install-dependencies
-            - run:
-                  name: Deploy Dev to Heroku
-                  command: |
-                      git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
-            - run:
-                  name: Log Dev deployment status
-                  command: heroku releases --app $HEROKU_APP_NAME_DEV
-            - store_test_results:
-                  path: test-results
-            - persist_to_workspace:
-                  root: .
-                  paths:
-                      - build_artifacts.tar.gz
+  deploy_dev:
+    executor: node-executor
+    working_directory: ~/project
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+      - run:
+          name: Extract build artifacts
+          command: tar -xzf build_artifacts.tar.gz -C .
+      - run:
+          name: Log files after extraction
+          command: ls -la
+      - install-dependencies
+      - run:
+          name: Install Heroku CLI
+          command: curl https://cli-assets.heroku.com/install.sh | sh
+      - run:
+          name: Deploy Dev to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
+      - run:
+          name: Log Dev deployment status
+          command: heroku releases --app $HEROKU_APP_NAME_DEV
+      - store_test_results:
+          path: test-results
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build_artifacts.tar.gz
 
-    deploy_qa:
-        executor: node-executor
-        working_directory: ~/project
-        steps:
-            - checkout
-            - attach_workspace:
-                  at: ~/project
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "yarn.lock" }}
-                      - v1-dependencies-
-            - run:
-                  name: Extract build artifacts
-                  command: tar -xzf build_artifacts.tar.gz -C .
-            - run:
-                  name: Log files after extraction
-                  command: ls -la
-            - install-dependencies
-            - run:
-                  name: Install Heroku CLI
-                  command: curl https://cli-assets.heroku.com/install.sh | sh
-            - run:
-                  name: Login to Heroku
-                  command: echo "$HEROKU_API_KEY" | heroku auth:token
-            - run:
-                  name: Set Heroku remote for QA
-                  command: heroku git:remote -a $HEROKU_APP_NAME_QA
-            - run:
-                  name: Push to Heroku QA
-                  command: git push heroku main
-            - run:
-                  name: Log QA deployment status
-                  command: heroku releases --app $HEROKU_APP_NAME_QA
-            - store_test_results:
-                  path: test-results
+  deploy_qa:
+    executor: node-executor
+    working_directory: ~/project
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+      - run:
+          name: Extract build artifacts
+          command: tar -xzf build_artifacts.tar.gz -C .
+      - run:
+          name: Log files after extraction
+          command: ls -la
+      - install-dependencies
+      - run:
+          name: Install Heroku CLI
+          command: curl https://cli-assets.heroku.com/install.sh | sh
+      - run:
+          name: Login to Heroku
+          command: echo "$HEROKU_API_KEY" | heroku auth:token
+      - run:
+          name: Set Heroku remote for QA
+          command: heroku git:remote -a $HEROKU_APP_NAME_QA
+      - run:
+          name: Push to Heroku QA
+          command: git push heroku main
+      - run:
+          name: Log QA deployment status
+          command: heroku releases --app $HEROKU_APP_NAME_QA
+      - store_test_results:
+          path: test-results
 
-    deploy_staging:
-        executor: node-executor
-        working_directory: ~/project
-        steps:
-            - checkout
-            - attach_workspace:
-                  at: ~/project
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "yarn.lock" }}
-                      - v1-dependencies-
-            - run:
-                  name: Extract build artifacts
-                  command: tar -xzf build_artifacts.tar.gz -C .
-            - run:
-                  name: Log files after extraction
-                  command: ls -la
-            - install-dependencies
-            - run:
-                  name: Install Heroku CLI
-                  command: curl https://cli-assets.heroku.com/install.sh | sh
-            - run:
-                  name: Login to Heroku
-                  command: echo "$HEROKU_API_KEY" | heroku auth:token
-            - run:
-                  name: Set Heroku remote for Staging
-                  command: heroku git:remote -a $HEROKU_APP_NAME_STAGING
-            - run:
-                  name: Push to Heroku Staging
-                  command: git push heroku main
-            - run:
-                  name: Log deployment status
-                  command: heroku releases --app $HEROKU_APP_NAME_STAGING
-            - store_test_results:
-                  path: test-results
+  deploy_staging:
+    executor: node-executor
+    working_directory: ~/project
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+      - run:
+          name: Extract build artifacts
+          command: tar -xzf build_artifacts.tar.gz -C .
+      - run:
+          name: Log files after extraction
+          command: ls -la
+      - install-dependencies
+      - run:
+          name: Install Heroku CLI
+          command: curl https://cli-assets.heroku.com/install.sh | sh
+      - run:
+          name: Login to Heroku
+          command: echo "$HEROKU_API_KEY" | heroku auth:token
+      - run:
+          name: Set Heroku remote for Staging
+          command: heroku git:remote -a $HEROKU_APP_NAME_STAGING
+      - run:
+          name: Push to Heroku Staging
+          command: git push heroku main
+      - run:
+          name: Log deployment status
+          command: heroku releases --app $HEROKU_APP_NAME_STAGING
+      - store_test_results:
+          path: test-results
 
-    deploy_prod:
-        executor: node-executor
-        working_directory: ~/project
-        steps:
-            - checkout
-            - attach_workspace:
-                  at: ~/project
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "yarn.lock" }}
-                      - v1-dependencies-
-            - run:
-                  name: Extract build artifacts
-                  command: tar -xzf build_artifacts.tar.gz -C .
-            - run:
-                  name: Log files after extraction
-                  command: ls -la
-            - install-dependencies
-            - run:
-                  name: Install Heroku CLI
-                  command: curl https://cli-assets.heroku.com/install.sh | sh
-            - run:
-                  name: Login to Heroku
-                  command: echo "$HEROKU_API_KEY" | heroku auth:token
-            - run:
-                  name: Set Heroku remote for Prod
-                  command: heroku git:remote -a $HEROKU_APP_NAME_PROD
-            - run:
-                  name: Push to Heroku Prod
-                  command: git push heroku main
-            - run:
-                  name: Log deployment status
-                  command: heroku releases --app $HEROKU_APP_NAME_PROD
-            - store_test_results:
-                  path: test-results
+  deploy_prod:
+    executor: node-executor
+    working_directory: ~/project
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+      - run:
+          name: Extract build artifacts
+          command: tar -xzf build_artifacts.tar.gz -C .
+      - run:
+          name: Log files after extraction
+          command: ls -la
+      - install-dependencies
+      - run:
+          name: Install Heroku CLI
+          command: curl https://cli-assets.heroku.com/install.sh | sh
+      - run:
+          name: Login to Heroku
+          command: echo "$HEROKU_API_KEY" | heroku auth:token
+      - run:
+          name: Set Heroku remote for Prod
+          command: heroku git:remote -a $HEROKU_APP_NAME_PROD
+      - run:
+          name: Push to Heroku Prod
+          command: git push heroku main
+      - run:
+          name: Log deployment status
+          command: heroku releases --app $HEROKU_APP_NAME_PROD
+      - store_test_results:
+          path: test-results
 
 workflows:
-    version: 2.1
-    build_deploy_main:
-        jobs:
-            - lint:
-                  filters:
-                      branches:
-                          only:
-                              - main
-                              - circleCi # Added branch here
-            - test:
-                  requires:
-                      - lint
-                  filters:
-                      branches:
-                          only:
-                              - main
-                              - circleCi # Added branch here
-            - build:
-                  requires:
-                      - test
-                  filters:
-                      branches:
-                          only:
-                              - main
-                              - circleCi # Added branch here
-            - deploy_dev:
-                  requires:
-                      - build
-                  filters:
-                      branches:
-                          only:
-                              - main
-                              - circleCi # Added branch here
-            - deploy_qa_iwcm:
-                  type: approval
-                  requires:
-                      - deploy_dev
-            - deploy_qa:
-                  type: approval
-                  requires:
-                      - deploy_qa_iwcm
-                  environment:
-                      HEROKU_APP_NAME: $HEROKU_APP_NAME_QA
-            - create_release:
-                  type: approval
-                  requires:
-                      - deploy_qa
-            - deploy_staging:
-                  type: approval
-                  requires:
-                      - create_release
-                  filters:
-                      branches:
-                          only:
-                              - main
-                              - circleCi # Added branch here
-                  environment:
-                      HEROKU_APP_NAME: $HEROKU_APP_NAME_STAGING
-            - deploy_prod:
-                  type: approval
-                  requires:
-                      - deploy_staging
-                  filters:
-                      branches:
-                          only:
-                              - main
-                              - circleCi # Added branch here
-                  environment:
-                      HEROKU_APP_NAME: $HEROKU_APP_NAME_PROD
+  version: 2.1
+  build_deploy_main:
+    jobs:
+      - lint:
+          filters:
+            branches:
+              only:
+                - main
+                - circleCi # Added branch here
+      - test:
+          requires:
+            - lint
+          filters:
+            branches:
+              only:
+                - main
+                - circleCi # Added branch here
+      - build:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - main
+                - circleCi # Added branch here
+      - deploy_dev:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
+                - circleCi # Added branch here
+      - deploy_qa_iwcm:
+          type: approval
+          requires:
+            - deploy_dev
+      - deploy_qa:
+          type: approval
+          requires:
+            - deploy_qa_iwcm
+          environment:
+            HEROKU_APP_NAME: $HEROKU_APP_NAME_QA
+      - create_release:
+          type: approval
+          requires:
+            - deploy_qa
+      - deploy_staging:
+          type: approval
+          requires:
+            - create_release
+          filters:
+            branches:
+              only:
+                - main
+                - circleCi # Added branch here
+          environment:
+            HEROKU_APP_NAME: $HEROKU_APP_NAME_STAGING
+      - deploy_prod:
+          type: approval
+          requires:
+            - deploy_staging
+          filters:
+            branches:
+              only:
+                - main
+                - circleCi # Added branch here
+          environment:
+            HEROKU_APP_NAME: $HEROKU_APP_NAME_PROD
