@@ -4,7 +4,7 @@ executors:
     node-executor:
         docker:
             - image: cimg/node:20.13.1
-            
+        working_directory: /tmp
 
 commands:
     install-dependencies:
@@ -25,9 +25,9 @@ commands:
 jobs:
     lint:
         executor: node-executor
-        working_directory: ~/project
         steps:
             - install-dependencies
+            - run: mkdir -p workspace
             - run:
                   name: Run Prettier
                   command: yarn prettier --check .
@@ -37,7 +37,6 @@ jobs:
 
     test:
         executor: node-executor
-        working_directory: ~/project
         steps:
             - install-dependencies
             - run:
@@ -48,7 +47,6 @@ jobs:
 
     build:
         executor: node-executor
-        working_directory: ~/project
         steps:
             - install-dependencies
             - restore_cache:
@@ -74,7 +72,7 @@ jobs:
                   command: |
                       tar -czf build_artifacts.tar.gz .next
             - persist_to_workspace:
-                  root: .
+                  root: workspace
                   paths:
                       - build_artifacts.tar.gz
             - store_test_results:
@@ -82,11 +80,10 @@ jobs:
 
     deploy_dev:
         executor: node-executor
-        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
-                  at: .
+                  at: /tmp/workspace
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
