@@ -4,7 +4,6 @@ executors:
     node-executor:
         docker:
             - image: cimg/node:20.13.1
-        working_directory: /project
 
 commands:
     install-dependencies:
@@ -25,6 +24,7 @@ commands:
 jobs:
     lint:
         executor: node-executor
+        working_directory: ~/project
         steps:
             - install-dependencies
             - run:
@@ -36,6 +36,7 @@ jobs:
 
     test:
         executor: node-executor
+        working_directory: ~/project
         steps:
             - install-dependencies
             - run:
@@ -46,6 +47,7 @@ jobs:
 
     build:
         executor: node-executor
+        working_directory: ~/project
         steps:
             - install-dependencies
             - restore_cache:
@@ -71,7 +73,7 @@ jobs:
                   command: |
                       tar -czf build_artifacts.tar.gz .next
             - persist_to_workspace:
-                  root: workspace
+                  root: .
                   paths:
                       - build_artifacts.tar.gz
             - store_test_results:
@@ -79,11 +81,11 @@ jobs:
 
     deploy_dev:
         executor: node-executor
-        working_directory: /project
+        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
-                  at: /project
+                  at: .
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
@@ -104,11 +106,11 @@ jobs:
 
     deploy_qa:
         executor: node-executor
-        working_directory: /project
+        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
-                  at: /project
+                  at: .
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
@@ -140,11 +142,11 @@ jobs:
 
     deploy_staging:
         executor: node-executor
-        working_directory: /project
+        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
-                  at: /project
+                  at: .
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
@@ -176,11 +178,11 @@ jobs:
 
     deploy_prod:
         executor: node-executor
-        working_directory: /project
+        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
-                  at: /project
+                  at: .
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
