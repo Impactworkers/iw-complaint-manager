@@ -21,6 +21,38 @@ commands:
                       - node_modules
                   key: v1-dependencies-{{ checksum "yarn.lock" }}
 
+    extract-build-artifacts:
+        steps:
+            - run:
+                  name: Extract build artifacts
+                  command: tar -xzf build_artifacts.tar.gz -C .
+            - run:
+                  name: Log files after extraction
+                  command: ls -la
+
+    install-heroku-cli:
+        steps:
+            - run:
+                  name: Install Heroku CLI
+                  command: curl https://cli-assets.heroku.com/install.sh | sh
+
+    deploy-to-heroku:
+    steps:
+        - run:
+              name: Login to Heroku
+              command: echo "$HEROKU_API_KEY" | heroku auth:token
+        - run:
+              name: Set Heroku remote
+              command: heroku git:remote -a $HEROKU_APP_NAME_DEV
+        - run:
+              name: Push to Heroku
+              command: git push heroku main
+        - run:
+              name: Log deployment status
+              command: heroku releases --app $HEROKU_APP_NAME_DEV
+        - store_test_results:
+              path: test-results
+
 jobs:
     lint:
         executor: node-executor
@@ -86,33 +118,11 @@ jobs:
             - checkout
             - attach_workspace:
                   at: ~/project
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "yarn.lock" }}
-                      - v1-dependencies-
-            - run:
-                  name: Extract build artifacts
-                  command: tar -xzf build_artifacts.tar.gz -C .
-            - run:
-                  name: Log files after extraction
-                  command: ls -la
+            - extract-build-artifacts
             - install-dependencies
-            - run:
-                  name: Install Heroku CLI
-                  command: curl https://cli-assets.heroku.com/install.sh | sh
-            - run:
-                  name: Deploy Dev to Heroku
-                  command: |
-                      git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git main
-            - run:
-                  name: Log Dev deployment status
-                  command: heroku releases --app $HEROKU_APP_NAME_DEV
-            - store_test_results:
-                  path: test-results
-            - persist_to_workspace:
-                  root: .
-                  paths:
-                      - build_artifacts.tar.gz
+            - install-heroku-cli
+            - deploy-to-heroku:
+                  app-name: HEROKU_APP_NAME_DEV
 
     deploy_qa:
         executor: node-executor
@@ -121,34 +131,11 @@ jobs:
             - checkout
             - attach_workspace:
                   at: ~/project
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "yarn.lock" }}
-                      - v1-dependencies-
-            - run:
-                  name: Extract build artifacts
-                  command: tar -xzf build_artifacts.tar.gz -C .
-            - run:
-                  name: Log files after extraction
-                  command: ls -la
+            - extract-build-artifacts
             - install-dependencies
-            - run:
-                  name: Install Heroku CLI
-                  command: curl https://cli-assets.heroku.com/install.sh | sh
-            - run:
-                  name: Login to Heroku
-                  command: echo "$HEROKU_API_KEY" | heroku auth:token
-            - run:
-                  name: Set Heroku remote for QA
-                  command: heroku git:remote -a $HEROKU_APP_NAME_QA
-            - run:
-                  name: Push to Heroku QA
-                  command: git push heroku main
-            - run:
-                  name: Log QA deployment status
-                  command: heroku releases --app $HEROKU_APP_NAME_QA
-            - store_test_results:
-                  path: test-results
+            - install-heroku-cli
+            - deploy-to-heroku:
+                  app-name: HEROKU_APP_NAME_QA
 
     deploy_staging:
         executor: node-executor
@@ -157,34 +144,11 @@ jobs:
             - checkout
             - attach_workspace:
                   at: ~/project
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "yarn.lock" }}
-                      - v1-dependencies-
-            - run:
-                  name: Extract build artifacts
-                  command: tar -xzf build_artifacts.tar.gz -C .
-            - run:
-                  name: Log files after extraction
-                  command: ls -la
+            - extract-build-artifacts
             - install-dependencies
-            - run:
-                  name: Install Heroku CLI
-                  command: curl https://cli-assets.heroku.com/install.sh | sh
-            - run:
-                  name: Login to Heroku
-                  command: echo "$HEROKU_API_KEY" | heroku auth:token
-            - run:
-                  name: Set Heroku remote for Staging
-                  command: heroku git:remote -a $HEROKU_APP_NAME_STAGING
-            - run:
-                  name: Push to Heroku Staging
-                  command: git push heroku main
-            - run:
-                  name: Log deployment status
-                  command: heroku releases --app $HEROKU_APP_NAME_STAGING
-            - store_test_results:
-                  path: test-results
+            - install-heroku-cli
+            - deploy-to-heroku:
+                  app-name: HEROKU_APP_NAME_STAGING
 
     deploy_prod:
         executor: node-executor
@@ -193,34 +157,11 @@ jobs:
             - checkout
             - attach_workspace:
                   at: ~/project
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "yarn.lock" }}
-                      - v1-dependencies-
-            - run:
-                  name: Extract build artifacts
-                  command: tar -xzf build_artifacts.tar.gz -C .
-            - run:
-                  name: Log files after extraction
-                  command: ls -la
+            - extract-build-artifacts
             - install-dependencies
-            - run:
-                  name: Install Heroku CLI
-                  command: curl https://cli-assets.heroku.com/install.sh | sh
-            - run:
-                  name: Login to Heroku
-                  command: echo "$HEROKU_API_KEY" | heroku auth:token
-            - run:
-                  name: Set Heroku remote for Prod
-                  command: heroku git:remote -a $HEROKU_APP_NAME_PROD
-            - run:
-                  name: Push to Heroku Prod
-                  command: git push heroku main
-            - run:
-                  name: Log deployment status
-                  command: heroku releases --app $HEROKU_APP_NAME_PROD
-            - store_test_results:
-                  path: test-results
+            - install-heroku-cli
+            - deploy-to-heroku:
+                  app-name: HEROKU_APP_NAME_PROD
 
 workflows:
     version: 2.1
