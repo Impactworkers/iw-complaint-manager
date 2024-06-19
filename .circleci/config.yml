@@ -4,6 +4,7 @@ executors:
     node-executor:
         docker:
             - image: cimg/node:20.13.1
+        working_directory: /tmp
 
 commands:
     install-dependencies:
@@ -81,7 +82,6 @@ jobs:
 
     deploy_dev:
         executor: node-executor
-        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
@@ -243,32 +243,27 @@ workflows:
                   requires:
                       - deploy_dev
             - deploy_qa:
-                  type: approval
                   requires:
                       - deploy_qa_iwcm
-                  environment:
-                      HEROKU_APP_NAME: $HEROKU_APP_NAME_QA
-            - create_release:
+            - hold_for_staging:
                   type: approval
                   requires:
                       - deploy_qa
             - deploy_staging:
-                  type: approval
                   requires:
-                      - create_release
+                      - hold_for_staging
                   filters:
                       branches:
                           only:
                               - main
-                  environment:
-                      HEROKU_APP_NAME: $HEROKU_APP_NAME_STAGING
-            - deploy_prod:
+            - hold_for_prod:
                   type: approval
                   requires:
                       - deploy_staging
+            - deploy_prod:
+                  requires:
+                      - hold_for_prod
                   filters:
                       branches:
                           only:
                               - main
-                  environment:
-                      HEROKU_APP_NAME: $HEROKU_APP_NAME_PROD
