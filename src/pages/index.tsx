@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 
 const HomePage = () => {
-    const isHerokuEnv = process.env.NODE_ENV === "development"; // Check if in Heroku environment
+    const isHerokuEnv = process.env.NODE_ENV === "production"; // Check if in Heroku environment
 
     const { oktaAuth, authState } = useOktaAuth();
     useEffect(() => {

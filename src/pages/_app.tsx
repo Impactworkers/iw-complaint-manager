@@ -1,4 +1,5 @@
 "use client";
+
 import { OktaAuth } from "@okta/okta-auth-js";
 import { Security } from "@okta/okta-react";
 import { useRouter } from "next/router";

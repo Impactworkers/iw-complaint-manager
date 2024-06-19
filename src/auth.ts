@@ -1,4 +1,3 @@
-// src/pages/auth.ts
 import { OktaAuth } from "@okta/okta-auth-js";
 
 const oktaAuth = new OktaAuth({
