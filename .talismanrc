@@ -1,4 +1,6 @@
 fileignoreconfig:
+- filename: .circleci/config.yml
+  checksum: 4facba1230fab43684ef54f60ab16a690875b417d730bf25789066e02cb30f43
 - filename: .env
   checksum: c4cf3494797a1e9f8a598a31ca8e72172f695c124268cdcab92f0d3005fd32ea
 - filename: cypress/e2e/spec.cy.ts
