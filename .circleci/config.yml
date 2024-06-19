@@ -4,7 +4,7 @@ executors:
     node-executor:
         docker:
             - image: cimg/node:20.13.1
-        working_directory: /tmp
+            - working_directory: /app
 
 commands:
     install-dependencies:
@@ -27,7 +27,6 @@ jobs:
         executor: node-executor
         steps:
             - install-dependencies
-            - run: mkdir -p workspace
             - run:
                   name: Run Prettier
                   command: yarn prettier --check .
@@ -80,10 +79,11 @@ jobs:
 
     deploy_dev:
         executor: node-executor
+        working_directory: /app
         steps:
             - checkout
             - attach_workspace:
-                  at: /tmp/workspace
+                  at: /app
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
@@ -104,11 +104,11 @@ jobs:
 
     deploy_qa:
         executor: node-executor
-        working_directory: ~/project
+        working_directory: /app
         steps:
             - checkout
             - attach_workspace:
-                  at: .
+                  at: /app
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
@@ -140,11 +140,11 @@ jobs:
 
     deploy_staging:
         executor: node-executor
-        working_directory: ~/project
+        working_directory: /app
         steps:
             - checkout
             - attach_workspace:
-                  at: .
+                  at: /app
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
@@ -176,11 +176,11 @@ jobs:
 
     deploy_prod:
         executor: node-executor
-        working_directory: ~/project
+        working_directory: /app
         steps:
             - checkout
             - attach_workspace:
-                  at: .
+                  at: /app
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
