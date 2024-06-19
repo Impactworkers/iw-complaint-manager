@@ -1,6 +1,6 @@
 import { AppProps } from "next/app";
 import React from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { Security } from "@okta/okta-react";
 import {
     oktaAuthConfig,
