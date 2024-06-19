@@ -4,7 +4,7 @@ executors:
     node-executor:
         docker:
             - image: cimg/node:20.13.1
-        working_directory: /app
+        working_directory: /project
 
 commands:
     install-dependencies:
@@ -79,11 +79,11 @@ jobs:
 
     deploy_dev:
         executor: node-executor
-        working_directory: /app
+        working_directory: /project
         steps:
             - checkout
             - attach_workspace:
-                  at: /app
+                  at: /project
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
@@ -104,11 +104,11 @@ jobs:
 
     deploy_qa:
         executor: node-executor
-        working_directory: /app
+        working_directory: /project
         steps:
             - checkout
             - attach_workspace:
-                  at: /app
+                  at: /project
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
@@ -140,11 +140,11 @@ jobs:
 
     deploy_staging:
         executor: node-executor
-        working_directory: /app
+        working_directory: /project
         steps:
             - checkout
             - attach_workspace:
-                  at: /app
+                  at: /project
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
@@ -176,11 +176,11 @@ jobs:
 
     deploy_prod:
         executor: node-executor
-        working_directory: /app
+        working_directory: /project
         steps:
             - checkout
             - attach_workspace:
-                  at: /app
+                  at: /project
             - restore_cache:
                   keys:
                       - v1-dependencies-{{ checksum "yarn.lock" }}
