@@ -14,8 +14,7 @@
         "build-storybook": "storybook build",
         "cypress:open": "cypress open",
         "test": "jest",
-        "test:watch": "jest --watch",
-        "export": "next export"
+        "test:watch": "jest --watch"
     },
     "dependencies": {
         "@emotion/cache": "^11.11.0",
