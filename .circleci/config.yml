@@ -4,7 +4,7 @@ executors:
     node-executor:
         docker:
             - image: cimg/node:20.13.1
-        working_directory: /tmp
+        working_directory: ~/project
 
 commands:
     install-dependencies:
@@ -25,7 +25,6 @@ commands:
 jobs:
     lint:
         executor: node-executor
-        working_directory: ~/project
         steps:
             - install-dependencies
             - run:
@@ -37,7 +36,6 @@ jobs:
 
     test:
         executor: node-executor
-        working_directory: ~/project
         steps:
             - install-dependencies
             - run:
@@ -48,7 +46,6 @@ jobs:
 
     build:
         executor: node-executor
-        working_directory: ~/project
         steps:
             - install-dependencies
             - restore_cache:
@@ -106,7 +103,6 @@ jobs:
 
     deploy_qa:
         executor: node-executor
-        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
@@ -142,7 +138,6 @@ jobs:
 
     deploy_staging:
         executor: node-executor
-        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
@@ -178,7 +173,6 @@ jobs:
 
     deploy_prod:
         executor: node-executor
-        working_directory: ~/project
         steps:
             - checkout
             - attach_workspace:
@@ -213,7 +207,6 @@ jobs:
                   path: test-results
 
 workflows:
-    version: 2.1
     build_deploy_main:
         jobs:
             - lint:
