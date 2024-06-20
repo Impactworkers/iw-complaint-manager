@@ -30,7 +30,6 @@
         "@mui/material-nextjs": "^5.15.11",
         "@okta/okta-auth-js": "^7.7.0",
         "@okta/okta-react": "^6.9.0",
-        "@okta/okta-signin-widget": "^7.19.3",
         "@storybook/addon-themes": "^8.1.5",
         "@tokens-studio/sd-transforms": "0.12.2",
         "css-loader": "^7.1.2",

@@ -46,7 +46,8 @@
     "rules": {
         "prettier/prettier": "error", // Commented out Prettier
         "quotes": ["error", "double"],
-        "react/no-unescaped-entities": 0
+        "react/no-unescaped-entities": 0,
+        "react/react-in-jsx-scope": "off"
     },
     "overrides": [
         {
