@@ -128,8 +128,9 @@ jobs:
                   name: Set Heroku remote for QA
                   command: heroku git:remote -a $HEROKU_APP_NAME_QA
             - run:
-                  name: Push to Heroku QA
-                  command: git push heroku main
+                  name: Deploy QA to Heroku
+                  command: |
+                      git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_QA.git main
             - run:
                   name: Log deployment status
                   command: heroku releases --app $HEROKU_APP_NAME_QA
@@ -163,8 +164,9 @@ jobs:
                   name: Set Heroku remote for Staging
                   command: heroku git:remote -a $HEROKU_APP_NAME_STAGING
             - run:
-                  name: Push to Heroku Staging
-                  command: git push heroku main
+                  name: Deploy Staging to Heroku
+                  command: |
+                      git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_STAGING.git main
             - run:
                   name: Log deployment status
                   command: heroku releases --app $HEROKU_APP_NAME_STAGING
@@ -198,8 +200,9 @@ jobs:
                   name: Set Heroku remote for Prod
                   command: heroku git:remote -a $HEROKU_APP_NAME_PROD
             - run:
-                  name: Push to Heroku Prod
-                  command: git push heroku main
+                  name: Deploy Prod to Heroku
+                  command: |
+                      git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_PROD.git main
             - run:
                   name: Log deployment status
                   command: heroku releases --app $HEROKU_APP_NAME_PROD
