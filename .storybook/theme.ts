@@ -112,45 +112,5 @@ export const defaultTheme = createTheme({
             letterSpacing: designTokens.BodyOverlineLetterSpacing
         }
     },
-    components: {
-        MuiAlert: {
-            styleOverrides: {
-                root: {
-                    fontSize: designTokens.ComponentsAlertTitleFontSize,
-                    fontWeight: designTokens.ComponentsAlertTitleFontWeight,
-                    lineHeight: designTokens.ComponentsAlertTitleLineHeight,
-                    letterSpacing: designTokens.ComponentsAlertTitleLetterSpacing
-                }
-            }
-        },
-        MuiAvatar:  {
-            styleOverrides: {
-                root: {
-                    fontSize: designTokens.ComponentsAvatarInitialsFontSize,
-                    fontWeight: designTokens.ComponentsAvatarInitialsFontWeight,
-                    lineHeight: designTokens.ComponentsAvatarInitialsLineHeight,
-                    letterSpacing: designTokens.ComponentsAvatarInitialsLetterSpacing
-                }
-            }
-        },
-        MuiBadge: {
-            styleOverrides: {
-                root: {
-                    fontSize: designTokens.ComponentsBadgeLabelFontSize,
-                    fontWeight: designTokens.ComponentsBadgeLabelFontWeight,
-                    lineHeight: designTokens.ComponentsBadgeLabelLineHeight,
-                    letterSpacing: designTokens.ComponentsBadgeLabelLetterSpacing
-                }
-            }
-        },
-        /*
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                size: "large",
-                }
-            }
-        },
-        */
-    }
+    // Work on adding colors using figma designs
 });
