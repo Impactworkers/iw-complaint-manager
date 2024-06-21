@@ -8,70 +8,6 @@ export const defaultTheme = createTheme({
             black: designTokens.CommonBlack,
             white: designTokens.CommonWhite
         },
-        primary: {
-            50: designTokens.Primary50,
-            100: designTokens.Primary100,
-            200: designTokens.Primary200,
-            300: designTokens.Primary300,
-            400: designTokens.Primary400,
-            500: designTokens.Primary500,
-            600: designTokens.Primary600,
-            700: designTokens.Primary700,
-            800: designTokens.Primary800,
-            900: designTokens.Primary900,
-        },
-        secondary: {
-            50: designTokens.Secondary50,
-            100: designTokens.Secondary100,
-            200: designTokens.Secondary200,
-            300: designTokens.Secondary300,
-            400: designTokens.Secondary400,
-            500: designTokens.Secondary500,
-            600: designTokens.Secondary600,
-            700: designTokens.Secondary700,
-            800: designTokens.Secondary800,
-            900: designTokens.Secondary900,
-        },
-        error: {
-            200: designTokens.UtilityError200,
-            300: designTokens.UtilityError300,
-            400: designTokens.UtilityError400,
-            500: designTokens.UtilityError500,
-            600: designTokens.UtilityError600,
-            700: designTokens.UtilityError700,
-            800: designTokens.UtilityError800,
-            900: designTokens.UtilityError900,
-        },
-        warning: {
-            200: designTokens.UtilityWarning200,
-            300: designTokens.UtilityWarning300,
-            400: designTokens.UtilityWarning400,
-            500: designTokens.UtilityWarning500,
-            600: designTokens.UtilityWarning600,
-            700: designTokens.UtilityWarning700,
-            800: designTokens.UtilityWarning800,
-            900: designTokens.UtilityWarning900,
-        },
-        info: {
-            200: designTokens.UtilityInformative200,
-            300: designTokens.UtilityInformative300,
-            400: designTokens.UtilityInformative400,
-            500: designTokens.UtilityInformative500,
-            600: designTokens.UtilityInformative600,
-            700: designTokens.UtilityInformative700,
-            800: designTokens.UtilityInformative800,
-            900: designTokens.UtilityInformative900,
-        },
-        success: {
-            200: designTokens.UtilitySuccess200,
-            300: designTokens.UtilitySuccess300,
-            400: designTokens.UtilitySuccess400,
-            500: designTokens.UtilitySuccess500,
-            600: designTokens.UtilitySuccess600,
-            700: designTokens.UtilitySuccess700,
-            800: designTokens.UtilitySuccess800,
-            900: designTokens.UtilitySuccess900,
-        },
         grey: {
             50: designTokens.Neutral50,
             100: designTokens.Neutral100,
@@ -155,12 +91,14 @@ export const defaultTheme = createTheme({
             lineHeight: designTokens.BodySubtitle2LineHeight,
             letterSpacing: designTokens.BodySubtitle2LetterSpacing
         },
+        /*
         button: {
             fontSize: designTokens.BodyButtonDefaultFontSize,
             fontWeight: designTokens.BodyButtonDefaultFontWeight,
             lineHeight: designTokens.BodyButtonDefaultLineHeight,
             letterSpacing: designTokens.BodyButtonDefaultLetterSpacing
         },
+        */
         caption: {
             fontSize: designTokens.BodyCaptionFontSize,
             fontWeight: designTokens.BodyCaptionFontWeight,
@@ -205,16 +143,14 @@ export const defaultTheme = createTheme({
                 }
             }
         },
+        /*
         MuiButton: {
             styleOverrides: {
                 root: {
-                    fontSize: designTokens.ComponentsButtonLargeFontSize,
-                    fontWeight: designTokens.ComponentsButtonLargeFontWeight,
-                    lineHeight: designTokens.ComponentsButtonLargeLineHeight,
-                    letterSpacing: designTokens.ComponentsButtonLargeLetterSpacing
+                size: "large",
                 }
             }
         },
-   
+        */
     }
 });
