@@ -16,7 +16,7 @@
         "storybook": "storybook dev -p 6006 --https --ssl-cert certificates/localhost.pem --ssl-key certificates/localhost-key.pem",
         "build-storybook": "storybook build",
         "cypress:open": "cypress open",
-        "test": "jest",
+        "test": "jest --passWithNoTests",
         "test:watch": "jest --watch"
     },
     "dependencies": {
