@@ -240,7 +240,7 @@ workflows:
                       - deploy_dev
             - deploy_qa:
                   requires:
-                      - deploy_qa_iwcm
+                      - hold_for_qa
             - hold_for_staging:
                   type: approval
                   requires:
