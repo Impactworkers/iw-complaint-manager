@@ -8,6 +8,42 @@ export const defaultTheme = createTheme({
             black: designTokens.CommonBlack,
             white: designTokens.CommonWhite
         },
+        primary: {
+            main: designTokens.Primary500,
+            light: designTokens.Primary100,
+            dark: designTokens.Primary700,
+            contrastText: designTokens.Neutral10
+        },
+        secondary: {
+            main: designTokens.Secondary500,
+            light: designTokens.Secondary100,
+            dark: designTokens.Secondary700,
+            contrastText: designTokens.Neutral10
+        },
+        error: {
+            main: designTokens.UtilityError500,
+            light: designTokens.UtilityError200,
+            dark: designTokens.UtilityError900,
+            contrastText: designTokens.Neutral10
+        },
+        warning: {
+            main: designTokens.UtilityWarning500,
+            light: designTokens.UtilityWarning200,
+            dark: designTokens.UtilityWarning900,
+            contrastText: designTokens.Neutral10
+        },
+        info: {
+            main: designTokens.UtilityInformative500,
+            light: designTokens.UtilityInformative200,
+            dark: designTokens.UtilityInformative900,
+            contrastText: designTokens.Neutral10
+        },
+        success: {
+            main: designTokens.UtilitySuccess500,
+            light: designTokens.UtilitySuccess200,
+            dark: designTokens.UtilitySuccess900,
+            contrastText: designTokens.Neutral10
+        },
         grey: {
             50: designTokens.Neutral50,
             100: designTokens.Neutral100,
@@ -22,70 +58,81 @@ export const defaultTheme = createTheme({
         },
         text: {
             primary: designTokens.TextPrimary,
-            secondary: designTokens.TextSecondary
+            secondary: designTokens.TextSecondary,
+            disabled: designTokens.Neutral400,
         },
         divider: designTokens.OtherDivider,
         background: {
-            paper: designTokens.BackgroundBackground,
-            default: designTokens.BackgroundPaper
+            paper: designTokens.BackgroundPaper,
+            default: designTokens.BackgroundBackground
         },
     },
     typography: {
         h1: {
+            fontFamily: designTokens.HeaderH1FontFamily,
             fontSize: designTokens.HeaderH1FontSize,
             fontWeight: designTokens.HeaderH1FontWeight,
             lineHeight: designTokens.HeaderH1LineHeight,
             letterSpacing: designTokens.HeaderH1LetterSpacing
         },
         h2: {
+            fontFamily: designTokens.HeaderH2FontFamily,
             fontSize: designTokens.HeaderH2FontSize,
             fontWeight: designTokens.HeaderH2FontWeight,
             lineHeight: designTokens.HeaderH2LineHeight,
             letterSpacing: designTokens.HeaderH2LetterSpacing
         },
         h3: {
+            fontFamily: designTokens.HeaderH3FontFamily,
             fontSize: designTokens.HeaderH3FontSize,
             fontWeight: designTokens.HeaderH3FontWeight,
             lineHeight: designTokens.HeaderH3LineHeight,
             letterSpacing: designTokens.HeaderH3LetterSpacing
         },
         h4: {
+            fontFamily: designTokens.HeaderH4FontFamily,
             fontSize: designTokens.HeaderH4FontSize,
             fontWeight: designTokens.HeaderH4FontWeight,
             lineHeight: designTokens.HeaderH4LineHeight,
             letterSpacing: designTokens.HeaderH4LetterSpacing
         },
         h5: {
+            fontFamily: designTokens.HeaderH5FontFamily,
             fontSize: designTokens.HeaderH5FontSize,
             fontWeight: designTokens.HeaderH5FontWeight,
             lineHeight: designTokens.HeaderH5LineHeight,
             letterSpacing: designTokens.HeaderH5LetterSpacing
         },
         h6: {
+            fontFamily: designTokens.HeaderH6FontFamily,
             fontSize: designTokens.HeaderH6FontSize,
             fontWeight: designTokens.HeaderH6FontWeight,
             lineHeight: designTokens.HeaderH6LineHeight,
             letterSpacing: designTokens.HeaderH6LetterSpacing
         },
         body1: {
+            fontFamily: designTokens.BodyBody1FontFamily,
             fontSize: designTokens.BodyBody1FontSize,
             fontWeight: designTokens.BodyBody1FontWeight,
             lineHeight: designTokens.BodyBody1LineHeight,
             letterSpacing: designTokens.BodyBody1LetterSpacing
         },
         body2: {
+            fontFamily: designTokens.BodyBody2FontFamily,
             fontSize: designTokens.BodyBody2FontSize,
             fontWeight: designTokens.BodyBody2FontWeight,
             lineHeight: designTokens.BodyBody2LineHeight,
             letterSpacing: designTokens.BodyBody2LetterSpacing
         },
         subtitle1: {
+            fontFamily: designTokens.BodySubtitle1FontFamily,
             fontSize: designTokens.BodySubtitle1FontSize,
             fontWeight: designTokens.BodySubtitle1FontWeight,
             lineHeight: designTokens.BodySubtitle1LineHeight,
             letterSpacing: designTokens.BodySubtitle1LetterSpacing
         },
         subtitle2: {
+            fontFamily: designTokens.BodySubtitle2FontFamily,
             fontSize: designTokens.BodySubtitle2FontSize,
             fontWeight: designTokens.BodySubtitle2FontWeight,
             lineHeight: designTokens.BodySubtitle2LineHeight,
@@ -100,12 +147,14 @@ export const defaultTheme = createTheme({
         },
         */
         caption: {
+            fontFamily: designTokens.BodyCaptionFontFamily,
             fontSize: designTokens.BodyCaptionFontSize,
             fontWeight: designTokens.BodyCaptionFontWeight,
             lineHeight: designTokens.BodyCaptionLineHeight,
             letterSpacing: designTokens.BodyCaptionLetterSpacing
         },
         overline: {
+            fontFamily: designTokens.BodyOverlineFontFamily,
             fontSize: designTokens.BodyOverlineFontSize,
             fontWeight: designTokens.BodyOverlineFontWeight,
             lineHeight: designTokens.BodyOverlineLineHeight,
