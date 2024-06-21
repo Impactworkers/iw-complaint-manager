@@ -234,7 +234,7 @@ workflows:
                       branches:
                           only:
                               - main
-            - deploy_qa_iwcm:
+            - hold_for_qa:
                   type: approval
                   requires:
                       - deploy_dev
