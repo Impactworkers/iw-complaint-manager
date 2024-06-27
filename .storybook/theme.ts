@@ -67,9 +67,6 @@ export const lightTheme = createTheme({
             paper: designTokens.BackgroundPaper,
             default: designTokens.BackgroundBackground
         },
-        action: {
-            hover: designTokens.Primary50
-        }
     },
     typography: {
         h1: {
@@ -137,6 +134,22 @@ export const lightTheme = createTheme({
             fontWeight: designTokens.BodyOverlineFontWeight,
             letterSpacing: designTokens.BodyOverlineLetterSpacing
         }
+    },
+    components: {
+        MuiListItem: {
+            styleOverrides: {
+                root: {
+                    "&:hover": {
+                        backgroundColor: designTokens.Primary50,
+                        color: designTokens.Primary500,
+                        "& .MuiListItemIcon-root": {
+                            color: designTokens.Primary500
+                        }
+                    }
+                }
+            }
+        }
+    
     }
 });
 
@@ -263,5 +276,21 @@ export const darkTheme = createTheme({
             fontWeight: designTokens.BodyOverlineFontWeight,
             letterSpacing: designTokens.BodyOverlineLetterSpacing
         }
+    },
+    components: {
+        MuiListItem: {
+            styleOverrides: {
+                root: {
+                    "&:hover": {
+                        backgroundColor: designTokens.Primary50,
+                        color: designTokens.Primary700,
+                        "& .MuiListItemIcon-root": {
+                            color: designTokens.Primary700
+                        }
+                    }
+                }
+            }
+        }
+    
     }
 });
