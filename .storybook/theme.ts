@@ -67,64 +67,57 @@ export const lightTheme = createTheme({
             paper: designTokens.BackgroundPaper,
             default: designTokens.BackgroundBackground
         },
+        action: {
+            hover: designTokens.Primary50
+        }
     },
     typography: {
         h1: {
-            fontFamily: designTokens.HeaderH1FontFamily,
             fontSize: designTokens.HeaderH1FontSize,
             fontWeight: designTokens.HeaderH1FontWeight,
             letterSpacing: designTokens.HeaderH1LetterSpacing
         },
         h2: {
-            fontFamily: designTokens.HeaderH2FontFamily,
             fontSize: designTokens.HeaderH2FontSize,
             fontWeight: designTokens.HeaderH2FontWeight,
             letterSpacing: designTokens.HeaderH2LetterSpacing
         },
         h3: {
-            fontFamily: designTokens.HeaderH3FontFamily,
             fontSize: designTokens.HeaderH3FontSize,
             fontWeight: designTokens.HeaderH3FontWeight,
             letterSpacing: designTokens.HeaderH3LetterSpacing
         },
         h4: {
-            fontFamily: designTokens.HeaderH4FontFamily,
             fontSize: designTokens.HeaderH4FontSize,
             fontWeight: designTokens.HeaderH4FontWeight,
             letterSpacing: designTokens.HeaderH4LetterSpacing
         },
         h5: {
-            fontFamily: designTokens.HeaderH5FontFamily,
             fontSize: designTokens.HeaderH5FontSize,
             fontWeight: designTokens.HeaderH5FontWeight,
             letterSpacing: designTokens.HeaderH5LetterSpacing
         },
         h6: {
-            fontFamily: designTokens.HeaderH6FontFamily,
             fontSize: designTokens.HeaderH6FontSize,
             fontWeight: designTokens.HeaderH6FontWeight,
             letterSpacing: designTokens.HeaderH6LetterSpacing
         },
         body1: {
-            fontFamily: designTokens.BodyBody1FontFamily,
             fontSize: designTokens.BodyBody1FontSize,
             fontWeight: designTokens.BodyBody1FontWeight,
             letterSpacing: designTokens.BodyBody1LetterSpacing
         },
         body2: {
-            fontFamily: designTokens.BodyBody2FontFamily,
             fontSize: designTokens.BodyBody2FontSize,
             fontWeight: designTokens.BodyBody2FontWeight,
             letterSpacing: designTokens.BodyBody2LetterSpacing
         },
         subtitle1: {
-            fontFamily: designTokens.BodySubtitle1FontFamily,
             fontSize: designTokens.BodySubtitle1FontSize,
             fontWeight: designTokens.BodySubtitle1FontWeight,
             letterSpacing: designTokens.BodySubtitle1LetterSpacing
         },
         subtitle2: {
-            fontFamily: designTokens.BodySubtitle2FontFamily,
             fontSize: designTokens.BodySubtitle2FontSize,
             fontWeight: designTokens.BodySubtitle2FontWeight,
             letterSpacing: designTokens.BodySubtitle2LetterSpacing
@@ -135,13 +128,11 @@ export const lightTheme = createTheme({
             letterSpacing: designTokens.BodyButtonDefaultLetterSpacing,
         },
         caption: {
-            fontFamily: designTokens.BodyCaptionFontFamily,
             fontSize: designTokens.BodyCaptionFontSize,
             fontWeight: designTokens.BodyCaptionFontWeight,
             letterSpacing: designTokens.BodyCaptionLetterSpacing
         },
         overline: {
-            fontFamily: designTokens.BodyOverlineFontFamily,
             fontSize: designTokens.BodyOverlineFontSize,
             fontWeight: designTokens.BodyOverlineFontWeight,
             letterSpacing: designTokens.BodyOverlineLetterSpacing
@@ -208,61 +199,51 @@ export const darkTheme = createTheme({
     },
     typography: {
         h1: {
-            fontFamily: designTokens.HeaderH1FontFamily,
             fontSize: designTokens.HeaderH1FontSize,
             fontWeight: designTokens.HeaderH1FontWeight,
             letterSpacing: designTokens.HeaderH1LetterSpacing
         },
         h2: {
-            fontFamily: designTokens.HeaderH2FontFamily,
             fontSize: designTokens.HeaderH2FontSize,
             fontWeight: designTokens.HeaderH2FontWeight,
             letterSpacing: designTokens.HeaderH2LetterSpacing
         },
         h3: {
-            fontFamily: designTokens.HeaderH3FontFamily,
             fontSize: designTokens.HeaderH3FontSize,
             fontWeight: designTokens.HeaderH3FontWeight,
             letterSpacing: designTokens.HeaderH3LetterSpacing
         },
         h4: {
-            fontFamily: designTokens.HeaderH4FontFamily,
             fontSize: designTokens.HeaderH4FontSize,
             fontWeight: designTokens.HeaderH4FontWeight,
             letterSpacing: designTokens.HeaderH4LetterSpacing
         },
         h5: {
-            fontFamily: designTokens.HeaderH5FontFamily,
             fontSize: designTokens.HeaderH5FontSize,
             fontWeight: designTokens.HeaderH5FontWeight,
             letterSpacing: designTokens.HeaderH5LetterSpacing
         },
         h6: {
-            fontFamily: designTokens.HeaderH6FontFamily,
             fontSize: designTokens.HeaderH6FontSize,
             fontWeight: designTokens.HeaderH6FontWeight,
             letterSpacing: designTokens.HeaderH6LetterSpacing
         },
         body1: {
-            fontFamily: designTokens.BodyBody1FontFamily,
             fontSize: designTokens.BodyBody1FontSize,
             fontWeight: designTokens.BodyBody1FontWeight,
             letterSpacing: designTokens.BodyBody1LetterSpacing
         },
         body2: {
-            fontFamily: designTokens.BodyBody2FontFamily,
             fontSize: designTokens.BodyBody2FontSize,
             fontWeight: designTokens.BodyBody2FontWeight,
             letterSpacing: designTokens.BodyBody2LetterSpacing
         },
         subtitle1: {
-            fontFamily: designTokens.BodySubtitle1FontFamily,
             fontSize: designTokens.BodySubtitle1FontSize,
             fontWeight: designTokens.BodySubtitle1FontWeight,
             letterSpacing: designTokens.BodySubtitle1LetterSpacing
         },
         subtitle2: {
-            fontFamily: designTokens.BodySubtitle2FontFamily,
             fontSize: designTokens.BodySubtitle2FontSize,
             fontWeight: designTokens.BodySubtitle2FontWeight,
             letterSpacing: designTokens.BodySubtitle2LetterSpacing
@@ -273,13 +254,11 @@ export const darkTheme = createTheme({
             letterSpacing: designTokens.BodyButtonDefaultLetterSpacing,
         },
         caption: {
-            fontFamily: designTokens.BodyCaptionFontFamily,
             fontSize: designTokens.BodyCaptionFontSize,
             fontWeight: designTokens.BodyCaptionFontWeight,
             letterSpacing: designTokens.BodyCaptionLetterSpacing
         },
         overline: {
-            fontFamily: designTokens.BodyOverlineFontFamily,
             fontSize: designTokens.BodyOverlineFontSize,
             fontWeight: designTokens.BodyOverlineFontWeight,
             letterSpacing: designTokens.BodyOverlineLetterSpacing
