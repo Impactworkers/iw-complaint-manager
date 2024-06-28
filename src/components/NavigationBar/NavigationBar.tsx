@@ -12,35 +12,34 @@ import {
     ListItemText,
     ListSubheader
 } from "@mui/material";
-import CasesIcon from "@mui/icons-material/Cases";
-import ModeEditIcon from "@mui/icons-material/ModeEdit";
+import { Cases, Edit } from "@mui/icons-material";
 
-export default function NavigationBar() {
+interface NavigationBarProps {
+    text: string[];
+}
+
+export const NavigationBar = ({ text }: NavigationBarProps): JSX.Element => {
+    const NavigationBarListItems = [
+        {
+            heading: false,
+            headingText: "",
+            divider: false,
+            text: text[0],
+            icon: <Cases />
+        },
+        {
+            heading: true,
+            headingText: "Admin Settings",
+            divider: true,
+            text: text[1],
+            icon: <Edit />
+        }
+    ];
     const [open, setOpen] = useState(false);
 
     const toggleNavigationBar = (newOpen: boolean) => () => {
         setOpen(newOpen);
     };
-
-    const NavigationBarListItems = [
-        {
-            ariaLabel: "cases",
-            heading: false,
-            headingText: "",
-            divider: false,
-            text: "Cases",
-            icon: <CasesIcon />
-        },
-        {
-            ariaLabel: "admin-settings",
-            heading: true,
-            headingText: "Admin Settings",
-            divider: true,
-            text: "Admin Portal",
-            icon: <ModeEditIcon />
-        }
-    ];
-
     const NavigationBarList = (
         <Box
             sx={{ width: 250 }}
@@ -60,10 +59,7 @@ export default function NavigationBar() {
                         <ListItem key={item.text} disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>{item.icon}</ListItemIcon>
-                                <ListItemText
-                                    primary={item.text}
-                                    aria-labelledby={item.ariaLabel}
-                                />
+                                <ListItemText primary={item.text} />
                             </ListItemButton>
                         </ListItem>
                     </Box>
@@ -80,4 +76,4 @@ export default function NavigationBar() {
             </Drawer>
         </div>
     );
-}
+};

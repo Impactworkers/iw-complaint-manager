@@ -1,15 +1,15 @@
 import { render, fireEvent, screen } from "@testing-library/react";
 import { describe, expect, test } from "@jest/globals";
-import NavigationBar from "./NavigationBar";
+import { NavigationBar } from "./NavigationBar";
 
 describe("NavigationBar", () => {
     test("should render open button", () => {
-        render(<NavigationBar />);
+        render(<NavigationBar text={["Cases", "Admin Portal"]} />);
         expect(screen.getByText("Navigation Bar")).toBeInTheDocument();
     });
 
     test("should render NavigationBar", async () => {
-        render(<NavigationBar />);
+        render(<NavigationBar text={["Cases", "Admin Portal"]} />);
         fireEvent.click(screen.getByText("Navigation Bar"));
         expect(screen.getByText("Cases")).toBeInTheDocument();
         expect(screen.getByText("Admin Settings")).toBeInTheDocument();
