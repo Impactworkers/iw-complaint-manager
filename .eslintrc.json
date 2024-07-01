@@ -24,6 +24,7 @@
     "extends": [
         "plugin:react/recommended",
         "plugin:prettier/recommended", // Enables eslint-plugin-prettier and eslint-config-prettier
+        "plugin:storybook/recommended",
         "plugin:react-hooks/recommended",
         "plugin:jsx-a11y/recommended",
         "eslint:recommended",
