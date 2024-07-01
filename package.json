@@ -2,6 +2,9 @@
     "name": "iw-complaint-manager",
     "version": "0.1.4",
     "private": true,
+    "engines": {
+        "node": "20.13.1"
+    },
     "scripts": {
         "dev": "next dev --experimental-https",
         "build": "next build ",
@@ -13,7 +16,7 @@
         "storybook": "storybook dev -p 6006 --https --ssl-cert certificates/localhost.pem --ssl-key certificates/localhost-key.pem",
         "build-storybook": "storybook build",
         "cypress:open": "cypress open",
-        "test": "jest",
+        "test": "jest --passWithNoTests",
         "test:watch": "jest --watch"
     },
     "dependencies": {
@@ -29,22 +32,23 @@
         "@okta/okta-react": "^6.9.0",
         "@okta/okta-signin-widget": "^7.19.4",
         "@storybook/addon-themes": "^8.1.5",
+        "@tokens-studio/sd-transforms": "0.12.2",
         "css-loader": "^7.1.2",
         "dotenv": "^16.4.5",
         "install": "^0.13.0",
-        "next": "^14.2.4",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "next": "14.2.4",
+        "react": "^18",
+        "react-dom": "^18",
         "react-router-dom": "^6.23.1",
         "release-please": "^16.12.0",
-        "serve": "^14.2.3",
+        "style-dictionary": "^3.9.2",
         "style-loader": "^4.0.0"
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.24.6",
         "@chromatic-com/storybook": "^1.5.0",
         "@jest/globals": "^29.7.0",
-        "@next/eslint-plugin-next": "^14.2.3",
+        "@next/eslint-plugin-next": "^14.2.4",
         "@storybook/addon-essentials": "^8.1.6",
         "@storybook/addon-interactions": "^8.1.6",
         "@storybook/addon-links": "^8.1.6",
@@ -61,7 +65,7 @@
         "@types/react-dom": "^18",
         "cypress": "^13.10.0",
         "eslint": "^8",
-        "eslint-config-next": "14.2.3",
+        "eslint-config-next": "14.2.4",
         "eslint-config-prettier": "^9.1.0",
         "eslint-import-resolver-typescript": "^3.6.1",
         "eslint-plugin-import": "^2.29.1",

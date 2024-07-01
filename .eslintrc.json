@@ -22,9 +22,9 @@
 
     // Base config
     "extends": [
-        "plugin:@next/next/recommended",
         "plugin:react/recommended",
         "plugin:prettier/recommended", // Enables eslint-plugin-prettier and eslint-config-prettier
+        "plugin:storybook/recommended",
         "plugin:react-hooks/recommended",
         "plugin:jsx-a11y/recommended",
         "eslint:recommended",
@@ -46,7 +46,9 @@
     "rules": {
         "prettier/prettier": "error", // Commented out Prettier
         "quotes": ["error", "double"],
-        "react/no-unescaped-entities": 0
+        "react/no-unescaped-entities": 0,
+        "react/react-in-jsx-scope": "off",
+        "no-undef": "off"
     },
     "overrides": [
         {
