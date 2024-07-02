@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 
 export default function Page() {
-    const isHerokuEnv = process.env.APP_ENV === "development"; // Check if in Heroku environment
+    const isHerokuEnv = process.env.APP_ENV !== "development";
 
     const { oktaAuth, authState } = useOktaAuth();
     useEffect(() => {

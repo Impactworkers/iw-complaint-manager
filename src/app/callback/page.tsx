@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { FC, useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 import { useRouter } from "next/navigation";
 
-const Callback: React.FC = () => {
+const Callback: FC = () => {
     const { oktaAuth } = useOktaAuth();
     const router = useRouter();
 

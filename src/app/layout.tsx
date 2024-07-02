@@ -8,14 +8,10 @@ import { NavigationBar } from "../components/NavigationBar/NavigationBar";
 import { Security } from "@okta/okta-react";
 import oktaAuth from "../auth/auth";
 import { useRouter } from "next/navigation";
-import React from "react";
+import { ReactNode } from "react";
 import OktaAuth from "@okta/okta-auth-js";
 
-export default function RootLayout({
-    children
-}: {
-    children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
     const router = useRouter();
 
     const restoreOriginalUri = async (
