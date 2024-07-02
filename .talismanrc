@@ -8,5 +8,5 @@ fileignoreconfig:
 - filename: remix
   checksum: 6b5809dab650e75401253815d60ec182f6e05241b1bf63c536ab85007de56f4a
 - filename: yarn.lock
-  checksum: 3f60eab776d6f323f0d11ad74ef3a975e27721b35ce5a21136f506e7386824c0
+  checksum: 825aab318c39e9d9f13a5ef19f1f601cebce6be7691a1636ed3ce89a20d6da2c
 version: "1.0"
