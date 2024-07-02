@@ -32,7 +32,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                         <ThemeProvider theme={lightTheme}>
                             <CssBaseline />
                             {children}
-                            <NavigationBar text={["Cases", "Admin Portal"]} />
+                            <NavigationBar
+                                text={["Cases", "Admin Portal"]}
+                                muiIcons={["Cases", "Edit"]}
+                            />
                         </ThemeProvider>
                     </AppRouterCacheProvider>
                 </Security>

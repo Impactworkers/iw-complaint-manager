@@ -4,12 +4,22 @@ import { NavigationBar } from "./NavigationBar";
 
 describe("NavigationBar", () => {
     test("should render open button", () => {
-        render(<NavigationBar text={["Cases", "Admin Portal"]} />);
+        render(
+            <NavigationBar
+                text={["Cases", "Admin Portal"]}
+                muiIcons={["Cases", "Edit"]}
+            />
+        );
         expect(screen.getByText("Navigation Bar")).toBeInTheDocument();
     });
 
     test("should render NavigationBar", async () => {
-        render(<NavigationBar text={["Cases", "Admin Portal"]} />);
+        render(
+            <NavigationBar
+                text={["Cases", "Admin Portal"]}
+                muiIcons={["Cases", "Edit"]}
+            />
+        );
         fireEvent.click(screen.getByText("Navigation Bar"));
         expect(screen.getByText("Cases")).toBeInTheDocument();
         expect(screen.getByText("Admin Settings")).toBeInTheDocument();

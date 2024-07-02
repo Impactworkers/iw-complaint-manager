@@ -1,6 +1,7 @@
 "use client"
 import { createTheme } from "@mui/material/styles";
 import * as designTokens from "../build-styles/variables";
+import { BorderRight } from "@mui/icons-material";
 
 export const lightTheme = createTheme({
     palette: {
@@ -119,11 +120,6 @@ export const lightTheme = createTheme({
             fontWeight: designTokens.BodySubtitle2FontWeight,
             letterSpacing: designTokens.BodySubtitle2LetterSpacing
         },
-        button: {
-            fontSize: designTokens.BodyButtonDefaultFontSize,
-            fontWeight: designTokens.BodyButtonDefaultFontWeight,
-            letterSpacing: designTokens.BodyButtonDefaultLetterSpacing,
-        },
         caption: {
             fontSize: designTokens.BodyCaptionFontSize,
             fontWeight: designTokens.BodyCaptionFontWeight,
@@ -142,6 +138,9 @@ export const lightTheme = createTheme({
                     "&:hover": {
                         backgroundColor: designTokens.Primary50,
                         color: designTokens.Primary500,
+                        borderRightWidth: "4px",
+                        borderRightColor: designTokens.Primary500,
+                        borderRightStyle: "solid",
                         "& .MuiListItemIcon-root": {
                             color: designTokens.Primary500
                         }
@@ -260,11 +259,6 @@ export const darkTheme = createTheme({
             fontSize: designTokens.BodySubtitle2FontSize,
             fontWeight: designTokens.BodySubtitle2FontWeight,
             letterSpacing: designTokens.BodySubtitle2LetterSpacing
-        },
-        button: {
-            fontSize: designTokens.BodyButtonDefaultFontSize,
-            fontWeight: designTokens.BodyButtonDefaultFontWeight,
-            letterSpacing: designTokens.BodyButtonDefaultLetterSpacing,
         },
         caption: {
             fontSize: designTokens.BodyCaptionFontSize,
