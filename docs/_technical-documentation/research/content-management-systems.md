@@ -14,12 +14,12 @@ A Content Management System (CMS) is a software application or set of related pr
 
 ## Core Features
 
-- **Content Creation**: Allows users to easily create and format content.
-- **Content Storage**: Stores content in a database and manages access to this content through a file system or a cloud-based solution.
-- **Workflow Management**: Supports the processes of content creation, review, approval, and publishing in a collaborative environment.
-- **Publishing**: Allows for the content to be published to the live site or for the content to be scheduled for publication at a future date and time.
-- **Search and Retrieval**: Enables users to search for and retrieve content.
-- **User and Group Management**: Manages user access to the CMS, allowing for role-based permissions that control what users can and cannot do.
+-   **Content Creation**: Allows users to easily create and format content.
+-   **Content Storage**: Stores content in a database and manages access to this content through a file system or a cloud-based solution.
+-   **Workflow Management**: Supports the processes of content creation, review, approval, and publishing in a collaborative environment.
+-   **Publishing**: Allows for the content to be published to the live site or for the content to be scheduled for publication at a future date and time.
+-   **Search and Retrieval**: Enables users to search for and retrieve content.
+-   **User and Group Management**: Manages user access to the CMS, allowing for role-based permissions that control what users can and cannot do.
 
 ## Drupal
 
@@ -35,14 +35,14 @@ Drupal can manage and store an organization's documents, digital assets, and rec
 
 ### Quick Points
 
-- Free and open-source
-- Written in the PHP programming language and requires a database such as MySQL or PostgreSQL to store content and settings.
-- Known for its flexibility, modularity, and a wide range of features,
-- Multi-Tenancy: can be configured for multi-site setups, allowing you to run multiple websites from a single codebase, each with their own custom configurations.
-- Custom UI: Offers extensive theming options to customize user interfaces.
-- Business Rules: Supports customizable workflows and business logic through its module system.
-- Infrastructure as Code: Can be deployed and managed through tools like Ansible, Chef, or Puppet, and supports containerization with Docker.
-- Widely used for websites that require high levels of security, such as government websites, large organizations, and universities.
+-   Free and open-source
+-   Written in the PHP programming language and requires a database such as MySQL or PostgreSQL to store content and settings.
+-   Known for its flexibility, modularity, and a wide range of features,
+-   Multi-Tenancy: can be configured for multi-site setups, allowing you to run multiple websites from a single codebase, each with their own custom configurations.
+-   Custom UI: Offers extensive theming options to customize user interfaces.
+-   Business Rules: Supports customizable workflows and business logic through its module system.
+-   Infrastructure as Code: Can be deployed and managed through tools like Ansible, Chef, or Puppet, and supports containerization with Docker.
+-   Widely used for websites that require high levels of security, such as government websites, large organizations, and universities.
 
 ### Key Features
 
@@ -137,13 +137,13 @@ Drupal supports Microsoft SQL Server, especially in environments where Microsoft
 While not supported out of the box, there are contributed modules and solutions in the Drupal community that enable integration with Oracle databases for enterprises that rely on Oracle's database solutions.
 
 {: .note }
-It's important to note that while Drupal can work with these database systems, the level of support, performance, and features available may vary depending on the database used. MySQL and MariaDB tend to have the most comprehensive support due to their widespread use and the active development of Drupal modules for these platforms. For other databases like SQL Server and Oracle, additional modules or configurations may be required to achieve full functionality. Always check the specific requirements and support status for the Drupal version you are using when considering a database system.  
+It's important to note that while Drupal can work with these database systems, the level of support, performance, and features available may vary depending on the database used. MySQL and MariaDB tend to have the most comprehensive support due to their widespread use and the active development of Drupal modules for these platforms. For other databases like SQL Server and Oracle, additional modules or configurations may be required to achieve full functionality. Always check the specific requirements and support status for the Drupal version you are using when considering a database system.
 
 ### Gotchas
 
-- Learning curve for site builders and developers new to Drupal that can more complex than simpler platforms like wordpress
-- Need for careful selection of modules and configurations to ensure performance and maintainability
+-   Learning curve for site builders and developers new to Drupal that can more complex than simpler platforms like wordpress
+-   Need for careful selection of modules and configurations to ensure performance and maintainability
 
 ### Links
 
-- [Drupal - Open Source CMS](https://www.google.com/url?q=https%3A%2F%2Fwww.drupal.org%2F&sa=D&sntz=1&usg=AOvVaw0zljFIK0RQXTCgS3xZ_VDU)
+-   [Drupal - Open Source CMS](https://www.google.com/url?q=https%3A%2F%2Fwww.drupal.org%2F&sa=D&sntz=1&usg=AOvVaw0zljFIK0RQXTCgS3xZ_VDU)

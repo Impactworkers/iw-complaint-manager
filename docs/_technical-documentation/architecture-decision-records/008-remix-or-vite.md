@@ -18,11 +18,11 @@ Accepted
 
 ### Context
 
-At the moment, Vite has no official backend integration. Configuration and 3rd party packages are required to use Vite with any sort of traditional backend. Remix is a framework that uses Vite as a compiler and allows deployment to any JavaScript runtime. 
+At the moment, Vite has no official backend integration. Configuration and 3rd party packages are required to use Vite with any sort of traditional backend. Remix is a framework that uses Vite as a compiler and allows deployment to any JavaScript runtime.
 
 ### Decision
 
-We are choosing the Remix framework over just using Vite by itself. Remix is a full-stack framework while Vite is essentialy a static file server with enhancements. Remix uses Vite as the default compiler, so we get the benefits of Vite in a full-stack framework. 
+We are choosing the Remix framework over just using Vite by itself. Remix is a full-stack framework while Vite is essentialy a static file server with enhancements. Remix uses Vite as the default compiler, so we get the benefits of Vite in a full-stack framework.
 
 ### Consequences
 

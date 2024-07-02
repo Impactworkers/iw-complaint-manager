@@ -1,13 +1,11 @@
 /** @type {import('next').NextConfig} */
-
-import { config as dotenvConfig } from "dotenv";
-dotenvConfig();
-
+import path from "path";
 const nextConfig = {
-    env: {
-        NEXT_PUBLIC_OKTA_CLIENT_ID: process.env.NEXT_PUBLIC_OKTA_CLIENT_ID,
-        NEXT_PUBLIC_OKTA_DOMAIN: process.env.NEXT_PUBLIC_OKTA_DOMAIN,
-        NEXT_PUBLIC_OKTA_REDIRECT_URI: process.env.NEXT_PUBLIC_OKTA_REDIRECT_URI
+    distDir: "out", // Specify the output directory for the exported files
+    // any other configuration options you might need
+    webpack: (config) => {
+        config.resolve.alias["pages"] = path.join(process.cwd(), "src/pages");
+        return config;
     }
 };
 

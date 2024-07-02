@@ -6,6 +6,7 @@ permalink: /adrs/adr-005
 ---
 
 {: .warning-title }
+
 > Check for Relevance
 >
 > This page may be about Complaint Manager 1.0. Should it be removed from this wiki?
@@ -29,9 +30,9 @@ Accepted
 
 ### Decision
 
-- The development made when this card was played is no longer necessary.
-- [Issue #477](https://github.com/orgs/PublicDataWorks/projects/1/views/3?pane=issue&itemId=52702677) - Run officer table script to fix roster issues. Fixes duplicated officers in the UI moving forward.
-- Therefore, we need to search the codebase and remove the changes that were added.
+-   The development made when this card was played is no longer necessary.
+-   [Issue #477](https://github.com/orgs/PublicDataWorks/projects/1/views/3?pane=issue&itemId=52702677) - Run officer table script to fix roster issues. Fixes duplicated officers in the UI moving forward.
+-   Therefore, we need to search the codebase and remove the changes that were added.
 
 ### Consequences
 

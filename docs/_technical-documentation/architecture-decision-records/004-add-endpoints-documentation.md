@@ -32,18 +32,18 @@ Decide which tool is better suited for documenting the API endpoints.
 
 Tool we are going to use to document the API endpoints:
 
-- [x] Swagger
-- [ ] Github
+-   [x] Swagger
+-   [ ] Github
 
 #### Swagger
 
 For the Swagger option, Swagger is a powerful tool that allows to document the API in a way that is easy to understand and use. Also, Swagger is commonly used in the industry.
 Other points considered include:
 
-- [OpenAPI and Swagger](https://swagger.io/solutions/getting-started-with-oas/)
-- It uses YAML. Learning YAML is a good skill to have because it is used in many other tools
-- It has a good amount of documentation and examples available online
-- There seem to be API testing capabilities that can be added to the project
+-   [OpenAPI and Swagger](https://swagger.io/solutions/getting-started-with-oas/)
+-   It uses YAML. Learning YAML is a good skill to have because it is used in many other tools
+-   It has a good amount of documentation and examples available online
+-   There seem to be API testing capabilities that can be added to the project
 
 An example of what a implementation would look like was implemented in the Complaint Manager(proof of concept). Here is the link to visualize it deployed:
 
@@ -70,12 +70,12 @@ https://github.com/primeroIMS/primero/tree/main/doc/api
 
 #### Swagger
 
-- We have extra packages added to the project and they will need maintenance
-- The team will need to learn how to write in YAML
-- The team will need to write down the documentation for each endpoint (or/and use some ai assistant tool to help with that)
+-   We have extra packages added to the project and they will need maintenance
+-   The team will need to learn how to write in YAML
+-   The team will need to write down the documentation for each endpoint (or/and use some ai assistant tool to help with that)
 
 #### Github
 
-- The team will have to write the documentation using markdown
-- The team will have to write down the documentation for each endpoint (or/and use some ai assistant tool to help with that)
-- There are no extra automated tests we can implement
+-   The team will have to write the documentation using markdown
+-   The team will have to write down the documentation for each endpoint (or/and use some ai assistant tool to help with that)
+-   There are no extra automated tests we can implement

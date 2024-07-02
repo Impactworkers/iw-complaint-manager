@@ -224,6 +224,7 @@ workflows:
                       branches:
                           only:
                               - main
+                              - okta-authentication
             - build:
                   requires:
                       - test

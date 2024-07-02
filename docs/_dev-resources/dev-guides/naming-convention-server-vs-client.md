@@ -19,19 +19,19 @@ To be Updated
 
 **ADD:**
 
-- appear on client and server
+-   appear on client and server
 
 **GET:**
 
-- *used on client and server
+-   \*used on client and server
 
 **EDIT:**
 
-- appear on client and server
+-   appear on client and server
 
 **REMOVE:**
 
-- appear on client and server
+-   appear on client and server
 
 ### - worker is out of scope
 
@@ -41,44 +41,44 @@ To be Updated
 
 **CREATE:**
 
-- appear on client and server
+-   appear on client and server
 
 **RETRIEVE:**
 
-- used mostly on the server side
+-   used mostly on the server side
 
 **UPDATE:**
 
-- appear on client and server
+-   appear on client and server
 
 **DELETE:**
 
-- only used on server
+-   only used on server
 
 also..
 
-- Models should be singular and camelCase
+-   Models should be singular and camelCase
 
-  - EX: db table is cases_inmates / model is caseInmate (see
+    -   EX: db table is cases_inmates / model is caseInmate (see
         caseInmate.js)
 
-- HTML values & test-ids should be kebab-case
+-   HTML values & test-ids should be kebab-case
 
-  - EX. data-test-id="this-is-an-example"
+    -   EX. data-test-id="this-is-an-example"
 
-- Functions start with a verb
+-   Functions start with a verb
 
-- Booleans should start with "is", "has"; something is suggest a
+-   Booleans should start with "is", "has"; something is suggest a
     yes or no
 
 some stuff:
 
-- KISS: Keep It Simple Stupid
+-   KISS: Keep It Simple Stupid
 
-- DRY: Don't Repeat Yourself
+-   DRY: Don't Repeat Yourself
 
-- YAGNI: You Ain't Gonna Need It
+-   YAGNI: You Ain't Gonna Need It
 
 resources:
 
-- [Summary of 'Clean code' by Robert C. Martin](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29).
+-   [Summary of 'Clean code' by Robert C. Martin](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29).

@@ -37,4 +37,4 @@ This configures [callouts](https://just-the-docs.com/docs/ui-components/callouts
 
 ### `collections`
 
-This enables the use of Jekyll collections.  It is Implemented in the Development resources folder.
+This enables the use of Jekyll collections. It is Implemented in the Development resources folder.

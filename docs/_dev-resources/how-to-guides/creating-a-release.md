@@ -18,7 +18,7 @@ Our repo is using the [release-please](https://github.com/googleapis/release-ple
 -   `feat:` which represents a new feature, and correlates to a SemVer minor.
 -   `feat!:` represents a breaking change (indicated by the !) and will result in a SemVer major.
 
-See the [commit format page](../dev-guides/commit-format.md) for more detailed information. 
+See the [commit format page](../dev-guides/commit-format.md) for more detailed information.
 
 Release-please automatically parses the git commit history and adds commits that have this prefix to the pull request.
 

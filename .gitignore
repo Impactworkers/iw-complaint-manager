@@ -40,3 +40,4 @@ certificates
 
 #secrets 
 .env.local
+.env
