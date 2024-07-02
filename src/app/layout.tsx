@@ -12,7 +12,10 @@ export default function RootLayout(props: any) {
                     <ThemeProvider theme={lightTheme}>
                         <CssBaseline />
                         {children}
-                        <NavigationBar text={["Cases", "Admin Portal"]} />
+                        <NavigationBar
+                            text={["Cases", "Admin Portal"]}
+                            muiIcons={["Cases", "Edit"]}
+                        />
                     </ThemeProvider>
                 </AppRouterCacheProvider>
             </body>

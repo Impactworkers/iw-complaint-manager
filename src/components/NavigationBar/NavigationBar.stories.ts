@@ -17,14 +17,16 @@ type Story = StoryObj<typeof meta>;
 
 export const NavBarClosed: Story = {
     args: {
-        text: ["Cases", "Admin Portal"]
+        text: ["Cases", "Admin Portal"],
+        muiIcons: ["Cases", "Edit"]
     }
 };
 
 // More on interaction testing: https://storybook.js.org/docs/writing-tests/interaction-testing
 export const NavBarOpen: Story = {
     args: {
-        text: ["Cases", "Admin Portal"]
+        text: ["Cases", "Admin Portal"],
+        muiIcons: ["Cases", "Edit"]
     },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);
