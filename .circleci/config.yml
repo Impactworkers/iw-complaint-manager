@@ -27,6 +27,12 @@ jobs:
         executor: node-executor
         steps:
             - install-dependencies
+            - run:
+                  name: Run Prettier
+                  command: yarn prettier --check .
+            - run:
+                  name: Run ESLint
+                  command: yarn lint
 
     test:
         executor: node-executor
