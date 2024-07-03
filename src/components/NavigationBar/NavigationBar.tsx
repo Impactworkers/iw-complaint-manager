@@ -1,8 +1,7 @@
 "use client";
-import { ComponentType, useState } from "react";
+import { ComponentType } from "react";
 import {
     Box,
-    Button,
     Divider,
     Drawer,
     List,
@@ -27,27 +26,27 @@ interface NavigationBarProps {
      */
     muiIcons: string[];
 }
-export const IconComponents = () => {
-    const iconPaths: { [key: string]: ComponentType } = {
-        Dashboard: dynamic(() => import("@mui/icons-material/Dashboard")),
-        Description: dynamic(() => import("@mui/icons-material/Description")),
-        Cases: dynamic(() => import("@mui/icons-material/Cases")),
-        Edit: dynamic(() => import("@mui/icons-material/Edit")),
-        Groups: dynamic(() => import("@mui/icons-material/Groups")),
-        Analytics: dynamic(() => import("@mui/icons-material/Analytics")),
-        LibraryAdd: dynamic(() => import("@mui/icons-material/LibraryAdd")),
-        Settings: dynamic(() => import("@mui/icons-material/Settings")),
-        default: dynamic(() => import("@mui/icons-material/Cases"))
-    };
-    return iconPaths;
-};
 
 export const NavigationBar = ({
     text = ["Cases", "Admin Portal"],
     muiIcons = ["Cases", "Edit"]
-}: NavigationBarProps): JSX.Element => {
-    const [open, setOpen] = useState(false);
-
+}: NavigationBarProps) => {
+    const IconComponents = () => {
+        const iconPaths: { [key: string]: ComponentType } = {
+            Dashboard: dynamic(() => import("@mui/icons-material/Dashboard")),
+            Description: dynamic(
+                () => import("@mui/icons-material/Description")
+            ),
+            Cases: dynamic(() => import("@mui/icons-material/Cases")),
+            Edit: dynamic(() => import("@mui/icons-material/Edit")),
+            Groups: dynamic(() => import("@mui/icons-material/Groups")),
+            Analytics: dynamic(() => import("@mui/icons-material/Analytics")),
+            LibraryAdd: dynamic(() => import("@mui/icons-material/LibraryAdd")),
+            Settings: dynamic(() => import("@mui/icons-material/Settings")),
+            default: dynamic(() => import("@mui/icons-material/Cases"))
+        };
+        return iconPaths;
+    };
     const NavigationBarListItems = [
         {
             heading: false,
@@ -69,15 +68,8 @@ export const NavigationBar = ({
         }
     ];
 
-    const toggleNavigationBar = (newOpen: boolean) => () => {
-        setOpen(newOpen);
-    };
     const NavigationBarList = (
-        <Box
-            sx={{ width: 250 }}
-            role="presentation"
-            onClick={toggleNavigationBar(false)}
-        >
+        <Box sx={{ width: 250 }} role="presentation">
             <List>
                 {NavigationBarListItems.map((item) => {
                     const { heading, headingText, divider, text, Icon } = item;
@@ -106,11 +98,8 @@ export const NavigationBar = ({
     );
 
     return (
-        <div>
-            <Button onClick={toggleNavigationBar(true)}>Navigation Bar</Button>
-            <Drawer open={open} onClose={toggleNavigationBar(false)}>
-                {NavigationBarList}
-            </Drawer>
-        </div>
+        <Drawer variant="persistent" anchor="left" open sx={{ width: 250 }}>
+            {NavigationBarList}
+        </Drawer>
     );
 };
