@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 
 export default function Page() {
-    const isHerokuEnv = process.env.APP_ENV === "development";
+    const isHerokuEnv = process.env.NEXT_PUBLIC_APP_ENV === "development";
     const { oktaAuth, authState } = useOktaAuth();
     const [isClient, setIsClient] = useState(false);
 
