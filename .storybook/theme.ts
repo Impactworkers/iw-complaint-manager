@@ -147,7 +147,15 @@ export const lightTheme = createTheme({
                     }
                 }
             }
-        }
+        },
+            MuiAppBar:{
+                styleOverrides:{
+                    root:{
+                        backgroundColor: designTokens.Neutral10,
+                        borderBottom: `1px solid ${designTokens.OtherDivider}`
+                    }
+                }
+            }
     
     }
 });

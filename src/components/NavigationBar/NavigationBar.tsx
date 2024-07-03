@@ -98,7 +98,14 @@ export const NavigationBar = ({
     );
 
     return (
-        <Drawer variant="persistent" anchor="left" open sx={{ width: 250 }}>
+        <Drawer
+            variant="persistent"
+            anchor="left"
+            open
+            sx={{
+                "& .MuiPaper-root": { top: "5%", width: "250px" }
+            }}
+        >
             {NavigationBarList}
         </Drawer>
     );

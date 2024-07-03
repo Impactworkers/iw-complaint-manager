@@ -10,6 +10,7 @@ import oktaAuth from "../auth/auth";
 import { useRouter } from "next/navigation";
 import { ReactNode } from "react";
 import OktaAuth from "@okta/okta-auth-js";
+import Header from "@/components/Header/Header";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     const router = useRouter();
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     <AppRouterCacheProvider>
                         <ThemeProvider theme={lightTheme}>
                             <CssBaseline />
+                            <Header />
                             {children}
                             <NavigationBar
                                 text={["Cases", "Admin Portal"]}
