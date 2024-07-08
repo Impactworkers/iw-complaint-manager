@@ -4,13 +4,11 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import { lightTheme } from "../../.storybook/theme";
 import CssBaseline from "@mui/material/CssBaseline";
-import { NavigationBar } from "../components/NavigationBar/NavigationBar";
 import { Security } from "@okta/okta-react";
 import oktaAuth from "../auth/auth";
 import { useRouter } from "next/navigation";
 import { ReactNode } from "react";
 import OktaAuth from "@okta/okta-auth-js";
-import Header from "@/components/Header/Header";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     const router = useRouter();
@@ -23,8 +21,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     };
 
     return (
-        <html lang="en">
-            <body>
+        <html lang="en" style={{ height: "100%", margin: "0", padding: "0" }}>
+            <body style={{ display: "flex", flexDirection: "column" }}>
                 <Security
                     oktaAuth={oktaAuth}
                     restoreOriginalUri={restoreOriginalUri}
@@ -32,12 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     <AppRouterCacheProvider>
                         <ThemeProvider theme={lightTheme}>
                             <CssBaseline />
-                            <Header />
                             {children}
-                            <NavigationBar
-                                text={["Cases", "Admin Portal"]}
-                                muiIcons={["Cases", "Edit"]}
-                            />
                         </ThemeProvider>
                     </AppRouterCacheProvider>
                 </Security>
