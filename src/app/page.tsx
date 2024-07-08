@@ -10,11 +10,9 @@ export default function Page() {
         herokuEnv === "qa" ||
         herokuEnv === "staging";
     const { oktaAuth, authState } = useOktaAuth();
-    const [isClient, setIsClient] = useState(false);
     const [redirectAttempted, setRedirectAttempted] = useState(false);
 
     useEffect(() => {
-        setIsClient(true);
         if (isHerokuEnv && !redirectAttempted) {
             const handleRedirect = async () => {
                 // Consider using authState.isAuthenticated if it's reliable
@@ -31,7 +29,7 @@ export default function Page() {
         }
     }, [isHerokuEnv, oktaAuth, authState, redirectAttempted]);
 
-    return isHerokuEnv && isClient && authState?.isAuthenticated ? (
+    return isHerokuEnv && authState?.isAuthenticated ? (
         <main
             className="flex min-h-screen flex-col p-6"
             style={{ marginLeft: "250px", paddingLeft: "5px" }}
