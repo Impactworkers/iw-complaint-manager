@@ -4,7 +4,11 @@ import { useState, useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 
 export default function Page() {
-    const isHerokuEnv = process.env.NEXT_PUBLIC_APP_ENV === "development";
+    const herokuEnv = process.env.NEXT_PUBLIC_APP_ENV;
+    const isHerokuEnv =
+        herokuEnv === "development" ||
+        herokuEnv === "qa" ||
+        herokuEnv === "staging";
     const { oktaAuth, authState } = useOktaAuth();
     const [isClient, setIsClient] = useState(false);
     const [redirectAttempted, setRedirectAttempted] = useState(false);
@@ -36,6 +40,11 @@ export default function Page() {
             <p className="text-lg mt-4">Welcome to Complaint Manager 2.0</p>
         </main>
     ) : (
-        <p>Local Environment: No SSO</p>
+        <p
+            className="text-lg mt-4"
+            style={{ marginLeft: "250px", marginTop: "100px" }}
+        >
+            Local Environment: No SSO
+        </p>
     );
 }
