@@ -23,16 +23,6 @@ const CasesTable: React.FC<CasesTableProps> = ({ columns, rows }) => {
         [key: string]: boolean;
     }>({});
 
-    // const menuItems = [
-    //     { label: "ID", key: "id" },
-    //     { label: "Type", key: "type" },
-    //     { label: "Date Created", key: "dateCreated" },
-    //     { label: "Creator", key: "creator" },
-    //     { label: "Location", key: "location" },
-    //     { label: "Status", key: "status" },
-    //     { label: "Assignees", key: "assignees" }
-    // ];
-
     const handleMenuOpen = (
         event: React.MouseEvent<HTMLButtonElement>,
         rowIndex: number
@@ -54,6 +44,8 @@ const CasesTable: React.FC<CasesTableProps> = ({ columns, rows }) => {
             });
         };
 
+    console.log("columns", columns);
+    console.log("rows", typeof rows);
     const modifiedColumns: GridColDef[] = [
         ...columns,
         {
