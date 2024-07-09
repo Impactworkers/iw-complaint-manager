@@ -159,15 +159,8 @@ export const lightTheme = createTheme({
             styleOverrides:{
                 root:{
                     backgroundColor: designTokens.Neutral10,
-                    borderBottom: `1px solid ${designTokens.OtherDivider}`,
+                    // borderBottom: `1px solid ${designTokens.OtherDivider}`,
                     height: "60px"
-                }
-            }
-        },
-        MuiDrawer: {
-            styleOverrides: {
-                paper: {
-                    marginTop: "58px",
                 }
             }
         },
