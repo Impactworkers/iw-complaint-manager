@@ -36,19 +36,20 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
 
     return (
         <Box sx={{ display: "flex" }}>
-            <CssBaseline />
             <AppBar
                 position="fixed"
                 sx={{
                     display: "flex",
                     justifyContent: "space-between",
-                    flexDirection: "row",
-                    transition: (theme) =>
-                        theme.transitions.create(["margin", "width"], {
-                            easing: theme.transitions.easing.sharp,
-                            duration: theme.transitions.duration.leavingScreen
-                        })
+                    flexDirection: "row"
+
+                    // transition: (theme) =>
+                    //     theme.transitions.create(["margin", "width"], {
+                    //         easing: theme.transitions.easing.sharp,
+                    //         duration: theme.transitions.duration.leavingScreen
+                    //     })
                 }}
+                elevation={0}
             >
                 <Toolbar>
                     <IconButton
@@ -78,7 +79,6 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
             />
             <Backdrop
                 sx={{
-                    color: "#fff",
                     zIndex: (theme) => theme.zIndex.drawer + 1,
                     opacity: 0.7,
                     position: "fixed",
