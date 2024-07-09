@@ -7,6 +7,8 @@ fileignoreconfig:
   checksum: 88fef28310fe9725e99aeb64836b510b1ed59741f031f5f7ec9b6640de3e8b81
 - filename: remix
   checksum: 6b5809dab650e75401253815d60ec182f6e05241b1bf63c536ab85007de56f4a
+- filename: src/components/Cases/CasesTable.tsx
+  checksum: eb5048a8fc1cb9067bd3d619915988818d17d41efa8c2bfa78c2dd7052b05240
 - filename: yarn.lock
   checksum: c37e0f76a73b65282e06345dd3e68f46583b602fff28de6e89cd632621fe7fe1
 version: "1.0"
