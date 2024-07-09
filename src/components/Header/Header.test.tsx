@@ -9,7 +9,7 @@ jest.mock("../../auth/auth", () => ({
 }));
 
 describe("Header component", () => {
-    test("should call logout function on clicking 'Logout' menu item", async () => {
+    test("should call logout function when clicking 'Logout' button", async () => {
         render(<Header />);
 
         await act(async () => {
