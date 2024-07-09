@@ -31,21 +31,21 @@ const AppBarWithSideNavWrapper: React.FC<any> = (args) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <ThemeProvider theme={theme}>
-            <div style={{ transform: "scale(1)", height: "100vh" }}>
-                <AppBarWithSideNav {...args} open={open} setOpen={setOpen}>
-                    <Stack
-                        sx={{
-                            display: "flex",
-                            justifyContent: "center",
-                            margin: "20px"
-                        }}
-                    >
-                        <div>Children Content</div>
-                    </Stack>
-                </AppBarWithSideNav>
-            </div>
-        </ThemeProvider>
+        // <ThemeProvider theme={theme}>
+        <div style={{ transform: "scale(1)", height: "100vh" }}>
+            <AppBarWithSideNav {...args} open={open} setOpen={setOpen}>
+                <Stack
+                    sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        margin: "20px"
+                    }}
+                >
+                    <div>Children Content</div>
+                </Stack>
+            </AppBarWithSideNav>
+        </div>
+        // </ThemeProvider>
     );
 };
 
