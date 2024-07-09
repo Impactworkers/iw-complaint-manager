@@ -31,6 +31,6 @@ describe("Cases table", () => {
         await act(async () => {
             render(<CasesTable columns={columns} rows={rows} />);
         });
-        expect(screen.getByText("ID")).toBeInTheDocument;
+        expect(screen.getByText("#111")).toBeInTheDocument();
     });
 });
