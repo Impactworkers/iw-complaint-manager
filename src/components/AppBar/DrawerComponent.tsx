@@ -50,7 +50,6 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
                 sx: {
                     zIndex: (theme) => theme.zIndex.drawer + 2,
                     height: "calc(100svh - 64px)",
-                    paddingTop: "30px",
                     top: "64px",
                     width: drawerWidth,
                     boxSizing: "border-box"
