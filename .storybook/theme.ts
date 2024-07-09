@@ -144,19 +144,33 @@ export const lightTheme = createTheme({
                         "& .MuiListItemIcon-root": {
                             color: designTokens.Primary500
                         }
-                    }
+                    },
                 }
             }
         },
-            MuiAppBar:{
-                styleOverrides:{
-                    root:{
-                        backgroundColor: designTokens.Neutral10,
-                        borderBottom: `1px solid ${designTokens.OtherDivider}`
-                    }
+        MuiList: {
+            styleOverrides: {
+                root: {
+                    paddingTop: "0px",
                 }
             }
-    
+        },
+        MuiAppBar: {
+            styleOverrides:{
+                root:{
+                    backgroundColor: designTokens.Neutral10,
+                    borderBottom: `1px solid ${designTokens.OtherDivider}`,
+                    height: "60px"
+                }
+            }
+        },
+        MuiDrawer: {
+            styleOverrides: {
+                paper: {
+                    marginTop: "58px",
+                }
+            }
+        },
     }
 });
 
