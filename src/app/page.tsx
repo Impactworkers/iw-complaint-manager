@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 import Typography from "@mui/material/Typography";
 import CasesTable from "@/components/Cases/CasesTable";
-import { NavigationBar } from "../components/NavigationBar/NavigationBar";
-import Header from "../components/Header/Header";
 
 export default function Page() {
     const herokuEnv = process.env.NEXT_PUBLIC_APP_ENV;
@@ -99,25 +97,15 @@ export default function Page() {
 
     return isHerokuEnv && authState?.isAuthenticated ? (
         <div>
-            <Header />
             <Typography variant="h5" className="page-title">
                 Welcome to Complaint Manager 2.0
             </Typography>
             <Typography variant="h4" className="section-title">
                 Cases
             </Typography>
-            <NavigationBar
-                text={["Cases", "Admin Portal"]}
-                muiIcons={["Cases", "Edit"]}
-            />
             <CasesTable columns={columns} rows={rows} />
         </div>
     ) : (
-        <p
-            className="text-lg mt-4"
-            style={{ marginLeft: "250px", marginTop: "100px" }}
-        >
-            Local Environment: No SSO
-        </p>
+        <p className="text-lg mt-4">Local Environment: No SSO</p>
     );
 }
