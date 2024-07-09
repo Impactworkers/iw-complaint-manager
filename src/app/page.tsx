@@ -106,6 +106,6 @@ export default function Page() {
             <CasesTable columns={columns} rows={rows} />
         </div>
     ) : (
-        <p className="text-lg mt-4">Local Environment: No SSO</p>
+        <p className="text-lg mt-4">Not logged in</p>
     );
 }
