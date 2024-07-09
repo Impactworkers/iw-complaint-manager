@@ -9,6 +9,7 @@ describe("NavigationBar", () => {
                 <NavigationBar
                     text={["Cases", "Admin Portal"]}
                     muiIcons={["Cases", "Edit"]}
+                    isDrawerOpen={true}
                 />
             );
         });
