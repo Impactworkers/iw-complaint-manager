@@ -22,6 +22,10 @@ const CasesTable: React.FC<CasesTableProps> = ({ columns, rows }) => {
     const [switchStates, setSwitchStates] = React.useState<{
         [key: string]: boolean;
     }>({});
+    const [paginationModel, setPaginationModel] = React.useState({
+        page: 0,
+        pageSize: 10
+    });
 
     const handleMenuOpen = (
         event: React.MouseEvent<HTMLButtonElement>,
@@ -44,8 +48,6 @@ const CasesTable: React.FC<CasesTableProps> = ({ columns, rows }) => {
             });
         };
 
-    console.log("columns", columns);
-    console.log("rows", typeof rows);
     const modifiedColumns: GridColDef[] = [
         ...columns,
         {
@@ -105,6 +107,9 @@ const CasesTable: React.FC<CasesTableProps> = ({ columns, rows }) => {
                 columns={modifiedColumns}
                 rowSelectionModel={selectionModel}
                 onRowSelectionModelChange={setSelectionModel}
+                paginationModel={paginationModel}
+                onPaginationModelChange={setPaginationModel}
+                disableColumnMenu
             />
         </div>
     );
