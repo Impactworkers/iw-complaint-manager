@@ -11,6 +11,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState, MouseEvent } from "react";
 import { NavigationBar } from "../NavigationBar/NavigationBar";
+import oktaAuth from "../../auth/auth";
 
 const Header = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -20,6 +21,9 @@ const Header = () => {
         setAnchorEl(event.currentTarget);
     const handleClose = () => setAnchorEl(null);
     const handleDrawerOpen = () => setIsDrawerOpen(!isDrawerOpen);
+    const handleLogout = () => {
+        oktaAuth.signOut();
+    };
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -69,6 +73,7 @@ const Header = () => {
                     >
                         <MenuItem onClick={handleClose}>Profile</MenuItem>
                         <MenuItem onClick={handleClose}>My account</MenuItem>
+                        <MenuItem onClick={handleLogout}>Log Out</MenuItem>
                     </Menu>
                 </Toolbar>
             </AppBar>
