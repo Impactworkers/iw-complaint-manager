@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 709px; /* Adjust height as needed */
+    height: 709px;
     overflow: auto;
     box-sizing: border-box;
 }
@@ -50,7 +50,7 @@
     border-bottom: 1px solid #f0f0f0;
     width: 141.67px !important;
     opacity: 0;
-    padding: 12px 24px; /* Sets the padding inside each cell */
+    padding: 12px 24px;
     border: 0px 0px 1px 0px solid #eaecf0;
 }
 
@@ -78,7 +78,6 @@
     justify-content: center;
     align-items: center;
     width: 66px !important;
-    /* border: 0.1px solid #000; */
 }
 
 .MuiDataGrid-virtualScroller {
@@ -90,16 +89,11 @@
     height: 44px !important;
 }
 
-.custom-data-grid .MuiDataGrid-row .MuiDataGrid-cell {
-    gap: 12px; /* This style is not directly applicable in this context */
-}
-
 .statusCell::before {
-    content: "•"; /* Adds a dot before the text */
-    display: inline-block; /* Ensures the dot is inline with the text */
-    margin-right: 8px; /* Adds some space between the dot and the text */
-    color: #037847; /* Sets the color of the dot; adjust as needed */
-    /* Additional styling for the dot as needed */
+    content: "•";
+    display: inline-block;
+    margin-right: 8px;
+    color: #037847;
 }
 
 .statusCell {

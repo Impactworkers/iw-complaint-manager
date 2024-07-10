@@ -28,12 +28,11 @@ export default function Page() {
     useEffect(() => {
         if (isHerokuEnv && !redirectAttempted) {
             const handleRedirect = async () => {
-                // Consider using authState.isAuthenticated if it's reliable
                 const isAuthenticated =
                     authState?.isAuthenticated ||
                     (await oktaAuth.isAuthenticated());
                 if (!isAuthenticated) {
-                    setRedirectAttempted(true); // Prevent further attempts
+                    setRedirectAttempted(true);
                     await oktaAuth.signInWithRedirect();
                 }
             };
