@@ -31,7 +31,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                         <ThemeProvider theme={lightTheme}>
                             <CssBaseline />
                             <Header />
-                            <div style={{ marginTop: "64px" }}>{children}</div>
+                            <div
+                                style={{
+                                    marginTop: "64px",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    justifyContent: "center",
+                                    alignItems: "center"
+                                }}
+                            >
+                                {children}
+                            </div>
                         </ThemeProvider>
                     </AppRouterCacheProvider>
                 </Security>
