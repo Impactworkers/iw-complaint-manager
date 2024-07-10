@@ -20,7 +20,7 @@ export default function Page() {
         { field: "Type", headerName: "Type", width: 141.67 },
         { field: "Creator", headerName: "Creator", width: 141.67 },
         { field: "Location", headerName: "Location", width: 141.67 },
-        { field: "Date Created", headerName: "Date Created", width: 141.67 },
+        { field: "Date", headerName: "Date Created", width: 141.67 },
         { field: "Status", headerName: "Status", width: 141.67 },
         { field: "Assignee", headerName: "Assignee", width: 141.67 }
     ];
@@ -80,7 +80,8 @@ export default function Page() {
                     flexShrink: "0",
                     border: "1px solid #F0F0F0",
                     background: "#FFF",
-                    overflow: "auto"
+                    overflow: "auto",
+                    top: "134px"
                 }}
             >
                 <CasesTable columns={columns} rows={casesInfoData} />

@@ -6,7 +6,7 @@ export const casesInfoData = [
         Date: "2024-01-01",
         Creator: "User1",
         Location: "New York",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserA"
     },
     {
@@ -16,7 +16,7 @@ export const casesInfoData = [
         Date: "2024-01-02",
         Creator: "User2",
         Location: "Los Angeles",
-        Status: "Closed",
+        Status: "Active",
         Assignee: "UserB"
     },
     {
@@ -26,7 +26,7 @@ export const casesInfoData = [
         Date: "2024-01-03",
         Creator: "User3",
         Location: "Chicago",
-        Status: "In Progress",
+        Status: "Inactive",
         Assignee: "UserC"
     },
     {
@@ -36,7 +36,7 @@ export const casesInfoData = [
         Date: "2024-01-04",
         Creator: "User4",
         Location: "Houston",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserD"
     },
     {
@@ -46,7 +46,7 @@ export const casesInfoData = [
         Date: "2024-01-05",
         Creator: "User5",
         Location: "Phoenix",
-        Status: "Closed",
+        Status: "Inactive",
         Assignee: "UserE"
     },
     {
@@ -56,7 +56,7 @@ export const casesInfoData = [
         Date: "2024-01-06",
         Creator: "User6",
         Location: "Philadelphia",
-        Status: "In Progress",
+        Status: "Inactive",
         Assignee: "UserF"
     },
     {
@@ -66,7 +66,7 @@ export const casesInfoData = [
         Date: "2024-01-07",
         Creator: "User7",
         Location: "San Antonio",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserG"
     },
     {
@@ -76,7 +76,7 @@ export const casesInfoData = [
         Date: "2024-01-08",
         Creator: "User8",
         Location: "San Diego",
-        Status: "Closed",
+        Status: "Inactive",
         Assignee: "UserH"
     },
     {
@@ -86,7 +86,7 @@ export const casesInfoData = [
         Date: "2024-01-09",
         Creator: "User9",
         Location: "Dallas",
-        Status: "In Progress",
+        Status: "Inactive",
         Assignee: "UserI"
     },
     {
@@ -96,7 +96,7 @@ export const casesInfoData = [
         Date: "2024-01-10",
         Creator: "User10",
         Location: "San Jose",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserJ"
     },
     {
@@ -106,7 +106,7 @@ export const casesInfoData = [
         Date: "2024-01-11",
         Creator: "User11",
         Location: "Austin",
-        Status: "Closed",
+        Status: "Inactive",
         Assignee: "UserK"
     },
     {
@@ -116,7 +116,7 @@ export const casesInfoData = [
         Date: "2024-01-12",
         Creator: "User12",
         Location: "Jacksonville",
-        Status: "In Progress",
+        Status: "Active",
         Assignee: "UserL"
     },
     {
@@ -126,7 +126,7 @@ export const casesInfoData = [
         Date: "2024-01-13",
         Creator: "User13",
         Location: "Fort Worth",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserM"
     },
     {
@@ -136,7 +136,7 @@ export const casesInfoData = [
         Date: "2024-01-14",
         Creator: "User14",
         Location: "Columbus",
-        Status: "Closed",
+        Status: "Inactive",
         Assignee: "UserN"
     },
     {
@@ -146,7 +146,7 @@ export const casesInfoData = [
         Date: "2024-01-15",
         Creator: "User15",
         Location: "Charlotte",
-        Status: "In Progress",
+        Status: "Active",
         Assignee: "UserO"
     },
     {
@@ -156,7 +156,7 @@ export const casesInfoData = [
         Date: "2024-01-16",
         Creator: "User16",
         Location: "San Francisco",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserP"
     },
     {
@@ -166,7 +166,7 @@ export const casesInfoData = [
         Date: "2024-01-17",
         Creator: "User17",
         Location: "Indianapolis",
-        Status: "Closed",
+        Status: "Inactive",
         Assignee: "UserQ"
     },
     {
@@ -176,7 +176,7 @@ export const casesInfoData = [
         Date: "2024-01-18",
         Creator: "User18",
         Location: "Seattle",
-        Status: "In Progress",
+        Status: "Active",
         Assignee: "UserR"
     },
     {
@@ -186,7 +186,7 @@ export const casesInfoData = [
         Date: "2024-01-19",
         Creator: "User19",
         Location: "Denver",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserS"
     },
     {
@@ -196,7 +196,7 @@ export const casesInfoData = [
         Date: "2024-01-20",
         Creator: "User20",
         Location: "Washington",
-        Status: "Closed",
+        Status: "Inactive",
         Assignee: "UserT"
     },
     {
@@ -206,7 +206,7 @@ export const casesInfoData = [
         Date: "2024-01-21",
         Creator: "User21",
         Location: "Boston",
-        Status: "In Progress",
+        Status: "Active",
         Assignee: "UserU"
     },
     {
@@ -216,7 +216,7 @@ export const casesInfoData = [
         Date: "2024-01-22",
         Creator: "User22",
         Location: "El Paso",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserV"
     },
     {
@@ -226,7 +226,7 @@ export const casesInfoData = [
         Date: "2024-01-23",
         Creator: "User23",
         Location: "Detroit",
-        Status: "Closed",
+        Status: "Inactive",
         Assignee: "UserW"
     },
     {
@@ -236,7 +236,7 @@ export const casesInfoData = [
         Date: "2024-01-24",
         Creator: "User24",
         Location: "Nashville",
-        Status: "In Progress",
+        Status: "Active",
         Assignee: "UserX"
     },
     {
@@ -246,7 +246,7 @@ export const casesInfoData = [
         Date: "2024-01-25",
         Creator: "User25",
         Location: "Memphis",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserY"
     },
     {
@@ -256,7 +256,7 @@ export const casesInfoData = [
         Date: "2024-01-26",
         Creator: "User26",
         Location: "Portland",
-        Status: "Closed",
+        Status: "Inactive",
         Assignee: "UserZ"
     },
     {
@@ -266,7 +266,7 @@ export const casesInfoData = [
         Date: "2024-01-27",
         Creator: "User27",
         Location: "Oklahoma City",
-        Status: "In Progress",
+        Status: "Active",
         Assignee: "UserAA"
     },
     {
@@ -276,7 +276,7 @@ export const casesInfoData = [
         Date: "2024-01-28",
         Creator: "User28",
         Location: "Las Vegas",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserBB"
     },
     {
@@ -286,7 +286,7 @@ export const casesInfoData = [
         Date: "2024-01-29",
         Creator: "User29",
         Location: "Louisville",
-        Status: "Closed",
+        Status: "Inactive",
         Assignee: "UserCC"
     },
     {
@@ -296,7 +296,7 @@ export const casesInfoData = [
         Date: "2024-01-30",
         Creator: "User30",
         Location: "Baltimore",
-        Status: "In Progress",
+        Status: "Active",
         Assignee: "UserDD"
     },
     {
@@ -306,7 +306,7 @@ export const casesInfoData = [
         Date: "2024-01-31",
         Creator: "User31",
         Location: "Milwaukee",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserEE"
     },
     {
@@ -316,7 +316,7 @@ export const casesInfoData = [
         Date: "2024-02-01",
         Creator: "User32",
         Location: "Albuquerque",
-        Status: "Closed",
+        Status: "Inactive",
         Assignee: "UserFF"
     },
     {
@@ -326,7 +326,7 @@ export const casesInfoData = [
         Date: "2024-02-02",
         Creator: "User33",
         Location: "Tucson",
-        Status: "In Progress",
+        Status: "Active",
         Assignee: "UserGG"
     },
     {
@@ -336,7 +336,7 @@ export const casesInfoData = [
         Date: "2024-02-03",
         Creator: "User34",
         Location: "Fresno",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserHH"
     },
     {
@@ -346,7 +346,7 @@ export const casesInfoData = [
         Date: "2024-02-04",
         Creator: "User35",
         Location: "Mesa",
-        Status: "Closed",
+        Status: "Inactive",
         Assignee: "UserII"
     },
     {
@@ -356,7 +356,7 @@ export const casesInfoData = [
         Date: "2024-02-05",
         Creator: "User36",
         Location: "Sacramento",
-        Status: "In Progress",
+        Status: "Active",
         Assignee: "UserJJ"
     },
     {
@@ -366,7 +366,7 @@ export const casesInfoData = [
         Date: "2024-02-06",
         Creator: "User37",
         Location: "Kansas City",
-        Status: "Open",
+        Status: "Active",
         Assignee: "UserKK"
     },
     {
@@ -376,7 +376,7 @@ export const casesInfoData = [
         Date: "2024-02-07",
         Creator: "User38",
         Location: "Long Beach",
-        Status: "Closed",
+        Status: "Inactive",
         Assignee: "UserLL"
     },
     {
@@ -386,7 +386,7 @@ export const casesInfoData = [
         Date: "2024-02-08",
         Creator: "User39",
         Location: "Omaha",
-        Status: "In Progress",
+        Status: "Active",
         Assignee: "UserMM"
     }
 ];
