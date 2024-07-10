@@ -1,12 +1,5 @@
 import React, { useState, FC } from "react";
-import {
-    Box,
-    Toolbar,
-    IconButton,
-    AppBar,
-    CssBaseline,
-    Backdrop
-} from "@mui/material";
+import { Box, Toolbar, IconButton, AppBar, Backdrop } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { Menu } from "./interfaces";
 import DrawerComponent from "./DrawerComponent";
@@ -16,7 +9,7 @@ interface AppBarWithSideNavProps {
     drawerItems: Menu[];
     open?: boolean;
     setOpen?: (value: boolean) => void;
-    children: JSX.Element;
+    children?: JSX.Element;
 }
 
 const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
@@ -42,12 +35,6 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
                     display: "flex",
                     justifyContent: "space-between",
                     flexDirection: "row"
-
-                    // transition: (theme) =>
-                    //     theme.transitions.create(["margin", "width"], {
-                    //         easing: theme.transitions.easing.sharp,
-                    //         duration: theme.transitions.duration.leavingScreen
-                    //     })
                 }}
                 elevation={0}
             >
