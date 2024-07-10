@@ -1,10 +1,20 @@
-import React, { useState, FC } from "react";
-import { Box, Toolbar, IconButton, AppBar, Backdrop } from "@mui/material";
+"use client";
+import React, { useState, FC, useEffect } from "react";
+import {
+    Box,
+    Toolbar,
+    IconButton,
+    AppBar,
+    Backdrop,
+    Avatar
+} from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { Menu } from "./interfaces";
 import DrawerComponent from "./DrawerComponent";
-
 import { ReactNode } from "react";
+import { useOktaAuth } from "@okta/okta-react";
+import Logo from "../../../public/Logo.svg";
+import Image from "next/image";
 
 interface AppBarWithSideNavProps {
     headerIcon?: ReactNode;
@@ -15,29 +25,49 @@ interface AppBarWithSideNavProps {
 }
 
 const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
-    headerIcon,
     drawerItems,
-    children,
     open: openProp,
     setOpen: setOpenProp
 }) => {
     const [openState, setOpenState] = useState(false);
+    const [userName, setUserName] = useState("");
     const open = openProp ?? openState;
     const setOpen = setOpenProp ?? setOpenState;
+    const { authState, oktaAuth } = useOktaAuth();
 
     const toggleDrawer = () => {
         setOpen(!open);
     };
 
+    const getFirstAndLastInitials = (name: string) => {
+        const nameArray = name.split(" ");
+        return `${nameArray[0].charAt(0)}${nameArray[
+            nameArray.length - 1
+        ].charAt(0)}`;
+    };
+
+    useEffect(() => {
+        const getUserName = async () => {
+            try {
+                await oktaAuth?.getUser().then((user) => {
+                    setUserName(user.name as string);
+                });
+            } catch (error) {
+                console.error(error);
+            }
+
+            return "";
+        };
+        if (authState?.isAuthenticated) {
+            getUserName();
+        }
+    }, [authState, oktaAuth, userName]);
+
     return (
         <Box sx={{ display: "flex" }}>
             <AppBar
                 position="fixed"
-                sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    flexDirection: "row"
-                }}
+                sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
                 elevation={0}
             >
                 <Toolbar>
@@ -57,9 +87,29 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
                     >
                         <MenuIcon />
                     </IconButton>
-                    {headerIcon}
+
+                    <Image
+                        src={Logo}
+                        alt="Logo"
+                        width={100}
+                        height={50}
+                        priority
+                    />
+                    <Box flexGrow={1} />
+                    <IconButton
+                        size="large"
+                        aria-label="account of current user"
+                        aria-controls="menu-appbar"
+                        aria-haspopup="true"
+                        // onClick={handleMenu}
+                    >
+                        <Avatar>
+                            {authState?.isAuthenticated
+                                ? getFirstAndLastInitials(userName)
+                                : "User"}
+                        </Avatar>
+                    </IconButton>
                 </Toolbar>
-                {children}
             </AppBar>
             <DrawerComponent
                 open={open}
