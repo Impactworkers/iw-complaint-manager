@@ -1,108 +1,85 @@
 import * as React from "react";
-import { DataGrid, GridColDef, GridRowSelectionModel } from "@mui/x-data-grid";
-import IconButton from "@mui/material/IconButton";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Menu from "@mui/material/Menu";
+import { DataGrid, GridRowSelectionModel, GridColDef } from "@mui/x-data-grid";
 import MenuItem from "@mui/material/MenuItem";
 import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
-
-interface CasesTableProps {
-    columns: GridColDef[];
-    rows: any[];
-}
+import { CasesTableProps } from "@/utils/types/CasesTable.types";
+import { Button } from "@mui/material";
+import { CasesTableMenuActions } from "./CasesTableMenuActions";
+import { ModifiedColumns } from "./ModifiedColumns";
+import "./CasesTable.css";
 
 const CasesTable: React.FC<CasesTableProps> = ({ columns, rows }) => {
     const [selectionModel, setSelectionModel] =
         React.useState<GridRowSelectionModel>([]);
-    const [menuAnchorEl, setMenuAnchorEl] = React.useState<null | HTMLElement>(
-        null
-    );
-    const [menuRowIndex, setMenuRowIndex] = React.useState<number | null>(null);
-    const [switchStates, setSwitchStates] = React.useState<{
-        [key: string]: boolean;
-    }>({});
     const [paginationModel, setPaginationModel] = React.useState({
         page: 0,
         pageSize: 10
     });
 
-    const handleMenuOpen = (
-        event: React.MouseEvent<HTMLButtonElement>,
-        rowIndex: number
-    ) => {
-        setMenuAnchorEl(event.currentTarget);
-        setMenuRowIndex(rowIndex);
-    };
+    const {
+        menuAnchorEl,
+        menuRowIndex,
+        switchStates,
+        handleMenuOpen,
+        handleMenuClose,
+        handleSwitchChange
+    } = CasesTableMenuActions();
 
-    const handleMenuClose = () => {
-        setMenuAnchorEl(null);
-        setMenuRowIndex(null);
-    };
-
-    const handleSwitchChange =
-        (itemKey: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
-            setSwitchStates({
-                ...switchStates,
-                [itemKey]: event.target.checked
-            });
-        };
-
-    const modifiedColumns: GridColDef[] = [
-        ...columns,
-        {
-            field: "actions",
-            headerName: " ",
-            sortable: false,
-            width: 100,
-            renderCell: (params) => (
-                <>
-                    <IconButton
-                        aria-label="more"
-                        aria-controls="actions-menu"
-                        aria-haspopup="true"
-                        onClick={(event) =>
-                            handleMenuOpen(event, params.row.id)
+    const renderMenuItems = React.useCallback(
+        () =>
+            columns.map((item) => (
+                <MenuItem key={item.field} onClick={handleMenuClose}>
+                    <FormControlLabel
+                        control={
+                            <Switch
+                                checked={!!switchStates[item.field]}
+                                onChange={handleSwitchChange(item.field)}
+                                name={item.field}
+                                aria-label={`Toggle ${item.headerName}`}
+                            />
                         }
-                    >
-                        <MoreVertIcon />
-                    </IconButton>
-                    <Menu
-                        id="actions-menu"
-                        anchorEl={menuAnchorEl}
-                        keepMounted
-                        open={Boolean(menuRowIndex === params.row.id)}
-                        onClose={handleMenuClose}
-                    >
-                        {columns.map((item) => (
-                            <MenuItem
-                                key={item.field}
-                                onClick={handleMenuClose}
-                            >
-                                <FormControlLabel
-                                    control={
-                                        <Switch
-                                            checked={!!switchStates[item.field]}
-                                            onChange={handleSwitchChange(
-                                                item.field
-                                            )}
-                                            name={item.field}
-                                        />
-                                    }
-                                    label={item.headerName}
-                                />
-                            </MenuItem>
-                        ))}
-                    </Menu>
-                </>
-            )
-        }
-    ];
+                        label={item.field}
+                    />
+                </MenuItem>
+            )),
+        [columns, handleMenuClose, handleSwitchChange, switchStates]
+    );
+
+    const modifiedColumns: GridColDef[] = React.useMemo(
+        () =>
+            ModifiedColumns(
+                columns,
+                menuAnchorEl,
+                menuRowIndex,
+                handleMenuOpen,
+                handleMenuClose,
+                renderMenuItems
+            ),
+        [
+            columns,
+            menuAnchorEl,
+            menuRowIndex,
+            handleMenuOpen,
+            handleMenuClose,
+            renderMenuItems
+        ]
+    );
 
     return (
-        <div style={{ height: "100%", width: "100%" }}>
+        <div className="table-container">
+            <div className="table-header">
+                <Button
+                    variant="contained"
+                    color="primary"
+                    className="add-case-button"
+                    onClick={() => {}}
+                >
+                    + Add Case
+                </Button>
+            </div>
             <DataGrid
-                checkboxSelection
+                style={{ height: 660, width: "100%" }}
                 rows={rows}
                 columns={modifiedColumns}
                 rowSelectionModel={selectionModel}
@@ -110,6 +87,52 @@ const CasesTable: React.FC<CasesTableProps> = ({ columns, rows }) => {
                 paginationModel={paginationModel}
                 onPaginationModelChange={setPaginationModel}
                 disableColumnMenu
+                checkboxSelection
+                sx={{
+                    "& .MuiDataGrid-root": {
+                        border: "none",
+                        width: "100%"
+                    },
+                    "& .MuiDataGrid-cell": {
+                        borderBottom: "1px solid #f0f0f0"
+                    },
+                    "& .MuiDataGrid-columnHeaders": {
+                        backgroundColor: "#f5f5f5",
+                        borderBottom: "1px solid #e0e0e0",
+                        fontSize: "14px",
+                        fontWeight: "bold"
+                    },
+                    "& .MuiDataGrid-columnHeaderTitleContainer": {
+                        justifyContent: "center",
+                        textAlign: "center"
+                    },
+                    "& .MuiDataGrid-columnSeparator": {
+                        display: "none"
+                    },
+                    "& .MuiDataGrid-columnHeaderCheckbox .MuiDataGrid-columnHeaderTitleContainer":
+                        {
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        },
+                    "& .MuiDataGrid-cellCheckbox": {
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center"
+                    },
+                    "& .MuiDataGrid-row": {
+                        minHeight: "50px !important",
+                        maxHeight: "50px !important",
+                        "& .MuiDataGrid-cell": {
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }
+                    },
+                    "& .MuiDataGrid-virtualScroller": {
+                        marginTop: "5px"
+                    }
+                }}
             />
         </div>
     );
