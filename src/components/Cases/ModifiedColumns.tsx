@@ -3,6 +3,7 @@ import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Menu from "@mui/material/Menu";
 import { GridColDef } from "@mui/x-data-grid";
+import "./CasesTable.css";
 
 export const ModifiedColumns = (
     columns: GridColDef[],
@@ -16,7 +17,8 @@ export const ModifiedColumns = (
         ...columns.map((column) => ({
             ...column,
             headerClassName: "dataGridHeader",
-            cellClassName: "dataGridCell"
+            cellClassName:
+                column.field === "Status" ? "statusCell" : "dataGridCell"
         })),
         {
             field: "actions",
@@ -43,7 +45,7 @@ export const ModifiedColumns = (
                         open={Boolean(menuRowIndex === params.row.id)}
                         onClose={handleMenuClose}
                     >
-                        {renderMenuItems()}
+                        {renderMenuItems(params.row)}
                     </Menu>
                 </>
             )

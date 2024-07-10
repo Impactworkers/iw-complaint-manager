@@ -86,11 +86,27 @@
 }
 
 .custom-data-grid .MuiDataGrid-row {
-    border-bottom: 1px solid #eaecf0; /* Adds a bottom border to each row */
-    height: 44px !important; /* Sets a fixed height for each row */
-    opacity: 0; /* Makes the rows fully transparent */
+    border-bottom: 1px solid #eaecf0;
+    height: 44px !important;
 }
 
 .custom-data-grid .MuiDataGrid-row .MuiDataGrid-cell {
     gap: 12px; /* This style is not directly applicable in this context */
+}
+
+.statusCell::before {
+    content: "•"; /* Adds a dot before the text */
+    display: inline-block; /* Ensures the dot is inline with the text */
+    margin-right: 8px; /* Adds some space between the dot and the text */
+    color: #037847; /* Sets the color of the dot; adjust as needed */
+    /* Additional styling for the dot as needed */
+}
+
+.statusCell {
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+    background-color: rgba(3, 120, 71, 0.5);
 }
