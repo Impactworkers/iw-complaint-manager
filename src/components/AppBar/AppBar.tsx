@@ -4,8 +4,10 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 import { Menu } from "./interfaces";
 import DrawerComponent from "./DrawerComponent";
 
+import { ReactNode } from "react";
+
 interface AppBarWithSideNavProps {
-    headerIcon?: JSX.Element;
+    headerIcon?: ReactNode;
     drawerItems: Menu[];
     open?: boolean;
     setOpen?: (value: boolean) => void;
