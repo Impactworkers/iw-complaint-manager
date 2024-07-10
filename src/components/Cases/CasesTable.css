@@ -1,0 +1,74 @@
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 709px; /* Adjust height as needed */
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.table-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.add-case-button {
+    height: 40px;
+    width: 120px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.status.active {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+.status.inactive {
+    background-color: #fdedec;
+    color: #d32f2f;
+}
+
+.custom-data-grid .MuiDataGrid-root {
+    border: none;
+    height: 100%;
+}
+
+.custom-data-grid .MuiDataGrid-cell {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.custom-data-grid .MuiDataGrid-columnHeaders {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.custom-data-grid .MuiDataGrid-columnSeparator {
+    display: none;
+}
+
+.custom-data-grid
+    .MuiDataGrid-columnHeaderCheckbox
+    .MuiDataGrid-columnHeaderTitleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-data-grid .MuiDataGrid-cellCheckbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
