@@ -2,14 +2,14 @@ import React, { FC } from "react";
 import {
     Drawer,
     Divider,
-    MenuItem,
     ListItemIcon,
     ListItemText,
-    Typography
+    Typography,
+    ListItem
 } from "@mui/material";
 import { ChevronRight } from "@mui/icons-material";
 import { Menu } from "./interfaces";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const drawerWidth = 350;
 
@@ -62,7 +62,7 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
             {mainItems.length > 0 && (
                 <>
                     {mainItems.map((menu) => (
-                        <MenuItem
+                        <ListItem
                             key={`mainMenu${menu.key}`}
                             tabIndex={0}
                             onKeyDown={(e) =>
@@ -72,10 +72,6 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
                                 router.push(menu.route);
                                 closeHandler();
                             }}
-                            sx={{
-                                borderRadius: "15px",
-                                margin: "10px"
-                            }}
                         >
                             {menu.icon && (
                                 <ListItemIcon>{menu.icon}</ListItemIcon>
@@ -84,7 +80,7 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
                                 <Typography>{menu.menuText}</Typography>
                             </ListItemText>
                             <ChevronRight sx={{ color: "transparent" }} />
-                        </MenuItem>
+                        </ListItem>
                     ))}
                 </>
             )}
@@ -95,7 +91,7 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
                         Admin Settings
                     </Typography>
                     {adminItems.map((menu) => (
-                        <MenuItem
+                        <ListItem
                             key={`adminMenu${menu.key}`}
                             tabIndex={0}
                             onKeyDown={(e) =>
@@ -105,10 +101,6 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
                                 router.push(menu.route);
                                 closeHandler();
                             }}
-                            sx={{
-                                borderRadius: "15px",
-                                margin: "10px"
-                            }}
                         >
                             {menu.icon && (
                                 <ListItemIcon>{menu.icon}</ListItemIcon>
@@ -117,7 +109,7 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
                                 <Typography>{menu.menuText}</Typography>
                             </ListItemText>
                             <ChevronRight sx={{ color: "transparent" }} />
-                        </MenuItem>
+                        </ListItem>
                     ))}
                 </>
             )}
