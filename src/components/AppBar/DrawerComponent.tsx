@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { ChevronRight } from "@mui/icons-material";
 import { Menu } from "./interfaces";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 const drawerWidth = 350;
 
@@ -33,7 +33,7 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
         }
     };
 
-    const router = useRouter();
+    // const router = useRouter();
 
     const mainItems = drawerItems.filter((item) => item.category === "Main");
     const adminItems = drawerItems.filter(
@@ -65,13 +65,13 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
                         <ListItem
                             key={`mainMenu${menu.key}`}
                             tabIndex={0}
-                            onKeyDown={(e) =>
-                                handleKeyDown(e, () => router.push(menu.route))
-                            }
-                            onClick={() => {
-                                router.push(menu.route);
-                                closeHandler();
-                            }}
+                            // onKeyDown={(e) =>
+                            //     handleKeyDown(e, () => router.push(menu.route))
+                            // }
+                            // onClick={() => {
+                            //     router.push(menu.route);
+                            //     closeHandler();
+                            // }}
                         >
                             {menu.icon && (
                                 <ListItemIcon>{menu.icon}</ListItemIcon>
@@ -94,13 +94,13 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
                         <ListItem
                             key={`adminMenu${menu.key}`}
                             tabIndex={0}
-                            onKeyDown={(e) =>
-                                handleKeyDown(e, () => router.push(menu.route))
-                            }
-                            onClick={() => {
-                                router.push(menu.route);
-                                closeHandler();
-                            }}
+                            // onKeyDown={(e) =>
+                            //     handleKeyDown(e, () => router.push(menu.route))
+                            // }
+                            // onClick={() => {
+                            //     router.push(menu.route);
+                            //     closeHandler();
+                            // }}
                         >
                             {menu.icon && (
                                 <ListItemIcon>{menu.icon}</ListItemIcon>

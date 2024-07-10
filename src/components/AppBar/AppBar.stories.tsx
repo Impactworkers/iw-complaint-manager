@@ -8,7 +8,7 @@ import { withRouter } from "./mockRouter";
 const meta: Meta<typeof AppBarWithSideNav> = {
     title: "Navigation/AppBarWithSideNav",
     component: AppBarWithSideNav,
-    decorators: [withRouter],
+    // decorators: [withRouter],
     parameters: {
         docs: {
             description: {
