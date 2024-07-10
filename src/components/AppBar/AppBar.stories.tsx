@@ -3,15 +3,12 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Stack } from "@mui/material";
 import AppBarWithSideNav from "./AppBar";
 import { mockMenuItems } from "./mocks";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { withRouter } from "./mockRouter";
-
-const theme = createTheme();
 
 const meta: Meta<typeof AppBarWithSideNav> = {
     title: "Navigation/AppBarWithSideNav",
     component: AppBarWithSideNav,
-    decorators: [withRouter], // Adding the withRouter decorator
+    decorators: [withRouter],
     parameters: {
         docs: {
             description: {
@@ -31,7 +28,6 @@ const AppBarWithSideNavWrapper: React.FC<any> = (args) => {
     const [open, setOpen] = useState(false);
 
     return (
-        // <ThemeProvider theme={theme}>
         <div style={{ transform: "scale(1)", height: "100vh" }}>
             <AppBarWithSideNav {...args} open={open} setOpen={setOpen}>
                 <Stack
@@ -45,14 +41,13 @@ const AppBarWithSideNavWrapper: React.FC<any> = (args) => {
                 </Stack>
             </AppBarWithSideNav>
         </div>
-        // </ThemeProvider>
     );
 };
 
 export const Default: Story = {
     render: (args) => <AppBarWithSideNavWrapper {...args} />,
     args: {
-        headerIcon: <img width="150" src="/path/to/logo.png" alt="Logo" />,
+        headerIcon: <div>Header Icon</div>,
         drawerItems: mockMenuItems
     }
 };
