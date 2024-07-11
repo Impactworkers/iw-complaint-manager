@@ -12,7 +12,7 @@ const Callback: FC = () => {
         const handleCallback = async () => {
             try {
                 await oktaAuth.handleLoginRedirect();
-                router.push("/");
+                router.push("/dashboard");
             } catch (error) {
                 console.error("Error handling login callback: ", error);
             }

@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { DataGrid, GridRowSelectionModel, GridColDef } from "@mui/x-data-grid";
 import MenuItem from "@mui/material/MenuItem";
