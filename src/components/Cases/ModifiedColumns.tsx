@@ -1,10 +1,11 @@
 import React from "react";
-import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Menu from "@mui/material/Menu";
 import { GridColDef } from "@mui/x-data-grid";
 import "./CasesTable.css";
-import { Chip } from "@mui/material";
+import { Chip, Avatar } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import AddIcon from "@mui/icons-material/Add";
 import { getCustomStyles } from "../../../.storybook/theme";
 
 export const ModifiedColumns = (
@@ -28,6 +29,27 @@ export const ModifiedColumns = (
                     const customStyles = getCustomStyles(chipColor);
 
                     return <Chip label={params.value} sx={customStyles} />;
+                }
+                if (column.field === "Assignee") {
+                    return (
+                        <div
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "10px"
+                            }}
+                        >
+                            <Avatar>{params.value}</Avatar>
+                            <IconButton
+                                size="small"
+                                onClick={() => {
+                                    /* Handle adding more assignees */
+                                }}
+                            >
+                                <AddIcon />
+                            </IconButton>
+                        </div>
+                    );
                 }
                 // For other cells not matching the condition, return the cell value
                 return params.value;
