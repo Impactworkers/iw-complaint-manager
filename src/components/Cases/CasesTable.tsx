@@ -90,51 +90,6 @@ const CasesTable: React.FC<CasesTableProps> = ({ columns, rows }) => {
                     onPaginationModelChange={setPaginationModel}
                     disableColumnMenu
                     checkboxSelection
-                    // sx={{
-                    //     "& .MuiDataGrid-root": {
-                    //         border: "none",
-                    //         width: "100%"
-                    //     },
-                    //     "& .MuiDataGrid-cell": {
-                    //         borderBottom: "1px solid #f0f0f0"
-                    //     },
-                    //     "& .MuiDataGrid-columnHeaders": {
-                    //         backgroundColor: "#f5f5f5",
-                    //         borderBottom: "3px solid red",
-                    //         fontSize: "14px",
-                    //         fontWeight: "bold"
-                    //     },
-                    //     "& .MuiDataGrid-columnHeaderTitleContainer": {
-                    //         justifyContent: "center",
-                    //         textAlign: "center"
-                    //     },
-                    //     "& .MuiDataGrid-columnSeparator": {
-                    //         display: "none"
-                    //     },
-                    //     "& .MuiDataGrid-columnHeaderCheckbox .MuiDataGrid-columnHeaderTitleContainer":
-                    //         {
-                    //             display: "flex",
-                    //             justifyContent: "center",
-                    //             alignItems: "center"
-                    //         },
-                    //     "& .MuiDataGrid-cellCheckbox": {
-                    //         display: "flex",
-                    //         justifyContent: "center",
-                    //         alignItems: "center"
-                    //     },
-                    //     "& .MuiDataGrid-row": {
-                    //         minHeight: "50px !important",
-                    //         maxHeight: "50px !important",
-                    //         "& .MuiDataGrid-cell": {
-                    //             display: "flex",
-                    //             justifyContent: "center",
-                    //             alignItems: "center"
-                    //         }
-                    //     },
-                    //     "& .MuiDataGrid-virtualScroller": {
-                    //         marginTop: "5px"
-                    //     }
-                    // }}
                 />
             </ThemeProvider>
         </div>

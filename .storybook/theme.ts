@@ -162,12 +162,14 @@ export const lightTheme = createTheme({
                         {
                             display: "flex",
                             justifyContent: "center",
-                            alignItems: "center"
+                            alignItems: "center",
+                            width: '66px',
                         },
                     "& .MuiDataGrid-cellCheckbox": {
                         display: "flex",
                         justifyContent: "center",
-                        alignItems: "center"
+                        alignItems: "center",
+                        width: '66px',
                     },
                     "& .MuiDataGrid-row": {
                         minHeight: "50px !important",
@@ -180,7 +182,7 @@ export const lightTheme = createTheme({
                     },
                     "& .MuiDataGrid-virtualScroller": {
                         marginTop: "5px"
-                    }
+                    }, 
                 }
             }
         },
@@ -366,9 +368,9 @@ export const darkTheme = createTheme({
 
 export const getCustomStyles = (chipColor: string) => ({
     bgcolor: chipColor === "success" ? "rgba(129, 199, 132, 0.1)" : "rgba(158, 158, 158, 0.1)",
-    border: chipColor === "success" ? "1px solid rgba(129, 199, 132, 1)" : "1px solid rgba(158, 158, 158, 1)",
+    color: chipColor === "success" ? "rgba(109, 179, 112, 1)" : "rgba(138, 138, 138, 1)", 
     "&:hover": {
-      bgcolor: chipColor === "success" ? "rgba(102, 187, 106, 0.1)" : "rgba(158, 158, 158, 0.1)",
-      border: chipColor === "success" ? "1px solid rgba(102, 187, 106, 1)" : "1px solid rgba(158, 158, 158, 1)"
+    bgcolor: chipColor === "success" ? "rgba(102, 187, 106, 0.1)" : "rgba(158, 158, 158, 0.1)",
+    border: chipColor === "success" ? "1px solid rgba(102, 187, 106, 1)" : "1px solid rgba(158, 158, 158, 1)"
     }
-  });
+});

@@ -6,9 +6,9 @@ import "./CasesTable.css";
 import Chip from "@mui/material/Chip";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
-import Button from "@mui/material/Button";
-import { Add } from "@mui/icons-material";
 import { getCustomStyles } from "../../../.storybook/theme";
+import { Fab } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 
 export const ModifiedColumns = (
     columns: GridColDef[],
@@ -29,10 +29,36 @@ export const ModifiedColumns = (
                     const chipColor =
                         params.value === "Active" ? "success" : "grey";
                     const customStyles = getCustomStyles(chipColor);
-
-                    return <Chip label={params.value} sx={customStyles} />;
+                    const DotIcon = () => (
+                        <span
+                            style={{
+                                height: "10px",
+                                width: "10px",
+                                backgroundColor: customStyles.color, // Green color
+                                borderRadius: "50%",
+                                display: "inline-block"
+                            }}
+                        />
+                    );
+                    return (
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                            <Chip
+                                icon={<DotIcon />}
+                                label={params.value}
+                                sx={customStyles}
+                            />
+                        </div>
+                    );
                 }
                 if (column.field === "Assignee") {
+                    const fullName = params.value;
+                    const nameParts = fullName.split(" ");
+                    const firstInitial = nameParts[0][0] || "";
+                    const lastName =
+                        nameParts.length > 1
+                            ? nameParts[nameParts.length - 1]
+                            : ""; // Get the last name
+                    const formattedName = `${firstInitial}. ${lastName}`; // Form
                     return (
                         <div
                             style={{
@@ -41,15 +67,14 @@ export const ModifiedColumns = (
                                 gap: "10px"
                             }}
                         >
-                            <Avatar>{params.value}</Avatar>
-                            <Button
+                            <Avatar>{formattedName}</Avatar>
+                            <Fab
                                 size="small"
-                                onClick={() => {
-                                    /* Handle adding more assignees */
-                                }}
+                                color="secondary"
+                                aria-label="add"
                             >
-                                <Add color="primary" />
-                            </Button>
+                                <AddIcon />
+                            </Fab>
                         </div>
                     );
                 }
