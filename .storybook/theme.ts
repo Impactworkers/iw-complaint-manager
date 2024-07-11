@@ -1,7 +1,7 @@
 "use client"
 import { createTheme } from "@mui/material/styles";
 import * as designTokens from "../build-styles/variables";
-import { BorderRight } from "@mui/icons-material";
+import type {} from '@mui/x-data-grid/themeAugmentation';
 
 export const lightTheme = createTheme({
     palette: {
@@ -132,6 +132,58 @@ export const lightTheme = createTheme({
         }
     },
     components: {
+        MuiDataGrid: {
+            styleOverrides: {
+                root:{
+                    height: "660px",
+                    width: "100%",
+                    "& .MuiDataGrid-root": {
+                        border: "none",
+                        width: "100%"
+                    },
+                    "& .MuiDataGrid-cell": {
+                        borderBottom: "1px solid #f0f0f0"
+                    },
+                    "& .MuiDataGrid-columnHeaders": {
+                        backgroundColor: "#f5f5f5",
+                        borderBottom: "1px solid #e0e0e0",
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                    },
+                    "& .MuiDataGrid-columnHeaderTitleContainer": {
+                        borderBottom: "1px solid #e0e0e0",
+                        justifyContent: "center",
+                        textAlign: "center"
+                    },
+                    "& .MuiDataGrid-columnSeparator": {
+                        display: "none"
+                    },
+                    "& .MuiDataGrid-columnHeaderCheckbox .MuiDataGrid-columnHeaderTitleContainer":
+                        {
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        },
+                    "& .MuiDataGrid-cellCheckbox": {
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center"
+                    },
+                    "& .MuiDataGrid-row": {
+                        minHeight: "50px !important",
+                        maxHeight: "50px !important",
+                        "& .MuiDataGrid-cell": {
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }
+                    },
+                    "& .MuiDataGrid-virtualScroller": {
+                        marginTop: "5px"
+                    }
+                }
+            }
+        },
         MuiListItem: {
             styleOverrides: {
                 root: {
@@ -310,3 +362,13 @@ export const darkTheme = createTheme({
     
     }
 });
+
+
+export const getCustomStyles = (chipColor: string) => ({
+    bgcolor: chipColor === "success" ? "rgba(129, 199, 132, 0.1)" : "rgba(158, 158, 158, 0.1)",
+    border: chipColor === "success" ? "1px solid rgba(129, 199, 132, 1)" : "1px solid rgba(158, 158, 158, 1)",
+    "&:hover": {
+      bgcolor: chipColor === "success" ? "rgba(102, 187, 106, 0.1)" : "rgba(158, 158, 158, 0.1)",
+      border: chipColor === "success" ? "1px solid rgba(102, 187, 106, 1)" : "1px solid rgba(158, 158, 158, 1)"
+    }
+  });
