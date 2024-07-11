@@ -69,17 +69,13 @@ const CasesTable: React.FC<CasesTableProps> = ({ columns, rows }) => {
 
     return (
         <div className="table-container">
-            <div className="table-header">
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className="add-case-button"
-                    onClick={() => {}}
-                >
-                    + Add Case
-                </Button>
-            </div>
             <ThemeProvider theme={lightTheme}>
+                <div className="table-header">
+                    <Button variant="contained" onClick={() => {}}>
+                        + Add Case
+                    </Button>
+                </div>
+
                 <DataGrid
                     style={{ height: 660, width: "100%" }}
                     rows={rows}

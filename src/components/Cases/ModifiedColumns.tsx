@@ -34,7 +34,7 @@ export const ModifiedColumns = (
                             style={{
                                 height: "10px",
                                 width: "10px",
-                                backgroundColor: customStyles.color, // Green color
+                                backgroundColor: customStyles.color,
                                 borderRadius: "50%",
                                 display: "inline-block"
                             }}
@@ -57,8 +57,8 @@ export const ModifiedColumns = (
                     const lastName =
                         nameParts.length > 1
                             ? nameParts[nameParts.length - 1]
-                            : ""; // Get the last name
-                    const formattedName = `${firstInitial}. ${lastName}`; // Form
+                            : "";
+                    const formattedName = `${firstInitial}. ${lastName}`;
                     return (
                         <div
                             style={{
@@ -72,13 +72,21 @@ export const ModifiedColumns = (
                                 size="small"
                                 color="secondary"
                                 aria-label="add"
+                                sx={{
+                                    width: "30px",
+                                    height: "25px",
+                                    backgroundColor: "#1890FF",
+                                    color: "#FFFFFF",
+                                    "&:hover": {
+                                        backgroundColor: "#1077cc"
+                                    }
+                                }}
                             >
                                 <AddIcon />
                             </Fab>
                         </div>
                     );
                 }
-                // For other cells not matching the condition, return the cell value
                 return params.value;
             }
         })),

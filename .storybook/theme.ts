@@ -134,6 +134,13 @@ export const lightTheme = createTheme({
     components: {
         MuiDataGrid: {
             styleOverrides: {
+                cell: {
+                    fontFamily: 'Roboto, sans-serif', 
+                    fontWeight: 400, 
+                    fontSize: '14px', 
+                    lineHeight: '16px',
+                    letterSpacing: '0.03em', 
+                },
                 root:{
                     height: "660px",
                     width: "100%",
@@ -182,9 +189,24 @@ export const lightTheme = createTheme({
                     },
                     "& .MuiDataGrid-virtualScroller": {
                         marginTop: "5px"
-                    }, 
+                    },
                 }
             }
+        },
+        MuiButton: {
+            styleOverrides: {
+            root: { 
+                width: "125px",
+                        height: "36px",
+                        top: "7px",
+                        gap: "0px",
+                        borderRadius: "4px 0px 0px 0px",
+                        opacity: "0px",
+                        background: "#1890ff",
+                        color: "#ffffff",
+                        position: 'relative',
+            },
+            },
         },
         MuiListItem: {
             styleOverrides: {
