@@ -3,9 +3,11 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Menu from "@mui/material/Menu";
 import { GridColDef } from "@mui/x-data-grid";
 import "./CasesTable.css";
-import { Chip, Avatar } from "@mui/material";
+import Chip from "@mui/material/Chip";
+import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
-import AddIcon from "@mui/icons-material/Add";
+import Button from "@mui/material/Button";
+import { Add } from "@mui/icons-material";
 import { getCustomStyles } from "../../../.storybook/theme";
 
 export const ModifiedColumns = (
@@ -40,14 +42,14 @@ export const ModifiedColumns = (
                             }}
                         >
                             <Avatar>{params.value}</Avatar>
-                            <IconButton
+                            <Button
                                 size="small"
                                 onClick={() => {
                                     /* Handle adding more assignees */
                                 }}
                             >
-                                <AddIcon />
-                            </IconButton>
+                                <Add color="primary" />
+                            </Button>
                         </div>
                     );
                 }
