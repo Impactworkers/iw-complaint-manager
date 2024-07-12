@@ -164,6 +164,17 @@ export const lightTheme = createTheme({
                 }
             }
         },
+        MuiSkeleton: {
+            styleOverrides: {
+              root: {
+                transition: 'all 0.3s ease-in',
+                '&:hover': {
+                  opacity: 0.7,
+                },
+                backgroundColor: designTokens.Neutral200,
+              },
+            },
+          },
     }
 });
 
