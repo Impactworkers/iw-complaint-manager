@@ -33,6 +33,7 @@ export const useGetOktaUserName = (): UseGetOktaUserNameReturnType => {
         if (authState?.isAuthenticated) {
             getUserName();
         }
+        setIsLoading(false);
     }, [authState?.isAuthenticated, oktaAuth]);
 
     return { userName, error, isLoading };
