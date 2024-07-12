@@ -14,6 +14,7 @@ const formatName = (fullName: string | undefined) => {
 };
 
 export const AssigneeAvatar = ({ fullName }: { fullName: string }) => {
+    // eslint-disable-next-line no-unused-vars
     const formattedName = formatName(fullName);
     return (
         <div
