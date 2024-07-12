@@ -7,7 +7,6 @@ import Chip from "@mui/material/Chip";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import { getCustomStyles } from "../../../.storybook/theme";
-import { Fab } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
 export const ModifiedColumns = (
@@ -32,11 +31,13 @@ export const ModifiedColumns = (
                     const DotIcon = () => (
                         <span
                             style={{
-                                height: "10px",
-                                width: "10px",
+                                height: "6px",
+                                width: "6px",
                                 backgroundColor: customStyles.color,
                                 borderRadius: "50%",
-                                display: "inline-block"
+                                display: "inline-block",
+                                marginRight: "-6px",
+                                marginLeft: "6px"
                             }}
                         />
                     );
@@ -45,7 +46,13 @@ export const ModifiedColumns = (
                             <Chip
                                 icon={<DotIcon />}
                                 label={params.value}
-                                sx={customStyles}
+                                sx={{
+                                    ...customStyles,
+                                    padding: "0 8px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center"
+                                }}
                             />
                         </div>
                     );
@@ -62,28 +69,36 @@ export const ModifiedColumns = (
                     return (
                         <div
                             style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "10px"
+                                position: "relative",
+                                display: "inline-block"
                             }}
                         >
-                            <Avatar>{formattedName}</Avatar>
-                            <Fab
-                                size="small"
-                                color="secondary"
-                                aria-label="add"
-                                sx={{
+                            <Avatar
+                                style={{
+                                    position: "absolute",
+                                    zIndex: 1,
+                                    top: "-3px",
+                                    transform: "translateX(-80%)",
                                     width: "30px",
-                                    height: "25px",
-                                    backgroundColor: "#1890FF",
-                                    color: "#FFFFFF",
-                                    "&:hover": {
-                                        backgroundColor: "#1077cc"
-                                    }
+                                    height: "30px"
                                 }}
                             >
-                                <AddIcon />
-                            </Fab>
+                                {formattedName}
+                            </Avatar>
+
+                            <AddIcon
+                                sx={{
+                                    color: "#ffffff",
+                                    backgroundColor: "#1890ff",
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    width: "24px",
+                                    height: "24px",
+                                    borderRadius: "50%",
+                                    position: "relative"
+                                }}
+                            />
                         </div>
                     );
                 }

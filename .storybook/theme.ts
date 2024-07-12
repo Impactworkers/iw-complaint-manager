@@ -247,6 +247,7 @@ export const lightTheme = createTheme({
                 }
             }
         },
+        
     }
 });
 
@@ -389,10 +390,10 @@ export const darkTheme = createTheme({
 
 
 export const getCustomStyles = (chipColor: string) => ({
-    bgcolor: chipColor === "success" ? "rgba(129, 199, 132, 0.1)" : "rgba(158, 158, 158, 0.1)",
-    color: chipColor === "success" ? "rgba(109, 179, 112, 1)" : "rgba(138, 138, 138, 1)", 
+    bgcolor: chipColor === "success" ? "rgba(149, 219, 152, 0.2)" : "rgba(178, 178, 178, 0.2)", // Brighter green and grey
+    color: chipColor === "success" ? "rgba(60, 130, 62, 1)" : "rgba(90, 90, 90, 1)",
     "&:hover": {
-    bgcolor: chipColor === "success" ? "rgba(102, 187, 106, 0.1)" : "rgba(158, 158, 158, 0.1)",
-    border: chipColor === "success" ? "1px solid rgba(102, 187, 106, 1)" : "1px solid rgba(158, 158, 158, 1)"
+        bgcolor: chipColor === "success" ? "rgba(122, 207, 130, 0.2)" : "rgba(178, 178, 178, 0.2)", // Brighter on hover
+        border: chipColor === "success" ? "1px solid rgba(102, 187, 106, 1)" : "1px solid rgba(158, 158, 158, 1)"
     }
 });

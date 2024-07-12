@@ -6,6 +6,7 @@
     height: 709px;
     overflow: auto;
     box-sizing: border-box;
+    background: #ffffff;
 }
 
 .table-header {
