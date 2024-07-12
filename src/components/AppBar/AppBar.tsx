@@ -1,6 +1,5 @@
 "use client";
-import React, { useState, FC, useEffect } from "react";
-import { useOktaAuth } from "@okta/okta-react";
+import React, { useState, FC } from "react";
 import { ReactNode } from "react";
 import {
     Box,
@@ -9,7 +8,7 @@ import {
     AppBar,
     Backdrop,
     Avatar,
-    Skeleton
+    Typography
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { DrawerMenuItem } from "./interfaces";
@@ -18,6 +17,8 @@ import Logo from "../../../public/Logo.svg";
 import Image from "next/image";
 import { getFirstAndLastInitials } from "@/utils/helperFunctions/appBarHelperFunctions";
 import AppBarSkeleton from "./AppBarSkeleton";
+import { useGetOktaUserName } from "@/hooks/useGetOktaUserName";
+import { lightTheme } from "../../../.storybook/theme";
 
 interface AppBarWithSideNavProps {
     headerIcon?: ReactNode;
@@ -34,41 +35,23 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
     setOpen: setOpenProp
 }) => {
     const [openState, setOpenState] = useState(false);
-    const [userName, setUserName] = useState("");
     const open = openProp ?? openState;
     const setOpen = setOpenProp ?? setOpenState;
-    const { authState, oktaAuth } = useOktaAuth();
+    const { userName, error, isLoading } = useGetOktaUserName();
 
     const toggleDrawer = () => {
         setOpen(!open);
     };
 
-    useEffect(() => {
-        const getUserName = async () => {
-            try {
-                await oktaAuth?.getUser().then((user) => {
-                    setUserName(user.name as string);
-                });
-            } catch (error) {
-                console.error(error);
-            }
-
-            return "";
-        };
-        if (authState?.isAuthenticated) {
-            getUserName();
-        }
-    }, [authState, oktaAuth, userName]);
-
-    if (!authState) {
-        return <AppBarSkeleton />;
-    }
-
     return (
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ flexGrow: 1 }}>
+            {isLoading && <AppBarSkeleton />}
             <AppBar
                 position="fixed"
-                sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                sx={{
+                    zIndex: (theme) => theme.zIndex.drawer + 1,
+                    visibility: isLoading ? "hidden" : "visible"
+                }}
                 elevation={0}
             >
                 <Toolbar>
@@ -104,20 +87,20 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
                         aria-haspopup="true"
                         // onClick={handleMenu}
                     >
-                        <Avatar>
-                            {authState?.isAuthenticated ? (
-                                <Avatar>
-                                    {getFirstAndLastInitials(userName)}
-                                </Avatar>
-                            ) : (
-                                <Skeleton
-                                    variant="circular"
-                                    width={40}
-                                    height={40}
-                                    animation="wave"
-                                />
-                            )}
-                        </Avatar>
+                        {error ? (
+                            <Typography color={lightTheme.palette.error.main}>
+                                {error}
+                            </Typography>
+                        ) : userName ? (
+                            <Avatar role="menu" data-testid="user-avatar-menu">
+                                {getFirstAndLastInitials(userName)}
+                            </Avatar>
+                        ) : (
+                            <Avatar
+                                role="menu"
+                                data-testid="default-avatar-menu"
+                            />
+                        )}
                     </IconButton>
                 </Toolbar>
             </AppBar>
