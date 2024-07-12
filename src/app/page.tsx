@@ -70,7 +70,7 @@ export default function Page() {
                 className="cases-container"
                 style={{
                     display: "flex",
-                    width: "1132px",
+                    // width: "1132px",
                     minHeight: "871px",
                     padding: "10px",
                     flexDirection: "row-reverse",

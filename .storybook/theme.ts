@@ -1,7 +1,7 @@
 "use client"
 import { createTheme } from "@mui/material/styles";
 import * as designTokens from "../build-styles/variables";
-import { BorderRight } from "@mui/icons-material";
+import type {} from '@mui/x-data-grid/themeAugmentation';
 
 export const lightTheme = createTheme({
     palette: {
@@ -132,6 +132,82 @@ export const lightTheme = createTheme({
         }
     },
     components: {
+        MuiDataGrid: {
+            styleOverrides: {
+                cell: {
+                    fontFamily: 'Roboto, sans-serif', 
+                    fontWeight: 400, 
+                    fontSize: '14px', 
+                    lineHeight: '16px',
+                    letterSpacing: '0.03em', 
+                },
+                root:{
+                    height: "660px",
+                    width: "100%",
+                    "& .MuiDataGrid-root": {
+                        border: "none",
+                        width: "100%"
+                    },
+                    "& .MuiDataGrid-cell": {
+                        borderBottom: "1px solid #f0f0f0"
+                    },
+                    "& .MuiDataGrid-columnHeaders": {
+                        backgroundColor: "#f5f5f5",
+                        borderBottom: "1px solid #e0e0e0",
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                    },
+                    "& .MuiDataGrid-columnHeaderTitleContainer": {
+                        borderBottom: "1px solid #e0e0e0",
+                        justifyContent: "center",
+                        textAlign: "center"
+                    },
+                    "& .MuiDataGrid-columnSeparator": {
+                        display: "none"
+                    },
+                    "& .MuiDataGrid-columnHeaderCheckbox .MuiDataGrid-columnHeaderTitleContainer":
+                        {
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: '66px',
+                        },
+                    "& .MuiDataGrid-cellCheckbox": {
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: '66px',
+                    },
+                    "& .MuiDataGrid-row": {
+                        minHeight: "50px !important",
+                        maxHeight: "50px !important",
+                        "& .MuiDataGrid-cell": {
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }
+                    },
+                    "& .MuiDataGrid-virtualScroller": {
+                        marginTop: "5px"
+                    },
+                }
+            }
+        },
+        MuiButton: {
+            styleOverrides: {
+            root: { 
+                width: "125px",
+                        height: "36px",
+                        top: "7px",
+                        gap: "0px",
+                        borderRadius: "4px 0px 0px 0px",
+                        opacity: "0px",
+                        background: "#1890ff",
+                        color: "#ffffff",
+                        position: 'relative',
+            },
+            },
+        },
         MuiListItem: {
             styleOverrides: {
                 root: {
@@ -312,5 +388,15 @@ export const darkTheme = createTheme({
             }
         }
     
+    }
+});
+
+
+export const getCustomStyles = (chipColor: string) => ({
+    bgcolor: chipColor === "success" ? "rgba(129, 199, 132, 0.1)" : "rgba(158, 158, 158, 0.1)",
+    color: chipColor === "success" ? "rgba(109, 179, 112, 1)" : "rgba(138, 138, 138, 1)", 
+    "&:hover": {
+    bgcolor: chipColor === "success" ? "rgba(102, 187, 106, 0.1)" : "rgba(158, 158, 158, 0.1)",
+    border: chipColor === "success" ? "1px solid rgba(102, 187, 106, 1)" : "1px solid rgba(158, 158, 158, 1)"
     }
 });

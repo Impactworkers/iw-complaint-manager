@@ -4,10 +4,11 @@ import MenuItem from "@mui/material/MenuItem";
 import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { CasesTableProps } from "@/utils/types/CasesTable.types";
-import { Button } from "@mui/material";
+import { Button, ThemeProvider } from "@mui/material";
 import { CasesTableMenuActions } from "./CasesTableMenuActions";
 import { ModifiedColumns } from "./ModifiedColumns";
 import "./CasesTable.css";
+import { lightTheme } from "../../../.storybook/theme";
 
 const CasesTable: React.FC<CasesTableProps> = ({ columns, rows }) => {
     const [selectionModel, setSelectionModel] =
@@ -68,72 +69,25 @@ const CasesTable: React.FC<CasesTableProps> = ({ columns, rows }) => {
 
     return (
         <div className="table-container">
-            <div className="table-header">
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className="add-case-button"
-                    onClick={() => {}}
-                >
-                    + Add Case
-                </Button>
-            </div>
-            <DataGrid
-                style={{ height: 660, width: "100%" }}
-                rows={rows}
-                columns={modifiedColumns}
-                rowSelectionModel={selectionModel}
-                onRowSelectionModelChange={setSelectionModel}
-                paginationModel={paginationModel}
-                onPaginationModelChange={setPaginationModel}
-                disableColumnMenu
-                checkboxSelection
-                sx={{
-                    "& .MuiDataGrid-root": {
-                        border: "none",
-                        width: "100%"
-                    },
-                    "& .MuiDataGrid-cell": {
-                        borderBottom: "1px solid #f0f0f0"
-                    },
-                    "& .MuiDataGrid-columnHeaders": {
-                        backgroundColor: "#f5f5f5",
-                        borderBottom: "1px solid #e0e0e0",
-                        fontSize: "14px",
-                        fontWeight: "bold"
-                    },
-                    "& .MuiDataGrid-columnHeaderTitleContainer": {
-                        justifyContent: "center",
-                        textAlign: "center"
-                    },
-                    "& .MuiDataGrid-columnSeparator": {
-                        display: "none"
-                    },
-                    "& .MuiDataGrid-columnHeaderCheckbox .MuiDataGrid-columnHeaderTitleContainer":
-                        {
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center"
-                        },
-                    "& .MuiDataGrid-cellCheckbox": {
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center"
-                    },
-                    "& .MuiDataGrid-row": {
-                        minHeight: "50px !important",
-                        maxHeight: "50px !important",
-                        "& .MuiDataGrid-cell": {
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center"
-                        }
-                    },
-                    "& .MuiDataGrid-virtualScroller": {
-                        marginTop: "5px"
-                    }
-                }}
-            />
+            <ThemeProvider theme={lightTheme}>
+                <div className="table-header">
+                    <Button variant="contained" onClick={() => {}}>
+                        + Add Case
+                    </Button>
+                </div>
+
+                <DataGrid
+                    style={{ height: 660, width: "100%" }}
+                    rows={rows}
+                    columns={modifiedColumns}
+                    rowSelectionModel={selectionModel}
+                    onRowSelectionModelChange={setSelectionModel}
+                    paginationModel={paginationModel}
+                    onPaginationModelChange={setPaginationModel}
+                    disableColumnMenu
+                    checkboxSelection
+                />
+            </ThemeProvider>
         </div>
     );
 };

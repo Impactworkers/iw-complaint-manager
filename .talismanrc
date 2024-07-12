@@ -3,6 +3,8 @@ fileignoreconfig:
   checksum: c4cf3494797a1e9f8a598a31ca8e72172f695c124268cdcab92f0d3005fd32ea
 - filename: cypress/e2e/spec.cy.ts
   checksum: 53b53dc96162892552ad7608a90b196247dd65159a0b6a418543bf523ee55223
+- filename: package-lock.json
+  checksum: 7997374f3617ca2f3fad6d9c600f4436b8fda2f65a6ec63ac560370e951463d9
 - filename: package.json
   checksum: 88fef28310fe9725e99aeb64836b510b1ed59741f031f5f7ec9b6640de3e8b81
 - filename: remix
