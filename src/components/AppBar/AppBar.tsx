@@ -13,6 +13,7 @@ import {
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { DrawerMenuItem } from "./interfaces";
 import DrawerComponent from "./DrawerComponent";
+import AvatarAccountMenu from "./AvatarAccountMenu";
 import Logo from "../../../public/Logo.svg";
 import Image from "next/image";
 import { getFirstAndLastInitials } from "@/utils/helperFunctions/appBarHelperFunctions";
@@ -37,7 +38,8 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
     const [openState, setOpenState] = useState(false);
     const open = openProp ?? openState;
     const setOpen = setOpenProp ?? setOpenState;
-    const { userName, error, isLoading } = useGetOktaUserName();
+    const { userName, error, isLoading, isAuthenticated } =
+        useGetOktaUserName();
 
     const toggleDrawer = () => {
         setOpen(!open);
@@ -95,11 +97,15 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
                             <Avatar role="menu" data-testid="user-avatar-menu">
                                 {getFirstAndLastInitials(userName)}
                             </Avatar>
+                        ) : userName && isAuthenticated ? (
+                            <AvatarAccountMenu userName={userName} />
                         ) : (
                             <Avatar
                                 role="menu"
                                 data-testid="default-avatar-menu"
-                            />
+                            >
+                                IW
+                            </Avatar>
                         )}
                     </IconButton>
                 </Toolbar>
