@@ -1,23 +1,19 @@
 "use client";
 import React, { FC } from "react";
-import {
-    Drawer,
-    Divider,
-    ListItemIcon,
-    ListItemText,
-    Typography,
-    ListItem
-} from "@mui/material";
-import { ChevronRight } from "@mui/icons-material";
-import { Menu } from "./interfaces";
+import { Drawer, Divider, Typography } from "@mui/material";
+import { DrawerMenuItem } from "./interfaces";
 import { useRouter } from "next/navigation";
+import {
+    filterDrawerItemsByCategory,
+    renderMenuItems
+} from "@/utils/helperFunctions/appBarHelperFunctions";
 
 const drawerWidth = 350;
 
 interface DrawerComponentProps {
     open: boolean;
     closeHandler: () => void;
-    drawerItems: Menu[];
+    drawerItems: DrawerMenuItem[];
 }
 
 const DrawerComponent: FC<DrawerComponentProps> = ({
@@ -25,6 +21,14 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
     closeHandler,
     drawerItems
 }) => {
+    const router = useRouter();
+
+    const mainDrawerItems = filterDrawerItemsByCategory(drawerItems, "Main");
+    const adminDrawerItems = filterDrawerItemsByCategory(
+        drawerItems,
+        "Admin Settings"
+    );
+
     const handleKeyDown = (event: React.KeyboardEvent, handler: () => void) => {
         if (event.key === "Enter" || event.key === "ArrowRight") {
             handler();
@@ -33,13 +37,6 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
             closeHandler();
         }
     };
-
-    const router = useRouter();
-
-    const mainItems = drawerItems.filter((item) => item.category === "Main");
-    const adminItems = drawerItems.filter(
-        (item) => item.category === "Admin Settings"
-    );
 
     return (
         <Drawer
@@ -61,60 +58,32 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
             anchor="left"
             open={open}
         >
-            {mainItems.length > 0 && (
-                <>
-                    {mainItems.map((menu) => (
-                        <ListItem
-                            key={`mainMenu${menu.key}`}
-                            tabIndex={0}
-                            onKeyDown={(e) =>
-                                handleKeyDown(e, () => router.push(menu.route))
-                            }
-                            onClick={() => {
-                                router.push(menu.route);
-                                closeHandler();
-                            }}
-                        >
-                            {menu.icon && (
-                                <ListItemIcon>{menu.icon}</ListItemIcon>
-                            )}
-                            <ListItemText inset={!menu.icon}>
-                                <Typography>{menu.menuText}</Typography>
-                            </ListItemText>
-                            <ChevronRight sx={{ color: "transparent" }} />
-                        </ListItem>
-                    ))}
-                </>
-            )}
-            {adminItems.length > 0 && (
-                <>
-                    <Divider />
-                    <Typography variant="h6" sx={{ padding: "10px" }}>
-                        Admin Settings
-                    </Typography>
-                    {adminItems.map((menu) => (
-                        <ListItem
-                            key={`adminMenu${menu.key}`}
-                            tabIndex={0}
-                            onKeyDown={(e) =>
-                                handleKeyDown(e, () => router.push(menu.route))
-                            }
-                            onClick={() => {
-                                router.push(menu.route);
-                                closeHandler();
-                            }}
-                        >
-                            {menu.icon && (
-                                <ListItemIcon>{menu.icon}</ListItemIcon>
-                            )}
-                            <ListItemText inset={!menu.icon}>
-                                <Typography>{menu.menuText}</Typography>
-                            </ListItemText>
-                            <ChevronRight sx={{ color: "transparent" }} />
-                        </ListItem>
-                    ))}
-                </>
-            )}
+            <>
+                {mainDrawerItems.length > 0 && (
+                    <>
+                        {renderMenuItems({
+                            items: mainDrawerItems,
+                            router,
+                            handleKeyDown,
+                            closeHandler
+                        })}
+                    </>
+                )}
+                {adminDrawerItems.length > 0 && (
+                    <>
+                        <Divider />
+                        <Typography variant="h6" sx={{ padding: "10px" }}>
+                            Admin Settings
+                        </Typography>
+                        {renderMenuItems({
+                            items: adminDrawerItems,
+                            router,
+                            handleKeyDown,
+                            closeHandler
+                        })}
+                    </>
+                )}
+            </>
         </Drawer>
     );
 };
