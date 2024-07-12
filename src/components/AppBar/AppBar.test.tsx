@@ -61,10 +61,10 @@ describe("AppBarWithSideNav Component", () => {
         const drawerToggleButton = screen.getByLabelText("open drawer");
 
         fireEvent.click(drawerToggleButton);
-        expect(screen.getByRole("presentation")).toHaveClass("MuiDrawer-root");
+        expect(screen.getByRole("complementary")).toHaveClass("MuiDrawer-root");
 
-        fireEvent.click(screen.getByRole("presentation"));
-        expect(screen.queryByRole("presentation")).toHaveClass(
+        fireEvent.click(screen.getByRole("complementary"));
+        expect(screen.queryByRole("complementary")).toHaveClass(
             "MuiDrawer-docked"
         );
     });
@@ -81,10 +81,6 @@ describe("AppBarWithSideNav Component", () => {
             </AppRouterContextProviderMock>
         );
 
-        await screen.findByText("?");
-
-        expect(
-            screen.getByLabelText("account of current user")
-        ).toBeInTheDocument();
+        expect(screen.getByTestId("default-avatar-menu")).toBeInTheDocument();
     });
 });
