@@ -1,5 +1,7 @@
 "use client";
 import React, { useState, FC, useEffect } from "react";
+import { useOktaAuth } from "@okta/okta-react";
+import { ReactNode } from "react";
 import {
     Box,
     Toolbar,
@@ -9,16 +11,15 @@ import {
     Avatar
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
-import { Menu } from "./interfaces";
+import { DrawerMenuItem } from "./interfaces";
 import DrawerComponent from "./DrawerComponent";
-import { ReactNode } from "react";
-import { useOktaAuth } from "@okta/okta-react";
 import Logo from "../../../public/Logo.svg";
 import Image from "next/image";
+import { getFirstAndLastInitials } from "@/utils/helperFunctions/appBarHelperFunctions";
 
 interface AppBarWithSideNavProps {
     headerIcon?: ReactNode;
-    drawerItems: Menu[];
+    drawerItems: DrawerMenuItem[];
     open?: boolean;
     // eslint-disable-next-line no-unused-vars
     setOpen?: (value: boolean) => void;
@@ -38,13 +39,6 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
 
     const toggleDrawer = () => {
         setOpen(!open);
-    };
-
-    const getFirstAndLastInitials = (name: string) => {
-        const nameArray = name.split(" ");
-        return `${nameArray[0].charAt(0)}${nameArray[
-            nameArray.length - 1
-        ].charAt(0)}`;
     };
 
     useEffect(() => {
@@ -107,7 +101,7 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
                         <Avatar>
                             {authState?.isAuthenticated
                                 ? getFirstAndLastInitials(userName)
-                                : "User"}
+                                : "?"}
                         </Avatar>
                     </IconButton>
                 </Toolbar>
