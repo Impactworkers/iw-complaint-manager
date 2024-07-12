@@ -12,7 +12,7 @@ import { FC, ReactElement } from "react";
  * @property {any} menuElementProps - The props to pass to the menu element.
  */
 
-export interface Menu {
+export interface DrawerMenuItem {
     key: string;
     icon?: ReactElement;
     menuText: string;
