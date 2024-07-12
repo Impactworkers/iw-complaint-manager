@@ -1,13 +1,5 @@
 import dynamic from "next/dynamic";
 import { ComponentType } from "react";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import DescriptionIcon from "@mui/icons-material/Description";
-import CasesIcon from "@mui/icons-material/Cases";
-import EditIcon from "@mui/icons-material/Edit";
-import GroupsIcon from "@mui/icons-material/Groups";
-import AnalyticsIcon from "@mui/icons-material/Analytics";
-import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
-import SettingsIcon from "@mui/icons-material/Settings";
 
 export const iconPaths: { [key: string]: ComponentType } = {
     Dashboard: dynamic(() => import("@mui/icons-material/Dashboard")),
@@ -24,56 +16,56 @@ export const iconPaths: { [key: string]: ComponentType } = {
 export const mockMenuItems = [
     {
         menuText: "Dashboard",
-        icon: <DashboardIcon />,
+        icon: <iconPaths.Dashboard />,
         key: "dashboard",
         route: "/dashboard",
         category: "Main"
     },
     {
         menuText: "Description",
-        icon: <DescriptionIcon />,
+        icon: <iconPaths.Description />,
         key: "description",
         route: "/description",
         category: "Main"
     },
     {
         menuText: "Cases",
-        icon: <CasesIcon />,
+        icon: <iconPaths.Cases />,
         key: "cases",
         route: "/cases",
         category: "Main"
     },
     {
         menuText: "Groups",
-        icon: <GroupsIcon />,
+        icon: <iconPaths.Groups />,
         key: "groups",
         route: "/groups",
         category: "Main"
     },
     {
         menuText: "Analytics",
-        icon: <AnalyticsIcon />,
+        icon: <iconPaths.Analytics />,
         key: "analytics",
         route: "/analytics",
         category: "Main"
     },
     {
         menuText: "LibraryAdd",
-        icon: <LibraryAddIcon />,
+        icon: <iconPaths.LibraryAdd />,
         key: "library-add",
         route: "/library-add",
         category: "Main"
     },
     {
         menuText: "Settings",
-        icon: <SettingsIcon />,
+        icon: <iconPaths.Settings />,
         key: "settings",
         route: "/settings",
         category: "Main"
     },
     {
         menuText: "Admin Portal",
-        icon: <EditIcon />,
+        icon: <iconPaths.default />,
         key: "admin-portal",
         route: "/admin-portal",
         category: "Admin Settings"
