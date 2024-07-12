@@ -43,6 +43,7 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
 
     return (
         <Drawer
+            role="presentation"
             sx={{
                 width: drawerWidth,
                 flexShrink: 0
