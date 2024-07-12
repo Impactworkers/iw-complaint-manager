@@ -8,6 +8,7 @@ import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import { getCustomStyles } from "../../../.storybook/theme";
 import AddIcon from "@mui/icons-material/Add";
+import { DotIcon } from "./dotIcon";
 
 export const ModifiedColumns = (
     columns: GridColDef[],
@@ -28,23 +29,10 @@ export const ModifiedColumns = (
                     const chipColor =
                         params.value === "Active" ? "success" : "grey";
                     const customStyles = getCustomStyles(chipColor);
-                    const DotIcon = () => (
-                        <span
-                            style={{
-                                height: "6px",
-                                width: "6px",
-                                backgroundColor: customStyles.color,
-                                borderRadius: "50%",
-                                display: "inline-block",
-                                marginRight: "-6px",
-                                marginLeft: "6px"
-                            }}
-                        />
-                    );
                     return (
                         <div style={{ display: "flex", alignItems: "center" }}>
                             <Chip
-                                icon={<DotIcon />}
+                                icon={<DotIcon color={customStyles.color} />}
                                 label={params.value}
                                 sx={{
                                     ...customStyles,
@@ -65,7 +53,7 @@ export const ModifiedColumns = (
                         nameParts.length > 1
                             ? nameParts[nameParts.length - 1]
                             : "";
-                    const formattedName = `${firstInitial}. ${lastName}`;
+                    const formattedName = `${firstInitial}. ${lastName}`; //option for initials only
                     return (
                         <div
                             style={{
@@ -78,12 +66,14 @@ export const ModifiedColumns = (
                                     position: "absolute",
                                     zIndex: 1,
                                     top: "-3px",
-                                    transform: "translateX(-80%)",
+                                    transform: "translateX(-75%)",
                                     width: "30px",
-                                    height: "30px"
+                                    height: "30px",
+                                    border: "2px solid #ffffff"
                                 }}
+                                src={`https://source.unsplash.com/random/200x200?sig=${Math.floor(Math.random() * 1000)}`}
                             >
-                                {formattedName}
+                                {/* {formattedName} */}
                             </Avatar>
 
                             <AddIcon
@@ -93,8 +83,8 @@ export const ModifiedColumns = (
                                     display: "inline-flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    width: "24px",
-                                    height: "24px",
+                                    width: "25px",
+                                    height: "25px",
                                     borderRadius: "50%",
                                     position: "relative"
                                 }}
