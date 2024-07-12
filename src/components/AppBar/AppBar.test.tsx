@@ -81,7 +81,7 @@ describe("AppBarWithSideNav Component", () => {
             </AppRouterContextProviderMock>
         );
 
-        await screen.findByText("User");
+        await screen.findByText("?");
 
         expect(
             screen.getByLabelText("account of current user")
