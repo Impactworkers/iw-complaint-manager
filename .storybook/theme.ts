@@ -408,7 +408,7 @@ export const darkTheme = createTheme({
 });
 
 
-export const getCustomStyles = (chipColor: string) => ({
+export const getCustomColor = (chipColor: string) => ({
     bgcolor: chipColor === "success" ? "rgba(122, 207, 130, 0.4)" : "rgba(178, 178, 178, 0.4)",
     color: chipColor === "success" ? "rgba(60, 130, 62, 1)" : "rgba(90, 90, 90, 1)",
     
