@@ -12,6 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState, MouseEvent } from "react";
 import { NavigationBar } from "../NavigationBar/NavigationBar";
 import oktaAuth from "../../auth/auth";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -21,8 +22,11 @@ const Header = () => {
         setAnchorEl(event.currentTarget);
     const handleClose = () => setAnchorEl(null);
     const handleDrawerOpen = () => setIsDrawerOpen(!isDrawerOpen);
+
+    const router = useRouter();
     const handleLogout = () => {
         oktaAuth.signOut();
+        router.push("/");
     };
 
     return (

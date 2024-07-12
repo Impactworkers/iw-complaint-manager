@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
-import Link from "next/link";
-import { Typography } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+    const router = useRouter();
     const herokuEnv = process.env.NEXT_PUBLIC_APP_ENV;
     const isHerokuEnv =
         herokuEnv === "development" ||
@@ -12,7 +12,6 @@ export default function Page() {
         herokuEnv === "staging";
     const { oktaAuth, authState } = useOktaAuth();
     const [redirectAttempted, setRedirectAttempted] = useState(false);
-
     useEffect(() => {
         if (isHerokuEnv && !redirectAttempted) {
             const handleRedirect = async () => {
@@ -29,18 +28,11 @@ export default function Page() {
         }
     }, [isHerokuEnv, oktaAuth, authState, redirectAttempted]);
 
-    return (
-        <>
-            {isHerokuEnv && authState?.isAuthenticated ? (
-                <>
-                    <Typography variant="h5" className="page-title">
-                        Welcome to Complaint Manager 2.0
-                    </Typography>
-                    <Link href="/dashboard">Go to dashboard</Link>
-                </>
-            ) : (
-                <p>Not logged in</p>
-            )}
-        </>
-    );
+    useEffect(() => {
+        if (authState?.isAuthenticated) {
+            router.push("/dashboard");
+        }
+    }, [authState, router]);
+
+    return <></>;
 }
