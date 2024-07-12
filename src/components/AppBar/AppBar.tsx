@@ -8,7 +8,8 @@ import {
     IconButton,
     AppBar,
     Backdrop,
-    Avatar
+    Avatar,
+    Skeleton
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { DrawerMenuItem } from "./interfaces";
@@ -16,6 +17,7 @@ import DrawerComponent from "./DrawerComponent";
 import Logo from "../../../public/Logo.svg";
 import Image from "next/image";
 import { getFirstAndLastInitials } from "@/utils/helperFunctions/appBarHelperFunctions";
+import AppBarSkeleton from "./AppBarSkeleton";
 
 interface AppBarWithSideNavProps {
     headerIcon?: ReactNode;
@@ -58,6 +60,10 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
         }
     }, [authState, oktaAuth, userName]);
 
+    if (!authState) {
+        return <AppBarSkeleton />;
+    }
+
     return (
         <Box sx={{ display: "flex" }}>
             <AppBar
@@ -99,9 +105,18 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
                         // onClick={handleMenu}
                     >
                         <Avatar>
-                            {authState?.isAuthenticated
-                                ? getFirstAndLastInitials(userName)
-                                : "?"}
+                            {authState?.isAuthenticated ? (
+                                <Avatar>
+                                    {getFirstAndLastInitials(userName)}
+                                </Avatar>
+                            ) : (
+                                <Skeleton
+                                    variant="circular"
+                                    width={40}
+                                    height={40}
+                                    animation="wave"
+                                />
+                            )}
                         </Avatar>
                     </IconButton>
                 </Toolbar>
