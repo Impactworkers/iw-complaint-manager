@@ -12,8 +12,8 @@ export interface CasesTableProps {
         Assignee: string;
     }[];
     columns: GridColDef[];
-    modifiedColumns: {
-        field: string;
-        headerName: string;
-    }[];
+    // modifiedColumns: {
+    //     field: string;
+    //     headerName: string;
+    // }[];
 }

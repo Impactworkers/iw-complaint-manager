@@ -39,13 +39,7 @@ describe("Cases table", () => {
 
     test("should render CaseRow", async () => {
         await act(async () => {
-            render(
-                <CasesTable
-                    columns={columns}
-                    rows={rows}
-                    modifiedColumns={[]}
-                />
-            );
+            render(<CasesTable columns={columns} rows={rows} />);
         });
         expect(screen.getByText("#111")).toBeInTheDocument();
     });
