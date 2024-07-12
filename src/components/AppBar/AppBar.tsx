@@ -20,6 +20,7 @@ interface AppBarWithSideNavProps {
     headerIcon?: ReactNode;
     drawerItems: Menu[];
     open?: boolean;
+    // eslint-disable-next-line no-unused-vars
     setOpen?: (value: boolean) => void;
     children?: JSX.Element;
 }
