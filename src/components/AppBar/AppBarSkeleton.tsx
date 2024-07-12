@@ -35,6 +35,7 @@ const AppBarSkeleton: React.FC = () => {
                     <Box flexGrow={1} />
                     <IconButton size="large" disabled>
                         <Skeleton
+                            data-testid="account-skeleton"
                             variant="circular"
                             width={40}
                             height={40}
