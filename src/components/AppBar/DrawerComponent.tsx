@@ -1,5 +1,5 @@
 "use client";
-import React, { FC } from "react";
+import { FC, useCallback, useMemo } from "react";
 import { Drawer, Divider, Typography } from "@mui/material";
 import { DrawerMenuItem } from "./interfaces";
 import { useRouter } from "next/navigation";
@@ -23,24 +23,31 @@ const DrawerComponent: FC<DrawerComponentProps> = ({
 }) => {
     const router = useRouter();
 
-    const mainDrawerItems = filterDrawerItemsByCategory(drawerItems, "Main");
-    const adminDrawerItems = filterDrawerItemsByCategory(
-        drawerItems,
-        "Admin Settings"
+    const mainDrawerItems = useMemo(
+        () => filterDrawerItemsByCategory(drawerItems, "Main"),
+        [drawerItems]
+    );
+    const adminDrawerItems = useMemo(
+        () => filterDrawerItemsByCategory(drawerItems, "Admin Settings"),
+        [drawerItems]
     );
 
-    const handleKeyDown = (event: React.KeyboardEvent, handler: () => void) => {
-        if (event.key === "Enter" || event.key === "ArrowRight") {
-            handler();
-        }
-        if (event.key === "Escape" || event.key === "ArrowLeft") {
-            closeHandler();
-        }
-    };
+    const handleKeyDown = useCallback(
+        (event: React.KeyboardEvent, handler: () => void) => {
+            if (event.key === "Enter" || event.key === "ArrowRight") {
+                handler();
+            }
+            if (event.key === "Escape" || event.key === "ArrowLeft") {
+                closeHandler();
+            }
+        },
+        [closeHandler]
+    );
 
     return (
         <Drawer
-            role="presentation"
+            role="complementary"
+            aria-label="Application Navigation"
             sx={{
                 width: drawerWidth,
                 flexShrink: 0
