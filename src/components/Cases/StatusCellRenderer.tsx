@@ -1,7 +1,6 @@
-import { DotIcon } from "./DotIcon";
 import { getCustomColor } from "../../../.storybook/theme";
 import Chip from "@mui/material/Chip";
-
+import { DotIcon } from "./DotIcon";
 interface StatusCellRendererParams {
     value: string;
 }
