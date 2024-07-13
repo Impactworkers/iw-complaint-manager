@@ -3,9 +3,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Menu from "@mui/material/Menu";
 import { GridColDef } from "@mui/x-data-grid";
 import "./CasesTable.css";
-import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
-import AddIcon from "@mui/icons-material/Add";
 import { StatusCellRenderer } from "./StatusCellRenderer";
 import { AssigneeAvatar } from "./AssigneeAvatar";
 
