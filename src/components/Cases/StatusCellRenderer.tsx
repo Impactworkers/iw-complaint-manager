@@ -1,13 +1,13 @@
-import { getCustomColor } from "../../../.storybook/theme";
+import { DotIcon } from "./dotIcon";
+import { getCustomStyles } from "../../../.storybook/theme";
 import Chip from "@mui/material/Chip";
-import { DotIcon } from "./DotIcon";
 interface StatusCellRendererParams {
     value: string;
 }
 
 export const StatusCellRenderer = (params: StatusCellRendererParams) => {
     const chipColor = params.value === "Active" ? "success" : "grey";
-    const customStyles = getCustomColor(chipColor);
+    const customStyles = getCustomStyles(chipColor);
     return (
         <div style={{ display: "flex", alignItems: "center" }}>
             <Chip

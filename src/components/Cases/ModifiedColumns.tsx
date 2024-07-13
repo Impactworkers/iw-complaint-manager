@@ -2,10 +2,12 @@ import React from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Menu from "@mui/material/Menu";
 import { GridColDef } from "@mui/x-data-grid";
+import "./CasesTable.css";
+import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
+import AddIcon from "@mui/icons-material/Add";
 import { StatusCellRenderer } from "./StatusCellRenderer";
 import { AssigneeAvatar } from "./AssigneeAvatar";
-import "./CasesTable.css";
 
 export const ModifiedColumns = (
     columns: GridColDef[],
@@ -18,7 +20,9 @@ export const ModifiedColumns = (
     return [
         ...columns.map((column) => ({
             ...column,
-            headerClassName: "casesTableHeader",
+            headerClassName: "dataGridHeader",
+            cellClassName:
+                column.field === "Status" ? "statusCell" : "dataGridCell",
             renderCell: (params: any) => {
                 if (column.field === "Status") {
                     return StatusCellRenderer(params);
@@ -34,7 +38,7 @@ export const ModifiedColumns = (
             headerName: " ",
             sortable: false,
             width: 100,
-            headerClassName: "casesTableHeader",
+            headerClassName: "dataGridHeader",
             renderCell: (params) => (
                 <>
                     <IconButton
