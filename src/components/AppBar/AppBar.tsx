@@ -7,7 +7,6 @@ import {
     IconButton,
     AppBar,
     Backdrop,
-    Avatar,
     Typography,
     Skeleton
 } from "@mui/material";
