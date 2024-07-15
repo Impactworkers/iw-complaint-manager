@@ -12,13 +12,19 @@ import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import { getFirstAndLastInitials } from "@/utils/helperFunctions/appBarHelperFunctions";
 import { FC } from "react";
+import { Skeleton } from "@mui/material";
+import oktaAuth from "@/auth/auth";
 
 interface AvatarAccountMenuProps {
     userName: string;
+    isLoading: boolean;
+    isAuthenticated: boolean;
 }
 
 const AvatarAccountMenu: FC<AvatarAccountMenuProps> = ({
-    userName
+    userName,
+    isLoading,
+    isAuthenticated
 }: AvatarAccountMenuProps) => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -28,6 +34,12 @@ const AvatarAccountMenu: FC<AvatarAccountMenuProps> = ({
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const handleLogout = () => {
+        setAnchorEl(null);
+        oktaAuth.signOut();
+    };
+
     return (
         <React.Fragment>
             <Box
@@ -40,15 +52,24 @@ const AvatarAccountMenu: FC<AvatarAccountMenuProps> = ({
                 <Tooltip title="Account settings">
                     <IconButton
                         onClick={handleClick}
-                        size="small"
-                        sx={{ ml: 2 }}
+                        // sx={{ ml: 2 }}
                         aria-controls={open ? "account-menu" : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? "true" : undefined}
                     >
-                        <Avatar sx={{ width: 32, height: 32 }}>
-                            {getFirstAndLastInitials(userName)}
-                        </Avatar>
+                        {isLoading ? (
+                            <Skeleton
+                                data-testid="account-skeleton"
+                                variant="circular"
+                                width={32}
+                                height={32}
+                                animation="wave"
+                            />
+                        ) : isAuthenticated && userName ? (
+                            <Avatar>{getFirstAndLastInitials(userName)}</Avatar>
+                        ) : isAuthenticated && !isLoading ? (
+                            <Avatar>IW</Avatar>
+                        ) : null}
                     </IconButton>
                 </Tooltip>
             </Box>
@@ -106,7 +127,7 @@ const AvatarAccountMenu: FC<AvatarAccountMenuProps> = ({
                     </ListItemIcon>
                     Settings
                 </MenuItem>
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={handleLogout}>
                     <ListItemIcon>
                         <Logout fontSize="small" />
                     </ListItemIcon>
