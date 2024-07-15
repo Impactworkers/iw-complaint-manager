@@ -6,6 +6,7 @@ export interface UseGetOktaUserNameReturnType {
     error: string | null;
     isLoading: boolean;
     isAuthenticated: boolean;
+    oktaAuth: ReturnType<typeof useOktaAuth>["oktaAuth"];
 }
 
 export const useGetOktaUserName = (): UseGetOktaUserNameReturnType => {
@@ -37,5 +38,5 @@ export const useGetOktaUserName = (): UseGetOktaUserNameReturnType => {
         setIsLoading(false);
     }, [authState?.isAuthenticated, oktaAuth]);
 
-    return { userName, error, isLoading, isAuthenticated };
+    return { userName, error, isLoading, isAuthenticated, oktaAuth };
 };

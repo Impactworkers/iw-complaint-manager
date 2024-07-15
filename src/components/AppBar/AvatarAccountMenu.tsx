@@ -19,12 +19,14 @@ interface AvatarAccountMenuProps {
     userName: string;
     isLoading: boolean;
     isAuthenticated: boolean;
+    oktaAuth: typeof oktaAuth;
 }
 
 const AvatarAccountMenu: FC<AvatarAccountMenuProps> = ({
     userName,
     isLoading,
-    isAuthenticated
+    isAuthenticated,
+    oktaAuth
 }: AvatarAccountMenuProps) => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -53,6 +55,7 @@ const AvatarAccountMenu: FC<AvatarAccountMenuProps> = ({
                     <IconButton
                         onClick={handleClick}
                         // sx={{ ml: 2 }}
+                        aria-label="account of current user"
                         aria-controls={open ? "account-menu" : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? "true" : undefined}
@@ -67,9 +70,11 @@ const AvatarAccountMenu: FC<AvatarAccountMenuProps> = ({
                             />
                         ) : isAuthenticated && userName ? (
                             <Avatar>{getFirstAndLastInitials(userName)}</Avatar>
-                        ) : isAuthenticated && !isLoading ? (
-                            <Avatar>IW</Avatar>
-                        ) : null}
+                        ) : (
+                            <Avatar data-testid="default-avatar-menu">
+                                IW
+                            </Avatar>
+                        )}
                     </IconButton>
                 </Tooltip>
             </Box>
@@ -110,18 +115,18 @@ const AvatarAccountMenu: FC<AvatarAccountMenuProps> = ({
                 transformOrigin={{ horizontal: "right", vertical: "top" }}
                 anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={handleClose} disabled={!isAuthenticated}>
                     <Avatar>{getFirstAndLastInitials(userName)}</Avatar> My
                     Account
                 </MenuItem>
                 <Divider />
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={handleClose} disabled={!isAuthenticated}>
                     <ListItemIcon>
                         <PersonAdd fontSize="small" />
                     </ListItemIcon>
                     Add another account
                 </MenuItem>
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={handleClose} disabled={!isAuthenticated}>
                     <ListItemIcon>
                         <Settings fontSize="small" />
                     </ListItemIcon>

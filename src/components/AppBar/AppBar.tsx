@@ -37,7 +37,7 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
     const [openState, setOpenState] = useState(false);
     const open = openProp ?? openState;
     const setOpen = setOpenProp ?? setOpenState;
-    const { userName, error, isLoading, isAuthenticated } =
+    const { userName, error, isLoading, isAuthenticated, oktaAuth } =
         useGetOktaUserName();
 
     const toggleDrawer = () => {
@@ -98,6 +98,7 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
                             userName={userName}
                             isLoading={isLoading}
                             isAuthenticated={isAuthenticated}
+                            oktaAuth={oktaAuth}
                         />
                     )}
                 </Toolbar>
