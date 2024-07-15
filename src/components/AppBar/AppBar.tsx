@@ -82,40 +82,25 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
                         priority
                     />
                     <Box flexGrow={1} />
-                    <IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        disabled={isLoading || !isAuthenticated}
-                    >
-                        {error ? (
-                            <Typography color={lightTheme.palette.error.main}>
-                                {error}
-                            </Typography>
-                        ) : isLoading ? (
-                            <Skeleton
-                                data-testid="account-skeleton"
-                                variant="circular"
-                                width={32}
-                                height={32}
-                                animation="wave"
-                            />
-                        ) : userName && isAuthenticated ? (
-                            <AvatarAccountMenu userName={userName} />
-                        ) : (
-                            !isLoading &&
-                            !userName &&
-                            isAuthenticated && (
-                                <Avatar
-                                    role="menu"
-                                    data-testid="default-avatar-menu"
-                                >
-                                    IW
-                                </Avatar>
-                            )
-                        )}
-                    </IconButton>
+                    {error ? (
+                        <Typography color={lightTheme.palette.error.main}>
+                            {error}
+                        </Typography>
+                    ) : isLoading ? (
+                        <Skeleton
+                            data-testid="account-skeleton"
+                            variant="circular"
+                            width={32}
+                            height={32}
+                            animation="wave"
+                        />
+                    ) : (
+                        <AvatarAccountMenu
+                            userName={userName}
+                            isLoading={isLoading}
+                            isAuthenticated={isAuthenticated}
+                        />
+                    )}
                 </Toolbar>
             </AppBar>
             <DrawerComponent
