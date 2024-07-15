@@ -8,7 +8,8 @@ import {
     AppBar,
     Backdrop,
     Avatar,
-    Typography
+    Typography,
+    Skeleton
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { DrawerMenuItem } from "./interfaces";
@@ -16,7 +17,6 @@ import DrawerComponent from "./DrawerComponent";
 import AvatarAccountMenu from "./AvatarAccountMenu";
 import Logo from "../../../public/Logo.svg";
 import Image from "next/image";
-import { getFirstAndLastInitials } from "@/utils/helperFunctions/appBarHelperFunctions";
 import AppBarSkeleton from "./AppBarSkeleton";
 import { useGetOktaUserName } from "@/hooks/useGetOktaUserName";
 import { lightTheme } from "../../../.storybook/theme";
@@ -87,25 +87,33 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
                         aria-label="account of current user"
                         aria-controls="menu-appbar"
                         aria-haspopup="true"
-                        // onClick={handleMenu}
+                        disabled={isLoading || !isAuthenticated}
                     >
                         {error ? (
                             <Typography color={lightTheme.palette.error.main}>
                                 {error}
                             </Typography>
-                        ) : userName ? (
-                            <Avatar role="menu" data-testid="user-avatar-menu">
-                                {getFirstAndLastInitials(userName)}
-                            </Avatar>
+                        ) : isLoading ? (
+                            <Skeleton
+                                data-testid="account-skeleton"
+                                variant="circular"
+                                width={32}
+                                height={32}
+                                animation="wave"
+                            />
                         ) : userName && isAuthenticated ? (
                             <AvatarAccountMenu userName={userName} />
                         ) : (
-                            <Avatar
-                                role="menu"
-                                data-testid="default-avatar-menu"
-                            >
-                                IW
-                            </Avatar>
+                            !isLoading &&
+                            !userName &&
+                            isAuthenticated && (
+                                <Avatar
+                                    role="menu"
+                                    data-testid="default-avatar-menu"
+                                >
+                                    IW
+                                </Avatar>
+                            )
                         )}
                     </IconButton>
                 </Toolbar>
