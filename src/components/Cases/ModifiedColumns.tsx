@@ -3,12 +3,9 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Menu from "@mui/material/Menu";
 import { GridColDef } from "@mui/x-data-grid";
 import "./CasesTable.css";
-import Chip from "@mui/material/Chip";
-import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
-import { getCustomStyles } from "../../../.storybook/theme";
-import { Fab } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
+import { StatusCellRenderer } from "./StatusCellRenderer";
+import { AssigneeAvatar } from "./AssigneeAvatar";
 
 export const ModifiedColumns = (
     columns: GridColDef[],
@@ -26,66 +23,10 @@ export const ModifiedColumns = (
                 column.field === "Status" ? "statusCell" : "dataGridCell",
             renderCell: (params: any) => {
                 if (column.field === "Status") {
-                    const chipColor =
-                        params.value === "Active" ? "success" : "grey";
-                    const customStyles = getCustomStyles(chipColor);
-                    const DotIcon = () => (
-                        <span
-                            style={{
-                                height: "10px",
-                                width: "10px",
-                                backgroundColor: customStyles.color,
-                                borderRadius: "50%",
-                                display: "inline-block"
-                            }}
-                        />
-                    );
-                    return (
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <Chip
-                                icon={<DotIcon />}
-                                label={params.value}
-                                sx={customStyles}
-                            />
-                        </div>
-                    );
+                    return StatusCellRenderer(params);
                 }
                 if (column.field === "Assignee") {
-                    const fullName = params.value;
-                    const nameParts = fullName.split(" ");
-                    const firstInitial = nameParts[0][0] || "";
-                    const lastName =
-                        nameParts.length > 1
-                            ? nameParts[nameParts.length - 1]
-                            : "";
-                    const formattedName = `${firstInitial}. ${lastName}`;
-                    return (
-                        <div
-                            style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "10px"
-                            }}
-                        >
-                            <Avatar>{formattedName}</Avatar>
-                            <Fab
-                                size="small"
-                                color="secondary"
-                                aria-label="add"
-                                sx={{
-                                    width: "30px",
-                                    height: "25px",
-                                    backgroundColor: "#1890FF",
-                                    color: "#FFFFFF",
-                                    "&:hover": {
-                                        backgroundColor: "#1077cc"
-                                    }
-                                }}
-                            >
-                                <AddIcon />
-                            </Fab>
-                        </div>
-                    );
+                    return AssigneeAvatar(params.value);
                 }
                 return params.value;
             }

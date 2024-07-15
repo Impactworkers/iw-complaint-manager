@@ -24,6 +24,16 @@ describe("Cases table", () => {
             Location: "New York",
             Status: "Open",
             Assignee: "UserA"
+        },
+        {
+            id: 2,
+            ID: "#112",
+            Type: "Feature",
+            Date: "2024-01-02",
+            Creator: "User2",
+            Location: "Los Angeles",
+            Status: "Closed",
+            Assignee: "UserB"
         }
     ];
 

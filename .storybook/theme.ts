@@ -141,6 +141,9 @@ export const lightTheme = createTheme({
                     lineHeight: '16px',
                     letterSpacing: '0.03em', 
                 },
+                columnHeader: {
+                    borderBottom: "1px solid #e0e0e0",
+                },
                 root:{
                     height: "660px",
                     width: "100%",
@@ -158,7 +161,6 @@ export const lightTheme = createTheme({
                         fontWeight: "bold",
                     },
                     "& .MuiDataGrid-columnHeaderTitleContainer": {
-                        borderBottom: "1px solid #e0e0e0",
                         justifyContent: "center",
                         textAlign: "center"
                     },
@@ -190,8 +192,26 @@ export const lightTheme = createTheme({
                     "& .MuiDataGrid-virtualScroller": {
                         marginTop: "5px"
                     },
-                }
-            }
+                    '& .MuiCheckbox-root': {
+                        '& svg': {
+                            border: "1px solid #D0D5DD", 
+                            backgroundColor: "transparent", 
+                            color: "transparent",
+                        '&:hover': {
+                            backgroundColor: "transparent", 
+                    },
+                        },
+                        '&.Mui-checked': {
+                        '& svg': {
+                            color: "#1890ff",
+                        },
+                        '& svg path': {
+                            color: "inherit",
+                            },
+                        },
+                    },
+},
+            },
         },
         MuiButton: {
             styleOverrides: {
@@ -393,10 +413,10 @@ export const darkTheme = createTheme({
 
 
 export const getCustomStyles = (chipColor: string) => ({
-    bgcolor: chipColor === "success" ? "rgba(129, 199, 132, 0.1)" : "rgba(158, 158, 158, 0.1)",
-    color: chipColor === "success" ? "rgba(109, 179, 112, 1)" : "rgba(138, 138, 138, 1)", 
+    bgcolor: chipColor === "success" ? "rgba(122, 207, 130, 0.4)" : "rgba(178, 178, 178, 0.4)",
+    color: chipColor === "success" ? "rgba(60, 130, 62, 1)" : "rgba(90, 90, 90, 1)",
+    
     "&:hover": {
-    bgcolor: chipColor === "success" ? "rgba(102, 187, 106, 0.1)" : "rgba(158, 158, 158, 0.1)",
-    border: chipColor === "success" ? "1px solid rgba(102, 187, 106, 1)" : "1px solid rgba(158, 158, 158, 1)"
+        border: chipColor === "success" ? "1px solid rgba(102, 187, 106, 1)" : "1px solid rgba(158, 158, 158, 1)", 
     }
 });
