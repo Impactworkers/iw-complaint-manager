@@ -5,25 +5,21 @@ export interface UseGetOktaUserNameReturnType {
     userName: string;
     error: string | null;
     isLoading: boolean;
-    isAuthenticated: boolean | null;
+    isAuthenticated: boolean;
 }
 
 export const useGetOktaUserName = (): UseGetOktaUserNameReturnType => {
     const [userName, setUserName] =
         useState<UseGetOktaUserNameReturnType["userName"]>("");
     const { authState, oktaAuth } = useOktaAuth();
-    const [error, setError] = useState<
-        UseGetOktaUserNameReturnType["error"] | null
-    >(null);
+    const [error, setError] =
+        useState<UseGetOktaUserNameReturnType["error"]>(null);
     const [isLoading, setIsLoading] =
         useState<UseGetOktaUserNameReturnType["isLoading"]>(true);
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(
-        null
-    );
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
     useEffect(() => {
         const getUserName = async (): Promise<void> => {
-            setIsLoading(true);
             try {
                 const user = await oktaAuth.getUser();
                 setUserName(user.name as string);
