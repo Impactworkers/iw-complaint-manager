@@ -2,7 +2,7 @@ import { GridColDef } from "@mui/x-data-grid";
 
 export interface CasesTableProps {
     rows: {
-        id: number;
+        id: string;
         ID: string;
         Type: string;
         Date: string;
