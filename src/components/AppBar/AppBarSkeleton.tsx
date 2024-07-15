@@ -37,8 +37,8 @@ const AppBarSkeleton: React.FC = () => {
                         <Skeleton
                             data-testid="account-skeleton"
                             variant="circular"
-                            width={40}
-                            height={40}
+                            width={32}
+                            height={32}
                             animation="wave"
                         />
                     </IconButton>
