@@ -30,6 +30,7 @@ export const renderMenuItems = ({
                 router.push(menu.route);
                 closeHandler();
             }}
+            sx={{ cursor: "pointer" }}
         >
             {menu.icon && <ListItemIcon>{menu.icon}</ListItemIcon>}
             <ListItemText inset={!menu.icon}>
