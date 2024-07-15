@@ -255,19 +255,23 @@ export const lightTheme = createTheme({
             styleOverrides:{
                 root:{
                     backgroundColor: designTokens.Neutral10,
-                    borderBottom: `1px solid ${designTokens.OtherDivider}`,
+                    // borderBottom: `1px solid ${designTokens.OtherDivider}`,
                     height: "60px"
                 }
             }
         },
-        MuiDrawer: {
+        MuiSkeleton: {
             styleOverrides: {
-                paper: {
-                    marginTop: "58px",
-                }
-            }
-        },   
-    },
+              root: {
+                transition: 'all 0.3s ease-in',
+                '&:hover': {
+                  opacity: 0.7,
+                },
+                backgroundColor: designTokens.Neutral200,
+              },
+            },
+          },
+    }
 });
 
 export const darkTheme = createTheme({
