@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import { describe, expect, test } from "@jest/globals";
 import AppBarWithSideNav from "./AppBar";
 import { useOktaAuth } from "@okta/okta-react";
@@ -34,10 +34,12 @@ describe("AppBarWithSideNav Component", () => {
     test("renders AppBarWithSideNav with authenticated user", async () => {
         const push = jest.fn();
 
-        render(
-            <AppRouterContextProviderMock router={{ push }}>
-                <AppBarWithSideNav drawerItems={mockMenuItems} />
-            </AppRouterContextProviderMock>
+        act(() =>
+            render(
+                <AppRouterContextProviderMock router={{ push }}>
+                    <AppBarWithSideNav drawerItems={mockMenuItems} />
+                </AppRouterContextProviderMock>
+            )
         );
 
         await screen.findByText("JD");
@@ -49,21 +51,25 @@ describe("AppBarWithSideNav Component", () => {
         ).toBeInTheDocument();
     });
 
-    test("toggles drawer visibility", () => {
+    test("toggles drawer visibility", async () => {
         const push = jest.fn();
 
-        render(
-            <AppRouterContextProviderMock router={{ push }}>
-                <AppBarWithSideNav drawerItems={mockMenuItems} />
-            </AppRouterContextProviderMock>
+        await act(async () =>
+            render(
+                <AppRouterContextProviderMock router={{ push }}>
+                    <AppBarWithSideNav drawerItems={mockMenuItems} />
+                </AppRouterContextProviderMock>
+            )
         );
 
         const drawerToggleButton = screen.getByLabelText("open drawer");
 
-        fireEvent.click(drawerToggleButton);
+        await act(async () => fireEvent.click(drawerToggleButton));
         expect(screen.getByRole("complementary")).toHaveClass("MuiDrawer-root");
 
-        fireEvent.click(screen.getByRole("complementary"));
+        await act(async () =>
+            fireEvent.click(screen.getByRole("complementary"))
+        );
         expect(screen.queryByRole("complementary")).toHaveClass(
             "MuiDrawer-docked"
         );
@@ -75,10 +81,12 @@ describe("AppBarWithSideNav Component", () => {
         } as ReturnType<typeof useOktaAuth>);
         const push = jest.fn();
 
-        render(
-            <AppRouterContextProviderMock router={{ push }}>
-                <AppBarWithSideNav drawerItems={mockMenuItems} />
-            </AppRouterContextProviderMock>
+        await act(async () =>
+            render(
+                <AppRouterContextProviderMock router={{ push }}>
+                    <AppBarWithSideNav drawerItems={mockMenuItems} />
+                </AppRouterContextProviderMock>
+            )
         );
 
         expect(screen.getByTestId("default-avatar-menu")).toBeInTheDocument();
