@@ -90,10 +90,8 @@ const AvatarAccountMenu: FC<AvatarAccountMenuProps> = ({
                 anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
                 <MenuItem onClick={handleClose}>
-                    <Avatar>{getFirstAndLastInitials(userName)}</Avatar> Profile
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                    <Avatar /> My account
+                    <Avatar>{getFirstAndLastInitials(userName)}</Avatar> My
+                    Account
                 </MenuItem>
                 <Divider />
                 <MenuItem onClick={handleClose}>
