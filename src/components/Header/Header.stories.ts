@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import Header from "./Header";
-import { expect, userEvent, within } from "@storybook/test";
-import { redirect, getRouter } from "@storybook/nextjs/navigation.mock";
+import { userEvent, within } from "@storybook/test";
 
 const meta: Meta<typeof Header> = {
     title: "Component/Header",
