@@ -13,6 +13,7 @@ import Logout from "@mui/icons-material/Logout";
 import { getFirstAndLastInitials } from "@/utils/helperFunctions/appBarHelperFunctions";
 import { FC } from "react";
 import { Skeleton } from "@mui/material";
+import { useRouter } from "next/navigation";
 import oktaAuth from "@/auth/auth";
 
 interface AvatarAccountMenuProps {
@@ -37,9 +38,12 @@ const AvatarAccountMenu: FC<AvatarAccountMenuProps> = ({
         setAnchorEl(null);
     };
 
+    const router = useRouter();
+
     const handleLogout = () => {
         setAnchorEl(null);
         oktaAuth.signOut();
+        router.push("/");
     };
 
     return (

@@ -9,8 +9,6 @@ import oktaAuth from "../auth/auth";
 import { useRouter } from "next/navigation";
 import { ReactNode } from "react";
 import OktaAuth from "@okta/okta-auth-js";
-import { mockMenuItems } from "@/components/AppBar/mocks";
-import AppBarWithSideNav from "@/components/AppBar/AppBar";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     const router = useRouter();
@@ -32,7 +30,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     <AppRouterCacheProvider>
                         <ThemeProvider theme={lightTheme}>
                             <CssBaseline />
-                            <AppBarWithSideNav drawerItems={mockMenuItems} />
                             <div style={{ marginTop: "64px" }}>{children}</div>
                         </ThemeProvider>
                     </AppRouterCacheProvider>
