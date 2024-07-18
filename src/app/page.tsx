@@ -12,6 +12,7 @@ export default function Page() {
         herokuEnv === "staging";
     const { oktaAuth, authState } = useOktaAuth();
     const [redirectAttempted, setRedirectAttempted] = useState(false);
+
     useEffect(() => {
         if (isHerokuEnv && !redirectAttempted) {
             const handleRedirect = async () => {
