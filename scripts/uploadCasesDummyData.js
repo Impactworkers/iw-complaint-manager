@@ -17,8 +17,8 @@ const sequelize = new Sequelize(
 const CasesData = sequelize.define(
     "CasesData",
     {
-        ID: {
-            type: DataTypes.INTEGER,
+        CASE_ID: {
+            type: DataTypes.STRING,
             allowNull: false,
             primaryKey: true
         },
@@ -60,7 +60,7 @@ async function uploadData() {
             __dirname,
             "..",
             "data",
-            "cases_dummy_data.csv"
+            "casesDummyData.csv"
         );
         await sequelize.sync({ force: true }); // Sync models to database (drops and recreates tables)
         await CasesData.bulkCreate(
@@ -71,7 +71,7 @@ async function uploadData() {
                 .map((line) => line.split(","))
                 .map(
                     ([
-                        ID,
+                        CASE_ID,
                         TYPE,
                         DATE,
                         CREATOR,
@@ -79,9 +79,9 @@ async function uploadData() {
                         STATUS,
                         ASSIGNEE
                     ]) => ({
-                        ID,
+                        CASE_ID: parseInt(CASE_ID, 10), // Ensure CASE_ID is an integer
                         TYPE,
-                        DATE,
+                        DATE: new Date(DATE), // Convert DATE to a Date object
                         CREATOR,
                         LOCATION,
                         STATUS,

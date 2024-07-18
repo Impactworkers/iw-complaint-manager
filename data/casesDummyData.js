@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const data = [
-    "ID,TYPE,DATE,CREATOR,LOCATION,STATUS,ASSIGNEE",
+    "CASE_ID,TYPE,DATE,CREATOR,LOCATION,STATUS,ASSIGNEE",
     "1,Bug,2024-01-01,User1,New York,Open,UserA",
     "2,Feature,2024-01-02,User2,Los Angeles,Closed,UserB",
     "3,Improvement,2024-01-03,User3,Chicago,In Progress,UserC",
@@ -54,5 +54,8 @@ const data = [
     "50,Improvement,2024-02-19,User50,San Francisco,Closed,UserXX"
 ];
 
-fs.writeFileSync("cases_dummy_data.csv", data.join("\n"));
-console.log("Dummy data CSV file generated.");
+const csvData = data.join("\n");
+fs.writeFile("casesDummyData.csv", csvData, (err) => {
+    if (err) throw err;
+    console.log("The file has been saved as CSV!");
+});
