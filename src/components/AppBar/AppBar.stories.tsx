@@ -3,10 +3,12 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Stack } from "@mui/material";
 import AppBarWithSideNav from "./AppBar";
 import { mockMenuItems } from "./mocks";
+import { withRouter } from "./mockRouter";
 
 const meta: Meta<typeof AppBarWithSideNav> = {
     title: "Navigation/AppBarWithSideNav",
     component: AppBarWithSideNav,
+    decorators: [withRouter],
     parameters: {
         docs: {
             description: {
