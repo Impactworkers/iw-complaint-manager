@@ -73,11 +73,7 @@ const AppBarWithSideNav: FC<AppBarWithSideNavProps> = ({
                         <MenuIcon />
                     </IconButton>
 
-                    <Image
-                        src={Logo}
-                        alt="Logo"
-                        style={{ objectFit: "contain" }}
-                    />
+                    <Image src={Logo} alt="Logo" objectFit="contain" priority />
                     <Box flexGrow={1} />
                     {error ? (
                         <Typography color={lightTheme.palette.error.main}>
