@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useOktaAuth } from "./useOktaAuth";
+import { useOktaAuth } from "@okta/okta-react";
 
 export interface UseGetOktaUserNameReturnType {
     userName: string;
