@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/Impactworkers/iw-complaint-manager/compare/v0.1.4...v0.2.0) (2024-07-19)
+
+
+### Features
+
+* [[#64](https://github.com/Impactworkers/iw-complaint-manager/issues/64)] implemented logout functionality ([d0b3607](https://github.com/Impactworkers/iw-complaint-manager/commit/d0b360754243b330e38e4f0cfd87626211fc1789))
+* [Create Header](https://github.com/orgs/Impactworkers/projects/9/views/2?pane=issue&itemId=64157490):Feat/appbar sidenav ([#90](https://github.com/Impactworkers/iw-complaint-manager/issues/90)) ([2b4cf4d](https://github.com/Impactworkers/iw-complaint-manager/commit/2b4cf4d6ed2ecf8e6d8a0a7d414ff87cf4ef4447))
+
 ## [0.1.4](https://github.com/Impactworkers/iw-complaint-manager/compare/v0.1.3...v0.1.4) (2024-06-12)
 
 ### Bug Fixes
